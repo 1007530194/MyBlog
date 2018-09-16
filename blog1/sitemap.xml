@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/</loc>
-<lastmod>2018-09-16T15:41:56-00:00</lastmod>
+<lastmod>2018-09-16T16:05:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/archives.html</loc>
-<lastmod>2018-09-16T15:41:56-00:00</lastmod>
+<lastmod>2018-09-16T16:05:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/tags.html</loc>
-<lastmod>2018-09-16T15:41:56-00:00</lastmod>
+<lastmod>2018-09-16T16:05:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/categories.html</loc>
-<lastmod>2018-09-16T15:41:56-00:00</lastmod>
+<lastmod>2018-09-16T16:05:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/pages/2018/01/10fen-zhong-shang-shou-latex.html</loc>
-<lastmod>2018-01-01T00:00:00+08:00</lastmod>
+<loc>http://localhost:8000/pages/2018/04/10fen-zhong-shang-shou-latex.html</loc>
+<lastmod>2018-04-01T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2018/01/10fen-zhong-shang-shou-latex4.html</loc>
+<lastmod>2018-01-03T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
@@ -271,7 +278,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/category/azhi-ding.html</loc>
-<lastmod>2018-01-01T00:00:00+08:06</lastmod>
+<lastmod>2018-04-01T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -383,7 +390,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/author/niult.html</loc>
-<lastmod>2018-01-01T00:00:00+08:06</lastmod>
+<lastmod>2018-04-01T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
