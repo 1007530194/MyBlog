@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/</loc>
-<lastmod>2018-09-16T16:34:26-00:00</lastmod>
+<lastmod>2018-09-16T16:56:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/archives.html</loc>
-<lastmod>2018-09-16T16:34:26-00:00</lastmod>
+<lastmod>2018-09-16T16:56:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/tags.html</loc>
-<lastmod>2018-09-16T16:34:26-00:00</lastmod>
+<lastmod>2018-09-16T16:56:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/categories.html</loc>
-<lastmod>2018-09-16T16:34:26-00:00</lastmod>
+<lastmod>2018-09-16T16:56:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -68,6 +68,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/pages/2018/01/ji-li-han-shu.html</loc>
+<lastmod>2018-01-01T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2018/01/ju-zhen-qiu-dao.html</loc>
 <lastmod>2018-01-01T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -284,6 +291,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://localhost:8000/category/00qi-ta.html</loc>
+<lastmod>2018-01-01T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://localhost:8000/category/01chang-yong-gong-ju.html</loc>
 <lastmod>2018-01-01T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -292,6 +306,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/category/02gong-ju-shi-yong.html</loc>
+<lastmod>2018-01-01T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/category/02wo-ai-du-shu.html</loc>
+<lastmod>2018-01-01T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/category/03shen-du-xue-xi.html</loc>
 <lastmod>2018-01-01T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -341,13 +369,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/category/shen-du-xue-xi-tensorflow.html</loc>
-<lastmod>2018-01-01T00:00:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://localhost:8000/category/shu-ji.html</loc>
 <lastmod>2018-01-01T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
