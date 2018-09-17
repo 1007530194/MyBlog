@@ -1,134 +1,232 @@
+
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
-<html class="no-js" lang="en"><!--<![endif]-->
-    <head>
-<meta charset="utf-8">
-<title>4.朴素贝叶斯 &mdash; What</title>
-<meta name="author" content="niult">
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="niult" />
+        <meta name="description" content="第4章 基于概率论的分类方法：朴素贝叶斯 朴素贝叶斯 概述 贝叶斯分类是一类分类算法的总称，这类算法均以贝叶斯定理为基础，故统称为贝叶斯分类。本章首先介绍贝叶斯分类算法的基础——贝叶斯定理。最后，我们通过实例来讨论贝叶斯分类的中最简单的一种: 朴素贝叶斯分类。 贝叶斯理论 &amp; 条件概率 贝叶斯理论 我们现在有一个数据集，它由两类数据组成，数据分布如下图所示： 我们现在用 p1(x,y) 表示数据点 (x,y) 属于类别 1（图中用圆点表示的类别）的概率 …" />
 
 
+    <title>4.朴素贝叶斯 - 魑魅魍魉</title>
 
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css" />
 
+    <link href="../../../theme/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet" />
 
+    <link href="../../../theme/css/pelican-twitchy.min.css" rel="stylesheet" />
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small" class="twitchy-background">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="../../.." title="魑魅魍魉" class="collapsed">
+            <span class="fas fa-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="../../../archives.html" title="Recent Articles" class="collapsed">
+            <span class="fas fa-th-list"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fas fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="#" title="Another social link"><i class="fab fa-another-social-link-square padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file"><i class="fab fa-you-can-add-links-in-your-config-file-square padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fas fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper" class="twitchy-background">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../../../">
+                            <span class="fas fa-home padding-small"></span>
+                            魑魅魍魉
+                    </a>
+                </li>
+                    <li>
+                        <a href="../../../archives.html">
+                            <span class="fas fa-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fas fa-users padding-small"></i>
+                        Contact
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="#" title="Another social link">
+                            <i class="fab fa-another-social-link-square padding-small"></i>
+                            Another social link
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file">
+                            <i class="fab fa-you-can-add-links-in-your-config-file-square padding-small"></i>
+                            You can add links in your config file
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fas fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fas fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li >
+                        <a href="../../../category/00qi-ta-2.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            00.其他2
+                            <span class="badge badge-secondary float-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/01chang-yong-gong-ju.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            01常用工具
+                            <span class="badge badge-secondary float-right categorybadge">10</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/02gong-ju-shi-yong.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            02.工具使用
+                            <span class="badge badge-secondary float-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/02wo-ai-du-shu.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            02.我爱读书
+                            <span class="badge badge-secondary float-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/03chang-yong-ming-ling.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            03.常用命令
+                            <span class="badge badge-secondary float-right categorybadge">3</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/03shen-du-xue-xi.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            03深度学习
+                            <span class="badge badge-secondary float-right categorybadge">12</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/ji-chu-zhi-shi.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            基础知识
+                            <span class="badge badge-secondary float-right categorybadge">3</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            机器学习实战
+                            <span class="badge badge-secondary float-right categorybadge">18</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/shen-du-xue-xi.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            深度学习
+                            <span class="badge badge-secondary float-right categorybadge">1</span>
+                        </a>
+                    </li>
+                </ul></li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">
+            <span id="right-arrow" class="fas fa-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="fas fa-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
 
-
-    <link href="../../../favicon.png" rel="icon">
-
-<link href="../../../theme/css/main.css" media="screen, projection"
-      rel="stylesheet" type="text/css">
-
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
-      rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
-      rel="stylesheet" type="text/css">
-
-<!-- mathjax config similar to math.stackexchange -->
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-<script type="text/javascript">
-    init_mathjax = function () {
-        if (window.MathJax) {
-            // MathJax loaded
-            MathJax.Hub.Config({
-                tex2jax: {
-                    inlineMath: [['$', '$'], ["\\(", "\\)"]],
-                    displayMath: [['$$', '$$'], ["\\[", "\\]"]]
-                },
-                displayAlign: 'center', // Change this to 'center' to center equations.
-                "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 0}}
-                }
-            });
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
-    };
-    init_mathjax();
-</script>
-
-<script type="text/javascript">
-    init_mathjax2 = function () {
-        // Fix <code> tags after MathJax finishes running. This is a
-        // hack to overcome a shortcoming of Markdown. Discussion at
-        // https://github.com/mojombo/jekyll/issues/199
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i = 0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    };
-    init_mathjax2();
-
-
-</script></head>
-
-<body>
-<header role="banner"><hgroup>
-  <h1><a href="../../../">What</a></h1>
-</hgroup></header>
-<nav role="navigation"><ul class="subscription" data-subscription="rss">
-</ul>
-
-
-<ul class="main-navigation">
-      <li >
-        <a href="../../../category/00qi-ta.html">00.其他</a>
-      </li>
-      <li >
-        <a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
-      </li>
-      <li >
-        <a href="../../../category/02gong-ju-shi-yong.html">02.工具使用</a>
-      </li>
-      <li >
-        <a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a>
-      </li>
-      <li >
-        <a href="../../../category/03shen-du-xue-xi.html">03深度学习</a>
-      </li>
-      <li >
-        <a href="../../../category/azhi-ding.html">A置顶</a>
-      </li>
-      <li >
-        <a href="../../../category/chang-yong-gong-ju.html">常用工具</a>
-      </li>
-      <li >
-        <a href="../../../category/generalb.html">General/b</a>
-      </li>
-      <li >
-        <a href="../../../category/ji-chu-zhi-shi.html">基础知识</a>
-      </li>
-      <li class="active">
-        <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a>
-      </li>
-      <li >
-        <a href="../../../category/shen-du-xue-xi.html">深度学习</a>
-      </li>
-      <li >
-        <a href="../../../category/shen-du-xue-xi-tensorflow.html">深度学习-tensorflow</a>
-      </li>
-      <li >
-        <a href="../../../category/xue-xi.html">学习</a>
-      </li>
-      <li >
-        <a href="../../../category/xue-xi-jupyter.html">学习jupyter</a>
-      </li>
-</ul></nav>
-<div id="main">
-    <div id="content">
-<div>
-  <article class="hentry" role="article">
-<header>
-      <h1 class="entry-title">4.朴素贝叶斯</h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第4章 基于概率论的分类方法：朴素贝叶斯</h1>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-9">
+                <header class="page-header">
+                    <h1>
+                        <a href="../../../pages/2017/01/4po-su-bei-xie-si.html"
+                           rel="bookmark"
+                           title="Permalink to 4.朴素贝叶斯">
+                            4.朴素贝叶斯
+                        </a>
+                        <small>
+<div class="post-info">
+    <div class="publish-info-block">
+        <small>
+            <span class="published">
+                <i class="fa fa-calendar padding-small"></i><time datetime="2017-01-01T00:00:00+08:00"> 2017-01-01 00:00</time>
+            </span>
+            <span class="category">
+                <i class="fa fa-folder-open padding-small"></i><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a>
+            </span>
+        </small>
+    </div>
+</div><!-- /.post-info -->                        </small>
+                    </h1>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="entry-content">
+                    <h1>第4章 基于概率论的分类方法：朴素贝叶斯</h1>
 <h2>朴素贝叶斯 概述</h2>
 <p><code>贝叶斯分类是一类分类算法的总称，这类算法均以贝叶斯定理为基础，故统称为贝叶斯分类。本章首先介绍贝叶斯分类算法的基础——贝叶斯定理。最后，我们通过实例来讨论贝叶斯分类的中最简单的一种: 朴素贝叶斯分类。</code></p>
 <h2>贝叶斯理论 &amp; 条件概率</h2>
@@ -182,29 +280,29 @@
 返回该文档属于每个类别的条件概率（P(类别|文档的所有词条)）
 </pre></div>
 <h3>朴素贝叶斯 开发流程</h3>
-<div class="highlight"><pre><span></span>收集数据: 可以使用任何方法。
-准备数据: 需要数值型或者布尔型数据。
-分析数据: 有大量特征时，绘制特征作用不大，此时使用直方图效果更好。
-训练算法: 计算不同的独立特征的条件概率。
-测试算法: 计算错误率。
-使用算法: 一个常见的朴素贝叶斯应用是文档分类。可以在任意的分类场景中使用朴素贝叶斯分类器，不一定非要是文本。
+<div class="highlight"><pre><span></span><span class="err">收集数据</span><span class="o">:</span> <span class="err">可以使用任何方法。</span>
+<span class="err">准备数据</span><span class="o">:</span> <span class="err">需要数值型或者布尔型数据。</span>
+<span class="err">分析数据</span><span class="o">:</span> <span class="err">有大量特征时，绘制特征作用不大，此时使用直方图效果更好。</span>
+<span class="err">训练算法</span><span class="o">:</span> <span class="err">计算不同的独立特征的条件概率。</span>
+<span class="err">测试算法</span><span class="o">:</span> <span class="err">计算错误率。</span>
+<span class="err">使用算法</span><span class="o">:</span> <span class="err">一个常见的朴素贝叶斯应用是文档分类。可以在任意的分类场景中使用朴素贝叶斯分类器，不一定非要是文本。</span>
 </pre></div>
 <h3>朴素贝叶斯 算法特点</h3>
-<div class="highlight"><pre><span></span>优点: 在数据较少的情况下仍然有效，可以处理多类别问题。
-缺点: 对于输入数据的准备方式较为敏感。
-适用数据类型: 标称型数据。
+<div class="highlight"><pre><span></span><span class="err">优点</span><span class="o">:</span> <span class="err">在数据较少的情况下仍然有效，可以处理多类别问题。</span>
+<span class="err">缺点</span><span class="o">:</span> <span class="err">对于输入数据的准备方式较为敏感。</span>
+<span class="err">适用数据类型</span><span class="o">:</span> <span class="err">标称型数据。</span>
 </pre></div>
 <h2>朴素贝叶斯 项目案例</h2>
 <h3>项目案例1: 屏蔽社区留言板的侮辱性言论</h3>
 <h4>项目概述</h4>
 <p>构建一个快速过滤器来屏蔽在线社区留言板上的侮辱性言论。如果某条留言使用了负面或者侮辱性的语言，那么就将该留言标识为内容不当。对此问题建立两个类别: 侮辱类和非侮辱类，使用 1 和 0 分别表示。</p>
 <h4>开发流程</h4>
-<div class="highlight"><pre><span></span>收集数据: 可以使用任何方法
-准备数据: 从文本中构建词向量
-分析数据: 检查词条确保解析的正确性
-训练算法: 从词向量计算概率
-测试算法: 根据现实情况修改分类器
-使用算法: 对社区留言板言论进行分类
+<div class="highlight"><pre><span></span><span class="err">收集数据</span><span class="o">:</span> <span class="err">可以使用任何方法</span>
+<span class="err">准备数据</span><span class="o">:</span> <span class="err">从文本中构建词向量</span>
+<span class="err">分析数据</span><span class="o">:</span> <span class="err">检查词条确保解析的正确性</span>
+<span class="err">训练算法</span><span class="o">:</span> <span class="err">从词向量计算概率</span>
+<span class="err">测试算法</span><span class="o">:</span> <span class="err">根据现实情况修改分类器</span>
+<span class="err">使用算法</span><span class="o">:</span> <span class="err">对社区留言板言论进行分类</span>
 </pre></div>
 <blockquote>
 <p>收集数据: 可以使用任何方法</p>
@@ -426,12 +524,12 @@
 <p>完成朴素贝叶斯的一个最著名的应用: 电子邮件垃圾过滤。</p>
 <h4>开发流程</h4>
 <p>使用朴素贝叶斯对电子邮件进行分类</p>
-<div class="highlight"><pre><span></span>收集数据: 提供文本文件
-准备数据: 将文本文件解析成词条向量
-分析数据: 检查词条确保解析的正确性
-训练算法: 使用我们之前建立的 trainNB() 函数
-测试算法: 使用朴素贝叶斯进行交叉验证
-使用算法: 构建一个完整的程序对一组文档进行分类，将错分的文档输出到屏幕上
+<div class="highlight"><pre><span></span><span class="err">收集数据</span><span class="o">:</span> <span class="err">提供文本文件</span>
+<span class="err">准备数据</span><span class="o">:</span> <span class="err">将文本文件解析成词条向量</span>
+<span class="err">分析数据</span><span class="o">:</span> <span class="err">检查词条确保解析的正确性</span>
+<span class="err">训练算法</span><span class="o">:</span> <span class="err">使用我们之前建立的</span> <span class="n">trainNB</span><span class="o">()</span> <span class="err">函数</span>
+<span class="err">测试算法</span><span class="o">:</span> <span class="err">使用朴素贝叶斯进行交叉验证</span>
+<span class="err">使用算法</span><span class="o">:</span> <span class="err">构建一个完整的程序对一组文档进行分类，将错分的文档输出到屏幕上</span>
 </pre></div>
 <blockquote>
 <p>收集数据: 提供文本文件</p>
@@ -575,12 +673,12 @@ Eugene
 <p>广告商往往想知道关于一个人的一些特定人口统计信息，以便能更好地定向推销广告。</p>
 <p>我们将分别从美国的两个城市中选取一些人，通过分析这些人发布的信息，来比较这两个城市的人们在广告用词上是否不同。如果结论确实不同，那么他们各自常用的词是那些，从人们的用词当中，我们能否对不同城市的人所关心的内容有所了解。</p>
 <h4>开发流程</h4>
-<div class="highlight"><pre><span></span>收集数据: 从 RSS 源收集内容，这里需要对 RSS 源构建一个接口
-准备数据: 将文本文件解析成词条向量
-分析数据: 检查词条确保解析的正确性
-训练算法: 使用我们之前建立的 trainNB0() 函数
-测试算法: 观察错误率，确保分类器可用。可以修改切分程序，以降低错误率，提高分类结果
-使用算法: 构建一个完整的程序，封装所有内容。给定两个 RSS 源，改程序会显示最常用的公共词
+<div class="highlight"><pre><span></span><span class="err">收集数据</span><span class="o">:</span> <span class="err">从</span> <span class="n">RSS</span> <span class="err">源收集内容，这里需要对</span> <span class="n">RSS</span> <span class="err">源构建一个接口</span>
+<span class="err">准备数据</span><span class="o">:</span> <span class="err">将文本文件解析成词条向量</span>
+<span class="err">分析数据</span><span class="o">:</span> <span class="err">检查词条确保解析的正确性</span>
+<span class="err">训练算法</span><span class="o">:</span> <span class="err">使用我们之前建立的</span> <span class="n">trainNB0</span><span class="o">()</span> <span class="err">函数</span>
+<span class="err">测试算法</span><span class="o">:</span> <span class="err">观察错误率，确保分类器可用。可以修改切分程序，以降低错误率，提高分类结果</span>
+<span class="err">使用算法</span><span class="o">:</span> <span class="err">构建一个完整的程序，封装所有内容。给定两个</span> <span class="n">RSS</span> <span class="err">源，改程序会显示最常用的公共词</span>
 </pre></div>
 <blockquote>
 <p>收集数据: 从 RSS 源收集内容，这里需要对 RSS 源构建一个接口</p>
@@ -790,96 +888,36 @@ Eugene
 <li><strong>作者：<a href="http://www.apache.wiki/display/~xuxin">羊三</a> <a href="http://www.apache.wiki/display/~chenyao">小瑶</a></strong></li>
 <li><a href="https://github.com/apachecn/MachineLearning">GitHub地址</a>: <a href="https://github.com/apachecn/MachineLearning">https://github.com/apachecn/MachineLearning</a></li>
 <li><strong>版权声明：欢迎转载学习 =&gt; 请标注信息来源于 <a href="http://www.apachecn.org/">ApacheCN</a></strong></li>
-</ul></div>
-    <footer>
-<p class="meta">
-  <span class="byline author vcard">
-    Posted by <span class="fn">
-        niult
-    </span>
-  </span>
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>  <span class="categories">
-    <a class='category' href='../../../category/ji-qi-xue-xi-shi-zhan.html'>机器学习实战</a>
-  </span>
-</p><div class="sharing">
-</div>    </footer>
-  </article>
+</ul>
+                </div>
+                <footer class="text-right">
+                    <p>- niult</p>
+                </footer>
+            </div>
+        </div>
+    </article>
+</section>
+<footer>
+    <hr>
+    <div class="row">
+        <div class="col-lg-9 text-center">
+            <p><small>
+                Built by <a href="http://docs.getpelican.com/en/latest">Pelican</a> / <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a>
+                &middot;                    &copy; 2018 niult
+            </small></p>
+        </div>
+    </div>
+</footer>            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.2 -->
+    <script src="../../../theme/js/jquery-1.11.2.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../../theme/js/bootstrap.min.js"></script>
+    <!-- twitchy Script -->
+    <script src="../../../theme/js/pelican_twitchy.min.js"></script>
 
-</div>
-<aside class="sidebar">
-
-        <section>
-
-            <h1>Categories</h1>
-            <ul id="recent_posts">
-                    <li><a href="../../../category/00qi-ta.html">00.其他</a></li>
-                    <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
-                    <li><a href="../../../category/02gong-ju-shi-yong.html">02.工具使用</a></li>
-                    <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
-                    <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
-                    <li><a href="../../../category/azhi-ding.html">a置顶</a></li>
-                    <li><a href="../../../category/chang-yong-gong-ju.html">常用工具</a></li>
-                    <li><a href="../../../category/generalb.html">general/b</a></li>
-                    <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
-                    <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
-                    <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
-                    <li><a href="../../../category/shen-du-xue-xi-tensorflow.html">深度学习-TensorFlow</a></li>
-                    <li><a href="../../../category/xue-xi.html">学习</a></li>
-                    <li><a href="../../../category/xue-xi-jupyter.html">学习jupyter</a></li>
-            </ul>
-        </section>
-
-    <section>
-        <h1>Recent Posts</h1>
-        <ul id="recent_posts">
-                <li class="post">
-                    <a href="../../../pages/2018/01/10fen-zhong-shang-shou-latex2.html">10分钟上手Latex2</a>
-                </li>
-                <li class="post">
-                    <a href="../../../pages/2018/01/10fen-zhong-shang-shou-latex3.html">10分钟上手Latex3</a>
-                </li>
-                <li class="post">
-                    <a href="../../../pages/2018/01/10fen-zhong-shang-shou-pandas.html">10分钟上手Pandas</a>
-                </li>
-                <li class="post">
-                    <a href="../../../pages/2018/01/10fen-zhong-shang-shou-pandas3.html">10分钟上手Pandas3</a>
-                </li>
-                <li class="post">
-                    <a href="../../../pages/2018/01/bo-ke-jian-jie.html">博客简介</a>
-                </li>
-        </ul>
-    </section>
-
-    <section>
-        <h1>Tags</h1>
-            <a href="../../../tag/tensorflow.html">tensorflow</a>,            <a href="../../../tag/jupyter-notebook.html">Jupyter notebook</a>,            <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,            <a href="../../../tag/machine-learning.html">Machine Learning</a>,            <a href="../../../tag/pandas.html">pandas</a>    </section>
-
-
-    <section>
-        <h1>Social</h1>
-        <ul>
-            <li><a href="#" target="_blank">You can add links in your config file</a></li>
-            <li><a href="#" target="_blank">Another social link</a></li>
-        </ul>
-    </section>
-    <section>
-        <h1>Blogroll</h1>
-        <ul>
-            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
-            <li><a href="http://python.org/" target="_blank">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
-            <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
-        </ul>
-    </section>
-
-</aside>    </div>
-</div>
-<footer role="contentinfo"><p>
-    Copyright &copy;  2016&ndash;2018  niult &mdash;
-  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
-</p></footer>
-<script src="../../../theme/js/modernizr-2.0.js"></script>
-<script src="../../../theme/js/ender.js"></script>
-<script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="niult" />
+        <meta name="keywords" content="工具" />
+        <meta name="description" content="命令基本格式: hadoop fs -cmd \&lt; args \&gt; 1.ls hadoop fs -ls / 列出hdfs文件系统根目录下的目录和文件 hadoop fs -ls -R / 列出hdfs文件系统所有的目录和文件 2.put hadoop fs -put &lt; local file &gt; &lt; hdfs file &gt; hdfs file的父目录一定要存在，否则命令不会执行 hadoop fs …" />
+
+
+    <title>10分钟上手Hadoop-HDFS常用文件命令 - 魑魅魍魉</title>
+
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css" />
+
+    <link href="../../../theme/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet" />
+
+    <link href="../../../theme/css/pelican-twitchy.min.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small" class="twitchy-background">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="../../.." title="魑魅魍魉" class="collapsed">
+            <span class="fas fa-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="../../../archives.html" title="Recent Articles" class="collapsed">
+            <span class="fas fa-th-list"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fas fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="#" title="Another social link"><i class="fab fa-another-social-link-square padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file"><i class="fab fa-you-can-add-links-in-your-config-file-square padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fas fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper" class="twitchy-background">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../../../">
+                            <span class="fas fa-home padding-small"></span>
+                            魑魅魍魉
+                    </a>
+                </li>
+                    <li>
+                        <a href="../../../archives.html">
+                            <span class="fas fa-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fas fa-users padding-small"></i>
+                        Contact
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="#" title="Another social link">
+                            <i class="fab fa-another-social-link-square padding-small"></i>
+                            Another social link
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file">
+                            <i class="fab fa-you-can-add-links-in-your-config-file-square padding-small"></i>
+                            You can add links in your config file
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fas fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fas fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li >
+                        <a href="../../../category/00qi-ta-2.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            00.其他2
+                            <span class="badge badge-secondary float-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="../../../category/01chang-yong-gong-ju.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            01常用工具
+                            <span class="badge badge-secondary float-right categorybadge">10</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/02gong-ju-shi-yong.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            02.工具使用
+                            <span class="badge badge-secondary float-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/02wo-ai-du-shu.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            02.我爱读书
+                            <span class="badge badge-secondary float-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/03chang-yong-ming-ling.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            03.常用命令
+                            <span class="badge badge-secondary float-right categorybadge">3</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/03shen-du-xue-xi.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            03深度学习
+                            <span class="badge badge-secondary float-right categorybadge">12</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/ji-chu-zhi-shi.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            基础知识
+                            <span class="badge badge-secondary float-right categorybadge">3</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            机器学习实战
+                            <span class="badge badge-secondary float-right categorybadge">18</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/shen-du-xue-xi.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            深度学习
+                            <span class="badge badge-secondary float-right categorybadge">1</span>
+                        </a>
+                    </li>
+                </ul></li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">
+            <span id="right-arrow" class="fas fa-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="fas fa-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-9">
+                <header class="page-header">
+                    <h1>
+                        <a href="../../../pages/2018/01/10fen-zhong-shang-shou-hadoop-hdfschang-yong-wen-jian-ming-ling.html"
+                           rel="bookmark"
+                           title="Permalink to 10分钟上手Hadoop-HDFS常用文件命令">
+                            10分钟上手Hadoop-HDFS常用文件命令
+                        </a>
+                        <small>
+<div class="post-info">
+    <div class="publish-info-block">
+        <small>
+            <span class="published">
+                <i class="fa fa-calendar padding-small"></i><time datetime="2018-01-01T00:00:00+08:00"> 2018-01-01 00:00</time>
+            </span>
+            <span class="category">
+                <i class="fa fa-folder-open padding-small"></i><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
+            </span>
+            <span class="tags">
+                <i class="fa fa-tags padding-small"></i>
+                <a href="../../../tag/gong-ju.html">工具</a>            </span>
+        </small>
+    </div>
+</div><!-- /.post-info -->                        </small>
+                    </h1>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="entry-content">
+                    <h2>命令基本格式:</h2>
+<div class="highlight"><pre><span></span>hadoop fs -cmd <span class="se">\&lt;</span> args <span class="se">\&gt;</span> 
+</pre></div>
+<hr/>
+<h3>1.ls</h3>
+<div class="highlight"><pre><span></span>hadoop fs -ls  /
+</pre></div>
+<p>列出hdfs文件系统根目录下的目录和文件</p>
+<div class="highlight"><pre><span></span>hadoop fs -ls -R /
+</pre></div>
+<p>列出hdfs文件系统所有的目录和文件</p>
+<hr/>
+<h3>2.put</h3>
+<div class="highlight"><pre><span></span>hadoop fs -put &lt; <span class="nb">local</span> file &gt; &lt; hdfs file &gt;
+</pre></div>
+<p>hdfs file的父目录一定要存在，否则命令不会执行</p>
+<div class="highlight"><pre><span></span>hadoop fs -put  &lt; <span class="nb">local</span> file or dir &gt;...&lt; hdfs dir &gt;
+</pre></div>
+<p>hdfs dir 一定要存在，否则命令不会执行</p>
+<div class="highlight"><pre><span></span>hadoop fs -put - &lt; hdsf  file&gt;
+</pre></div>
+<p>从键盘读取输入到hdfs file中，按Ctrl+D结束输入，hdfs file不能存在，否则命令不会执行</p>
+<h4>2.1.moveFromLocal</h4>
+<div class="highlight"><pre><span></span>hadoop fs -moveFromLocal  <span class="se">\&lt;</span> <span class="nb">local</span> src <span class="se">\&gt;</span> ... <span class="se">\&lt;</span> hdfs dst <span class="se">\&gt;</span>
+</pre></div>
+<p>与put相类似，命令执行后源文件 local src 被删除，也可以从从键盘读取输入到hdfs file中</p>
+<h4>2.2.copyFromLocal</h4>
+<div class="highlight"><pre><span></span>hadoop fs -copyFromLocal  <span class="se">\&lt;</span> <span class="nb">local</span> src <span class="se">\&gt;</span> ... <span class="se">\&lt;</span> hdfs dst <span class="se">\&gt;</span>
+</pre></div>
+<p>与put相类似，也可以从从键盘读取输入到hdfs file中</p>
+<hr/>
+<h3>3.get</h3>
+<div class="highlight"><pre><span></span>hadoop fs -get &lt; hdfs file &gt; &lt; <span class="nb">local</span> file or dir&gt;
+</pre></div>
+<p>local file不能和 hdfs file名字不能相同，否则会提示文件已存在，没有重名的文件会复制到本地</p>
+<div class="highlight"><pre><span></span>hadoop fs -get &lt; hdfs file or dir &gt; ... &lt; <span class="nb">local</span>  dir &gt;
+</pre></div>
+<p>拷贝多个文件或目录到本地时，本地要为文件夹路径
+<strong>注意：</strong>如果用户不是root， local 路径要为用户文件夹下的路径，否则会出现权限问题，</p>
+<h4>3.1.moveToLocal</h4>
+<p>当前版本中还未实现此命令</p>
+<h4>3.2.copyToLocal</h4>
+<div class="highlight"><pre><span></span>hadoop fs -copyToLocal <span class="se">\&lt;</span> <span class="nb">local</span> src <span class="se">\&gt;</span> ... <span class="se">\&lt;</span> hdfs dst <span class="se">\&gt;</span>
+</pre></div>
+<p>与get相类似</p>
+<hr/>
+<h3>4.rm</h3>
+<div class="highlight"><pre><span></span>hadoop fs -rm &lt; hdfs file &gt; ...
+hadoop fs -rm -r &lt; hdfs dir&gt;...
+</pre></div>
+<p>每次可以删除多个文件或目录</p>
+<hr/>
+<h3>5.mkdir</h3>
+<div class="highlight"><pre><span></span>hadoop fs -mkdir &lt; hdfs path&gt;
+</pre></div>
+<p>只能一级一级的建目录，父目录不存在的话使用这个命令会报错</p>
+<div class="highlight"><pre><span></span>hadoop fs -mkdir -p &lt; hdfs path&gt; 
+</pre></div>
+<p>所创建的目录如果父目录不存在就创建该父目录</p>
+<hr/>
+<h3>6.getmerge</h3>
+<div class="highlight"><pre><span></span>hadoop fs -getmerge &lt; hdfs dir &gt;  &lt; <span class="nb">local</span> file &gt;
+</pre></div>
+<p>将hdfs指定目录下所有文件排序后合并到local指定的<strong>文件</strong>中，文件不存在时会自动创建，文件存在时会覆盖里面的内容</p>
+<div class="highlight"><pre><span></span>hadoop fs -getmerge -nl  &lt; hdfs dir &gt;  &lt; <span class="nb">local</span> file &gt;
+</pre></div>
+<p>加上nl后，合并到local file中的hdfs文件之间会空出一行</p>
+<hr/>
+<h3>7.cp</h3>
+<div class="highlight"><pre><span></span>hadoop fs -cp  &lt; hdfs file &gt;  &lt; hdfs file &gt;
+</pre></div>
+<p>目标文件不能存在，否则命令不能执行，相当于给文件重命名并保存，源文件还存在
+hadoop fs -cp \&lt; hdfs file or dir &gt;... \&lt; hdfs dir &gt;</p>
+<p>目标文件夹要存在，否则命令不能执行</p>
+<hr/>
+<h3>8.mv</h3>
+<div class="highlight"><pre><span></span>hadoop fs -mv &lt; hdfs file &gt;  &lt; hdfs file &gt;
+</pre></div>
+<p>目标文件不能存在，否则命令不能执行，相当于给文件重命名并保存，源文件不存在</p>
+<div class="highlight"><pre><span></span>hadoop fs -mv  &lt; hdfs file or dir &gt;...  &lt; hdfs dir &gt;
+</pre></div>
+<p>源路径有多个时，目标路径必须为目录，且必须存在。
+<strong>注意：</strong>跨文件系统的移动（local到hdfs或者反过来）都是不允许的</p>
+<hr/>
+<h3>9.count</h3>
+<div class="highlight"><pre><span></span>hadoop fs -count &lt; hdfs path &gt;
+</pre></div>
+<p>统计hdfs对应路径下的目录个数，文件个数，文件总计大小
+显示为目录个数，文件个数，文件总计大小，输入路径</p>
+<hr/>
+<h3>10.du</h3>
+<div class="highlight"><pre><span></span>hadoop fs -du &lt; hdsf path&gt; 
+</pre></div>
+<p>显示hdfs对应路径下每个文件夹和文件的大小</p>
+<div class="highlight"><pre><span></span>hadoop fs -du -s &lt; hdsf path&gt; 
+</pre></div>
+<p>显示hdfs对应路径下所有文件和的大小</p>
+<div class="highlight"><pre><span></span>hadoop fs -du - h &lt; hdsf path&gt; 
+</pre></div>
+<p>显示hdfs对应路径下每个文件夹和文件的大小,文件的大小用方便阅读的形式表示，例如用64M代替67108864</p>
+<hr/>
+<h3>11.text</h3>
+<div class="highlight"><pre><span></span>hadoop fs -text &lt; hdsf file&gt;
+</pre></div>
+<p>将文本文件或某些格式的非文本文件通过文本格式输出</p>
+<hr/>
+<h3>12.setrep</h3>
+<div class="highlight"><pre><span></span>hadoop fs -setrep -R <span class="m">3</span> &lt; hdfs path &gt;
+</pre></div>
+<p>改变一个文件在hdfs中的副本个数，上述命令中数字3为所设置的副本个数，-R选项可以对一个人目录下的所有目录+文件递归执行改变副本个数的操作</p>
+<hr/>
+<h3>13.stat</h3>
+<div class="highlight"><pre><span></span>hdoop fs -stat <span class="o">[</span>format<span class="o">]</span> &lt; hdfs path &gt;
+</pre></div>
+<p>返回对应路径的状态信息
+[format]可选参数有：%b（文件大小），%o（Block大小），%n（文件名），%r（副本个数），%y（最后一次修改日期和时间）
+可以这样书写<em>hadoop fs -stat %b%o%n \&lt; hdfs path &gt;</em>，不过不建议，这样每个字符输出的结果不是太容易分清楚</p>
+<hr/>
+<h3>14.tail</h3>
+<div class="highlight"><pre><span></span>hadoop fs -tail &lt; hdfs file &gt;
+</pre></div>
+<p>在标准输出中显示文件末尾的1KB数据</p>
+<hr/>
+<h3>15.archive</h3>
+<div class="highlight"><pre><span></span>hadoop archive -archiveName name.har -p <span class="se">\&lt;</span> hdfs parent dir <span class="se">\&gt;</span> <span class="se">\&lt;</span> src <span class="se">\&gt;</span>* <span class="se">\&lt;</span> hdfs dst <span class="se">\&gt;</span>
+</pre></div>
+<p>命令中参数name：压缩文件名，自己任意取；\&lt; hdfs parent dir &gt; ：压缩文件所在的父目录；\&lt; src &gt;<em>：要压缩的文件名；\&lt; hdfs dst &gt;：压缩文件存放路径
+*示例：hadoop archive -archiveName hadoop.har -p /user 1.txt 2.txt /des</em>
+示例中将hdfs中/user目录下的文件1.txt，2.txt压缩成一个名叫hadoop.har的文件存放在hdfs中/des目录下，如果1.txt，2.txt不写就是将/user目录下所有的目录和文件压缩成一个名叫hadoop.har的文件存放在hdfs中/des目录下
+显示har的内容可以用如下命令：</p>
+<div class="highlight"><pre><span></span>hadoop fs -ls /des/hadoop.jar
+</pre></div>
+<p>显示har压缩的是那些文件可以用如下命令</p>
+<div class="highlight"><pre><span></span>hadoop fs -ls -R har:///des/hadoop.har
+</pre></div>
+<p><strong>注意：</strong>har文件不能进行二次压缩。如果想给.har加文件，只能找到原来的文件，重新创建一个。har文件中原来文件的数据并没有变化，har文件真正的作用是减少NameNode和DataNode过多的空间浪费。</p>
+<hr/>
+<h3>16.balancer</h3>
+<div class="highlight"><pre><span></span>hdfs balancer 
+</pre></div>
+<p>如果管理员发现某些DataNode保存数据过多，某些DataNode保存数据相对较少，可以使用上述命令手动启动内部的均衡过程</p>
+<hr/>
+<h3>17.dfsadmin</h3>
+<div class="highlight"><pre><span></span>hdfs dfsadmin -help
+</pre></div>
+<p>管理员可以通过dfsadmin管理HDFS，用法可以通过上述命令查看
+hdfs dfsadmin -report</p>
+<p>显示文件系统的基本数据</p>
+<div class="highlight"><pre><span></span>hdfs dfsadmin -safemode &lt; enter <span class="p">|</span> leave <span class="p">|</span> get <span class="p">|</span> <span class="nb">wait</span> &gt;
+</pre></div>
+<p>enter：进入安全模式；leave：离开安全模式；get：获知是否开启安全模式；
+wait：等待离开安全模式</p>
+<hr/>
+<h3>18.distcp</h3>
+<p>用来在两个HDFS之间拷贝数据</p>
+                </div>
+                <footer class="text-right">
+                    <p>- niult</p>
+                </footer>
+            </div>
+        </div>
+    </article>
+</section>
+<footer>
+    <hr>
+    <div class="row">
+        <div class="col-lg-9 text-center">
+            <p><small>
+                Built by <a href="http://docs.getpelican.com/en/latest">Pelican</a> / <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a>
+                &middot;                    &copy; 2018 niult
+            </small></p>
+        </div>
+    </div>
+</footer>            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.2 -->
+    <script src="../../../theme/js/jquery-1.11.2.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../../theme/js/bootstrap.min.js"></script>
+    <!-- twitchy Script -->
+    <script src="../../../theme/js/pelican_twitchy.min.js"></script>
+
+</body>
+</html>

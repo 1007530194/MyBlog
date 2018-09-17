@@ -1,134 +1,232 @@
+
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
-<html class="no-js" lang="en"><!--<![endif]-->
-    <head>
-<meta charset="utf-8">
-<title>2.k-近邻算法 &mdash; What</title>
-<meta name="author" content="niult">
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="niult" />
+        <meta name="description" content="第2章 k-近邻算法 KNN 概述 k-近邻（kNN, k-NearestNeighbor）算法是一种基本分类与回归方法，我们这里只讨论分类问题中的 k-近邻算法。 一句话总结：近朱者赤近墨者黑！ k 近邻算法的输入为实例的特征向量，对应于特征空间的点；输出为实例的类别，可以取多类。k 近邻算法假设给定一个训练数据集，其中的实例类别已定。分类时，对新的实例，根据其 k 个最近邻的训练实例的类别，通过多数表决等方式进行预测。因此，k近邻算法不具有显式的学习过程。 k 近邻算法实际上利用训练数据集对特征向量空间进行划分 …" />
 
 
+    <title>2.k-近邻算法 - 魑魅魍魉</title>
 
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css" />
 
+    <link href="../../../theme/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet" />
 
+    <link href="../../../theme/css/pelican-twitchy.min.css" rel="stylesheet" />
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small" class="twitchy-background">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="../../.." title="魑魅魍魉" class="collapsed">
+            <span class="fas fa-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="../../../archives.html" title="Recent Articles" class="collapsed">
+            <span class="fas fa-th-list"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fas fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="#" title="Another social link"><i class="fab fa-another-social-link-square padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file"><i class="fab fa-you-can-add-links-in-your-config-file-square padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fas fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper" class="twitchy-background">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../../../">
+                            <span class="fas fa-home padding-small"></span>
+                            魑魅魍魉
+                    </a>
+                </li>
+                    <li>
+                        <a href="../../../archives.html">
+                            <span class="fas fa-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fas fa-users padding-small"></i>
+                        Contact
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="#" title="Another social link">
+                            <i class="fab fa-another-social-link-square padding-small"></i>
+                            Another social link
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="You can add links in your config file">
+                            <i class="fab fa-you-can-add-links-in-your-config-file-square padding-small"></i>
+                            You can add links in your config file
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fas fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fas fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li >
+                        <a href="../../../category/00qi-ta-2.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            00.其他2
+                            <span class="badge badge-secondary float-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/01chang-yong-gong-ju.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            01常用工具
+                            <span class="badge badge-secondary float-right categorybadge">10</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/02gong-ju-shi-yong.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            02.工具使用
+                            <span class="badge badge-secondary float-right categorybadge">2</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/02wo-ai-du-shu.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            02.我爱读书
+                            <span class="badge badge-secondary float-right categorybadge">1</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/03chang-yong-ming-ling.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            03.常用命令
+                            <span class="badge badge-secondary float-right categorybadge">3</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/03shen-du-xue-xi.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            03深度学习
+                            <span class="badge badge-secondary float-right categorybadge">12</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/ji-chu-zhi-shi.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            基础知识
+                            <span class="badge badge-secondary float-right categorybadge">3</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            机器学习实战
+                            <span class="badge badge-secondary float-right categorybadge">18</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../../../category/shen-du-xue-xi.html">
+                            <i class="fas fa-folder-open padding-small"></i>
+                            深度学习
+                            <span class="badge badge-secondary float-right categorybadge">1</span>
+                        </a>
+                    </li>
+                </ul></li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">
+            <span id="right-arrow" class="fas fa-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="fas fa-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
 
-
-    <link href="../../../favicon.png" rel="icon">
-
-<link href="../../../theme/css/main.css" media="screen, projection"
-      rel="stylesheet" type="text/css">
-
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
-      rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
-      rel="stylesheet" type="text/css">
-
-<!-- mathjax config similar to math.stackexchange -->
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-<script type="text/javascript">
-    init_mathjax = function () {
-        if (window.MathJax) {
-            // MathJax loaded
-            MathJax.Hub.Config({
-                tex2jax: {
-                    inlineMath: [['$', '$'], ["\\(", "\\)"]],
-                    displayMath: [['$$', '$$'], ["\\[", "\\]"]]
-                },
-                displayAlign: 'center', // Change this to 'center' to center equations.
-                "HTML-CSS": {
-                    styles: {'.MathJax_Display': {"margin": 0}}
-                }
-            });
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
-    };
-    init_mathjax();
-</script>
-
-<script type="text/javascript">
-    init_mathjax2 = function () {
-        // Fix <code> tags after MathJax finishes running. This is a
-        // hack to overcome a shortcoming of Markdown. Discussion at
-        // https://github.com/mojombo/jekyll/issues/199
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i = 0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    };
-    init_mathjax2();
-
-
-</script></head>
-
-<body>
-<header role="banner"><hgroup>
-  <h1><a href="../../../">What</a></h1>
-</hgroup></header>
-<nav role="navigation"><ul class="subscription" data-subscription="rss">
-</ul>
-
-
-<ul class="main-navigation">
-      <li >
-        <a href="../../../category/00qi-ta.html">00.其他</a>
-      </li>
-      <li >
-        <a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
-      </li>
-      <li >
-        <a href="../../../category/02gong-ju-shi-yong.html">02.工具使用</a>
-      </li>
-      <li >
-        <a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a>
-      </li>
-      <li >
-        <a href="../../../category/03shen-du-xue-xi.html">03深度学习</a>
-      </li>
-      <li >
-        <a href="../../../category/azhi-ding.html">A置顶</a>
-      </li>
-      <li >
-        <a href="../../../category/chang-yong-gong-ju.html">常用工具</a>
-      </li>
-      <li >
-        <a href="../../../category/generalb.html">General/b</a>
-      </li>
-      <li >
-        <a href="../../../category/ji-chu-zhi-shi.html">基础知识</a>
-      </li>
-      <li class="active">
-        <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a>
-      </li>
-      <li >
-        <a href="../../../category/shen-du-xue-xi.html">深度学习</a>
-      </li>
-      <li >
-        <a href="../../../category/shen-du-xue-xi-tensorflow.html">深度学习-tensorflow</a>
-      </li>
-      <li >
-        <a href="../../../category/xue-xi.html">学习</a>
-      </li>
-      <li >
-        <a href="../../../category/xue-xi-jupyter.html">学习jupyter</a>
-      </li>
-</ul></nav>
-<div id="main">
-    <div id="content">
-<div>
-  <article class="hentry" role="article">
-<header>
-      <h1 class="entry-title">2.k-近邻算法</h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第2章 k-近邻算法</h1>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-9">
+                <header class="page-header">
+                    <h1>
+                        <a href="../../../pages/2017/01/2k-jin-lin-suan-fa.html"
+                           rel="bookmark"
+                           title="Permalink to 2.k-近邻算法">
+                            2.k-近邻算法
+                        </a>
+                        <small>
+<div class="post-info">
+    <div class="publish-info-block">
+        <small>
+            <span class="published">
+                <i class="fa fa-calendar padding-small"></i><time datetime="2017-01-01T00:00:00+08:00"> 2017-01-01 00:00</time>
+            </span>
+            <span class="category">
+                <i class="fa fa-folder-open padding-small"></i><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a>
+            </span>
+        </small>
+    </div>
+</div><!-- /.post-info -->                        </small>
+                    </h1>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="entry-content">
+                    <h1>第2章 k-近邻算法</h1>
 <p><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default" type="text/javascript"></script></p>
 <h2>KNN 概述</h2>
 <p><code>k-近邻（kNN, k-NearestNeighbor）算法是一种基本分类与回归方法，我们这里只讨论分类问题中的 k-近邻算法。</code></p>
@@ -377,18 +475,18 @@ $$\sqrt{(0-67)^2 + (20000-32000)^2 + (1.1-0.1)^2 }$$</p>
 </pre></div>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">classify0</span><span class="p">(</span><span class="n">inX</span><span class="p">,</span> <span class="n">dataSet</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="n">dataSetSize</span> <span class="o">=</span> <span class="n">dataSet</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
- <span class="err"> </span> <span class="err"> </span><span class="c1">#距离度量 度量公式为欧氏距离</span>
- <span class="err"> </span> <span class="err"> </span><span class="n">diffMat</span> <span class="o">=</span> <span class="n">tile</span><span class="p">(</span><span class="n">inX</span><span class="p">,</span> <span class="p">(</span><span class="n">dataSetSize</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="err">–</span> <span class="n">dataSet</span>
+    <span class="c1">#距离度量 度量公式为欧氏距离</span>
+    <span class="n">diffMat</span> <span class="o">=</span> <span class="n">tile</span><span class="p">(</span><span class="n">inX</span><span class="p">,</span> <span class="p">(</span><span class="n">dataSetSize</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="err">–</span> <span class="n">dataSet</span>
     <span class="n">sqDiffMat</span> <span class="o">=</span> <span class="n">diffMat</span><span class="o">**</span><span class="mi">2</span>
     <span class="n">sqDistances</span> <span class="o">=</span> <span class="n">sqDiffMat</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">distances</span> <span class="o">=</span> <span class="n">sqDistances</span><span class="o">**</span><span class="mf">0.5</span>
- <span class="err"> </span> <span class="err"> </span>
+    
     <span class="c1">#将距离排序：从小到大</span>
     <span class="n">sortedDistIndicies</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>
     <span class="c1">#选取前K个最短距离， 选取这K个中最多的分类类别</span>
     <span class="n">classCount</span><span class="o">=</span><span class="p">{}</span>
- <span class="err"> </span> <span class="err"> </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="err">：</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">voteIlabel</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">sortedDistIndicies</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="err">：</span>
+        <span class="n">voteIlabel</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">sortedDistIndicies</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
         <span class="n">classCount</span><span class="p">[</span><span class="n">voteIlabel</span><span class="p">]</span> <span class="o">=</span> <span class="n">classCount</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">voteIlabel</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> 
     <span class="n">sortedClassCount</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">classCount</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sortedClassCount</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -563,96 +661,36 @@ $$\sqrt{(0-67)^2 + (20000-32000)^2 + (1.1-0.1)^2 }$$</p>
 <li><strong>作者：<a href="http://www.apache.wiki/display/~xuxin">羊三</a> <a href="http://www.apache.wiki/display/~chenyao">小瑶</a></strong></li>
 <li><a href="https://github.com/apachecn/MachineLearning">GitHub地址</a>: <a href="https://github.com/apachecn/MachineLearning">https://github.com/apachecn/MachineLearning</a></li>
 <li><strong>版权声明：欢迎转载学习 =&gt; 请标注信息来源于 <a href="http://www.apachecn.org/">ApacheCN</a></strong></li>
-</ul></div>
-    <footer>
-<p class="meta">
-  <span class="byline author vcard">
-    Posted by <span class="fn">
-        niult
-    </span>
-  </span>
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>  <span class="categories">
-    <a class='category' href='../../../category/ji-qi-xue-xi-shi-zhan.html'>机器学习实战</a>
-  </span>
-</p><div class="sharing">
-</div>    </footer>
-  </article>
+</ul>
+                </div>
+                <footer class="text-right">
+                    <p>- niult</p>
+                </footer>
+            </div>
+        </div>
+    </article>
+</section>
+<footer>
+    <hr>
+    <div class="row">
+        <div class="col-lg-9 text-center">
+            <p><small>
+                Built by <a href="http://docs.getpelican.com/en/latest">Pelican</a> / <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a>
+                &middot;                    &copy; 2018 niult
+            </small></p>
+        </div>
+    </div>
+</footer>            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.2 -->
+    <script src="../../../theme/js/jquery-1.11.2.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../../theme/js/bootstrap.min.js"></script>
+    <!-- twitchy Script -->
+    <script src="../../../theme/js/pelican_twitchy.min.js"></script>
 
-</div>
-<aside class="sidebar">
-
-        <section>
-
-            <h1>Categories</h1>
-            <ul id="recent_posts">
-                    <li><a href="../../../category/00qi-ta.html">00.其他</a></li>
-                    <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
-                    <li><a href="../../../category/02gong-ju-shi-yong.html">02.工具使用</a></li>
-                    <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
-                    <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
-                    <li><a href="../../../category/azhi-ding.html">a置顶</a></li>
-                    <li><a href="../../../category/chang-yong-gong-ju.html">常用工具</a></li>
-                    <li><a href="../../../category/generalb.html">general/b</a></li>
-                    <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
-                    <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
-                    <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
-                    <li><a href="../../../category/shen-du-xue-xi-tensorflow.html">深度学习-TensorFlow</a></li>
-                    <li><a href="../../../category/xue-xi.html">学习</a></li>
-                    <li><a href="../../../category/xue-xi-jupyter.html">学习jupyter</a></li>
-            </ul>
-        </section>
-
-    <section>
-        <h1>Recent Posts</h1>
-        <ul id="recent_posts">
-                <li class="post">
-                    <a href="../../../pages/2018/01/10fen-zhong-shang-shou-latex2.html">10分钟上手Latex2</a>
-                </li>
-                <li class="post">
-                    <a href="../../../pages/2018/01/10fen-zhong-shang-shou-latex3.html">10分钟上手Latex3</a>
-                </li>
-                <li class="post">
-                    <a href="../../../pages/2018/01/10fen-zhong-shang-shou-pandas.html">10分钟上手Pandas</a>
-                </li>
-                <li class="post">
-                    <a href="../../../pages/2018/01/10fen-zhong-shang-shou-pandas3.html">10分钟上手Pandas3</a>
-                </li>
-                <li class="post">
-                    <a href="../../../pages/2018/01/bo-ke-jian-jie.html">博客简介</a>
-                </li>
-        </ul>
-    </section>
-
-    <section>
-        <h1>Tags</h1>
-            <a href="../../../tag/tensorflow.html">tensorflow</a>,            <a href="../../../tag/jupyter-notebook.html">Jupyter notebook</a>,            <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,            <a href="../../../tag/machine-learning.html">Machine Learning</a>,            <a href="../../../tag/pandas.html">pandas</a>    </section>
-
-
-    <section>
-        <h1>Social</h1>
-        <ul>
-            <li><a href="#" target="_blank">You can add links in your config file</a></li>
-            <li><a href="#" target="_blank">Another social link</a></li>
-        </ul>
-    </section>
-    <section>
-        <h1>Blogroll</h1>
-        <ul>
-            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
-            <li><a href="http://python.org/" target="_blank">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
-            <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
-        </ul>
-    </section>
-
-</aside>    </div>
-</div>
-<footer role="contentinfo"><p>
-    Copyright &copy;  2016&ndash;2018  niult &mdash;
-  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
-</p></footer>
-<script src="../../../theme/js/modernizr-2.0.js"></script>
-<script src="../../../theme/js/ender.js"></script>
-<script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 </body>
 </html>
