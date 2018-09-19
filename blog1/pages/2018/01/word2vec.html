@@ -1,236 +1,88 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="niult" />
-        <meta name="keywords" content="TensorFlowExample" />
-        <meta name="description" content="Word2Vec (Word Embedding)¶Implement Word2Vec algorithm to compute vector representations of words. This example is using a small chunk of Wikipedia articles to train from. More info: Mikolov, Tomas et al. &#34;Efficient Estimation of Word Representations in Vector Space.&#34;, 2013" />
+  <meta charset="utf-8">
+  <title>word2vec &mdash; 魑魅魍魉</title>
+  <meta name="author" content="niult">
 
 
-    <title>word2vec - 魑魅魍魉</title>
 
-        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css" />
 
-    <link href="../../../theme/css/fontawesome-all.min.css" rel="stylesheet" />
-    <link href="../../../theme/css/pygments/native.css" rel="stylesheet" />
 
-    <link href="../../../theme/css/pelican-twitchy.min.css" rel="stylesheet" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <!-- Feeds -->
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="../../../favicon.png" rel="icon">
+
+  <link href="../../../theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
 </head>
-<body data-spy="scroll" data-target="#scrollspy">
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper-small" class="twitchy-background">
-            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
-                <li>
-        <a href="../../.." title="魑魅魍魉" class="collapsed">
-            <span class="fas fa-home"></span>
-        </a>
-    </li>
-                <li class="nav-divider"></li>
-                <li>
-        <a href="../../../archives.html" title="Recent Articles" class="collapsed">
-            <span class="fas fa-th-list"></span>
-        </a>
-    </li>
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
-                        <i class="fas fa-users padding-small"></i>
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
-                    <li>
-                        <a href="#" title="Another social link"><i class="fab fa-another-social-link-square padding-small"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" title="You can add links in your config file"><i class="fab fa-you-can-add-links-in-your-config-file-square padding-small"></i></a>
-                    </li>
-                </ul></li>
-                <li class="nav-divider"></li>
-                <li>
-        <a href="#" title="Back to top" class="collapsed">
-            <span class="fas fa-arrow-up"></span>
-        </a>
-    </li>
-            </ul>
-        </div>
-        <div id="sidebar-wrapper" class="twitchy-background">
-            <ul id="accordion" class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="../../../">
-                            <span class="fas fa-home padding-small"></span>
-                            魑魅魍魉
-                    </a>
-                </li>
-                    <li>
-                        <a href="../../../archives.html">
-                            <span class="fas fa-th-list padding-small"></span>
-                            Recent Articles
-                        </a>
-                    </li>
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
-                        <i class="fas fa-users padding-small"></i>
-                        Contact
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
-                    <li>
-                        <a href="#" title="Another social link">
-                            <i class="fab fa-another-social-link-square padding-small"></i>
-                            Another social link
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="You can add links in your config file">
-                            <i class="fab fa-you-can-add-links-in-your-config-file-square padding-small"></i>
-                            You can add links in your config file
-                        </a>
-                    </li>
-                </ul></li>
-                
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
-                        <i class="fas fa-folder-open padding-small"></i>
-                        Pages
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
-                </ul></li>
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
-                        <i class="fas fa-folder-open padding-small"></i>
-                        Categories
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
-                    <li >
-                        <a href="../../../category/00qi-ta-2.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            00.其他2
-                            <span class="badge badge-secondary float-right categorybadge">2</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/01chang-yong-gong-ju.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            01常用工具
-                            <span class="badge badge-secondary float-right categorybadge">10</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/02gong-ju-shi-yong.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            02.工具使用
-                            <span class="badge badge-secondary float-right categorybadge">2</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/02wo-ai-du-shu.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            02.我爱读书
-                            <span class="badge badge-secondary float-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/03chang-yong-ming-ling.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            03.常用命令
-                            <span class="badge badge-secondary float-right categorybadge">3</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="../../../category/03shen-du-xue-xi.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            03深度学习
-                            <span class="badge badge-secondary float-right categorybadge">12</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/ji-chu-zhi-shi.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            基础知识
-                            <span class="badge badge-secondary float-right categorybadge">3</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            机器学习实战
-                            <span class="badge badge-secondary float-right categorybadge">18</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/shen-du-xue-xi.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            深度学习
-                            <span class="badge badge-secondary float-right categorybadge">1</span>
-                        </a>
-                    </li>
-                </ul></li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-        <!-- open/close sidebar -->
-        <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">
-            <span id="right-arrow" class="fas fa-chevron-right"  title="expand sidebar"></span>
-            <span id="left-arrow" class="fas fa-chevron-left" title="minimize sidebar"></span>
-        </a>
-       <!-- /open/close sidebar -->
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-<section id="content">
-    <article>
-        <div class="row">
-            <div class="col-lg-9">
-                <header class="page-header">
-                    <h1>
-                        <a href="../../../pages/2018/01/word2vec.html"
-                           rel="bookmark"
-                           title="Permalink to word2vec">
-                            word2vec
-                        </a>
-                        <small>
-<div class="post-info">
-    <div class="publish-info-block">
-        <small>
-            <span class="published">
-                <i class="fa fa-calendar padding-small"></i><time datetime="2018-01-01T00:00:00+08:00"> 2018-01-01 00:00</time>
-            </span>
-            <span class="category">
-                <i class="fa fa-folder-open padding-small"></i><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a>
-            </span>
-            <span class="tags">
-                <i class="fa fa-tags padding-small"></i>
-                <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>            </span>
-        </small>
-    </div>
-</div><!-- /.post-info -->                        </small>
-                    </h1>
-                </header>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="entry-content">
-                    <style type="text/css">/*!
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="../../../">魑魅魍魉</a></h1>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+
+<ul class="main-navigation">
+      <li >
+        <a href="../../../category/00qi-ta.html">00.其他</a>
+      </li>
+      <li >
+        <a href="../../../category/00qi-ta-2.html">00.其他2</a>
+      </li>
+      <li >
+        <a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
+      </li>
+      <li >
+        <a href="../../../category/02gong-ju-shi-yong.html">02.工具使用</a>
+      </li>
+      <li >
+        <a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a>
+      </li>
+      <li >
+        <a href="../../../category/03chang-yong-ming-ling.html">03.常用命令</a>
+      </li>
+      <li class="active">
+        <a href="../../../category/03shen-du-xue-xi.html">03深度学习</a>
+      </li>
+      <li >
+        <a href="../../../category/book-pydata.html">Book-pydata</a>
+      </li>
+      <li >
+        <a href="../../../category/ji-chu-zhi-shi.html">基础知识</a>
+      </li>
+      <li >
+        <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a>
+      </li>
+      <li >
+        <a href="../../../category/shen-du-xue-xi.html">深度学习</a>
+      </li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">word2vec</h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content"><style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -1209,10 +1061,6 @@ h6:hover .anchor-link {
 <h1 id="Word2Vec-(Word-Embedding)">Word2Vec (Word Embedding)<a class="anchor-link" href="#Word2Vec-(Word-Embedding)">¶</a></h1><p>Implement Word2Vec algorithm to compute vector representations of words.
 This example is using a small chunk of Wikipedia articles to train from.</p>
 <p>More info: <a href="https://arxiv.org/pdf/1301.3781.pdf">Mikolov, Tomas et al. "Efficient Estimation of Word Representations in Vector Space.", 2013</a></p>
-<ul>
-<li>Author: Aymeric Damien</li>
-<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
-</ul>
 </div>
 </div>
 </div>
@@ -1232,6 +1080,20 @@ This example is using a small chunk of Wikipedia articles to train from.</p>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Applications/Anaconda/anaconda3/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+/Applications/Anaconda/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -1265,12 +1127,12 @@ This example is using a small chunk of Wikipedia articles to train from.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Download a small chunk of Wikipedia articles collection</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">'http://mattmahoney.net/dc/text8.zip'</span>
-<span class="n">data_path</span> <span class="o">=</span> <span class="s1">'text8.zip'</span>
+<span class="n">data_path</span> <span class="o">=</span> <span class="s1">'tmp/data/text8.zip'</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">data_path</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Downloading the dataset... (It may take some time)"</span><span class="p">)</span>
     <span class="n">filename</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data_path</span><span class="p">)</span>
@@ -1282,10 +1144,37 @@ This example is using a small chunk of Wikipedia articles to train from.</p>
 </div>
 </div>
 </div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Downloading the dataset... (It may take some time)
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-3-e7ebb32fbbdf&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>exists<span class="ansi-blue-fg">(</span>data_path<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"Downloading the dataset... (It may take some time)"</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg">     </span>filename<span class="ansi-blue-fg">,</span> _ <span class="ansi-blue-fg">=</span> urllib<span class="ansi-blue-fg">.</span>urlretrieve<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> data_path<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"Done!"</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span> <span class="ansi-red-fg"># Unzip the dataset file. Text has already been processed</span>
+
+<span class="ansi-red-fg">AttributeError</span>: module 'urllib' has no attribute 'urlretrieve'</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build the dictionary and replace rare words with UNK token</span>
@@ -1325,24 +1214,10 @@ This example is using a small chunk of Wikipedia articles to train from.</p>
 </div>
 </div>
 </div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Words count: 17005207
-Unique words: 253854
-Vocabulary size: 50000
-Most common words: [('UNK', 418391), ('the', 1061396), ('of', 593677), ('and', 416629), ('one', 411764), ('in', 372201), ('a', 325873), ('to', 316376), ('zero', 264975), ('nine', 250430)]
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_index</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1382,7 +1257,7 @@ Most common words: [('UNK', 418391), ('the', 1061396), ('of', 593677), ('and', 4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Input data</span>
@@ -1427,7 +1302,7 @@ Most common words: [('UNK', 418391), ('the', 1061396), ('of', 593677), ('and', 4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize the variables (i.e. assign their default value)</span>
@@ -1471,429 +1346,6 @@ Most common words: [('UNK', 418391), ('the', 1061396), ('of', 593677), ('and', 4
 </div>
 </div>
 </div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Step 1, Average Loss= 520.3188
-Evaluation...
-"five" nearest neighbors: brothers, swinging, dissemination, fruitful, trichloride, dll, timur, torre,
-"of" nearest neighbors: malting, vaginal, cecil, xiaoping, arrangers, hydras, exhibits, splits,
-"going" nearest neighbors: besht, xps, sdtv, mississippi, frequencies, tora, reciprocating, tursiops,
-"hardware" nearest neighbors: burgh, residences, mares, attested, whirlwind, isomerism, admiration, ties,
-"american" nearest neighbors: tensile, months, baffling, cricket, kodak, risky, nicomedia, jura,
-"britain" nearest neighbors: superstring, interpretations, genealogical, munition, boer, occasional, psychologists, turbofan,
-Step 10000, Average Loss= 202.2640
-Step 20000, Average Loss= 96.5149
-Step 30000, Average Loss= 67.2858
-Step 40000, Average Loss= 52.5055
-Step 50000, Average Loss= 42.6301
-Step 60000, Average Loss= 37.3644
-Step 70000, Average Loss= 33.1220
-Step 80000, Average Loss= 30.5835
-Step 90000, Average Loss= 28.2243
-Step 100000, Average Loss= 25.5532
-Step 110000, Average Loss= 24.0891
-Step 120000, Average Loss= 21.8576
-Step 130000, Average Loss= 21.2192
-Step 140000, Average Loss= 19.8834
-Step 150000, Average Loss= 19.3362
-Step 160000, Average Loss= 18.3129
-Step 170000, Average Loss= 17.4952
-Step 180000, Average Loss= 16.8531
-Step 190000, Average Loss= 15.9615
-Step 200000, Average Loss= 15.0718
-Evaluation...
-"five" nearest neighbors: three, four, eight, six, seven, two, nine, one,
-"of" nearest neighbors: the, is, a, was, with, in, and, on,
-"going" nearest neighbors: time, military, called, with, used, state, most, new,
-"hardware" nearest neighbors: deaths, system, three, at, zero, two, s, UNK,
-"american" nearest neighbors: UNK, and, s, about, in, when, from, after,
-"britain" nearest neighbors: years, were, from, both, of, these, is, many,
-Step 210000, Average Loss= 14.9267
-Step 220000, Average Loss= 15.4700
-Step 230000, Average Loss= 14.0867
-Step 240000, Average Loss= 14.5337
-Step 250000, Average Loss= 13.2458
-Step 260000, Average Loss= 13.2944
-Step 270000, Average Loss= 13.0396
-Step 280000, Average Loss= 12.1902
-Step 290000, Average Loss= 11.7444
-Step 300000, Average Loss= 11.8473
-Step 310000, Average Loss= 11.1306
-Step 320000, Average Loss= 11.1699
-Step 330000, Average Loss= 10.8638
-Step 340000, Average Loss= 10.7910
-Step 350000, Average Loss= 11.0721
-Step 360000, Average Loss= 10.6309
-Step 370000, Average Loss= 10.4836
-Step 380000, Average Loss= 10.3482
-Step 390000, Average Loss= 10.0679
-Step 400000, Average Loss= 10.0070
-Evaluation...
-"five" nearest neighbors: four, three, six, seven, eight, two, one, zero,
-"of" nearest neighbors: and, in, the, a, for, by, is, while,
-"going" nearest neighbors: name, called, made, military, music, people, city, was,
-"hardware" nearest neighbors: power, a, john, the, has, see, and, system,
-"american" nearest neighbors: s, british, UNK, john, in, during, and, from,
-"britain" nearest neighbors: from, general, are, before, first, after, history, was,
-Step 410000, Average Loss= 10.1151
-Step 420000, Average Loss= 9.5719
-Step 430000, Average Loss= 9.8267
-Step 440000, Average Loss= 9.4704
-Step 450000, Average Loss= 9.5561
-Step 460000, Average Loss= 9.1479
-Step 470000, Average Loss= 8.8914
-Step 480000, Average Loss= 9.0281
-Step 490000, Average Loss= 9.3139
-Step 500000, Average Loss= 9.1559
-Step 510000, Average Loss= 8.8257
-Step 520000, Average Loss= 8.9081
-Step 530000, Average Loss= 8.8572
-Step 540000, Average Loss= 8.5835
-Step 550000, Average Loss= 8.4495
-Step 560000, Average Loss= 8.4193
-Step 570000, Average Loss= 8.3399
-Step 580000, Average Loss= 8.1633
-Step 590000, Average Loss= 8.2914
-Step 600000, Average Loss= 8.0268
-Evaluation...
-"five" nearest neighbors: three, four, six, two, seven, eight, one, zero,
-"of" nearest neighbors: and, the, in, including, with, for, on, or,
-"going" nearest neighbors: popular, king, his, music, and, time, name, being,
-"hardware" nearest neighbors: power, over, then, than, became, at, less, for,
-"american" nearest neighbors: english, s, german, in, french, since, john, between,
-"britain" nearest neighbors: however, were, state, first, group, general, from, second,
-Step 610000, Average Loss= 8.1733
-Step 620000, Average Loss= 8.2522
-Step 630000, Average Loss= 8.0434
-Step 640000, Average Loss= 8.0930
-Step 650000, Average Loss= 7.8770
-Step 660000, Average Loss= 7.9221
-Step 670000, Average Loss= 7.7645
-Step 680000, Average Loss= 7.9534
-Step 690000, Average Loss= 7.7507
-Step 700000, Average Loss= 7.7499
-Step 710000, Average Loss= 7.6629
-Step 720000, Average Loss= 7.6055
-Step 730000, Average Loss= 7.4779
-Step 740000, Average Loss= 7.3182
-Step 750000, Average Loss= 7.6399
-Step 760000, Average Loss= 7.4364
-Step 770000, Average Loss= 7.6509
-Step 780000, Average Loss= 7.3204
-Step 790000, Average Loss= 7.4101
-Step 800000, Average Loss= 7.4354
-Evaluation...
-"five" nearest neighbors: three, four, six, seven, eight, two, one, nine,
-"of" nearest neighbors: and, the, its, a, with, at, in, for,
-"going" nearest neighbors: were, man, music, now, great, support, popular, her,
-"hardware" nearest neighbors: power, system, then, military, high, against, since, international,
-"american" nearest neighbors: english, british, born, b, john, french, d, german,
-"britain" nearest neighbors: government, second, before, from, state, several, the, at,
-Step 810000, Average Loss= 7.2603
-Step 820000, Average Loss= 7.1646
-Step 830000, Average Loss= 7.3155
-Step 840000, Average Loss= 7.1274
-Step 850000, Average Loss= 7.1237
-Step 860000, Average Loss= 7.1528
-Step 870000, Average Loss= 7.0673
-Step 880000, Average Loss= 7.2167
-Step 890000, Average Loss= 7.1359
-Step 900000, Average Loss= 7.0940
-Step 910000, Average Loss= 7.1114
-Step 920000, Average Loss= 6.9328
-Step 930000, Average Loss= 7.0108
-Step 940000, Average Loss= 7.0630
-Step 950000, Average Loss= 6.8371
-Step 960000, Average Loss= 7.0466
-Step 970000, Average Loss= 6.8331
-Step 980000, Average Loss= 6.9670
-Step 990000, Average Loss= 6.7357
-Step 1000000, Average Loss= 6.6453
-Evaluation...
-"five" nearest neighbors: four, three, six, eight, seven, two, nine, zero,
-"of" nearest neighbors: the, became, including, first, second, from, following, and,
-"going" nearest neighbors: near, music, popular, made, while, his, works, most,
-"hardware" nearest neighbors: power, system, before, its, using, for, thus, an,
-"american" nearest neighbors: b, born, d, UNK, nine, john, english, seven,
-"britain" nearest neighbors: of, following, government, home, from, state, end, several,
-Step 1010000, Average Loss= 6.7193
-Step 1020000, Average Loss= 6.9297
-Step 1030000, Average Loss= 6.7905
-Step 1040000, Average Loss= 6.7709
-Step 1050000, Average Loss= 6.7337
-Step 1060000, Average Loss= 6.7617
-Step 1070000, Average Loss= 6.7489
-Step 1080000, Average Loss= 6.6259
-Step 1090000, Average Loss= 6.6415
-Step 1100000, Average Loss= 6.7209
-Step 1110000, Average Loss= 6.5471
-Step 1120000, Average Loss= 6.6508
-Step 1130000, Average Loss= 6.5184
-Step 1140000, Average Loss= 6.6202
-Step 1150000, Average Loss= 6.7205
-Step 1160000, Average Loss= 6.5821
-Step 1170000, Average Loss= 6.6200
-Step 1180000, Average Loss= 6.5089
-Step 1190000, Average Loss= 6.5587
-Step 1200000, Average Loss= 6.4930
-Evaluation...
-"five" nearest neighbors: three, four, six, seven, eight, two, nine, zero,
-"of" nearest neighbors: the, and, including, in, first, with, following, from,
-"going" nearest neighbors: near, popular, works, today, large, now, when, both,
-"hardware" nearest neighbors: power, system, computer, its, both, for, using, which,
-"american" nearest neighbors: born, d, john, german, b, UNK, english, s,
-"britain" nearest neighbors: state, following, government, home, became, people, were, the,
-Step 1210000, Average Loss= 6.5985
-Step 1220000, Average Loss= 6.4534
-Step 1230000, Average Loss= 6.5083
-Step 1240000, Average Loss= 6.4913
-Step 1250000, Average Loss= 6.4326
-Step 1260000, Average Loss= 6.3891
-Step 1270000, Average Loss= 6.1601
-Step 1280000, Average Loss= 6.4479
-Step 1290000, Average Loss= 6.3813
-Step 1300000, Average Loss= 6.5335
-Step 1310000, Average Loss= 6.2971
-Step 1320000, Average Loss= 6.3723
-Step 1330000, Average Loss= 6.4234
-Step 1340000, Average Loss= 6.3130
-Step 1350000, Average Loss= 6.2867
-Step 1360000, Average Loss= 6.3505
-Step 1370000, Average Loss= 6.2990
-Step 1380000, Average Loss= 6.3012
-Step 1390000, Average Loss= 6.3112
-Step 1400000, Average Loss= 6.2680
-Evaluation...
-"five" nearest neighbors: four, three, six, two, seven, eight, one, zero,
-"of" nearest neighbors: the, its, and, including, in, with, see, for,
-"going" nearest neighbors: near, great, like, today, began, called, an, another,
-"hardware" nearest neighbors: power, computer, system, for, program, high, control, small,
-"american" nearest neighbors: english, german, french, born, john, british, s, references,
-"britain" nearest neighbors: state, great, government, people, following, became, along, home,
-Step 1410000, Average Loss= 6.3157
-Step 1420000, Average Loss= 6.3466
-Step 1430000, Average Loss= 6.3090
-Step 1440000, Average Loss= 6.3330
-Step 1450000, Average Loss= 6.2072
-Step 1460000, Average Loss= 6.2363
-Step 1470000, Average Loss= 6.2736
-Step 1480000, Average Loss= 6.1793
-Step 1490000, Average Loss= 6.2977
-Step 1500000, Average Loss= 6.1899
-Step 1510000, Average Loss= 6.2381
-Step 1520000, Average Loss= 6.1027
-Step 1530000, Average Loss= 6.0046
-Step 1540000, Average Loss= 6.0747
-Step 1550000, Average Loss= 6.2524
-Step 1560000, Average Loss= 6.1247
-Step 1570000, Average Loss= 6.1937
-Step 1580000, Average Loss= 6.0450
-Step 1590000, Average Loss= 6.1556
-Step 1600000, Average Loss= 6.1765
-Evaluation...
-"five" nearest neighbors: three, four, six, two, seven, eight, one, zero,
-"of" nearest neighbors: the, and, its, for, from, modern, in, part,
-"going" nearest neighbors: great, today, once, now, while, her, like, by,
-"hardware" nearest neighbors: power, system, high, program, control, computer, typically, making,
-"american" nearest neighbors: born, english, british, german, john, french, b, d,
-"britain" nearest neighbors: country, state, home, government, first, following, during, from,
-Step 1610000, Average Loss= 6.1029
-Step 1620000, Average Loss= 6.0501
-Step 1630000, Average Loss= 6.1536
-Step 1640000, Average Loss= 6.0483
-Step 1650000, Average Loss= 6.1197
-Step 1660000, Average Loss= 6.0261
-Step 1670000, Average Loss= 6.1012
-Step 1680000, Average Loss= 6.1795
-Step 1690000, Average Loss= 6.1224
-Step 1700000, Average Loss= 6.0896
-Step 1710000, Average Loss= 6.0418
-Step 1720000, Average Loss= 6.0626
-Step 1730000, Average Loss= 6.0214
-Step 1740000, Average Loss= 6.1206
-Step 1750000, Average Loss= 5.9721
-Step 1760000, Average Loss= 6.0782
-Step 1770000, Average Loss= 6.0291
-Step 1780000, Average Loss= 6.0187
-Step 1790000, Average Loss= 5.9761
-Step 1800000, Average Loss= 5.7518
-Evaluation...
-"five" nearest neighbors: four, three, six, seven, eight, nine, two, zero,
-"of" nearest neighbors: the, from, in, became, and, second, first, including,
-"going" nearest neighbors: today, which, once, little, made, before, now, etc,
-"hardware" nearest neighbors: computer, power, program, system, high, typically, current, eventually,
-"american" nearest neighbors: b, d, born, actor, UNK, robert, william, english,
-"britain" nearest neighbors: government, state, country, from, world, great, of, in,
-Step 1810000, Average Loss= 5.9839
-Step 1820000, Average Loss= 5.9931
-Step 1830000, Average Loss= 6.0794
-Step 1840000, Average Loss= 5.9072
-Step 1850000, Average Loss= 5.9831
-Step 1860000, Average Loss= 6.0023
-Step 1870000, Average Loss= 5.9375
-Step 1880000, Average Loss= 5.9250
-Step 1890000, Average Loss= 5.9422
-Step 1900000, Average Loss= 5.9339
-Step 1910000, Average Loss= 5.9235
-Step 1920000, Average Loss= 5.9692
-Step 1930000, Average Loss= 5.9022
-Step 1940000, Average Loss= 5.9599
-Step 1950000, Average Loss= 6.0174
-Step 1960000, Average Loss= 5.9530
-Step 1970000, Average Loss= 5.9479
-Step 1980000, Average Loss= 5.8870
-Step 1990000, Average Loss= 5.9271
-Step 2000000, Average Loss= 5.8774
-Evaluation...
-"five" nearest neighbors: four, three, six, seven, eight, two, nine, zero,
-"of" nearest neighbors: and, the, from, in, within, first, including, with,
-"going" nearest neighbors: today, before, another, little, work, etc, now, him,
-"hardware" nearest neighbors: computer, program, system, both, making, designed, power, simple,
-"american" nearest neighbors: actor, born, d, robert, john, b, german, writer,
-"britain" nearest neighbors: government, state, following, great, england, became, country, from,
-Step 2010000, Average Loss= 5.9373
-Step 2020000, Average Loss= 5.9113
-Step 2030000, Average Loss= 5.9158
-Step 2040000, Average Loss= 5.9020
-Step 2050000, Average Loss= 5.8608
-Step 2060000, Average Loss= 5.7379
-Step 2070000, Average Loss= 5.7143
-Step 2080000, Average Loss= 5.9379
-Step 2090000, Average Loss= 5.8201
-Step 2100000, Average Loss= 5.9390
-Step 2110000, Average Loss= 5.7295
-Step 2120000, Average Loss= 5.8290
-Step 2130000, Average Loss= 5.9042
-Step 2140000, Average Loss= 5.8367
-Step 2150000, Average Loss= 5.7760
-Step 2160000, Average Loss= 5.8664
-Step 2170000, Average Loss= 5.7974
-Step 2180000, Average Loss= 5.8523
-Step 2190000, Average Loss= 5.8047
-Step 2200000, Average Loss= 5.8172
-Evaluation...
-"five" nearest neighbors: three, four, six, eight, two, seven, one, zero,
-"of" nearest neighbors: the, with, group, in, its, and, from, including,
-"going" nearest neighbors: produced, when, today, while, little, before, had, like,
-"hardware" nearest neighbors: computer, system, power, technology, program, simple, for, designed,
-"american" nearest neighbors: english, canadian, german, french, author, british, film, born,
-"britain" nearest neighbors: government, great, state, established, british, england, country, army,
-Step 2210000, Average Loss= 5.8847
-Step 2220000, Average Loss= 5.8622
-Step 2230000, Average Loss= 5.8295
-Step 2240000, Average Loss= 5.8484
-Step 2250000, Average Loss= 5.7917
-Step 2260000, Average Loss= 5.7846
-Step 2270000, Average Loss= 5.8307
-Step 2280000, Average Loss= 5.7341
-Step 2290000, Average Loss= 5.8519
-Step 2300000, Average Loss= 5.7792
-Step 2310000, Average Loss= 5.8277
-Step 2320000, Average Loss= 5.7196
-Step 2330000, Average Loss= 5.5469
-Step 2340000, Average Loss= 5.7177
-Step 2350000, Average Loss= 5.8139
-Step 2360000, Average Loss= 5.7849
-Step 2370000, Average Loss= 5.7022
-Step 2380000, Average Loss= 5.7447
-Step 2390000, Average Loss= 5.7667
-Step 2400000, Average Loss= 5.7625
-Evaluation...
-"five" nearest neighbors: three, four, six, seven, two, eight, zero, nine,
-"of" nearest neighbors: the, and, from, part, in, following, within, including,
-"going" nearest neighbors: where, once, little, now, again, while, off, produced,
-"hardware" nearest neighbors: system, computer, high, power, using, designed, systems, simple,
-"american" nearest neighbors: author, actor, english, born, writer, british, b, d,
-"britain" nearest neighbors: great, established, government, england, country, state, army, former,
-Step 2410000, Average Loss= 5.6953
-Step 2420000, Average Loss= 5.7413
-Step 2430000, Average Loss= 5.7242
-Step 2440000, Average Loss= 5.7397
-Step 2450000, Average Loss= 5.7755
-Step 2460000, Average Loss= 5.6881
-Step 2470000, Average Loss= 5.7471
-Step 2480000, Average Loss= 5.8159
-Step 2490000, Average Loss= 5.7452
-Step 2500000, Average Loss= 5.7547
-Step 2510000, Average Loss= 5.6945
-Step 2520000, Average Loss= 5.7318
-Step 2530000, Average Loss= 5.6682
-Step 2540000, Average Loss= 5.7660
-Step 2550000, Average Loss= 5.6956
-Step 2560000, Average Loss= 5.7307
-Step 2570000, Average Loss= 5.7015
-Step 2580000, Average Loss= 5.6932
-Step 2590000, Average Loss= 5.6386
-Step 2600000, Average Loss= 5.4734
-Evaluation...
-"five" nearest neighbors: four, three, six, seven, eight, nine, two, zero,
-"of" nearest neighbors: the, and, in, from, became, including, for, with,
-"going" nearest neighbors: little, again, just, a, now, where, to, for,
-"hardware" nearest neighbors: computer, program, system, software, designed, systems, technology, current,
-"american" nearest neighbors: actor, d, writer, b, born, singer, author, robert,
-"britain" nearest neighbors: great, established, government, england, country, in, from, state,
-Step 2610000, Average Loss= 5.7291
-Step 2620000, Average Loss= 5.6412
-Step 2630000, Average Loss= 5.7485
-Step 2640000, Average Loss= 5.5833
-Step 2650000, Average Loss= 5.6548
-Step 2660000, Average Loss= 5.7159
-Step 2670000, Average Loss= 5.6569
-Step 2680000, Average Loss= 5.6080
-Step 2690000, Average Loss= 5.7037
-Step 2700000, Average Loss= 5.6360
-Step 2710000, Average Loss= 5.6707
-Step 2720000, Average Loss= 5.6811
-Step 2730000, Average Loss= 5.6237
-Step 2740000, Average Loss= 5.7050
-Step 2750000, Average Loss= 5.6991
-Step 2760000, Average Loss= 5.6691
-Step 2770000, Average Loss= 5.7057
-Step 2780000, Average Loss= 5.6162
-Step 2790000, Average Loss= 5.6484
-Step 2800000, Average Loss= 5.6627
-Evaluation...
-"five" nearest neighbors: four, six, three, seven, eight, nine, two, one,
-"of" nearest neighbors: the, in, following, including, part, and, from, under,
-"going" nearest neighbors: again, before, little, away, once, when, eventually, then,
-"hardware" nearest neighbors: computer, system, software, program, systems, designed, for, design,
-"american" nearest neighbors: actor, writer, singer, author, born, robert, d, john,
-"britain" nearest neighbors: established, england, great, government, france, army, the, throughout,
-Step 2810000, Average Loss= 5.5900
-Step 2820000, Average Loss= 5.7053
-Step 2830000, Average Loss= 5.6064
-Step 2840000, Average Loss= 5.6891
-Step 2850000, Average Loss= 5.5571
-Step 2860000, Average Loss= 5.4490
-Step 2870000, Average Loss= 5.5428
-Step 2880000, Average Loss= 5.6832
-Step 2890000, Average Loss= 5.5973
-Step 2900000, Average Loss= 5.5816
-Step 2910000, Average Loss= 5.5647
-Step 2920000, Average Loss= 5.6001
-Step 2930000, Average Loss= 5.6459
-Step 2940000, Average Loss= 5.5622
-Step 2950000, Average Loss= 5.5707
-Step 2960000, Average Loss= 5.6492
-Step 2970000, Average Loss= 5.5633
-Step 2980000, Average Loss= 5.6323
-Step 2990000, Average Loss= 5.5440
-Step 3000000, Average Loss= 5.6209
-Evaluation...
-"five" nearest neighbors: four, three, six, eight, seven, two, zero, one,
-"of" nearest neighbors: the, in, and, including, group, includes, part, from,
-"going" nearest neighbors: once, again, when, quickly, before, eventually, little, had,
-"hardware" nearest neighbors: computer, system, software, designed, program, simple, systems, sound,
-"american" nearest neighbors: canadian, english, author, german, french, british, irish, australian,
-"britain" nearest neighbors: established, england, great, government, throughout, france, british, northern,
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 </body>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -1924,36 +1376,94 @@ Evaluation...
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
+</div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        niult
+    </span>
+  </span>
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>  <span class="categories">
+    <a class='category' href='../../../category/03shen-du-xue-xi.html'>03深度学习</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="../../../tag/tensorflowexample.html">TensorFlowExample</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
 
-                </div>
-                <footer class="text-right">
-                    <p>- niult</p>
-                </footer>
-            </div>
-        </div>
-    </article>
-</section>
-<footer>
-    <hr>
-    <div class="row">
-        <div class="col-lg-9 text-center">
-            <p><small>
-                Built by <a href="http://docs.getpelican.com/en/latest">Pelican</a> / <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a>
-                &middot;                    &copy; 2018 niult
-            </small></p>
-        </div>
-    </div>
-</footer>            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-    </div>
-    <!-- /#wrapper -->
-    <!-- jQuery Version 1.11.2 -->
-    <script src="../../../theme/js/jquery-1.11.2.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../../../theme/js/bootstrap.min.js"></script>
-    <!-- twitchy Script -->
-    <script src="../../../theme/js/pelican_twitchy.min.js"></script>
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-hadoop-hdfschang-yong-wen-jian-ming-ling.html">10分钟上手Hadoop-HDFS常用文件命令</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-latex2.html">10分钟上手Latex2</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-latex3.html">10分钟上手Latex3</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-pandas.html">10分钟上手Pandas</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-pandas3.html">10分钟上手Pandas3</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="../../../category/00qi-ta.html">00.其他</a></li>
+        <li><a href="../../../category/00qi-ta-2.html">00.其他2</a></li>
+        <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
+        <li><a href="../../../category/02gong-ju-shi-yong.html">02.工具使用</a></li>
+        <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
+        <li><a href="../../../category/03chang-yong-ming-ling.html">03.常用命令</a></li>
+        <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
+        <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
+        <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
+        <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
+        <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
+    </ul>
+  </section>
+ 
 
+  <section>
+  <h1>Tags</h1>
+    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+
+
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="#" target="_blank">You can add links in your config file</a></li>
+            <li><a href="#" target="_blank">Another social link</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+            <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+            <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+        </ul>
+    </section>
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2017&ndash;2018  niult &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  <script src="../../../theme/js/modernizr-2.0.js"></script>
+  <script src="../../../theme/js/ender.js"></script>
+  <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 </body>
 </html>

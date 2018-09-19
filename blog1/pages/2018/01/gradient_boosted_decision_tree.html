@@ -1,236 +1,88 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="niult" />
-        <meta name="keywords" content="TensorFlowExample" />
-        <meta name="description" content="Gradient Boosted Decision Tree¶Implement a Gradient Boosted Decision tree (GBDT) with TensorFlow to classify handwritten digit images. This example is using the MNIST database of handwritten digits as training samples (http://yann.lecun.com/exdb/mnist/). Author: Aymeric Damien" />
+  <meta charset="utf-8">
+  <title>gradient_boosted_decision_tree &mdash; 魑魅魍魉</title>
+  <meta name="author" content="niult">
 
 
-    <title>gradient_boosted_decision_tree - 魑魅魍魉</title>
 
-        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css" />
 
-    <link href="../../../theme/css/fontawesome-all.min.css" rel="stylesheet" />
-    <link href="../../../theme/css/pygments/native.css" rel="stylesheet" />
 
-    <link href="../../../theme/css/pelican-twitchy.min.css" rel="stylesheet" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <!-- Feeds -->
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="../../../favicon.png" rel="icon">
+
+  <link href="../../../theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
 </head>
-<body data-spy="scroll" data-target="#scrollspy">
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper-small" class="twitchy-background">
-            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
-                <li>
-        <a href="../../.." title="魑魅魍魉" class="collapsed">
-            <span class="fas fa-home"></span>
-        </a>
-    </li>
-                <li class="nav-divider"></li>
-                <li>
-        <a href="../../../archives.html" title="Recent Articles" class="collapsed">
-            <span class="fas fa-th-list"></span>
-        </a>
-    </li>
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
-                        <i class="fas fa-users padding-small"></i>
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
-                    <li>
-                        <a href="#" title="Another social link"><i class="fab fa-another-social-link-square padding-small"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" title="You can add links in your config file"><i class="fab fa-you-can-add-links-in-your-config-file-square padding-small"></i></a>
-                    </li>
-                </ul></li>
-                <li class="nav-divider"></li>
-                <li>
-        <a href="#" title="Back to top" class="collapsed">
-            <span class="fas fa-arrow-up"></span>
-        </a>
-    </li>
-            </ul>
-        </div>
-        <div id="sidebar-wrapper" class="twitchy-background">
-            <ul id="accordion" class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="../../../">
-                            <span class="fas fa-home padding-small"></span>
-                            魑魅魍魉
-                    </a>
-                </li>
-                    <li>
-                        <a href="../../../archives.html">
-                            <span class="fas fa-th-list padding-small"></span>
-                            Recent Articles
-                        </a>
-                    </li>
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
-                        <i class="fas fa-users padding-small"></i>
-                        Contact
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
-                    <li>
-                        <a href="#" title="Another social link">
-                            <i class="fab fa-another-social-link-square padding-small"></i>
-                            Another social link
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="You can add links in your config file">
-                            <i class="fab fa-you-can-add-links-in-your-config-file-square padding-small"></i>
-                            You can add links in your config file
-                        </a>
-                    </li>
-                </ul></li>
-                
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
-                        <i class="fas fa-folder-open padding-small"></i>
-                        Pages
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
-                </ul></li>
-                <li class="nav-divider"></li>
-                <li>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
-                        <i class="fas fa-folder-open padding-small"></i>
-                        Categories
-                    </a>
-                </li>
-                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
-                    <li >
-                        <a href="../../../category/00qi-ta-2.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            00.其他2
-                            <span class="badge badge-secondary float-right categorybadge">2</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/01chang-yong-gong-ju.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            01常用工具
-                            <span class="badge badge-secondary float-right categorybadge">10</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/02gong-ju-shi-yong.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            02.工具使用
-                            <span class="badge badge-secondary float-right categorybadge">2</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/02wo-ai-du-shu.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            02.我爱读书
-                            <span class="badge badge-secondary float-right categorybadge">1</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/03chang-yong-ming-ling.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            03.常用命令
-                            <span class="badge badge-secondary float-right categorybadge">3</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="../../../category/03shen-du-xue-xi.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            03深度学习
-                            <span class="badge badge-secondary float-right categorybadge">12</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/ji-chu-zhi-shi.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            基础知识
-                            <span class="badge badge-secondary float-right categorybadge">3</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            机器学习实战
-                            <span class="badge badge-secondary float-right categorybadge">18</span>
-                        </a>
-                    </li>
-                    <li >
-                        <a href="../../../category/shen-du-xue-xi.html">
-                            <i class="fas fa-folder-open padding-small"></i>
-                            深度学习
-                            <span class="badge badge-secondary float-right categorybadge">1</span>
-                        </a>
-                    </li>
-                </ul></li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-        <!-- open/close sidebar -->
-        <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">
-            <span id="right-arrow" class="fas fa-chevron-right"  title="expand sidebar"></span>
-            <span id="left-arrow" class="fas fa-chevron-left" title="minimize sidebar"></span>
-        </a>
-       <!-- /open/close sidebar -->
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-<section id="content">
-    <article>
-        <div class="row">
-            <div class="col-lg-9">
-                <header class="page-header">
-                    <h1>
-                        <a href="../../../pages/2018/01/gradient_boosted_decision_tree.html"
-                           rel="bookmark"
-                           title="Permalink to gradient_boosted_decision_tree">
-                            gradient_boosted_decision_tree
-                        </a>
-                        <small>
-<div class="post-info">
-    <div class="publish-info-block">
-        <small>
-            <span class="published">
-                <i class="fa fa-calendar padding-small"></i><time datetime="2018-01-01T00:00:00+08:00"> 2018-01-01 00:00</time>
-            </span>
-            <span class="category">
-                <i class="fa fa-folder-open padding-small"></i><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a>
-            </span>
-            <span class="tags">
-                <i class="fa fa-tags padding-small"></i>
-                <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>            </span>
-        </small>
-    </div>
-</div><!-- /.post-info -->                        </small>
-                    </h1>
-                </header>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="entry-content">
-                    <style type="text/css">/*!
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="../../../">魑魅魍魉</a></h1>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+
+<ul class="main-navigation">
+      <li >
+        <a href="../../../category/00qi-ta.html">00.其他</a>
+      </li>
+      <li >
+        <a href="../../../category/00qi-ta-2.html">00.其他2</a>
+      </li>
+      <li >
+        <a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
+      </li>
+      <li >
+        <a href="../../../category/02gong-ju-shi-yong.html">02.工具使用</a>
+      </li>
+      <li >
+        <a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a>
+      </li>
+      <li >
+        <a href="../../../category/03chang-yong-ming-ling.html">03.常用命令</a>
+      </li>
+      <li class="active">
+        <a href="../../../category/03shen-du-xue-xi.html">03深度学习</a>
+      </li>
+      <li >
+        <a href="../../../category/book-pydata.html">Book-pydata</a>
+      </li>
+      <li >
+        <a href="../../../category/ji-chu-zhi-shi.html">基础知识</a>
+      </li>
+      <li >
+        <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a>
+      </li>
+      <li >
+        <a href="../../../category/shen-du-xue-xi.html">深度学习</a>
+      </li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">gradient_boosted_decision_tree</h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content"><style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -1206,19 +1058,13 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Gradient-Boosted-Decision-Tree">Gradient Boosted Decision Tree<a class="anchor-link" href="#Gradient-Boosted-Decision-Tree">¶</a></h1><p>Implement a Gradient Boosted Decision tree (GBDT) with TensorFlow to classify
-handwritten digit images. This example is using the MNIST database of
-handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>).</p>
-<ul>
-<li>Author: Aymeric Damien</li>
-<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
-</ul>
+<h1 id="Gradient-Boosted-Decision-Tree">Gradient Boosted Decision Tree<a class="anchor-link" href="#Gradient-Boosted-Decision-Tree">¶</a></h1><p>利用张力流实现梯度提升决策树(GBDT)，对手写数字图像进行分类。这个示例使用手写数字的MNIST数据库作为训练样本 (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>).</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
@@ -1237,15 +1083,14 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import MNIST data</span>
 <span class="c1"># Set verbosity to display errors only (Remove this line for showing warnings)</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">tensorflow.examples.tutorials.mnist</span> <span class="k">import</span> <span class="n">input_data</span>
-<span class="n">mnist</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">read_data_sets</span><span class="p">(</span><span class="s2">"/tmp/data/"</span><span class="p">,</span> <span class="n">one_hot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                  <span class="n">source_url</span><span class="o">=</span><span class="s1">'http://yann.lecun.com/exdb/mnist/'</span><span class="p">)</span>
+<span class="n">mnist</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">read_data_sets</span><span class="p">(</span><span class="s2">"tmp/data/"</span><span class="p">,</span> <span class="n">one_hot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">source_url</span><span class="o">=</span><span class="s1">'http://yann.lecun.com/exdb/mnist/'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1255,10 +1100,10 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Extracting /tmp/data/train-images-idx3-ubyte.gz
-Extracting /tmp/data/train-labels-idx1-ubyte.gz
-Extracting /tmp/data/t10k-images-idx3-ubyte.gz
-Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
+<pre>Extracting tmp/data/train-images-idx3-ubyte.gz
+Extracting tmp/data/train-labels-idx1-ubyte.gz
+Extracting tmp/data/t10k-images-idx3-ubyte.gz
+Extracting tmp/data/t10k-labels-idx1-ubyte.gz
 </pre>
 </div>
 </div>
@@ -1267,7 +1112,7 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Parameters</span>
@@ -1290,7 +1135,7 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fill GBDT parameters into the config proto</span>
@@ -1321,7 +1166,7 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display TF info logs</span>
@@ -1344,7 +1189,26 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>INFO:tensorflow:Active Feature Columns: ['images_0', 'images_1', 'images_2', 'images_3', 'images_4', 'images_5', 'images_6', 'images_7', 'images_8', 'images_9', 'images_10', 'images_11', 'images_12', 'images_13', 'images_14', 'images_15', 'images_16', 'images_17', 'images_18', 'images_19', 'images_20', 'images_21', 'images_22', 'images_23', 'images_24', 'images_25', 'images_26', 'images_27', 'images_28', 'images_29', 'images_30', 'images_31', 'images_32', 'images_33', 'images_34', 'images_35', 'images_36', 'images_37', 'images_38', 'images_39', 'images_40', 'images_41', 'images_42', 'images_43', 'images_44', 'images_45', 'images_46', 'images_47', 'images_48', 'images_49', 'images_50', 'images_51', 'images_52', 'images_53', 'images_54', 'images_55', 'images_56', 'images_57', 'images_58', 'images_59', 'images_60', 'images_61', 'images_62', 'images_63', 'images_64', 'images_65', 'images_66', 'images_67', 'images_68', 'images_69', 'images_70', 'images_71', 'images_72', 'images_73', 'images_74', 'images_75', 'images_76', 'images_77', 'images_78', 'images_79', 'images_80', 'images_81', 'images_82', 'images_83', 'images_84', 'images_85', 'images_86', 'images_87', 'images_88', 'images_89', 'images_90', 'images_91', 'images_92', 'images_93', 'images_94', 'images_95', 'images_96', 'images_97', 'images_98', 'images_99', 'images_100', 'images_101', 'images_102', 'images_103', 'images_104', 'images_105', 'images_106', 'images_107', 'images_108', 'images_109', 'images_110', 'images_111', 'images_112', 'images_113', 'images_114', 'images_115', 'images_116', 'images_117', 'images_118', 'images_119', 'images_120', 'images_121', 'images_122', 'images_123', 'images_124', 'images_125', 'images_126', 'images_127', 'images_128', 'images_129', 'images_130', 'images_131', 'images_132', 'images_133', 'images_134', 'images_135', 'images_136', 'images_137', 'images_138', 'images_139', 'images_140', 'images_141', 'images_142', 'images_143', 'images_144', 'images_145', 'images_146', 'images_147', 'images_148', 'images_149', 'images_150', 'images_151', 'images_152', 'images_153', 'images_154', 'images_155', 'images_156', 'images_157', 'images_158', 'images_159', 'images_160', 'images_161', 'images_162', 'images_163', 'images_164', 'images_165', 'images_166', 'images_167', 'images_168', 'images_169', 'images_170', 'images_171', 'images_172', 'images_173', 'images_174', 'images_175', 'images_176', 'images_177', 'images_178', 'images_179', 'images_180', 'images_181', 'images_182', 'images_183', 'images_184', 'images_185', 'images_186', 'images_187', 'images_188', 'images_189', 'images_190', 'images_191', 'images_192', 'images_193', 'images_194', 'images_195', 'images_196', 'images_197', 'images_198', 'images_199', 'images_200', 'images_201', 'images_202', 'images_203', 'images_204', 'images_205', 'images_206', 'images_207', 'images_208', 'images_209', 'images_210', 'images_211', 'images_212', 'images_213', 'images_214', 'images_215', 'images_216', 'images_217', 'images_218', 'images_219', 'images_220', 'images_221', 'images_222', 'images_223', 'images_224', 'images_225', 'images_226', 'images_227', 'images_228', 'images_229', 'images_230', 'images_231', 'images_232', 'images_233', 'images_234', 'images_235', 'images_236', 'images_237', 'images_238', 'images_239', 'images_240', 'images_241', 'images_242', 'images_243', 'images_244', 'images_245', 'images_246', 'images_247', 'images_248', 'images_249', 'images_250', 'images_251', 'images_252', 'images_253', 'images_254', 'images_255', 'images_256', 'images_257', 'images_258', 'images_259', 'images_260', 'images_261', 'images_262', 'images_263', 'images_264', 'images_265', 'images_266', 'images_267', 'images_268', 'images_269', 'images_270', 'images_271', 'images_272', 'images_273', 'images_274', 'images_275', 'images_276', 'images_277', 'images_278', 'images_279', 'images_280', 'images_281', 'images_282', 'images_283', 'images_284', 'images_285', 'images_286', 'images_287', 'images_288', 'images_289', 'images_290', 'images_291', 'images_292', 'images_293', 'images_294', 'images_295', 'images_296', 'images_297', 'images_298', 'images_299', 'images_300', 'images_301', 'images_302', 'images_303', 'images_304', 'images_305', 'images_306', 'images_307', 'images_308', 'images_309', 'images_310', 'images_311', 'images_312', 'images_313', 'images_314', 'images_315', 'images_316', 'images_317', 'images_318', 'images_319', 'images_320', 'images_321', 'images_322', 'images_323', 'images_324', 'images_325', 'images_326', 'images_327', 'images_328', 'images_329', 'images_330', 'images_331', 'images_332', 'images_333', 'images_334', 'images_335', 'images_336', 'images_337', 'images_338', 'images_339', 'images_340', 'images_341', 'images_342', 'images_343', 'images_344', 'images_345', 'images_346', 'images_347', 'images_348', 'images_349', 'images_350', 'images_351', 'images_352', 'images_353', 'images_354', 'images_355', 'images_356', 'images_357', 'images_358', 'images_359', 'images_360', 'images_361', 'images_362', 'images_363', 'images_364', 'images_365', 'images_366', 'images_367', 'images_368', 'images_369', 'images_370', 'images_371', 'images_372', 'images_373', 'images_374', 'images_375', 'images_376', 'images_377', 'images_378', 'images_379', 'images_380', 'images_381', 'images_382', 'images_383', 'images_384', 'images_385', 'images_386', 'images_387', 'images_388', 'images_389', 'images_390', 'images_391', 'images_392', 'images_393', 'images_394', 'images_395', 'images_396', 'images_397', 'images_398', 'images_399', 'images_400', 'images_401', 'images_402', 'images_403', 'images_404', 'images_405', 'images_406', 'images_407', 'images_408', 'images_409', 'images_410', 'images_411', 'images_412', 'images_413', 'images_414', 'images_415', 'images_416', 'images_417', 'images_418', 'images_419', 'images_420', 'images_421', 'images_422', 'images_423', 'images_424', 'images_425', 'images_426', 'images_427', 'images_428', 'images_429', 'images_430', 'images_431', 'images_432', 'images_433', 'images_434', 'images_435', 'images_436', 'images_437', 'images_438', 'images_439', 'images_440', 'images_441', 'images_442', 'images_443', 'images_444', 'images_445', 'images_446', 'images_447', 'images_448', 'images_449', 'images_450', 'images_451', 'images_452', 'images_453', 'images_454', 'images_455', 'images_456', 'images_457', 'images_458', 'images_459', 'images_460', 'images_461', 'images_462', 'images_463', 'images_464', 'images_465', 'images_466', 'images_467', 'images_468', 'images_469', 'images_470', 'images_471', 'images_472', 'images_473', 'images_474', 'images_475', 'images_476', 'images_477', 'images_478', 'images_479', 'images_480', 'images_481', 'images_482', 'images_483', 'images_484', 'images_485', 'images_486', 'images_487', 'images_488', 'images_489', 'images_490', 'images_491', 'images_492', 'images_493', 'images_494', 'images_495', 'images_496', 'images_497', 'images_498', 'images_499', 'images_500', 'images_501', 'images_502', 'images_503', 'images_504', 'images_505', 'images_506', 'images_507', 'images_508', 'images_509', 'images_510', 'images_511', 'images_512', 'images_513', 'images_514', 'images_515', 'images_516', 'images_517', 'images_518', 'images_519', 'images_520', 'images_521', 'images_522', 'images_523', 'images_524', 'images_525', 'images_526', 'images_527', 'images_528', 'images_529', 'images_530', 'images_531', 'images_532', 'images_533', 'images_534', 'images_535', 'images_536', 'images_537', 'images_538', 'images_539', 'images_540', 'images_541', 'images_542', 'images_543', 'images_544', 'images_545', 'images_546', 'images_547', 'images_548', 'images_549', 'images_550', 'images_551', 'images_552', 'images_553', 'images_554', 'images_555', 'images_556', 'images_557', 'images_558', 'images_559', 'images_560', 'images_561', 'images_562', 'images_563', 'images_564', 'images_565', 'images_566', 'images_567', 'images_568', 'images_569', 'images_570', 'images_571', 'images_572', 'images_573', 'images_574', 'images_575', 'images_576', 'images_577', 'images_578', 'images_579', 'images_580', 'images_581', 'images_582', 'images_583', 'images_584', 'images_585', 'images_586', 'images_587', 'images_588', 'images_589', 'images_590', 'images_591', 'images_592', 'images_593', 'images_594', 'images_595', 'images_596', 'images_597', 'images_598', 'images_599', 'images_600', 'images_601', 'images_602', 'images_603', 'images_604', 'images_605', 'images_606', 'images_607', 'images_608', 'images_609', 'images_610', 'images_611', 'images_612', 'images_613', 'images_614', 'images_615', 'images_616', 'images_617', 'images_618', 'images_619', 'images_620', 'images_621', 'images_622', 'images_623', 'images_624', 'images_625', 'images_626', 'images_627', 'images_628', 'images_629', 'images_630', 'images_631', 'images_632', 'images_633', 'images_634', 'images_635', 'images_636', 'images_637', 'images_638', 'images_639', 'images_640', 'images_641', 'images_642', 'images_643', 'images_644', 'images_645', 'images_646', 'images_647', 'images_648', 'images_649', 'images_650', 'images_651', 'images_652', 'images_653', 'images_654', 'images_655', 'images_656', 'images_657', 'images_658', 'images_659', 'images_660', 'images_661', 'images_662', 'images_663', 'images_664', 'images_665', 'images_666', 'images_667', 'images_668', 'images_669', 'images_670', 'images_671', 'images_672', 'images_673', 'images_674', 'images_675', 'images_676', 'images_677', 'images_678', 'images_679', 'images_680', 'images_681', 'images_682', 'images_683', 'images_684', 'images_685', 'images_686', 'images_687', 'images_688', 'images_689', 'images_690', 'images_691', 'images_692', 'images_693', 'images_694', 'images_695', 'images_696', 'images_697', 'images_698', 'images_699', 'images_700', 'images_701', 'images_702', 'images_703', 'images_704', 'images_705', 'images_706', 'images_707', 'images_708', 'images_709', 'images_710', 'images_711', 'images_712', 'images_713', 'images_714', 'images_715', 'images_716', 'images_717', 'images_718', 'images_719', 'images_720', 'images_721', 'images_722', 'images_723', 'images_724', 'images_725', 'images_726', 'images_727', 'images_728', 'images_729', 'images_730', 'images_731', 'images_732', 'images_733', 'images_734', 'images_735', 'images_736', 'images_737', 'images_738', 'images_739', 'images_740', 'images_741', 'images_742', 'images_743', 'images_744', 'images_745', 'images_746', 'images_747', 'images_748', 'images_749', 'images_750', 'images_751', 'images_752', 'images_753', 'images_754', 'images_755', 'images_756', 'images_757', 'images_758', 'images_759', 'images_760', 'images_761', 'images_762', 'images_763', 'images_764', 'images_765', 'images_766', 'images_767', 'images_768', 'images_769', 'images_770', 'images_771', 'images_772', 'images_773', 'images_774', 'images_775', 'images_776', 'images_777', 'images_778', 'images_779', 'images_780', 'images_781', 'images_782', 'images_783']
-WARNING:tensorflow:From /Users/aymeric.damien/anaconda2/lib/python2.7/site-packages/tensorflow/contrib/learn/python/learn/estimators/head.py:678: __new__ (from tensorflow.contrib.learn.python.learn.estimators.model_fn) is deprecated and will be removed in a future version.
+INFO:tensorflow:Learner config: num_classes: 10
+regularization {
+  l2: 0.0010000000474974513
+}
+constraints {
+  max_tree_depth: 16
+}
+learning_rate_tuner {
+  fixed {
+    learning_rate: 0.10000000149011612
+  }
+}
+pruning_mode: POST_PRUNE
+growing_mode: LAYER_BY_LAYER
+multi_class_strategy: DIAGONAL_HESSIAN
+
+WARNING:tensorflow:From /Applications/Anaconda/anaconda3/lib/python3.6/site-packages/tensorflow/python/framework/function.py:986: calling Graph.create_op (from tensorflow.python.framework.ops) with compute_shapes is deprecated and will be removed in a future version.
+Instructions for updating:
+Shapes are always computed; don't use the compute_shapes as it has no effect.
+WARNING:tensorflow:From /Applications/Anaconda/anaconda3/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/estimators/head.py:678: ModelFnOps.__new__ (from tensorflow.contrib.learn.python.learn.estimators.model_fn) is deprecated and will be removed in a future version.
 Instructions for updating:
 When switching to tf.estimator.Estimator, use tf.estimator.EstimatorSpec. You can use the `estimator_spec` method to create an equivalent one.
 INFO:tensorflow:Create CheckpointSaverHook.
@@ -1357,49 +1221,16 @@ INFO:tensorflow:Done running local_init_op.
 WARNING:tensorflow:Issue encountered when serializing resources.
 Type is unsupported, or the types of the items don't match field type in CollectionDef. Note this is a warning and probably safe to ignore.
 '_Resource' object has no attribute 'name'
-INFO:tensorflow:Saving checkpoints for 0 into /var/folders/p7/9nxn5g_s5kv636j86zdg2hrr0000gr/T/tmpE_8oiQ/model.ckpt.
+INFO:tensorflow:Saving checkpoints for 0 into /var/folders/d3/bqcldz9s7s3c3skhbbk10j3c0000gn/T/tmpb0yvnwgu/model.ckpt.
 WARNING:tensorflow:Issue encountered when serializing resources.
 Type is unsupported, or the types of the items don't match field type in CollectionDef. Note this is a warning and probably safe to ignore.
 '_Resource' object has no attribute 'name'
 INFO:tensorflow:loss = 2.3025992, step = 1
-INFO:tensorflow:Saving checkpoints for 2 into /var/folders/p7/9nxn5g_s5kv636j86zdg2hrr0000gr/T/tmpE_8oiQ/model.ckpt.
+INFO:tensorflow:Saving checkpoints for 33 into /var/folders/d3/bqcldz9s7s3c3skhbbk10j3c0000gn/T/tmpb0yvnwgu/model.ckpt.
 WARNING:tensorflow:Issue encountered when serializing resources.
 Type is unsupported, or the types of the items don't match field type in CollectionDef. Note this is a warning and probably safe to ignore.
 '_Resource' object has no attribute 'name'
-INFO:tensorflow:Saving checkpoints for 94 into /var/folders/p7/9nxn5g_s5kv636j86zdg2hrr0000gr/T/tmpE_8oiQ/model.ckpt.
-WARNING:tensorflow:Issue encountered when serializing resources.
-Type is unsupported, or the types of the items don't match field type in CollectionDef. Note this is a warning and probably safe to ignore.
-'_Resource' object has no attribute 'name'
-INFO:tensorflow:global_step/sec: 0.199624
-INFO:tensorflow:loss = 0.32783023, step = 101 (500.943 sec)
-INFO:tensorflow:Requesting stop since we have reached 10 trees.
-INFO:tensorflow:Saving checkpoints for 161 into /var/folders/p7/9nxn5g_s5kv636j86zdg2hrr0000gr/T/tmpE_8oiQ/model.ckpt.
-WARNING:tensorflow:Issue encountered when serializing resources.
-Type is unsupported, or the types of the items don't match field type in CollectionDef. Note this is a warning and probably safe to ignore.
-'_Resource' object has no attribute 'name'
-INFO:tensorflow:Loss for final step: 0.21336032.
 </pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt output_prompt">Out[5]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>GradientBoostedDecisionTreeClassifier(params={'head': &lt;tensorflow.contrib.learn.python.learn.estimators.head._MultiClassHead object at 0x127568650&gt;, 'weight_column_name': None, 'feature_columns': None, 'center_bias': False, 'num_trees': 10, 'logits_modifier_function': None, 'use_core_libs': False, 'learner_config': num_classes: 10
-regularization {
-  l2: 0.0010000000475
-}
-constraints {
-  max_tree_depth: 16
-}
-learning_rate_tuner {
-  fixed {
-    learning_rate: 0.10000000149
-  }
-}
-pruning_mode: POST_PRUNE
-growing_mode: LAYER_BY_LAYER
-multi_class_strategy: DIAGONAL_HESSIAN
-, 'examples_per_layer': 1000})</pre>
 </div>
 </div>
 </div>
@@ -1475,36 +1306,94 @@ Testing Accuracy: 0.9273
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
+</div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        niult
+    </span>
+  </span>
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>  <span class="categories">
+    <a class='category' href='../../../category/03shen-du-xue-xi.html'>03深度学习</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="../../../tag/tensorflowexample.html">TensorFlowExample</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
 
-                </div>
-                <footer class="text-right">
-                    <p>- niult</p>
-                </footer>
-            </div>
-        </div>
-    </article>
-</section>
-<footer>
-    <hr>
-    <div class="row">
-        <div class="col-lg-9 text-center">
-            <p><small>
-                Built by <a href="http://docs.getpelican.com/en/latest">Pelican</a> / <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a>
-                &middot;                    &copy; 2018 niult
-            </small></p>
-        </div>
-    </div>
-</footer>            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-    </div>
-    <!-- /#wrapper -->
-    <!-- jQuery Version 1.11.2 -->
-    <script src="../../../theme/js/jquery-1.11.2.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../../../theme/js/bootstrap.min.js"></script>
-    <!-- twitchy Script -->
-    <script src="../../../theme/js/pelican_twitchy.min.js"></script>
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-hadoop-hdfschang-yong-wen-jian-ming-ling.html">10分钟上手Hadoop-HDFS常用文件命令</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-latex2.html">10分钟上手Latex2</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-latex3.html">10分钟上手Latex3</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-pandas.html">10分钟上手Pandas</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-pandas3.html">10分钟上手Pandas3</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="../../../category/00qi-ta.html">00.其他</a></li>
+        <li><a href="../../../category/00qi-ta-2.html">00.其他2</a></li>
+        <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
+        <li><a href="../../../category/02gong-ju-shi-yong.html">02.工具使用</a></li>
+        <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
+        <li><a href="../../../category/03chang-yong-ming-ling.html">03.常用命令</a></li>
+        <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
+        <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
+        <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
+        <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
+        <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
+    </ul>
+  </section>
+ 
 
+  <section>
+  <h1>Tags</h1>
+    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+
+
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="#" target="_blank">You can add links in your config file</a></li>
+            <li><a href="#" target="_blank">Another social link</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+            <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+            <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+        </ul>
+    </section>
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2017&ndash;2018  niult &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  <script src="../../../theme/js/modernizr-2.0.js"></script>
+  <script src="../../../theme/js/ender.js"></script>
+  <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 </body>
 </html>
