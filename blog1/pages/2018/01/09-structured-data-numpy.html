@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>jupyter_example &mdash; 魑魅魍魉</title>
+  <title>09-Structured-Data-NumPy &mdash; 魑魅魍魉</title>
   <meta name="author" content="niult">
 
 
@@ -38,7 +38,7 @@
 
 
 <ul class="main-navigation">
-      <li class="active">
+      <li >
         <a href="../../../category/00qi-ta.html">00.其他</a>
       </li>
       <li >
@@ -71,13 +71,16 @@
       <li >
         <a href="../../../category/shen-du-xue-xi.html">深度学习</a>
       </li>
+      <li class="active">
+        <a href="../../../category/tools-numpy.html">Tools-numpy</a>
+      </li>
 </ul></nav>
   <div id="main">
     <div id="content">
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">jupyter_example</h1>
+      <h1 class="entry-title">09-Structured-Data-NumPy</h1>
     <p class="meta">
 <time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
 </header>
@@ -1058,13 +1061,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>title: pydata-05.3 总结和描述性统计</li>
-<li>author: niult</li>
-<li>date: 2018-01-01</li>
-<li>category: book-pydata</li>
-<li>tags: python,book,pydata</li>
-</ul>
+<h1 id="Structured-Data:-NumPy's-Structured-Arrays">Structured Data: NumPy's Structured Arrays<a class="anchor-link" href="#Structured-Data:-NumPy's-Structured-Arrays">¶</a></h1>
 </div>
 </div>
 </div>
@@ -1072,8 +1069,18 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Scientific-Python-Cheatsheet">Scientific Python Cheatsheet<a class="anchor-link" href="#Scientific-Python-Cheatsheet">¶</a></h2><p><a href="https://github.com/IPGP">IPGP</a> / <a href="https://ipgp.github.io/scientific_python_cheat_sheet/">Scientific Python Cheatsheet</a></p>
-<h3 id="NumPy">NumPy<a class="anchor-link" href="#NumPy">¶</a></h3>
+<p>While often our data can be well represented by a homogeneous array of values, sometimes this is not the case. This section demonstrates the use of NumPy's <em>structured arrays</em> and <em>record arrays</em>, which provide efficient storage for compound, heterogeneous data.  While the patterns shown here are useful for simple operations, scenarios like this often lend themselves to the use of Pandas <code>Dataframe</code>s, which we'll explore in <a href="03.00-Introduction-to-Pandas.ipynb">Chapter 3</a>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1081,7 +1088,31 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="测试玩下">测试玩下<a class="anchor-link" href="#测试玩下">¶</a></h2>
+<p>Imagine that we have several categories of data on a number of people (say, name, age, and weight), and we'd like to store these values for use in a Python program.
+It would be possible to store these in three separate arrays:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Alice'</span><span class="p">,</span> <span class="s1">'Bob'</span><span class="p">,</span> <span class="s1">'Cathy'</span><span class="p">,</span> <span class="s1">'Doug'</span><span class="p">]</span>
+<span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="p">[</span><span class="mf">55.0</span><span class="p">,</span> <span class="mf">85.5</span><span class="p">,</span> <span class="mf">68.0</span><span class="p">,</span> <span class="mf">61.5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But this is a bit clumsy. There's nothing here that tells us that the three arrays are related; it would be more natural if we could use a single structure to store all of this data.
+NumPy can handle this through structured arrays, which are arrays with compound data types.</p>
+<p>Recall that previously we created a simple array using an expression like this:</p>
 </div>
 </div>
 </div>
@@ -1090,9 +1121,29 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can similarly create a structured array using a compound data type specification:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use a compound data type for structured arrays</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">'names'</span><span class="p">:(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">,</span> <span class="s1">'weight'</span><span class="p">),</span>
+                          <span class="s1">'formats'</span><span class="p">:(</span><span class="s1">'U10'</span><span class="p">,</span> <span class="s1">'i4'</span><span class="p">,</span> <span class="s1">'f8'</span><span class="p">)})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1102,10 +1153,20 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2
+<pre>[('name', '&lt;U10'), ('age', '&lt;i4'), ('weight', '&lt;f8')]
 </pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here <code>'U10'</code> translates to "Unicode string of maximum length 10," <code>'i4'</code> translates to "4-byte (i.e., 32 bit) integer," and <code>'f8'</code> translates to "8-byte (i.e., 64 bit) float."
+We'll discuss other options for these type codes in the following section.</p>
+<p>Now that we've created an empty container array, we can fill the array with our lists of values:</p>
 </div>
 </div>
 </div>
@@ -1114,16 +1175,10 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">'age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">age</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">'weight'</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1133,15 +1188,41 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19]
+<pre>[('Alice', 25, 55.0) ('Bob', 45, 85.5) ('Cathy', 37, 68.0)
+ ('Doug', 19, 61.5)]
 </pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we had hoped, the data is now arranged together in one convenient block of memory.</p>
+<p>The handy thing with structured arrays is that you can now refer to values either by index or by name:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get all names</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
 <div class="output_area">
-<div class="prompt"></div>
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"/>
+<div class="prompt output_prompt">Out[6]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array(['Alice', 'Bob', 'Cathy', 'Doug'], 
+      dtype='&lt;U10')</pre>
 </div>
 </div>
 </div>
@@ -1152,7 +1233,284 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get first row of data</span>
+<span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>('Alice', 25, 55.0)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get the name from the last row</span>
+<span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>'Doug'</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using Boolean masking, this even allows you to do some more sophisticated operations such as filtering on age:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get names where age is under 30</span>
+<span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'age'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array(['Alice', 'Doug'], 
+      dtype='&lt;U10')</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that if you'd like to do any operations that are any more complicated than these, you should probably consider the Pandas package, covered in the next chapter.
+As we'll see, Pandas provides a <code>Dataframe</code> object, which is a structure built on NumPy arrays that offers a variety of useful data manipulation functionality similar to what we've shown here, as well as much, much more.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Creating-Structured-Arrays">Creating Structured Arrays<a class="anchor-link" href="#Creating-Structured-Arrays">¶</a></h2><p>Structured array data types can be specified in a number of ways.
+Earlier, we saw the dictionary method:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">({</span><span class="s1">'names'</span><span class="p">:(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">,</span> <span class="s1">'weight'</span><span class="p">),</span>
+          <span class="s1">'formats'</span><span class="p">:(</span><span class="s1">'U10'</span><span class="p">,</span> <span class="s1">'i4'</span><span class="p">,</span> <span class="s1">'f8'</span><span class="p">)})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>dtype([('name', '&lt;U10'), ('age', '&lt;i4'), ('weight', '&lt;f8')])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For clarity, numerical types can be specified using Python types or NumPy <code>dtype</code>s instead:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">({</span><span class="s1">'names'</span><span class="p">:(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">,</span> <span class="s1">'weight'</span><span class="p">),</span>
+          <span class="s1">'formats'</span><span class="p">:((</span><span class="n">np</span><span class="o">.</span><span class="n">str_</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>dtype([('name', '&lt;U10'), ('age', '&lt;i8'), ('weight', '&lt;f4')])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A compound type can also be specified as a list of tuples:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">([(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'S10'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'age'</span><span class="p">,</span> <span class="s1">'i4'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'weight'</span><span class="p">,</span> <span class="s1">'f8'</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[12]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>dtype([('name', 'S10'), ('age', '&lt;i4'), ('weight', '&lt;f8')])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If the names of the types do not matter to you, you can specify the types alone in a comma-separated string:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'S10,i4,f8'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[13]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>dtype([('f0', 'S10'), ('f1', '&lt;i4'), ('f2', '&lt;f8')])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The shortened string format codes may seem confusing, but they are built on simple principles.
+The first (optional) character is <code>&lt;</code> or <code>&gt;</code>, which means "little endian" or "big endian," respectively, and specifies the ordering convention for significant bits.
+The next character specifies the type of data: characters, bytes, ints, floating points, and so on (see the table below).
+The last character or characters represents the size of the object in bytes.</p>
+<table>
+<thead><tr>
+<th>Character</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'b'</code></td>
+<td>Byte</td>
+<td><code>np.dtype('b')</code></td>
+</tr>
+<tr>
+<td><code>'i'</code></td>
+<td>Signed integer</td>
+<td><code>np.dtype('i4') == np.int32</code></td>
+</tr>
+<tr>
+<td><code>'u'</code></td>
+<td>Unsigned integer</td>
+<td><code>np.dtype('u1') == np.uint8</code></td>
+</tr>
+<tr>
+<td><code>'f'</code></td>
+<td>Floating point</td>
+<td><code>np.dtype('f8') == np.int64</code></td>
+</tr>
+<tr>
+<td><code>'c'</code></td>
+<td>Complex floating point</td>
+<td><code>np.dtype('c16') == np.complex128</code></td>
+</tr>
+<tr>
+<td><code>'S'</code>, <code>'a'</code></td>
+<td>String</td>
+<td><code>np.dtype('S5')</code></td>
+</tr>
+<tr>
+<td><code>'U'</code></td>
+<td>Unicode string</td>
+<td><code>np.dtype('U') == np.str_</code></td>
+</tr>
+<tr>
+<td><code>'V'</code></td>
+<td>Raw data (void)</td>
+<td><code>np.dtype('V') == np.void</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="More-Advanced-Compound-Types">More Advanced Compound Types<a class="anchor-link" href="#More-Advanced-Compound-Types">¶</a></h2><p>It is possible to define even more advanced compound types.
+For example, you can create a type where each element contains an array or matrix of values.
+Here, we'll create a data type with a <code>mat</code> component consisting of a $3\times 3$ floating-point matrix:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">([(</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'i8'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'mat'</span><span class="p">,</span> <span class="s1">'f8'</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))])</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s1">'mat'</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1162,7 +1520,10 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2
+<pre>(0, [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]])
+[[ 0.  0.  0.]
+ [ 0.  0.  0.]
+ [ 0.  0.  0.]]
 </pre>
 </div>
 </div>
@@ -1173,18 +1534,10 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="c1"># array initialization</span>
-<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>             <span class="c1"># direct initialization</span>
-<span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>  <span class="c1"># single precision array with 20 entries</span>
-<span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>                   <span class="c1"># initialize 200 zeros</span>
-<span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>  <span class="c1"># 3 x 3 integer matrix with ones</span>
-<span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>                     <span class="c1"># ones on the diagonal</span>
-<span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>                <span class="c1"># returns array with zeros and the shape of a</span>
-<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>       <span class="c1"># 100 points from 0 to 10</span>
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>            <span class="c1"># points from 0 to &lt;100 with step width 2</span>
-<span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>         <span class="c1"># 100 log-spaced points between 1e-5 and 1e2</span>
-<span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>                      <span class="c1"># copy array to new memory</span>
-</pre></div>
+<p>Now each element in the <code>X</code> array consists of an <code>id</code> and a $3\times 3$ matrix.
+Why would you use this rather than a simple multidimensional array, or perhaps a Python dictionary?
+The reason is that this NumPy <code>dtype</code> directly maps onto a C structure definition, so the buffer containing the array content can be accessed directly within an appropriately written C program.
+If you find yourself writing a Python interface to a legacy C or Fortran library that manipulates structured data, you'll probably find structured arrays quite useful!</p>
 </div>
 </div>
 </div>
@@ -1192,20 +1545,111 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="c1"># array properties and operations</span>
-<span class="n">a</span><span class="o">.</span><span class="n">shape</span>                <span class="c1"># a tuple with the lengths of each axis</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>                 <span class="c1"># length of axis 0</span>
-<span class="n">a</span><span class="o">.</span><span class="n">ndim</span>                 <span class="c1"># number of dimensions (axes)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>         <span class="c1"># sort array along axis</span>
-<span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>            <span class="c1"># collapse array to one dimension</span>
-<span class="n">a</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span>               <span class="c1"># return complex conjugate</span>
-<span class="n">a</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>     <span class="c1"># cast to integer</span>
-<span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># return index of maximum along a given axis</span>
-<span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>           <span class="c1"># return cumulative sum</span>
-<span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>              <span class="c1"># True if any element is True</span>
-<span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>              <span class="c1"># True if all elements are True</span>
-<span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># return sorted index array along axis</span>
+<h2 id="RecordArrays:-Structured-Arrays-with-a-Twist">RecordArrays: Structured Arrays with a Twist<a class="anchor-link" href="#RecordArrays:-Structured-Arrays-with-a-Twist">¶</a></h2><p>NumPy also provides the <code>np.recarray</code> class, which is almost identical to the structured arrays just described, but with one additional feature: fields can be accessed as attributes rather than as dictionary keys.
+Recall that we previously accessed the ages by writing:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'age'</span><span class="p">]</span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[15]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([25, 45, 37, 19], dtype=int32)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we view our data as a record array instead, we can access this with slightly fewer keystrokes:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_rec</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">recarray</span><span class="p">)</span>
+<span class="n">data_rec</span><span class="o">.</span><span class="n">age</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([25, 45, 37, 19], dtype=int32)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The downside is that for record arrays, there is some extra overhead involved in accessing the fields, even when using the same syntax. We can see this here:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> data['age']
+<span class="o">%</span><span class="k">timeit</span> data_rec['age']
+<span class="o">%</span><span class="k">timeit</span> data_rec.age
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1000000 loops, best of 3: 241 ns per loop
+100000 loops, best of 3: 4.61 µs per loop
+100000 loops, best of 3: 7.27 µs per loop
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Whether the more convenient notation is worth the additional overhead will depend on your own application.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="On-to-Pandas">On to Pandas<a class="anchor-link" href="#On-to-Pandas">¶</a></h2><p>This section on structured and record arrays is purposely at the end of this chapter, because it leads so well into the next package we will cover: Pandas.
+Structured arrays like the ones discussed here are good to know about for certain situations, especially in case you're using NumPy arrays to map onto binary data formats in C, Fortran, or another language.
+For day-to-day use of structured data, the Pandas package is a much better choice, and we'll dive into a full discussion of it in the chapter that follows.</p>
 </div>
 </div>
 </div>
@@ -1247,10 +1691,10 @@ h6:hover .anchor-link {
     </span>
   </span>
 <time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>  <span class="categories">
-    <a class='category' href='../../../category/00qi-ta.html'>00.其他</a>
+    <a class='category' href='../../../category/tools-numpy.html'>tools-numpy</a>
   </span>
   <span class="categories">
-    <a class="category" href="../../../tag/jupyter.html">jupyter</a>,    <a class="category" href="../../../tag/python.html">python</a>  </span>
+    <a class="category" href="../../../tag/python.html">python</a>,    <a class="category" href="../../../tag/numpy.html">numpy</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>
@@ -1261,19 +1705,19 @@ h6:hover .anchor-link {
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-hadoop-hdfschang-yong-wen-jian-ming-ling.html">10分钟上手Hadoop-HDFS常用文件命令</a>
+          <a href="../../../pages/2018/01/00-introduction-to-numpy.html">00-Introduction-to-NumPy</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-latex2.html">10分钟上手Latex2</a>
+          <a href="../../../pages/2018/01/00-numpy.html">00-numpy</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-latex3.html">10分钟上手Latex3</a>
+          <a href="../../../pages/2018/01/01-understanding-data-types.html">01-Understanding-Data-Types</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-pandas.html">10分钟上手Pandas</a>
+          <a href="../../../pages/2018/01/02-the-basics-of-numpy-arrays.html">02-The-Basics-Of-NumPy-Arrays</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2018/01/10fen-zhong-shang-shou-pandas3.html">10分钟上手Pandas3</a>
+          <a href="../../../pages/2018/01/03-computation-on-arrays-ufuncs.html">03-Computation-on-arrays-ufuncs</a>
       </li>
     </ul>
   </section>
@@ -1292,13 +1736,14 @@ h6:hover .anchor-link {
         <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
         <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
         <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
+        <li><a href="../../../category/tools-numpy.html">tools-numpy</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
 
 
     <section>
