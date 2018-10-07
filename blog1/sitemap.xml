@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/</loc>
-<lastmod>2018-10-06T10:15:02-00:00</lastmod>
+<lastmod>2018-10-07T16:40:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/archives.html</loc>
-<lastmod>2018-10-06T10:15:02-00:00</lastmod>
+<lastmod>2018-10-07T16:40:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/tags.html</loc>
-<lastmod>2018-10-06T10:15:02-00:00</lastmod>
+<lastmod>2018-10-07T16:40:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/categories.html</loc>
-<lastmod>2018-10-06T10:15:02-00:00</lastmod>
+<lastmod>2018-10-07T16:40:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -151,6 +151,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://localhost:8000/pages/2018/01/geng-xin-suo-you-mo-kuai.html</loc>
+<lastmod>2018-01-01T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
 <loc>http://localhost:8000/pages/2018/01/gradient_boosted_decision_tree.html</loc>
 <lastmod>2018-01-01T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -250,6 +257,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/pages/2018/01/pandashan-shu-shen-ru.html</loc>
+<lastmod>2018-01-01T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2018/01/pangrankzhi-mapreduce.html</loc>
+<lastmod>2018-01-01T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2018/01/pipchang-yong-ming-ling.html</loc>
 <lastmod>2018-01-01T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -683,6 +704,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://localhost:8000/category/tools.html</loc>
+<lastmod>2018-01-01T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://localhost:8000/category/tools-numpy.html</loc>
 <lastmod>2018-01-01T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -711,6 +739,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://localhost:8000/tag/pip.html</loc>
+<lastmod>2018-01-01T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/tag/geng-xin-suo-you-mo-kuai.html</loc>
+<lastmod>2018-01-01T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://localhost:8000/tag/tensorflowexample.html</loc>
 <lastmod>2018-01-01T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -733,6 +775,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/tag/xun-huan-shen-jing-wang-luo.html</loc>
+<lastmod>2018-01-01T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/tag/pangrank.html</loc>
+<lastmod>2018-01-01T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/tag/mapreduce.html</loc>
 <lastmod>2018-01-01T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>

@@ -73,12 +73,69 @@
         <a href="./category/shen-du-xue-xi.html">深度学习</a>
       </li>
       <li >
+        <a href="./category/tools.html">Tools</a>
+      </li>
+      <li >
         <a href="./category/tools-numpy.html">Tools-numpy</a>
       </li>
 </ul></nav>
   <div id="main">
     <div id="content">
 <div class="blog-index">
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2018/01/stock_example.html">stock_Example</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/stock_example.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2018/01/sun-shi-han-shu.html">损失函数</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content"><p><a href="http://blog.csdn.net/u014595019/article/details/52562159">参考网址</a></p>
+<h2>损失函数</h2>
+<p>在之前的内容中，我们用的损失函数都是平方差函数，即 </p>
+<p>$$C=\frac{1}{2}(a−y)^2$$</p>
+<p>其中y是我们期望的输出，$a$为神经元的实际输出$a=\sigma(Wx+b)$。也就是说，当神经元的实际输出与我们的期望输出差距越大，代价就越高。想法非常的好，然而在实际应用中，我们知道参数的修正是与$\frac{\partial{C}}{\partial{W …</p></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/sun-shi-han-shu.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2018/01/tensorflowyou-hua-qi-de-xuan-ze.html">tensorflow优化器的选择</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content"><p>在很多机器学习和深度学习的应用中，我们发现用的最多的优化器是 Adam，为什么呢？</p>
+<p>下面是 TensorFlow 中的优化器， 
+<a href="https://www.tensorflow.org/api_guides/python/train">https://www.tensorflow.org/api_guides/python/train</a>
+<img alt="" src="https://github.com/1007530194/datas/blob/master/images/blog/study/others/28A308A65B43D79482C913803F349716.png"/></p>
+<p>在 keras 中也有 SGD，RMSprop，Adagrad，Adadelta，Adam 等： 
+<a href="https://keras.io/optimizers/">https://keras.io/optimizers/</a></p>
+<p>我们可以发现除了常见的梯度下降，还有 Adadelta …</p></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/tensorflowyou-hua-qi-de-xuan-ze.html">Read On &crarr;</a>
+  </footer>
+  		</article>
   		<article>
 <header>
       <h1 class="entry-title">
@@ -358,70 +415,6 @@ MapReduce: 分布式的计算框架 …</pre></div></div>
     <a rel="full-article" href="./pages/2017/01/2k-jin-lin-suan-fa.html">Read On &crarr;</a>
   </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2017/01/3jue-ce-shu.html">3.决策树</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第3章 决策树</h1>
-<p><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default" type="text/javascript"></script></p>
-<h2>决策树 概述</h2>
-<p><code>决策树（Decision Tree）算法是一种基本的分类与回归方法，是最经常使用的数据挖掘算法之一。我们这章节只讨论用于分类的决策树。</code></p>
-<p><code>决策树模型呈树形结构，在分类问题中，表示基于特征对实例进行分类的过程。它可以认为是 if-then 规则的集合，也可以认为是定义在特征空间与类空间上的条件概率分布。</code></p>
-<p><code>决策树学习通常包括 3 个步骤：特征选择、决策树的生成和决策树的修剪。</code></p>
-<h2>决策树 场景</h2>
-<p>一个叫做 "二十个问题" 的游戏，游戏的规则很简单：参与游戏的一方在脑海中想某个事物，其他参与者向他提问 …</p></div>
-  <footer>
-    <a rel="full-article" href="./pages/2017/01/3jue-ce-shu.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2017/01/4po-su-bei-xie-si.html">4.朴素贝叶斯</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第4章 基于概率论的分类方法：朴素贝叶斯</h1>
-<h2>朴素贝叶斯 概述</h2>
-<p><code>贝叶斯分类是一类分类算法的总称，这类算法均以贝叶斯定理为基础，故统称为贝叶斯分类。本章首先介绍贝叶斯分类算法的基础——贝叶斯定理。最后，我们通过实例来讨论贝叶斯分类的中最简单的一种: 朴素贝叶斯分类。</code></p>
-<h2>贝叶斯理论 &amp; 条件概率</h2>
-<h3>贝叶斯理论</h3>
-<p>我们现在有一个数据集，它由两类数据组成，数据分布如下图所示：</p>
-<p><img alt="朴素贝叶斯示例数据分布" src="https://github.com/1007530194/datas/blob/master/images/blog/books/deeplearningdo/4.NaiveBayesian/朴素贝叶斯示例数据分布.png" title="参数已知的概率分布"/></p>
-<p>我们现在用 p1(x,y) 表示数据点 (x,y) 属于类别 1（图中用圆点表示的类别）的概率 …</p></div>
-  <footer>
-    <a rel="full-article" href="./pages/2017/01/4po-su-bei-xie-si.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2017/01/5logistichui-gui.html">5.Logistic回归</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第5章 Logistic回归</h1>
-<p><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default" type="text/javascript"></script></p>
-<h2>Logistic 回归 概述</h2>
-<p><code>Logistic 回归 或者叫逻辑回归 虽然名字有回归，但是它是用来做分类的。其主要思想是: 根据现有数据对分类边界线(Decision Boundary)建立回归公式，以此进行分类。</code></p>
-<h2>须知概念</h2>
-<h3>Sigmoid 函数</h3>
-<h4>回归 概念</h4>
-<p>假设现在有一些数据点，我们用一条直线对这些点进行拟合（这条直线称为最佳拟合直线），这个拟合的过程就叫做回归。进而可以得到对这些点的拟合直线方程，那么我们根据这个回归方程，怎么进行分类呢？请看下面。</p>
-<h4>二值型输出分类函数 …</h4></div>
-  <footer>
-    <a rel="full-article" href="./pages/2017/01/5logistichui-gui.html">Read On &crarr;</a>
-  </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="./index6.html">&larr; Older</a>
 
@@ -465,6 +458,7 @@ MapReduce: 分布式的计算框架 …</pre></div></div>
         <li><a href="./category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
         <li><a href="./category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
         <li><a href="./category/shen-du-xue-xi.html">深度学习</a></li>
+        <li><a href="./category/tools.html">tools</a></li>
         <li><a href="./category/tools-numpy.html">tools-numpy</a></li>
     </ul>
   </section>
@@ -472,7 +466,7 @@ MapReduce: 分布式的计算框架 …</pre></div></div>
 
   <section>
   <h1>Tags</h1>
-    <a href="./tag/python.html">python</a>,    <a href="./tag/numpy.html">numpy</a>,    <a href="./tag/gong-ju.html">工具</a>,    <a href="./tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="./tag/tensorflow.html">tensorflow</a>,    <a href="./tag/shen-du-xue-xi.html">深度学习</a>,    <a href="./tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="./tag/book.html">book</a>,    <a href="./tag/pydata.html">pydata</a>,    <a href="./tag/jupyter.html">jupyter</a>,    <a href="./tag/pyhton.html">pyhton</a>,    <a href="./tag/xgboost.html">xgboost</a>  </section>
+    <a href="./tag/python.html">python</a>,    <a href="./tag/numpy.html">numpy</a>,    <a href="./tag/gong-ju.html">工具</a>,    <a href="./tag/pip.html">pip</a>,    <a href="./tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="./tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="./tag/tensorflow.html">tensorflow</a>,    <a href="./tag/shen-du-xue-xi.html">深度学习</a>,    <a href="./tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="./tag/pangrank.html">PangRank</a>,    <a href="./tag/mapreduce.html">MapReduce</a>,    <a href="./tag/book.html">book</a>,    <a href="./tag/pydata.html">pydata</a>,    <a href="./tag/jupyter.html">jupyter</a>,    <a href="./tag/pyhton.html">pyhton</a>,    <a href="./tag/xgboost.html">xgboost</a>  </section>
 
 
     <section>
@@ -485,9 +479,8 @@ MapReduce: 分布式的计算框架 …</pre></div></div>
     <section>
         <h1>Blogroll</h1>
         <ul>
-            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
-            <li><a href="http://python.org/" target="_blank">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+            <li><a href="http://getpelican.com/" target="_blank">pelican</a></li>
+            <li><a href="http://python.org/" target="_blank">python</a></li>
             <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
         </ul>
     </section>
@@ -495,11 +488,29 @@ MapReduce: 分布式的计算框架 …</pre></div></div>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2017&ndash;2018  niult &mdash;
-  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+        活到老，学到老，玩到老
+    <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
   <script src="./theme/js/modernizr-2.0.js"></script>
   <script src="./theme/js/ender.js"></script>
   <script src="./theme/js/octopress.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-127062347-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-127062347-1');
+    ga('send', 'pageview');
+</script>
 </body>
 </html>
