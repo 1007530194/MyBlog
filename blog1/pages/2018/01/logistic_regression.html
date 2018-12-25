@@ -1114,28 +1114,14 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>WARNING:tensorflow:From &lt;ipython-input-1-90e18c3c17ed&gt;:5: read_data_sets (from tensorflow.contrib.learn.python.learn.datasets.mnist) is deprecated and will be removed in a future version.
-Instructions for updating:
-Please use alternatives such as official/mnist/dataset.py from tensorflow/models.
-WARNING:tensorflow:From /Applications/Anaconda/anaconda3/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/mnist.py:260: maybe_download (from tensorflow.contrib.learn.python.learn.datasets.base) is deprecated and will be removed in a future version.
-Instructions for updating:
-Please write your own downloading logic.
-WARNING:tensorflow:From /Applications/Anaconda/anaconda3/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/mnist.py:262: extract_images (from tensorflow.contrib.learn.python.learn.datasets.mnist) is deprecated and will be removed in a future version.
-Instructions for updating:
-Please use tf.data to implement this functionality.
+<pre>Successfully downloaded train-images-idx3-ubyte.gz 9912422 bytes.
 Extracting tmp/data/train-images-idx3-ubyte.gz
-WARNING:tensorflow:From /Applications/Anaconda/anaconda3/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/mnist.py:267: extract_labels (from tensorflow.contrib.learn.python.learn.datasets.mnist) is deprecated and will be removed in a future version.
-Instructions for updating:
-Please use tf.data to implement this functionality.
+Successfully downloaded train-labels-idx1-ubyte.gz 28881 bytes.
 Extracting tmp/data/train-labels-idx1-ubyte.gz
-WARNING:tensorflow:From /Applications/Anaconda/anaconda3/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/mnist.py:110: dense_to_one_hot (from tensorflow.contrib.learn.python.learn.datasets.mnist) is deprecated and will be removed in a future version.
-Instructions for updating:
-Please use tf.one_hot on tensors.
+Successfully downloaded t10k-images-idx3-ubyte.gz 1648877 bytes.
 Extracting tmp/data/t10k-images-idx3-ubyte.gz
+Successfully downloaded t10k-labels-idx1-ubyte.gz 4542 bytes.
 Extracting tmp/data/t10k-labels-idx1-ubyte.gz
-WARNING:tensorflow:From /Applications/Anaconda/anaconda3/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/mnist.py:290: DataSet.__init__ (from tensorflow.contrib.learn.python.learn.datasets.mnist) is deprecated and will be removed in a future version.
-Instructions for updating:
-Please use alternatives such as official/mnist/dataset.py from tensorflow/models.
 </pre>
 </div>
 </div>
@@ -1178,7 +1164,7 @@ Please use alternatives such as official/mnist/dataset.py from tensorflow/models
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start training</span>
@@ -1217,33 +1203,33 @@ Please use alternatives such as official/mnist/dataset.py from tensorflow/models
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Epoch: 0001 cost= 1.183257565
-Epoch: 0002 cost= 0.665171309
-Epoch: 0003 cost= 0.552824434
-Epoch: 0004 cost= 0.498661273
-Epoch: 0005 cost= 0.465543925
-Epoch: 0006 cost= 0.442557672
-Epoch: 0007 cost= 0.425530371
-Epoch: 0008 cost= 0.412256878
-Epoch: 0009 cost= 0.401370889
-Epoch: 0010 cost= 0.392415820
-Epoch: 0011 cost= 0.384799663
-Epoch: 0012 cost= 0.378193579
-Epoch: 0013 cost= 0.372424739
-Epoch: 0014 cost= 0.367312722
-Epoch: 0015 cost= 0.362744808
-Epoch: 0016 cost= 0.358580630
-Epoch: 0017 cost= 0.354858605
-Epoch: 0018 cost= 0.351494630
-Epoch: 0019 cost= 0.348356135
-Epoch: 0020 cost= 0.345411579
-Epoch: 0021 cost= 0.342787642
-Epoch: 0022 cost= 0.340236557
-Epoch: 0023 cost= 0.337977476
-Epoch: 0024 cost= 0.335757318
-Epoch: 0025 cost= 0.333721833
+<pre>Epoch: 0001 cost= 1.182246142
+Epoch: 0002 cost= 0.665240551
+Epoch: 0003 cost= 0.553549129
+Epoch: 0004 cost= 0.498193700
+Epoch: 0005 cost= 0.466965615
+Epoch: 0006 cost= 0.441203552
+Epoch: 0007 cost= 0.426735978
+Epoch: 0008 cost= 0.410804259
+Epoch: 0009 cost= 0.400358670
+Epoch: 0010 cost= 0.394580868
+Epoch: 0011 cost= 0.383867347
+Epoch: 0012 cost= 0.377542422
+Epoch: 0013 cost= 0.371999756
+Epoch: 0014 cost= 0.368405915
+Epoch: 0015 cost= 0.362732306
+Epoch: 0016 cost= 0.358748689
+Epoch: 0017 cost= 0.354518292
+Epoch: 0018 cost= 0.352773304
+Epoch: 0019 cost= 0.348025317
+Epoch: 0020 cost= 0.345050780
+Epoch: 0021 cost= 0.342389516
+Epoch: 0022 cost= 0.339818355
+Epoch: 0023 cost= 0.338261876
+Epoch: 0024 cost= 0.335919285
+Epoch: 0025 cost= 0.333004750
 Optimization Finished!
-Accuracy: 0.8883333
+Accuracy: 0.8896667
 </pre>
 </div>
 </div>
@@ -1342,7 +1328,7 @@ Accuracy: 0.8883333
 
   <section>
   <h1>Tags</h1>
-    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
 
 
     <section>

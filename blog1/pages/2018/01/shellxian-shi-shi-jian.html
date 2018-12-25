@@ -93,10 +93,59 @@
 
   <div class="entry-content"><p>请参考ubuntu显示时间的方法：</p>
 <p>编辑文件~/.bashrc:</p>
-<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s2">"echo -n \[\$(date +%H:%M:%S)\]\ "</span>
+<div class="highlight"><pre><span></span>     <span class="nv">PS1</span><span class="o">=</span><span class="s1">'[$(date +%Y-%m-%d) \t \W]\$ '</span>
 </pre></div>
 <p>设置后显示效果如下：</p>
 <div class="highlight"><pre><span></span><span class="o">[</span><span class="m">07</span>:00:31<span class="o">]</span> user@name:~$
+</pre></div>
+<p>http://blog.51cto.com/rebybyx/1329740</p>
+<p>用过了一段时间的Fedora Linux，感觉不错。</p>
+<p>但是在命令行界面下操作的时候，就总是感觉少点儿什么！没错，就是看时间和日期比较麻烦啦，要用命令去看，有时候就是懒得动了嘛……</p>
+<p>今天在学习bash变量的过程中，正好无意中发现了一个很方便的变量，那就是PS1啦～注意：是数字“1”，可不是字母哦～用这个变量，我们可以轻松的让我们的命令提示符内容中包含日期和时间，同时大家也可以自己定义哦～笔者改完的效果如下：</p>
+<p>[rebyx@linux Thu Nov 21 18:45 ~]$</p>
+<p>首先，大家可以用echo看看PS1这个变量中到底是什么样子的值，用下面的代码：</p>
+<p>echo $PS1</p>
+<p>执行过后可以看到如下结果：</p>
+<p>[\u@\h \W]\$
+到了现在，肯定有人想知道那写\u啊、\h啊什么的都是什么呢？这里我简单解释下哈～</p>
+<div class="highlight"><pre><span></span>   \u    ;现实当前用户的帐号名称，如“rebybyx”
+
+   \h    ;仅取主机名在第一个小数点之前的名字，如你的主机名为"linux.byx"时，就仅显示“linux”
+
+   \W    ;利用basename函数取得工作目录名称，所以仅会列出最后一个目录名
+
+   \d    ;可显示出“星期月日”的日期格式，如“Thu Nov 21”
+
+   \A    ;显示时间，为24小时格式的 “HH:MM”
+
+   \t     ;显示时间，为24小时格式的“HH:MM:SS”
+
+   \$    ;提示符，如果是root，则为#，否则为$
+
+
+
+   至于其他的字符，应该就是会原样输出，具体怎样，笔者也没有测试过，各位谁要是试过了的话，可以考虑联系下笔者哦～一起玩玩儿哈～
+
+
+
+   接下来，我们开始修改配置文件！大家应该都知道，当我们启动一个shell时会自动调用我们的主文件夹的.bash_profile和.bashrc等的几个文件，注意前边有一个“.”（就是小数点）！就是隐藏文件啦～用vi打开后，在文件的最后一行添加下面这行，实际上就是我们手动把PS1这个变量改变了！
+</pre></div>
+<p>$ vi ~/.bash_profile</p>
+<h1>或者下边这个</h1>
+<p>$ vi ~/.bashrc</p>
+<h1>添加下边这行代码</h1>
+<p>PS1='[\u@\h \d \A \W]\$ '</p>
+<div class="highlight"><pre><span></span>   这样就和笔者的一样了。如果你想要让所有用户的命令提示符都变成这样的话，那就要在/etc目录下修改咯～当我们在启动新的shell时，系统除了会调用我们主文件夹的那些隐藏文件外，还会调用/etc目录下的/etc/bashrc文件，我们就通过修改它来达到我们的目的啦～！不过需要注意的是，系统是先调用这个文件后才去调用我们主文件夹的文件的，所以说，这个时候最好把你对刚才那个文件的修改撤销掉，就是该回来！
+</pre></div>
+<p>先进入到root用户下，不然是不可以修改的！
+$ su -
+Password:</p>
+<h1>vi /etc/bashrc</h1>
+<div class="highlight"><pre><span></span>   然后同样添加上边的那行代码～
+
+
+
+   这样就ok啦～！大家注销掉再重新登陆下就可以看到效果啦～好玩儿吧～
 </pre></div></div>
     <footer>
 <p class="meta">
@@ -158,7 +207,7 @@
 
   <section>
   <h1>Tags</h1>
-    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
 
 
     <section>

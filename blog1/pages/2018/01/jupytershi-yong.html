@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>nearest_neighbor &mdash; 魑魅魍魉</title>
+  <title>jupyter使用 &mdash; 魑魅魍魉</title>
   <meta name="author" content="niult">
 
 
@@ -44,7 +44,7 @@
       <li >
         <a href="../../../category/00qi-ta-2.html">00.其他2</a>
       </li>
-      <li >
+      <li class="active">
         <a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
       </li>
       <li >
@@ -56,7 +56,7 @@
       <li >
         <a href="../../../category/03chang-yong-ming-ling.html">03.常用命令</a>
       </li>
-      <li class="active">
+      <li >
         <a href="../../../category/03shen-du-xue-xi.html">03深度学习</a>
       </li>
       <li >
@@ -86,7 +86,7 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">nearest_neighbor</h1>
+      <h1 class="entry-title">jupyter使用</h1>
     <p class="meta">
 <time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
 </header>
@@ -1067,12 +1067,9 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Nearest-Neighbor-Example">Nearest Neighbor Example<a class="anchor-link" href="#Nearest-Neighbor-Example">¶</a></h1><p>A nearest neighbor learning algorithm example using TensorFlow library.
-This example is using the MNIST database of handwritten digits (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>)</p>
-<ul>
-<li>Author: Aymeric Damien</li>
-<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
-</ul>
+<p><a href="https://www.howtoing.com/how-to-install-run-connect-to-jupyter-notebook-on-remote-server">教程</a></p>
+<p>ssh -L 8000:localhost:8888 sammy@your_server_ip</p>
+<p>ssh -L 8000:localhost:8888 www@10.2.6.199</p>
 </div>
 </div>
 </div>
@@ -1081,12 +1078,7 @@ This example is using the MNIST database of handwritten digits (<a href="http://
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-
-<span class="c1"># Import MINST data</span>
-<span class="kn">from</span> <span class="nn">tensorflow.examples.tutorials.mnist</span> <span class="k">import</span> <span class="n">input_data</span>
-<span class="n">mnist</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">read_data_sets</span><span class="p">(</span><span class="s2">"/tmp/data/"</span><span class="p">,</span> <span class="n">one_hot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pwd
 </pre></div>
 </div>
 </div>
@@ -1096,279 +1088,54 @@ This example is using the MNIST database of handwritten digits (<a href="http://
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Extracting MNIST_data/train-images-idx3-ubyte.gz
-Extracting MNIST_data/train-labels-idx1-ubyte.gz
-Extracting MNIST_data/t10k-images-idx3-ubyte.gz
-Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
+<pre>/Users/weidian/Documents/MyDiary
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># In this example, we limit mnist data</span>
-<span class="n">Xtr</span><span class="p">,</span> <span class="n">Ytr</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">next_batch</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span> <span class="c1">#5000 for training (nn candidates)</span>
-<span class="n">Xte</span><span class="p">,</span> <span class="n">Yte</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">next_batch</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="c1">#200 for testing</span>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="安装conda">安装conda<a class="anchor-link" href="#安装conda">¶</a></h1><h2 id="换源">换源<a class="anchor-link" href="#换源">¶</a></h2><p>conda config --add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</a><br/>
+conda config --add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a><br/>
+conda config --add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</a><br/>
+conda config --add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</a></p>
+<p>conda config --add channels <a href="https://mirrors.ustc.edu.cn/anaconda/pkgs/main/">https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</a><br/>
+conda config --add channels <a href="https://mirrors.ustc.edu.cn/anaconda/pkgs/free/">https://mirrors.ustc.edu.cn/anaconda/pkgs/free/</a><br/>
+conda config --add channels <a href="https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/">https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</a><br/>
+conda config --add channels <a href="https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/">https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/</a><br/>
+conda config --add channels <a href="https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/">https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/</a><br/>
+conda config --add channels <a href="https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/">https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/</a></p>
+<h2 id="设置搜索时显示通道地址">设置搜索时显示通道地址<a class="anchor-link" href="#设置搜索时显示通道地址">¶</a></h2><p>conda config --set show_channel_urls yes</p>
+<h1 id="安装软件">安装软件<a class="anchor-link" href="#安装软件">¶</a></h1><h2 id="安装jupyter及插件">安装jupyter及插件<a class="anchor-link" href="#安装jupyter及插件">¶</a></h2><div class="highlight"><pre><span></span>pip install jupyter
 
-<span class="c1"># tf Graph Input</span>
-<span class="n">xtr</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">"float"</span><span class="p">,</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">784</span><span class="p">])</span>
-<span class="n">xte</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">"float"</span><span class="p">,</span> <span class="p">[</span><span class="mi">784</span><span class="p">])</span>
+pip install jupyter_contrib_nbextensions
 
-<span class="c1"># Nearest Neighbor calculation using L1 Distance</span>
-<span class="c1"># Calculate L1 Distance</span>
-<span class="n">distance</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_sum</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">xtr</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">xte</span><span class="p">))),</span> <span class="n">reduction_indices</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># Prediction: Get min distance index (Nearest neighbor)</span>
-<span class="n">pred</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+jupyter contrib nbextension install --user 
 
-<span class="n">accuracy</span> <span class="o">=</span> <span class="mf">0.</span>
+pip install jupyter_nbextensions_configurator
 
-<span class="c1"># Initialize the variables (i.e. assign their default value)</span>
-<span class="n">init</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">()</span>
+jupyter nbextensions_configurator <span class="nb">enable</span> --user
+</pre></div>
+<h2 id="conda安装TensorFlow">conda安装TensorFlow<a class="anchor-link" href="#conda安装TensorFlow">¶</a></h2><div class="highlight"><pre><span></span>conda install tensorflow-gpu
+</pre></div>
+<h1 id="问题">问题<a class="anchor-link" href="#问题">¶</a></h1><h2 id="conda关闭ssl验证通道">conda关闭ssl验证通道<a class="anchor-link" href="#conda关闭ssl验证通道">¶</a></h2><div class="highlight"><pre><span></span>conda config --set ssl_verify <span class="nb">false</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start training</span>
-<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
-    <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
-
-    <span class="c1"># loop over test data</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Xte</span><span class="p">)):</span>
-        <span class="c1"># Get nearest neighbor</span>
-        <span class="n">nn_index</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">xtr</span><span class="p">:</span> <span class="n">Xtr</span><span class="p">,</span> <span class="n">xte</span><span class="p">:</span> <span class="n">Xte</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]})</span>
-        <span class="c1"># Get nearest neighbor class label and compare it to its true label</span>
-        <span class="nb">print</span> <span class="s2">"Test"</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">"Prediction:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Ytr</span><span class="p">[</span><span class="n">nn_index</span><span class="p">]),</span> \
-            <span class="s2">"True Class:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Yte</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="c1"># Calculate accuracy</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Ytr</span><span class="p">[</span><span class="n">nn_index</span><span class="p">])</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Yte</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
-            <span class="n">accuracy</span> <span class="o">+=</span> <span class="mf">1.</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">Xte</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="s2">"Done!"</span>
-    <span class="nb">print</span> <span class="s2">"Accuracy:"</span><span class="p">,</span> <span class="n">accuracy</span>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="jupyter-后台执行">jupyter 后台执行<a class="anchor-link" href="#jupyter-后台执行">¶</a></h1><h2 id="-"> <a class="anchor-link" href="#-">¶</a></h2><div class="highlight"><pre><span></span>nohup  jupyter notebook --config ./config/jupyter_notebook_config.py &gt; /data/jupyter/jupyter.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Test 0 Prediction: 7 True Class: 7
-Test 1 Prediction: 2 True Class: 2
-Test 2 Prediction: 1 True Class: 1
-Test 3 Prediction: 0 True Class: 0
-Test 4 Prediction: 4 True Class: 4
-Test 5 Prediction: 1 True Class: 1
-Test 6 Prediction: 4 True Class: 4
-Test 7 Prediction: 9 True Class: 9
-Test 8 Prediction: 8 True Class: 5
-Test 9 Prediction: 9 True Class: 9
-Test 10 Prediction: 0 True Class: 0
-Test 11 Prediction: 0 True Class: 6
-Test 12 Prediction: 9 True Class: 9
-Test 13 Prediction: 0 True Class: 0
-Test 14 Prediction: 1 True Class: 1
-Test 15 Prediction: 5 True Class: 5
-Test 16 Prediction: 4 True Class: 9
-Test 17 Prediction: 7 True Class: 7
-Test 18 Prediction: 3 True Class: 3
-Test 19 Prediction: 4 True Class: 4
-Test 20 Prediction: 9 True Class: 9
-Test 21 Prediction: 6 True Class: 6
-Test 22 Prediction: 6 True Class: 6
-Test 23 Prediction: 5 True Class: 5
-Test 24 Prediction: 4 True Class: 4
-Test 25 Prediction: 0 True Class: 0
-Test 26 Prediction: 7 True Class: 7
-Test 27 Prediction: 4 True Class: 4
-Test 28 Prediction: 0 True Class: 0
-Test 29 Prediction: 1 True Class: 1
-Test 30 Prediction: 3 True Class: 3
-Test 31 Prediction: 1 True Class: 1
-Test 32 Prediction: 3 True Class: 3
-Test 33 Prediction: 4 True Class: 4
-Test 34 Prediction: 7 True Class: 7
-Test 35 Prediction: 2 True Class: 2
-Test 36 Prediction: 7 True Class: 7
-Test 37 Prediction: 1 True Class: 1
-Test 38 Prediction: 2 True Class: 2
-Test 39 Prediction: 1 True Class: 1
-Test 40 Prediction: 1 True Class: 1
-Test 41 Prediction: 7 True Class: 7
-Test 42 Prediction: 4 True Class: 4
-Test 43 Prediction: 1 True Class: 2
-Test 44 Prediction: 3 True Class: 3
-Test 45 Prediction: 5 True Class: 5
-Test 46 Prediction: 1 True Class: 1
-Test 47 Prediction: 2 True Class: 2
-Test 48 Prediction: 4 True Class: 4
-Test 49 Prediction: 4 True Class: 4
-Test 50 Prediction: 6 True Class: 6
-Test 51 Prediction: 3 True Class: 3
-Test 52 Prediction: 5 True Class: 5
-Test 53 Prediction: 5 True Class: 5
-Test 54 Prediction: 6 True Class: 6
-Test 55 Prediction: 0 True Class: 0
-Test 56 Prediction: 4 True Class: 4
-Test 57 Prediction: 1 True Class: 1
-Test 58 Prediction: 9 True Class: 9
-Test 59 Prediction: 5 True Class: 5
-Test 60 Prediction: 7 True Class: 7
-Test 61 Prediction: 8 True Class: 8
-Test 62 Prediction: 9 True Class: 9
-Test 63 Prediction: 3 True Class: 3
-Test 64 Prediction: 7 True Class: 7
-Test 65 Prediction: 4 True Class: 4
-Test 66 Prediction: 6 True Class: 6
-Test 67 Prediction: 4 True Class: 4
-Test 68 Prediction: 3 True Class: 3
-Test 69 Prediction: 0 True Class: 0
-Test 70 Prediction: 7 True Class: 7
-Test 71 Prediction: 0 True Class: 0
-Test 72 Prediction: 2 True Class: 2
-Test 73 Prediction: 7 True Class: 9
-Test 74 Prediction: 1 True Class: 1
-Test 75 Prediction: 7 True Class: 7
-Test 76 Prediction: 3 True Class: 3
-Test 77 Prediction: 7 True Class: 2
-Test 78 Prediction: 9 True Class: 9
-Test 79 Prediction: 7 True Class: 7
-Test 80 Prediction: 7 True Class: 7
-Test 81 Prediction: 6 True Class: 6
-Test 82 Prediction: 2 True Class: 2
-Test 83 Prediction: 7 True Class: 7
-Test 84 Prediction: 8 True Class: 8
-Test 85 Prediction: 4 True Class: 4
-Test 86 Prediction: 7 True Class: 7
-Test 87 Prediction: 3 True Class: 3
-Test 88 Prediction: 6 True Class: 6
-Test 89 Prediction: 1 True Class: 1
-Test 90 Prediction: 3 True Class: 3
-Test 91 Prediction: 6 True Class: 6
-Test 92 Prediction: 9 True Class: 9
-Test 93 Prediction: 3 True Class: 3
-Test 94 Prediction: 1 True Class: 1
-Test 95 Prediction: 4 True Class: 4
-Test 96 Prediction: 1 True Class: 1
-Test 97 Prediction: 7 True Class: 7
-Test 98 Prediction: 6 True Class: 6
-Test 99 Prediction: 9 True Class: 9
-Test 100 Prediction: 6 True Class: 6
-Test 101 Prediction: 0 True Class: 0
-Test 102 Prediction: 5 True Class: 5
-Test 103 Prediction: 4 True Class: 4
-Test 104 Prediction: 9 True Class: 9
-Test 105 Prediction: 9 True Class: 9
-Test 106 Prediction: 2 True Class: 2
-Test 107 Prediction: 1 True Class: 1
-Test 108 Prediction: 9 True Class: 9
-Test 109 Prediction: 4 True Class: 4
-Test 110 Prediction: 8 True Class: 8
-Test 111 Prediction: 7 True Class: 7
-Test 112 Prediction: 3 True Class: 3
-Test 113 Prediction: 9 True Class: 9
-Test 114 Prediction: 7 True Class: 7
-Test 115 Prediction: 9 True Class: 4
-Test 116 Prediction: 9 True Class: 4
-Test 117 Prediction: 4 True Class: 4
-Test 118 Prediction: 9 True Class: 9
-Test 119 Prediction: 7 True Class: 2
-Test 120 Prediction: 5 True Class: 5
-Test 121 Prediction: 4 True Class: 4
-Test 122 Prediction: 7 True Class: 7
-Test 123 Prediction: 6 True Class: 6
-Test 124 Prediction: 7 True Class: 7
-Test 125 Prediction: 9 True Class: 9
-Test 126 Prediction: 0 True Class: 0
-Test 127 Prediction: 5 True Class: 5
-Test 128 Prediction: 8 True Class: 8
-Test 129 Prediction: 5 True Class: 5
-Test 130 Prediction: 6 True Class: 6
-Test 131 Prediction: 6 True Class: 6
-Test 132 Prediction: 5 True Class: 5
-Test 133 Prediction: 7 True Class: 7
-Test 134 Prediction: 8 True Class: 8
-Test 135 Prediction: 1 True Class: 1
-Test 136 Prediction: 0 True Class: 0
-Test 137 Prediction: 1 True Class: 1
-Test 138 Prediction: 6 True Class: 6
-Test 139 Prediction: 4 True Class: 4
-Test 140 Prediction: 6 True Class: 6
-Test 141 Prediction: 7 True Class: 7
-Test 142 Prediction: 2 True Class: 3
-Test 143 Prediction: 1 True Class: 1
-Test 144 Prediction: 7 True Class: 7
-Test 145 Prediction: 1 True Class: 1
-Test 146 Prediction: 8 True Class: 8
-Test 147 Prediction: 2 True Class: 2
-Test 148 Prediction: 0 True Class: 0
-Test 149 Prediction: 1 True Class: 2
-Test 150 Prediction: 9 True Class: 9
-Test 151 Prediction: 9 True Class: 9
-Test 152 Prediction: 5 True Class: 5
-Test 153 Prediction: 5 True Class: 5
-Test 154 Prediction: 1 True Class: 1
-Test 155 Prediction: 5 True Class: 5
-Test 156 Prediction: 6 True Class: 6
-Test 157 Prediction: 0 True Class: 0
-Test 158 Prediction: 3 True Class: 3
-Test 159 Prediction: 4 True Class: 4
-Test 160 Prediction: 4 True Class: 4
-Test 161 Prediction: 6 True Class: 6
-Test 162 Prediction: 5 True Class: 5
-Test 163 Prediction: 4 True Class: 4
-Test 164 Prediction: 6 True Class: 6
-Test 165 Prediction: 5 True Class: 5
-Test 166 Prediction: 4 True Class: 4
-Test 167 Prediction: 5 True Class: 5
-Test 168 Prediction: 1 True Class: 1
-Test 169 Prediction: 4 True Class: 4
-Test 170 Prediction: 9 True Class: 4
-Test 171 Prediction: 7 True Class: 7
-Test 172 Prediction: 2 True Class: 2
-Test 173 Prediction: 3 True Class: 3
-Test 174 Prediction: 2 True Class: 2
-Test 175 Prediction: 1 True Class: 7
-Test 176 Prediction: 1 True Class: 1
-Test 177 Prediction: 8 True Class: 8
-Test 178 Prediction: 1 True Class: 1
-Test 179 Prediction: 8 True Class: 8
-Test 180 Prediction: 1 True Class: 1
-Test 181 Prediction: 8 True Class: 8
-Test 182 Prediction: 5 True Class: 5
-Test 183 Prediction: 0 True Class: 0
-Test 184 Prediction: 2 True Class: 8
-Test 185 Prediction: 9 True Class: 9
-Test 186 Prediction: 2 True Class: 2
-Test 187 Prediction: 5 True Class: 5
-Test 188 Prediction: 0 True Class: 0
-Test 189 Prediction: 1 True Class: 1
-Test 190 Prediction: 1 True Class: 1
-Test 191 Prediction: 1 True Class: 1
-Test 192 Prediction: 0 True Class: 0
-Test 193 Prediction: 4 True Class: 9
-Test 194 Prediction: 0 True Class: 0
-Test 195 Prediction: 1 True Class: 3
-Test 196 Prediction: 1 True Class: 1
-Test 197 Prediction: 6 True Class: 6
-Test 198 Prediction: 4 True Class: 4
-Test 199 Prediction: 2 True Class: 2
-Done!
-Accuracy: 0.92
-</pre>
-</div>
-</div>
+<h2 id="停止">停止<a class="anchor-link" href="#停止">¶</a></h2><blockquote><p>ps -ef | grep jupyter</p>
+<p>kill -9 pid</p>
+</blockquote>
 </div>
 </div>
 </div>
@@ -1410,10 +1177,10 @@ Accuracy: 0.92
     </span>
   </span>
 <time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>  <span class="categories">
-    <a class='category' href='../../../category/03shen-du-xue-xi.html'>03深度学习</a>
+    <a class='category' href='../../../category/01chang-yong-gong-ju.html'>01常用工具</a>
   </span>
   <span class="categories">
-    <a class="category" href="../../../tag/tensorflowexample.html">TensorFlowExample</a>  </span>
+    <a class="category" href="../../../tag/jupyter.html">jupyter</a>,    <a class="category" href="../../../tag/python.html">python</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>
