@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>矩阵求导 &mdash; 魑魅魍魉</title>
+  <meta name="author" content="niult">
+
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="../../../favicon.png" rel="icon">
+
+  <link href="../../../theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="../../../">魑魅魍魉</a></h1>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+
+<ul class="main-navigation">
+      <li >
+        <a href="../../../category/00qi-ta.html">00.其他</a>
+      </li>
+      <li >
+        <a href="../../../category/00qi-ta-2.html">00.其他2</a>
+      </li>
+      <li >
+        <a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
+      </li>
+      <li >
+        <a href="../../../category/02gong-ju-shi-yong.html">02.工具使用</a>
+      </li>
+      <li >
+        <a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a>
+      </li>
+      <li >
+        <a href="../../../category/03chang-yong-ming-ling.html">03.常用命令</a>
+      </li>
+      <li >
+        <a href="../../../category/03shen-du-xue-xi.html">03深度学习</a>
+      </li>
+      <li >
+        <a href="../../../category/book-pydata.html">Book-pydata</a>
+      </li>
+      <li class="active">
+        <a href="../../../category/ji-chu-zhi-shi.html">基础知识</a>
+      </li>
+      <li >
+        <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a>
+      </li>
+      <li >
+        <a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a>
+      </li>
+      <li >
+        <a href="../../../category/shen-du-xue-xi.html">深度学习</a>
+      </li>
+      <li >
+        <a href="../../../category/tools.html">Tools</a>
+      </li>
+      <li >
+        <a href="../../../category/tools-numpy.html">Tools-numpy</a>
+      </li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">矩阵求导</h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content"><h1>前提及说明</h1>
+<p>第一次遇见矩阵求导，大多数人都是一头雾水，而搜了维基百科看也还是云里雾里，一堆的名词和一堆的表格到底都是什么呢？这里总结了我个人的学习经验，并且通过一个例子可以让你感受如何进行矩阵求导，下次再遇到需要进行矩阵求导的地方就不会措手不及。</p>
+<p>在进行概念的解说之前，首先大家需要先知道下面的这个前提：</p>
+<p>https://en.wikipedia.org/wiki/Matrix_calculus</p>
+<h1>基本分类</h1>
+<h2>前提</h2>
+<p>若$x$为向量，则默认$\boldsymbol x$为列向量，$\boldsymbol x^T$为行向量
+若$y$为向量，则默认$\boldsymbol y$为列向量，$\boldsymbol y^T$为行向量</p>
+<h2>标量/向量</h2>
+<p>$$\frac {\partial y}{\partial\boldsymbol x}=
+\begin{bmatrix} 
+ \frac {\partial y}{\partial x_1}
+\\frac {\partial y}{\partial x_2}
+\ ...
+\\frac {\partial y}{\partial x_n}
+\end{bmatrix} $$</p>
+<p>$$\frac {\partial y}{\partial\boldsymbol x^T}=
+\left ({\frac {\partial y^T}{\partial\boldsymbol x}} \right)^T=
+\left ({\frac {\partial y}{\partial\boldsymbol x}} \right)^T=
+\begin{bmatrix} 
+ \frac {\partial y}{\partial x_1}
+&amp;\frac {\partial y}{\partial x_2}
+&amp; ...
+&amp;\frac {\partial y}{\partial x_n}
+\end{bmatrix} 
+$$</p>
+<h2>向量/标量</h2>
+<p>$$\frac {\partial\boldsymbol y}{\partial x}=
+\begin{bmatrix} 
+  \frac {\partial y_1}{\partial x}
+\\frac {\partial y_2}{\partial x}
+\ ...
+\\frac {\partial y_n}{\partial x}
+\end{bmatrix} $$</p>
+<p>$$\frac {\partial\boldsymbol y^T}{\partial x}=
+\left(\frac {\partial\boldsymbol y}{\partial x^T}\right)^T=
+\left(\frac {\partial\boldsymbol y}{\partial x}\right)^T=
+\begin{bmatrix} 
+  \frac {\partial y_1}{\partial x}
+&amp;\frac {\partial y_2}{\partial x}
+&amp; ...
+&amp;\frac {\partial y_n}{\partial x}
+\end{bmatrix} 
+$$</p>
+<h2>向量/向量</h2>
+<h3>1 $\frac {\partial\boldsymbol y^T}{\partial\boldsymbol x}$按照$\boldsymbol x$展开</h3>
+<p>$$\frac {\partial\boldsymbol y^T}{\partial\boldsymbol x}
+=\begin{bmatrix} 
+ \frac {\partial\boldsymbol y^T}{\partial x_1}
+\\frac {\partial\boldsymbol y^T}{\partial x_2}
+\ ...
+\\frac {\partial\boldsymbol y^T}{\partial x_n}
+\end{bmatrix}
+=\begin{bmatrix} 
+  \frac {\partial y_1}{\partial x_1}
+  &amp; \frac {\partial y_2}{\partial x_1}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_1}
+\\frac {\partial y_1}{\partial x_2}
+  &amp; \frac {\partial y_2}{\partial x_2}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_2}
+\ ...
+  &amp; ...
+\\frac {\partial y_1}{\partial x_n}
+  &amp; \frac {\partial y_2}{\partial x_n}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_n}
+\end{bmatrix}
+$$</p>
+<h3>2 $\frac {\partial\boldsymbol y^T}{\partial\boldsymbol x}$按照$\boldsymbol y$展开</h3>
+<p>$$\frac {\partial\boldsymbol y^T}{\partial\boldsymbol x}
+=\begin{bmatrix} 
+  \frac {\partial y_1}{\partial\boldsymbol x}
+&amp;\frac {\partial y_2}{\partial\boldsymbol x}
+&amp; ...
+&amp;\frac {\partial y_m}{\partial\boldsymbol x}
+\end{bmatrix}
+=\begin{bmatrix} 
+  \frac {\partial y_1}{\partial x_1}
+  &amp; \frac {\partial y_2}{\partial x_1}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_1}
+\\frac {\partial y_1}{\partial x_2}
+  &amp; \frac {\partial y_2}{\partial x_2}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_2}
+\ ...
+  &amp; ...
+\\frac {\partial y_1}{\partial x_n}
+  &amp; \frac {\partial y_2}{\partial x_n}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_n}
+\end{bmatrix} 
+$$</p>
+<h3>3 $\frac {\partial\boldsymbol y}{\partial\boldsymbol x^T}$按照$\boldsymbol x$展开</h3>
+<p>$$\frac {\partial\boldsymbol y}{\partial\boldsymbol x^T}
+=\begin{bmatrix} 
+  \frac {\partial\boldsymbol y}{\partial x_1}
+&amp;\frac {\partial\boldsymbol y}{\partial x_2}
+&amp; ...
+&amp;\frac {\partial\boldsymbol y}{\partial x_n}
+\end{bmatrix}
+=\begin{bmatrix} 
+  \frac {\partial y_1}{\partial x_1}
+  &amp; \frac {\partial y_1}{\partial x_2}
+  &amp; ...
+  &amp; \frac {\partial y_1}{\partial x_n}
+\\frac {\partial y_2}{\partial x_1}
+  &amp; \frac {\partial y_2}{\partial x_2}
+  &amp; ...
+  &amp; \frac {\partial y_2}{\partial x_n}
+\ ...
+  &amp; ...
+\\frac {\partial y_m}{\partial x_1}
+  &amp; \frac {\partial y_m}{\partial x_2}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_n}
+\end{bmatrix} 
+$$</p>
+<h3>4 $\frac {\partial\boldsymbol y}{\partial\boldsymbol x^T}$按照$\boldsymbol y$展开</h3>
+<p>$$\frac {\partial\boldsymbol y}{\partial\boldsymbol x^T}
+=\begin{bmatrix} 
+ \frac {\partial y_1}{\partial\boldsymbol x^T}
+\\frac {\partial y_2}{\partial\boldsymbol x^T}
+\ ...
+\\frac {\partial y_m}{\partial\boldsymbol x^T}
+\end{bmatrix}
+=\begin{bmatrix} 
+  \frac {\partial y_1}{\partial x_1}
+  &amp; \frac {\partial y_1}{\partial x_2}
+  &amp; ...
+  &amp; \frac {\partial y_1}{\partial x_n}
+\\frac {\partial y_2}{\partial x_1}
+  &amp; \frac {\partial y_2}{\partial x_2}
+  &amp; ...
+  &amp; \frac {\partial y_2}{\partial x_n}
+\ ...
+  &amp; ...
+\\frac {\partial y_m}{\partial x_1}
+  &amp; \frac {\partial y_m}{\partial x_2}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_n}
+\end{bmatrix} 
+$$</p>
+<h1>标量/矩阵</h1>
+<p>$$\frac {\partial y}{\partial\boldsymbol X}
+=\frac {\partial y}{\partial{
+\begin{bmatrix} 
+  \boldsymbol x_1^T
+\\boldsymbol x_2^T
+\ ...
+\\boldsymbol x_p^T
+\end{bmatrix}
+}}
+=\begin{bmatrix} 
+  \frac {\partial y}{\boldsymbol x_1^T}
+\\frac {\partial y}{\boldsymbol x_2^T}
+\ ...
+\\frac {\partial y}{\boldsymbol x_p^T}
+\end{bmatrix}
+=\begin{bmatrix} 
+  \frac {\partial y}{\partial x_{11}}
+  &amp; \frac {\partial y}{\partial x_{21}}
+  &amp; ...
+  &amp; \frac {\partial y}{\partial x_{p1}}
+\\frac {\partial y}{\partial x_{12}}
+  &amp; \frac {\partial y}{\partial x_{22}}
+  &amp; ...
+  &amp; \frac {\partial y}{\partial x_{p2}}
+\ ...
+  &amp; ...
+\\frac {\partial y}{\partial x_{1q}}
+  &amp; \frac {\partial y}{\partial x_{2q}}
+  &amp; ...
+  &amp; \frac {\partial y}{\partial x_{pq}}
+\end{bmatrix} 
+$$</p>
+<h1>矩阵/标量</h1>
+<p>$$\frac {\partial\boldsymbol Y}{\partial x}=
+\begin{bmatrix} 
+  \frac {\partial y_{11}}{\partial x}
+  &amp; \frac {\partial y_{12}}{\partial x}
+  &amp; ...
+  &amp; \frac {\partial y_{1n}}{\partial x}
+\\frac {\partial y_{21}}{\partial x}
+  &amp; \frac {\partial y_{22}}{\partial x}
+  &amp; ...
+  &amp; \frac {\partial y_{2n}}{\partial x}
+\ ...
+  &amp; ...
+\\frac {\partial y_{m1}}{\partial x}
+  &amp; \frac {\partial y_{m2}}{\partial x}
+  &amp; ...
+  &amp; \frac {\partial y_{mn}}{\partial x}
+\end{bmatrix} 
+$$</p>
+<h1>一个求导的例子</h1>
+<p>问题</p>
+<p>$$\frac {\partial {(y−Xw)^T(y−Xw)}}{\partial w}$$</p>
+<p>说明： $y$、$w$为列向量，$X$为矩阵</p>
+<h2>式子演化</h2>
+<p>看到这个例子不要急着去查表求导，先看看它的形式，是$u(w)∗v(w)$的形式，这种形式一般求导较为复杂，因此为了简化运算，我们先把式子展开成下面的样子（注意：$(Xw)^T=w^TX^T$）： </p>
+<p>$$\frac{\partial(y^Ty−y^TXw−w^TX^Ty+w^TX^TXw)}{\partial w}$$</p>
+<p>然后就可以写成四个部分求导的形式如下（累加后求导=求导后累加）： </p>
+<p>$$
+\frac{\partial y^Ty}{\partial w}
+−\frac{\partial y^TXw}{\partial w}
+−\frac{\partial w^TX^Ty}{\partial w}
++\frac{\partial w^TX^TXw}{\partial w}
+$$</p>
+<h2>求导</h2>
+<p>$\frac{\partial y^Ty}{\partial w}$求导 : </p>
+<p>$$\frac{\partial y^Ty}{\partial w}=0$$</p>
+<p>说明：分子部分为标量，分母部分为向量，找到维基百科中的Scalar-by-vector identities表格，在表格中匹配形式到第1行的位置，因为分母为列向量，因此为分母布局，对应的求导结果就是 0 。</p>
+<p>$\frac{\partial y^TXw}{\partial w}$求导 : </p>
+<p>$$\frac{\partial y^TXw}{\partial w}=X^Ty$$</p>
+<p>说明：同样的，在维基百科中的Scalar-by-vector identities表格，在表格中匹配形式到第11行的位置，对应的求导结果就是 $X^Ty$ 。</p>
+<p>$\frac{\partial w^TX^Ty}{\partial w}$求导 :</p>
+<p>$$\frac{\partial w^TX^Ty}{\partial w}=\frac{\partial(w^TX^Ty)^T}{\partial w}=\frac{\partial y^TXw}{\partial w}=X^Ty$$</p>
+<p>说明：因为分子为标量，标量的转置等于本身，所以对分子进行转置操作，其等价于第二部分。</p>
+<p>$\frac{\partial w^TX^TXw}{\partial w}$求导 : </p>
+<p>$$\frac{\partial w^TX^TXw}{\partial w}=2X^TXw$$</p>
+<p>说明：同样的，在维基百科中的Scalar-by-vector identities表格，在表格中匹配形式到第13行的位置，矩阵的转置乘上本身（$X^TX$）为对称矩阵当做表格中的A ，所以得到求导结果 $2X^TXw$ 。</p>
+<h2>整合</h2>
+<p>把四个部分求导结果进行相应的加减就可以得到最终的结果： </p>
+<p>$$\frac{\partial y^Ty}{\partial w}
+−\frac{\partial y^TXw}{\partial w}
+−\frac{\partial w^TX^Ty}{\partial w}
++\frac{\partial w^TX^TXw}{\partial w}
+=0−X^Ty−X^Ty+2X^TXw=−2X^T(y+Xw)$$</p>
+<p>现在你再看看维基百科里那成堆的表格，是不是觉得异常实用了！</p>
+<p>$$\frac {\partial\boldsymbol y^T}{\partial\boldsymbol x}
+=\begin{bmatrix} 
+ \frac {\partial\boldsymbol y^T}{\partial x_1}
+\\frac {\partial\boldsymbol y^T}{\partial x_2}
+\ ...
+\\frac {\partial\boldsymbol y^T}{\partial x_n}
+\end{bmatrix}
+=\begin{bmatrix} 
+  \frac {\partial y_1}{\partial x_1}
+  &amp; \frac {\partial y_2}{\partial x_1}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_1}
+\\frac {\partial y_1}{\partial x_2}
+  &amp; \frac {\partial y_2}{\partial x_2}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_2}
+\ ...
+  &amp; ...
+\\frac {\partial y_1}{\partial x_n}
+  &amp; \frac {\partial y_2}{\partial x_n}
+  &amp; ...
+  &amp; \frac {\partial y_m}{\partial x_n}
+\end{bmatrix}
+$$</p>
+<p>$$\boldsymbol y=\boldsymbol A^T \boldsymbol x$$</p>
+<p>$$\boldsymbol y=\boldsymbol A^T \boldsymbol x$$</p>
+<p>$$\frac {\partial\boldsymbol y^T}{\partial\boldsymbol x}
+=\frac {\partial\boldsymbol x^T \boldsymbol A}{\partial\boldsymbol x}
+$$</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        niult
+    </span>
+  </span>
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>  <span class="categories">
+    <a class='category' href='../../../category/ji-chu-zhi-shi.html'>基础知识</a>
+  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="../../../pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
+      </li>
+      <li class="post">
+          <a href="../../../pages/2019/01/numpyjiao-cheng-02.html">numpy教程02</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="../../../category/00qi-ta.html">00.其他</a></li>
+        <li><a href="../../../category/00qi-ta-2.html">00.其他2</a></li>
+        <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
+        <li><a href="../../../category/02gong-ju-shi-yong.html">02.工具使用</a></li>
+        <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
+        <li><a href="../../../category/03chang-yong-ming-ling.html">03.常用命令</a></li>
+        <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
+        <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
+        <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
+        <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
+        <li><a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
+        <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
+        <li><a href="../../../category/tools.html">tools</a></li>
+        <li><a href="../../../category/tools-numpy.html">tools-numpy</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/latex.html">latex</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/plot.html">plot</a>,    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+
+
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="#" target="_blank">You can add links in your config file</a></li>
+            <li><a href="#" target="_blank">Another social link</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://getpelican.com/" target="_blank">pelican</a></li>
+            <li><a href="http://python.org/" target="_blank">python</a></li>
+            <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+        </ul>
+    </section>
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+        活到老，学到老，玩到老
+    <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  <script src="../../../theme/js/modernizr-2.0.js"></script>
+  <script src="../../../theme/js/ender.js"></script>
+  <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-127062347-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-127062347-1');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>
