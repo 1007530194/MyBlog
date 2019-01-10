@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>00-Introduction-to-NumPy &mdash; 魑魅魍魉</title>
+  <title>latex公式编号实例 &mdash; 魑魅魍魉</title>
   <meta name="author" content="niult">
 
 
@@ -74,10 +74,10 @@
       <li >
         <a href="../../../category/shen-du-xue-xi.html">深度学习</a>
       </li>
-      <li >
+      <li class="active">
         <a href="../../../category/tools.html">Tools</a>
       </li>
-      <li class="active">
+      <li >
         <a href="../../../category/tools-numpy.html">Tools-numpy</a>
       </li>
 </ul></nav>
@@ -86,9 +86,9 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">00-Introduction-to-NumPy</h1>
+      <h1 class="entry-title">latex公式编号实例</h1>
     <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>    </p>
 </header>
 
   <div class="entry-content"><style type="text/css">/*!
@@ -1067,7 +1067,15 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction-to-NumPy">Introduction to NumPy<a class="anchor-link" href="#Introduction-to-NumPy">¶</a></h1>
+<h1 id="定理引用">定理引用<a class="anchor-link" href="#定理引用">¶</a></h1><p>\begin{theorem} \label{theo:dotp}
+ $u$ 和 $v$ 是两个向量 $\mathbb{R}^n$. 点成可以表示成
+\begin{equation}
+\label{eq:dotp}
+u^Tv = |u||v| \cos \theta,
+\end{equation}
+where $\theta$ is the angle between $u$ and $v$ ...
+\end{theorem}</p>
+<p>定理 \ref{theo:dotp} 举了一个例子</p>
 </div>
 </div>
 </div>
@@ -1075,44 +1083,13 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This chapter, along with chapter 3, outlines techniques for effectively loading, storing, and manipulating in-memory data in Python.
-The topic is very broad: datasets can come from a wide range of sources and a wide range of formats, including be collections of documents, collections of images, collections of sound clips, collections of numerical measurements, or nearly anything else.
-Despite this apparent heterogeneity, it will help us to think of all data fundamentally as arrays of numbers.</p>
-<p>For example, images–particularly digital images–can be thought of as simply two-dimensional arrays of numbers representing pixel brightness across the area.
-Sound clips can be thought of as one-dimensional arrays of intensity versus time.
-Text can be converted in various ways into numerical representations, perhaps binary digits representing the frequency of certain words or pairs of words.
-No matter what the data are, the first step in making it analyzable will be to transform them into arrays of numbers.
-(We will discuss some specific examples of this process later in <a href="05.04-Feature-Engineering.ipynb">Feature Engineering</a>)</p>
-<p>For this reason, efficient storage and manipulation of numerical arrays is absolutely fundamental to the process of doing data science.
-We'll now take a look at the specialized tools that Python has for handling such numerical arrays: the NumPy package, and the Pandas package (discussed in Chapter 3).</p>
-<p>This chapter will cover NumPy in detail. NumPy (short for <em>Numerical Python</em>) provides an efficient interface to store and operate on dense data buffers.
-In some ways, NumPy arrays are like Python's built-in <code>list</code> type, but NumPy arrays provide much more efficient storage and data operations as the arrays grow larger in size.
-NumPy arrays form the core of nearly the entire ecosystem of data science tools in Python, so time spent learning to use NumPy effectively will be valuable no matter what aspect of data science interests you.</p>
-<p>If you followed the advice outlined in the Preface and installed the Anaconda stack, you already have NumPy installed and ready to go.
-If you're more the do-it-yourself type, you can go to <a href="http://www.numpy.org/">http://www.numpy.org/</a> and follow the installation instructions found there.
-Once you do, you can import NumPy and double-check the version:</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [1]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[1]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>'1.14.5'</pre>
-</div>
-</div>
+<h1 id="公式引用">公式引用<a class="anchor-link" href="#公式引用">¶</a></h1><p>$u$ 和 $v$ 是两个向量 $\mathbb{R}^n$. 点成可以表示成</p>
+<p>\begin{equation}
+\label{eq:dotp2}
+u^Tv = |u||v| \cos \theta,
+\end{equation}
+where $\theta$ is the angle between $u$ and $v$ ...</p>
+<p>公式 \ref{eq:dotp2} 和\ref{eq:dotp} 举了一个例子</p>
 </div>
 </div>
 </div>
@@ -1120,42 +1097,7 @@ Once you do, you can import NumPy and double-check the version:</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For the pieces of the package discussed here, I'd recommend NumPy version 1.8 or later.
-By convention, you'll find that most people in the SciPy/PyData world will import NumPy using <code>np</code> as an alias:</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Throughout this chapter, and indeed the rest of the book, you'll find that this is the way we will import and use NumPy.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Reminder-about-Built-In-Documentation">Reminder about Built In Documentation<a class="anchor-link" href="#Reminder-about-Built-In-Documentation">¶</a></h2><p>As you read through this chapter, don't forget that IPython gives you the ability to quickly explore the contents of a package (by using the tab-completion feature), as well as the documentation of various functions (using the <code>?</code> character – Refer back to <a href="01.01-Help-And-Documentation.ipynb">Help and Documentation in IPython</a>).</p>
-<p>For example, to display all the contents of the numpy namespace, you can type this:</p>
-<div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">np</span><span class="o">.&lt;</span><span class="n">TAB</span><span class="o">&gt;</span>
-</pre></div>
-<p>And to display NumPy's built-in documentation, you can use this:</p>
-<div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> np<span class="o">?</span>
-</pre></div>
-<p>More detailed documentation, along with tutorials and other resources, can be found at <a href="http://www.numpy.org">http://www.numpy.org</a>.</p>
+<p>公式 \ref{eq:dotp2} 和\ref{eq:dotp} 举了一个例子</p>
 </div>
 </div>
 </div>
@@ -1196,11 +1138,11 @@ By convention, you'll find that most people in the SciPy/PyData world will impor
         niult
     </span>
   </span>
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>  <span class="categories">
-    <a class='category' href='../../../category/tools-numpy.html'>tools-numpy</a>
+<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>  <span class="categories">
+    <a class='category' href='../../../category/tools.html'>tools</a>
   </span>
   <span class="categories">
-    <a class="category" href="../../../tag/python.html">python</a>,    <a class="category" href="../../../tag/numpy.html">numpy</a>  </span>
+    <a class="category" href="../../../tag/python.html">python</a>,    <a class="category" href="../../../tag/latex.html">latex</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>
@@ -1211,19 +1153,19 @@ By convention, you'll find that most people in the SciPy/PyData world will impor
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="../../../pages/2018/01/00-introduction-to-numpy.html">00-Introduction-to-NumPy</a>
+          <a href="../../../pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2018/01/00-numpy.html">00-numpy</a>
+          <a href="../../../pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2018/01/01-understanding-data-types.html">01-Understanding-Data-Types</a>
+          <a href="../../../pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2018/01/02-the-basics-of-numpy-arrays.html">02-The-Basics-Of-NumPy-Arrays</a>
+          <a href="../../../pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2018/01/03-computation-on-arrays-ufuncs.html">03-Computation-on-arrays-ufuncs</a>
+          <a href="../../../pages/2019/01/numpyjiao-cheng-02.html">numpy教程02</a>
       </li>
     </ul>
   </section>
@@ -1251,7 +1193,7 @@ By convention, you'll find that most people in the SciPy/PyData world will impor
 
   <section>
   <h1>Tags</h1>
-    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/latex.html">latex</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/plot.html">plot</a>,    <a href="../../../tag/gong-ju.html">工具</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
 
 
     <section>
