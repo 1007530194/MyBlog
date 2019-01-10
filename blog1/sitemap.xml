@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/</loc>
-<lastmod>2019-01-02T19:57:35-00:00</lastmod>
+<lastmod>2019-01-10T15:11:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/archives.html</loc>
-<lastmod>2019-01-02T19:57:35-00:00</lastmod>
+<lastmod>2019-01-10T15:11:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/tags.html</loc>
-<lastmod>2019-01-02T19:57:35-00:00</lastmod>
+<lastmod>2019-01-10T15:11:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/categories.html</loc>
-<lastmod>2019-01-02T19:57:35-00:00</lastmod>
+<lastmod>2019-01-10T15:11:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -145,6 +145,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/pages/2018/01/bo-ke-jian-jie.html</loc>
+<lastmod>2018-01-01T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2018/01/fen-ci-gong-ju-pkuseg.html</loc>
 <lastmod>2018-01-01T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
