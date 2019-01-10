@@ -1064,16 +1064,14 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Vectorized-String-Operations">Vectorized String Operations<a class="anchor-link" href="#Vectorized-String-Operations">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>One strength of Python is its relative ease in handling and manipulating string data.
 Pandas builds on this and provides a comprehensive set of <em>vectorized string operations</em> that become an essential piece of the type of munging required when working with (read: cleaning up) real-world data.
@@ -1082,8 +1080,7 @@ In this section, we'll walk through some of the Pandas string operations, and th
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducing-Pandas-String-Operations">Introducing Pandas String Operations<a class="anchor-link" href="#Introducing-Pandas-String-Operations">¶</a></h2><p>We saw in previous sections how tools like NumPy and Pandas generalize arithmetic operations so that we can easily and quickly perform the same operation on many array elements. For example:</p>
 </div>
@@ -1113,8 +1110,7 @@ In this section, we'll walk through some of the Pandas string operations, and th
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This <em>vectorization</em> of operations simplifies the syntax of operating on arrays of data: we no longer have to worry about the size or shape of the array, but just about what operation we want done.
 For arrays of strings, NumPy does not provide such simple access, and thus you're stuck using a more verbose loop syntax:</p>
@@ -1144,8 +1140,7 @@ For arrays of strings, NumPy does not provide such simple access, and thus you'r
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Pandas includes features to address both this need for vectorized string operations and for correctly handling missing data via the <code>str</code> attribute of Pandas Series and Index objects containing strings.
 So, for example, suppose we create a Pandas Series with this data:</p>
@@ -1180,16 +1175,14 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Using tab completion on this <code>str</code> attribute will list all the vectorized string methods available to Pandas.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Tables-of-Pandas-String-Methods">Tables of Pandas String Methods<a class="anchor-link" href="#Tables-of-Pandas-String-Methods">¶</a></h2><p>If you have a good understanding of string manipulation in Python, most of Pandas string syntax is intuitive enough that it's probably sufficient to just list a table of available methods; we will start with that here, before diving deeper into a few of the subtleties.
 The examples in this section use the following series of names:</p>
@@ -1209,8 +1202,7 @@ The examples in this section use the following series of names:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Methods-similar-to-Python-string-methods">Methods similar to Python string methods<a class="anchor-link" href="#Methods-similar-to-Python-string-methods">¶</a></h3><p>Nearly all Python's built-in string methods are mirrored by a Pandas vectorized string method. Here is a list of Pandas <code>str</code> methods that mirror Python string methods:</p>
 <table>
@@ -1304,8 +1296,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>But some others return numbers:</p>
 </div>
@@ -1339,8 +1330,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Or Boolean values:</p>
 </div>
@@ -1374,8 +1364,7 @@ dtype: bool</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Still others return lists or other compound values for each element:</p>
 </div>
@@ -1409,16 +1398,14 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We'll see further manipulations of this kind of series-of-lists object as we continue our discussion.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Methods-using-regular-expressions">Methods using regular expressions<a class="anchor-link" href="#Methods-using-regular-expressions">¶</a></h3><p>In addition, there are several methods that accept regular expressions to examine the content of each string element, and follow some of the API conventions of Python's built-in <code>re</code> module:</p>
 <table>
@@ -1466,8 +1453,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With these, you can do a wide range of interesting operations.
 For example, we can extract the first name from each by asking for a contiguous group of characters at the beginning of each element:</p>
@@ -1502,8 +1488,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Or we can do something more complicated, like finding all names that start and end with a consonant, making use of the start-of-string (<code>^</code>) and end-of-string (<code>$</code>) regular expression characters:</p>
 </div>
@@ -1537,16 +1522,14 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The ability to concisely apply regular expressions across <code>Series</code> or <code>Dataframe</code> entries opens up many possibilities for analysis and cleaning of data.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Miscellaneous-methods">Miscellaneous methods<a class="anchor-link" href="#Miscellaneous-methods">¶</a></h3><p>Finally, there are some miscellaneous methods that enable other convenient operations:</p>
 <table>
@@ -1602,8 +1585,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Vectorized-item-access-and-slicing">Vectorized item access and slicing<a class="anchor-link" href="#Vectorized-item-access-and-slicing">¶</a></h4><p>The <code>get()</code> and <code>slice()</code> operations, in particular, enable vectorized element access from each array.
 For example, we can get a slice of the first three characters of each array using <code>str.slice(0, 3)</code>.
@@ -1639,8 +1621,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Indexing via <code>df.str.get(i)</code> and <code>df.str[i]</code> is likewise similar.</p>
 <p>These <code>get()</code> and <code>slice()</code> methods also let you access elements of arrays returned by <code>split()</code>.
@@ -1676,8 +1657,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Indicator-variables">Indicator variables<a class="anchor-link" href="#Indicator-variables">¶</a></h4><p>Another method that requires a bit of extra explanation is the <code>get_dummies()</code> method.
 This is useful when your data has a column containing some sort of coded indicator.
@@ -1765,8 +1745,7 @@ For example, we might have a dataset that contains information in the form of co
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>get_dummies()</code> routine lets you quickly split-out these indicator variables into a <code>DataFrame</code>:</p>
 </div>
@@ -1863,8 +1842,7 @@ For example, we might have a dataset that contains information in the form of co
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With these operations as building blocks, you can construct an endless range of string processing procedures when cleaning your data.</p>
 <p>We won't dive further into these methods here, but I encourage you to read through <a href="http://pandas.pydata.org/pandas-docs/stable/text.html">"Working with Text Data"</a> in the Pandas online documentation, or to refer to the resources listed in <a href="03.13-Further-Resources.ipynb">Further Resources</a>.</p>
@@ -1872,8 +1850,7 @@ For example, we might have a dataset that contains information in the form of co
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Example:-Recipe-Database">Example: Recipe Database<a class="anchor-link" href="#Example:-Recipe-Database">¶</a></h2><p>These vectorized string operations become most useful in the process of cleaning up messy, real-world data.
 Here I'll walk through an example of that, using an open recipe database compiled from various sources on the Web.
@@ -1896,8 +1873,7 @@ Our goal will be to parse the recipe data into ingredient lists, so we can quick
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The database is in JSON format, so we will try <code>pd.read_json</code> to read it:</p>
 </div>
@@ -1929,8 +1905,7 @@ Our goal will be to parse the recipe data into ingredient lists, so we can quick
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Oops! We get a <code>ValueError</code> mentioning that there is "trailing data."
 Searching for the text of this error on the Internet, it seems that it's due to using a file in which <em>each line</em> is itself a valid JSON, but the full file is not.
@@ -1970,8 +1945,7 @@ Let's check if this interpretation is true:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Yes, apparently each line is a valid JSON, so we'll need to string them together.
 One way we can do this is to actually construct a string representation containing all these JSON entries, and then load the whole thing with <code>pd.read_json</code>:</p>
@@ -2028,8 +2002,7 @@ One way we can do this is to actually construct a string representation containi
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We see there are nearly 200,000 recipes, and 17 columns.
 Let's take a look at one row to see what we have:</p>
@@ -2064,8 +2037,7 @@ Let's take a look at one row to see what we have:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There is a lot of information there, but much of it is in a very messy form, as is typical of data scraped from the Web.
 In particular, the ingredient list is in string format; we're going to have to carefully extract the information we're interested in.
@@ -2101,8 +2073,7 @@ Let's start by taking a closer look at the ingredients:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The ingredient lists average 250 characters long, with a minimum of 0 and a maximum of nearly 10,000 characters!</p>
 <p>Just out of curiousity, let's see which recipe has the longest ingredient list:</p>
@@ -2137,8 +2108,7 @@ Let's start by taking a closer look at the ingredients:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>That certainly looks like an involved recipe.</p>
 <p>We can do other aggregate explorations; for example, let's see how many of the recipes are for breakfast food:</p>
@@ -2173,8 +2143,7 @@ Let's start by taking a closer look at the ingredients:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Or how many of the recipes list cinnamon as an ingredient:</p>
 </div>
@@ -2208,8 +2177,7 @@ Let's start by taking a closer look at the ingredients:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We could even look to see whether any recipes misspell the ingredient as "cinamon":</p>
 </div>
@@ -2243,8 +2211,7 @@ Let's start by taking a closer look at the ingredients:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is the type of essential data exploration that is possible with Pandas string tools.
 It is data munging like this that Python really excels at.</p>
@@ -2252,8 +2219,7 @@ It is data munging like this that Python really excels at.</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="A-simple-recipe-recommender">A simple recipe recommender<a class="anchor-link" href="#A-simple-recipe-recommender">¶</a></h3><p>Let's go a bit further, and start working on a simple recipe recommendation system: given a list of ingredients, find a recipe that uses all those ingredients.
 While conceptually straightforward, the task is complicated by the heterogeneity of the data: there is no easy operation, for example, to extract a clean list of ingredients from each row.
@@ -2275,8 +2241,7 @@ For simplicity, let's just stick with herbs and spices for the time being:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can then build a Boolean <code>DataFrame</code> consisting of True and False values, indicating whether this ingredient appears in the list:</p>
 </div>
@@ -2322,8 +2287,7 @@ For simplicity, let's just stick with herbs and spices for the time being:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now, as an example, let's say we'd like to find a recipe that uses parsley, paprika, and tarragon.
 We can compute this very quickly using the <code>query()</code> method of <code>DataFrame</code>s, discussed in <a href="03.12-Performance-Eval-and-Query.ipynb">High-Performance Pandas: <code>eval()</code> and <code>query()</code></a>:</p>
@@ -2360,8 +2324,7 @@ We can compute this very quickly using the <code>query()</code> method of <code>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We find only 10 recipes with this combination; let's use the index returned by this selection to discover the names of the recipes that have this combination:</p>
 </div>
@@ -2395,16 +2358,14 @@ We can compute this very quickly using the <code>query()</code> method of <code>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that we have narrowed down our recipe selection by a factor of almost 20,000, we are in a position to make a more informed decision about what we'd like to cook for dinner.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Going-further-with-recipes">Going further with recipes<a class="anchor-link" href="#Going-further-with-recipes">¶</a></h3><p>Hopefully this example has given you a bit of a flavor (ba-dum!) for the types of data cleaning operations that are efficiently enabled by Pandas string methods.
 Of course, building a very robust recipe recommendation system would require a <em>lot</em> more work!
@@ -2414,16 +2375,14 @@ This points to the truism that in data science, cleaning and munging of real-wor
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Working-with-Time-Series">Working with Time Series<a class="anchor-link" href="#Working-with-Time-Series">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Pandas was developed in the context of financial modeling, so as you might expect, it contains a fairly extensive set of tools for working with dates, times, and time-indexed data.
 Date and time data comes in a few flavors, which we will discuss here:</p>
@@ -2440,8 +2399,7 @@ After listing some resources that go into more depth, we will review some short 
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Dates-and-Times-in-Python">Dates and Times in Python<a class="anchor-link" href="#Dates-and-Times-in-Python">¶</a></h2><p>The Python world has a number of available representations of dates, times, deltas, and timespans.
 While the time series tools provided by Pandas tend to be the most useful for data science applications, it is helpful to see their relationship to other packages used in Python.</p>
@@ -2449,8 +2407,7 @@ While the time series tools provided by Pandas tend to be the most useful for da
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Native-Python-dates-and-times:-datetime-and-dateutil">Native Python dates and times: <code>datetime</code> and <code>dateutil</code><a class="anchor-link" href="#Native-Python-dates-and-times:-datetime-and-dateutil">¶</a></h3><p>Python's basic objects for working with dates and times reside in the built-in <code>datetime</code> module.
 Along with the third-party <code>dateutil</code> module, you can use it to quickly perform a host of useful functionalities on dates and times.
@@ -2481,8 +2438,7 @@ For example, you can manually build a date using the <code>datetime</code> type:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Or, using the <code>dateutil</code> module, you can parse dates from a variety of string formats:</p>
 </div>
@@ -2512,8 +2468,7 @@ For example, you can manually build a date using the <code>datetime</code> type:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Once you have a <code>datetime</code> object, you can do things like printing the day of the week:</p>
 </div>
@@ -2541,8 +2496,7 @@ For example, you can manually build a date using the <code>datetime</code> type:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the final line, we've used one of the standard string format codes for printing dates (<code>"%A"</code>), which you can read about in the <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">strftime section</a> of Python's <a href="https://docs.python.org/3/library/datetime.html">datetime documentation</a>.
 Documentation of other useful date utilities can be found in <a href="http://labix.org/python-dateutil">dateutil's online documentation</a>.
@@ -2554,8 +2508,7 @@ just as lists of Python numerical variables are suboptimal compared to NumPy-sty
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Typed-arrays-of-times:-NumPy's-datetime64">Typed arrays of times: NumPy's <code>datetime64</code><a class="anchor-link" href="#Typed-arrays-of-times:-NumPy's-datetime64">¶</a></h3><p>The weaknesses of Python's datetime format inspired the NumPy team to add a set of native time series data type to NumPy.
 The <code>datetime64</code> dtype encodes dates as 64-bit integers, and thus allows arrays of dates to be represented very compactly.
@@ -2587,8 +2540,7 @@ The <code>datetime64</code> requires a very specific input format:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Once we have this date formatted, however, we can quickly do vectorized operations on it:</p>
 </div>
@@ -2619,8 +2571,7 @@ The <code>datetime64</code> requires a very specific input format:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Because of the uniform type in NumPy <code>datetime64</code> arrays, this type of operation can be accomplished much more quickly than if we were working directly with Python's <code>datetime</code> objects, especially as arrays get large
 (we introduced this type of vectorization in <a href="02.03-Computation-on-arrays-ufuncs.ipynb">Computation on NumPy Arrays: Universal Functions</a>).</p>
@@ -2654,8 +2605,7 @@ NumPy will infer the desired unit from the input; for example, here is a day-bas
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here is a minute-based datetime:</p>
 </div>
@@ -2683,8 +2633,7 @@ NumPy will infer the desired unit from the input; for example, here is a day-bas
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Notice that the time zone is automatically set to the local time on the computer executing the code.
 You can force any desired fundamental unit using one of many format codes; for example, here we'll force a nanosecond-based time:</p>
@@ -2713,16 +2662,14 @@ You can force any desired fundamental unit using one of many format codes; for e
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The following table, drawn from the <a href="http://docs.scipy.org/doc/numpy/reference/arrays.datetime.html">NumPy datetime64 documentation</a>, lists the available format codes along with the relative and absolute timespans that they can encode:</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <table>
 <thead><tr>
@@ -2817,8 +2764,7 @@ You can force any desired fundamental unit using one of many format codes; for e
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For the types of data we see in the real world, a useful default is <code>datetime64[ns]</code>, as it can encode a useful range of modern dates with a suitably fine precision.</p>
 <p>Finally, we will note that while the <code>datetime64</code> data type addresses some of the deficiencies of the built-in Python <code>datetime</code> type, it lacks many of the convenient methods and functions provided by <code>datetime</code> and especially <code>dateutil</code>.
@@ -2827,8 +2773,7 @@ More information can be found in <a href="http://docs.scipy.org/doc/numpy/refere
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Dates-and-times-in-pandas:-best-of-both-worlds">Dates and times in pandas: best of both worlds<a class="anchor-link" href="#Dates-and-times-in-pandas:-best-of-both-worlds">¶</a></h3><p>Pandas builds upon all the tools just discussed to provide a <code>Timestamp</code> object, which combines the ease-of-use of <code>datetime</code> and <code>dateutil</code> with the efficient storage and vectorized interface of <code>numpy.datetime64</code>.
 From a group of these <code>Timestamp</code> objects, Pandas can construct a <code>DatetimeIndex</code> that can be used to index data in a <code>Series</code> or <code>DataFrame</code>; we'll see many examples of this below.</p>
@@ -2882,8 +2827,7 @@ We can parse a flexibly formatted string date, and use format codes to output th
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Additionally, we can do NumPy-style vectorized operations directly on this same object:</p>
 </div>
@@ -2914,16 +2858,14 @@ We can parse a flexibly formatted string date, and use format codes to output th
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the next section, we will take a closer look at manipulating time series data with the tools provided by Pandas.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Pandas-Time-Series:-Indexing-by-Time">Pandas Time Series: Indexing by Time<a class="anchor-link" href="#Pandas-Time-Series:-Indexing-by-Time">¶</a></h2><p>Where the Pandas time series tools really become useful is when you begin to <em>index data by timestamps</em>.
 For example, we can construct a <code>Series</code> object that has time indexed data:</p>
@@ -2959,8 +2901,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that we have this data in a <code>Series</code>, we can make use of any of the <code>Series</code> indexing patterns we discussed in previous sections, passing values that can be coerced into dates:</p>
 </div>
@@ -2991,8 +2932,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are additional special date-only indexing operations, such as passing a year to obtain a slice of all data from that year:</p>
 </div>
@@ -3022,8 +2962,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Later, we will see additional examples of the convenience of dates-as-indices.
 But first, a closer look at the available time series data structures.</p>
@@ -3031,8 +2970,7 @@ But first, a closer look at the available time series data structures.</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Pandas-Time-Series-Data-Structures">Pandas Time Series Data Structures<a class="anchor-link" href="#Pandas-Time-Series-Data-Structures">¶</a></h2><p>This section will introduce the fundamental Pandas data structures for working with time series data:</p>
 <ul>
@@ -3044,8 +2982,7 @@ But first, a closer look at the available time series data structures.</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The most fundamental of these date/time objects are the <code>Timestamp</code> and <code>DatetimeIndex</code> objects.
 While these class objects can be invoked directly, it is more common to use the <code>pd.to_datetime()</code> function, which can parse a wide variety of formats.
@@ -3079,8 +3016,7 @@ Passing a single date to <code>pd.to_datetime()</code> yields a <code>Timestamp<
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Any <code>DatetimeIndex</code> can be converted to a <code>PeriodIndex</code> with the <code>to_period()</code> function with the addition of a frequency code; here we'll use <code>'D'</code> to indicate daily frequency:</p>
 </div>
@@ -3110,8 +3046,7 @@ Passing a single date to <code>pd.to_datetime()</code> yields a <code>Timestamp<
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A <code>TimedeltaIndex</code> is created, for example, when a date is subtracted from another:</p>
 </div>
@@ -3139,8 +3074,7 @@ Passing a single date to <code>pd.to_datetime()</code> yields a <code>Timestamp<
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Regular-sequences:-pd.date_range()">Regular sequences: <code>pd.date_range()</code><a class="anchor-link" href="#Regular-sequences:-pd.date_range()">¶</a></h3><p>To make the creation of regular date sequences more convenient, Pandas offers a few functions for this purpose: <code>pd.date_range()</code> for timestamps, <code>pd.period_range()</code> for periods, and <code>pd.timedelta_range()</code> for time deltas.
 We've seen that Python's <code>range()</code> and NumPy's <code>np.arange()</code> turn a startpoint, endpoint, and optional stepsize into a sequence.
@@ -3173,8 +3107,7 @@ By default, the frequency is one day:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Alternatively, the date range can be specified not with a start and endpoint, but with a startpoint and a number of periods:</p>
 </div>
@@ -3204,8 +3137,7 @@ By default, the frequency is one day:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The spacing can be modified by altering the <code>freq</code> argument, which defaults to <code>D</code>.
 For example, here we will construct a range of hourly timestamps:</p>
@@ -3238,8 +3170,7 @@ For example, here we will construct a range of hourly timestamps:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To create regular sequences of <code>Period</code> or <code>Timedelta</code> values, the very similar <code>pd.period_range()</code> and <code>pd.timedelta_range()</code> functions are useful.
 Here are some monthly periods:</p>
@@ -3270,8 +3201,7 @@ Here are some monthly periods:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>And a sequence of durations increasing by an hour:</p>
 </div>
@@ -3301,16 +3231,14 @@ Here are some monthly periods:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>All of these require an understanding of Pandas frequency codes, which we'll summarize in the next section.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Frequencies-and-Offsets">Frequencies and Offsets<a class="anchor-link" href="#Frequencies-and-Offsets">¶</a></h2><p>Fundamental to these Pandas time series tools is the concept of a frequency or date offset.
 Just as we saw the <code>D</code> (day) and <code>H</code> (hour) codes above, we can use such codes to specify any desired frequency spacing.
@@ -3319,8 +3247,7 @@ The following table summarizes the main codes available:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <table>
 <thead><tr>
@@ -3403,8 +3330,7 @@ The following table summarizes the main codes available:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The monthly, quarterly, and annual frequencies are all marked at the end of the specified period.
 By adding an <code>S</code> suffix to any of these, they instead will be marked at the beginning:</p>
@@ -3412,8 +3338,7 @@ By adding an <code>S</code> suffix to any of these, they instead will be marked 
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <table>
 <thead><tr>
@@ -3452,8 +3377,7 @@ By adding an <code>S</code> suffix to any of these, they instead will be marked 
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Additionally, you can change the month used to mark any quarterly or annual code by adding a three-letter month code as a suffix:</p>
 <ul>
@@ -3493,8 +3417,7 @@ For example, for a frequency of 2 hours 30 minutes, we can combine the hour (<co
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>All of these short codes refer to specific instances of Pandas time series offsets, which can be found in the <code>pd.tseries.offsets</code> module.
 For example, we can create a business day offset directly as follows:</p>
@@ -3526,16 +3449,14 @@ For example, we can create a business day offset directly as follows:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For more discussion of the use of frequencies and offsets, see the <a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html#dateoffset-objects">"DateOffset" section</a> of the Pandas documentation.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Resampling,-Shifting,-and-Windowing">Resampling, Shifting, and Windowing<a class="anchor-link" href="#Resampling,-Shifting,-and-Windowing">¶</a></h2><p>The ability to use dates and times as indices to intuitively organize and access data is an important piece of the Pandas time series tools.
 The benefits of indexed data in general (automatic alignment during operations, intuitive data slicing and access, etc.) still apply, and Pandas provides several additional time series-specific operations.</p>
@@ -3582,8 +3503,7 @@ Here we will load Google's closing price history:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For simplicity, we'll use just the closing price:</p>
 </div>
@@ -3617,8 +3537,7 @@ Here we will load Google's closing price history:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can visualize this using the <code>plot()</code> method, after the normal Matplotlib setup boilerplate (see <a href="04.00-Introduction-To-Matplotlib.ipynb">Chapter 4</a>):</p>
 </div>
@@ -3665,8 +3584,7 @@ Here we will load Google's closing price history:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Resampling-and-converting-frequencies">Resampling and converting frequencies<a class="anchor-link" href="#Resampling-and-converting-frequencies">¶</a></h3><p>One common need for time series data is resampling at a higher or lower frequency.
 This can be done using the <code>resample()</code> method, or the much simpler <code>asfreq()</code> method.
@@ -3712,16 +3630,14 @@ Here we will resample the data at the end of business year:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Notice the difference: at each point, <code>resample</code> reports the <em>average of the previous year</em>, while <code>asfreq</code> reports the <em>value at the end of the year</em>.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For up-sampling, <code>resample()</code> and <code>asfreq()</code> are largely equivalent, though resample has many more options available.
 In this case, the default for both methods is to leave the up-sampled points empty, that is, filled with NA values.
@@ -3776,8 +3692,7 @@ Here, we will resample the business day data at a daily frequency (i.e., includi
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The top panel is the default: non-business days are left as NA values and do not appear on the plot.
 The bottom panel shows the differences between two strategies for filling the gaps: forward-filling and backward-filling.</p>
@@ -3785,8 +3700,7 @@ The bottom panel shows the differences between two strategies for filling the ga
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Time-shifts">Time-shifts<a class="anchor-link" href="#Time-shifts">¶</a></h3><p>Another common time series-specific operation is shifting of data in time.
 Pandas has two closely related methods for computing this: <code>shift()</code> and <code>tshift()</code>
@@ -3858,8 +3772,7 @@ In both cases, the shift is specified in multiples of the frequency.</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We see here that <code>shift(900)</code> shifts the <em>data</em> by 900 days, pushing some of it off the end of the graph (and leaving NA values at the other end), while <code>tshift(900)</code> shifts the <em>index values</em> by 900 days.</p>
 <p>A common context for this type of shift is in computing differences over time. For example, we use shifted values to compute the one-year return on investment for Google stock over the course of the dataset:</p>
@@ -3880,16 +3793,14 @@ In both cases, the shift is specified in multiples of the frequency.</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This helps us to see the overall trend in Google stock: thus far, the most profitable times to invest in Google have been (unsurprisingly, in retrospect) shortly after its IPO, and in the middle of the 2009 recession.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Rolling-windows">Rolling windows<a class="anchor-link" href="#Rolling-windows">¶</a></h3><p>Rolling statistics are a third type of time series-specific operation implemented by Pandas.
 These can be accomplished via the <code>rolling()</code> attribute of <code>Series</code> and <code>DataFrame</code> objects, which returns a view similar to what we saw with the <code>groupby</code> operation (see <a href="03.08-Aggregation-and-Grouping.ipynb">Aggregation and Grouping</a>).
@@ -3936,16 +3847,14 @@ This rolling view makes available a number of aggregation operations by default.
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As with group-by operations, the <code>aggregate()</code> and <code>apply()</code> methods can be used for custom rolling computations.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Where-to-Learn-More">Where to Learn More<a class="anchor-link" href="#Where-to-Learn-More">¶</a></h2><p>This section has provided only a brief summary of some of the most essential features of time series tools provided by Pandas; for a more complete discussion, you can refer to the <a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html">"Time Series/Date" section</a> of the Pandas online documentation.</p>
 <p>Another excellent resource is the textbook <a href="http://shop.oreilly.com/product/0636920023784.do">Python for Data Analysis</a> by Wes McKinney (OReilly, 2012).
@@ -3956,8 +3865,7 @@ In particular, this book emphasizes time series tools in the context of business
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Example:-Visualizing-Seattle-Bicycle-Counts">Example: Visualizing Seattle Bicycle Counts<a class="anchor-link" href="#Example:-Visualizing-Seattle-Bicycle-Counts">¶</a></h2><p>As a more involved example of working with some time series data, let's take a look at bicycle counts on Seattle's <a href="http://www.openstreetmap.org/#map=17/47.64813/-122.34965">Fremont Bridge</a>.
 This data comes from an automated bicycle counter, installed in late 2012, which has inductive sensors on the east and west sidewalks of the bridge.
@@ -3993,8 +3901,7 @@ The hourly bicycle counts can be downloaded from <a href="http://data.seattle.go
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Once this dataset is downloaded, we can use Pandas to read the CSV output into a <code>DataFrame</code>.
 We will specify that we want the Date as an index, and we want these dates to be automatically parsed:</p>
@@ -4079,8 +3986,7 @@ We will specify that we want the Date as an index, and we want these dates to be
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For convenience, we'll further process this dataset by shortening the column names and adding a "Total" column:</p>
 </div>
@@ -4099,8 +4005,7 @@ We will specify that we want the Date as an index, and we want these dates to be
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's take a look at the summary statistics for this data:</p>
 </div>
@@ -4202,8 +4107,7 @@ We will specify that we want the Date as an index, and we want these dates to be
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Visualizing-the-data">Visualizing the data<a class="anchor-link" href="#Visualizing-the-data">¶</a></h3><p>We can gain some insight into the dataset by visualizing it.
 Let's start by plotting the raw data:</p>
@@ -4246,8 +4150,7 @@ Let's start by plotting the raw data:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The ~25,000 hourly samples are far too dense for us to make much sense of.
 We can gain more insight by resampling the data to a coarser grid.
@@ -4280,8 +4183,7 @@ Let's resample by week:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This shows us some interesting seasonal trends: as you might expect, people bicycle more in the summer than in the winter, and even within a particular season the bicycle use varies from week to week (likely dependent on weather; see <a href="05.06-Linear-Regression.ipynb">In Depth: Linear Regression</a> where we explore this further).</p>
 <p>Another way that comes in handy for aggregating the data is to use a rolling mean, utilizing the <code>pd.rolling_mean()</code> function.
@@ -4314,8 +4216,7 @@ Here we'll do a 30 day rolling mean of our data, making sure to center the windo
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The jaggedness of the result is due to the hard cutoff of the window.
 We can get a smoother version of a rolling mean using a window function–for example, a Gaussian window.
@@ -4347,8 +4248,7 @@ The following code specifies both the width of the window (we chose 50 days) and
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Digging-into-the-data">Digging into the data<a class="anchor-link" href="#Digging-into-the-data">¶</a></h3><p>While these smoothed data views are useful to get an idea of the general trend in the data, they hide much of the interesting structure.
 For example, we might want to look at the average traffic as a function of the time of day.
@@ -4381,8 +4281,7 @@ We can do this using the GroupBy functionality discussed in <a href="03.08-Aggre
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The hourly traffic is a strongly bimodal distribution, with peaks around 8:00 in the morning and 5:00 in the evening.
 This is likely evidence of a strong component of commuter traffic crossing the bridge.
@@ -4416,8 +4315,7 @@ This is further evidenced by the differences between the western sidewalk (gener
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This shows a strong distinction between weekday and weekend totals, with around twice as many average riders crossing the bridge on Monday through Friday than on Saturday and Sunday.</p>
 <p>With this in mind, let's do a compound GroupBy and look at the hourly trend on weekdays versus weekends.
@@ -4438,8 +4336,7 @@ We'll start by grouping by both a flag marking the weekend, and the time of day:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we'll use some of the Matplotlib tools described in <a href="04.08-Multiple-Subplots.ipynb">Multiple Subplots</a> to plot two panels side by side:</p>
 </div>
@@ -4487,8 +4384,7 @@ http://pandas.pydata.org/pandas-docs/stable/indexing.html#ix-indexer-is-deprecat
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The result is very interesting: we see a bimodal commute pattern during the work week, and a unimodal recreational pattern during the weekends.
 It would be interesting to dig through this data in more detail, and examine the effect of weather, temperature, time of year, and other factors on people's commuting patterns; for further discussion, see my blog post <a href="https://jakevdp.github.io/blog/2014/06/10/is-seattle-really-seeing-an-uptick-in-cycling/">"Is Seattle Really Seeing an Uptick In Cycling?"</a>, which uses a subset of this data.
@@ -4497,16 +4393,14 @@ We will also revisit this dataset in the context of modeling in <a href="05.06-L
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="High-Performance-Pandas:-eval()-and-query()">High-Performance Pandas: eval() and query()<a class="anchor-link" href="#High-Performance-Pandas:-eval()-and-query()">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As we've already seen in previous sections, the power of the PyData stack is built upon the ability of NumPy and Pandas to push basic operations into C via an intuitive syntax: examples are vectorized/broadcasted operations in NumPy, and grouping-type operations in Pandas.
 While these abstractions are efficient and effective for many common use cases, they often rely on the creation of temporary intermediate objects, which can cause undue overhead in computational time and memory use.</p>
@@ -4517,8 +4411,7 @@ In this notebook we will walk through their use and give some rules-of-thumb abo
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Motivating-query()-and-eval():-Compound-Expressions">Motivating <code>query()</code> and <code>eval()</code>: Compound Expressions<a class="anchor-link" href="#Motivating-query()-and-eval():-Compound-Expressions">¶</a></h2><p>We've seen previously that NumPy and Pandas support fast vectorized operations; for example, when adding the elements of two arrays:</p>
 </div>
@@ -4551,8 +4444,7 @@ In this notebook we will walk through their use and give some rules-of-thumb abo
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As discussed in <a href="02.03-Computation-on-arrays-ufuncs.ipynb">Computation on NumPy Arrays: Universal Functions</a>, this is much faster than doing the addition via a Python loop or comprehension:</p>
 </div>
@@ -4581,8 +4473,7 @@ In this notebook we will walk through their use and give some rules-of-thumb abo
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>But this abstraction can become less efficient when computing compound expressions.
 For example, consider the following expression:</p>
@@ -4601,8 +4492,7 @@ For example, consider the following expression:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Because NumPy evaluates each subexpression, this is roughly equivalent to the following:</p>
 </div>
@@ -4622,8 +4512,7 @@ For example, consider the following expression:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In other words, <em>every intermediate step is explicitly allocated in memory</em>. If the <code>x</code> and <code>y</code> arrays are very large, this can lead to significant memory and computational overhead.
 The Numexpr library gives you the ability to compute this type of compound expression element by element, without the need to allocate full intermediate arrays.
@@ -4655,8 +4544,7 @@ The <a href="https://github.com/pydata/numexpr">Numexpr documentation</a> has mo
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The benefit here is that Numexpr evaluates the expression in a way that does not use full-sized temporary arrays, and thus can be much more efficient than NumPy, especially for large arrays.
 The Pandas <code>eval()</code> and <code>query()</code> tools that we will discuss here are conceptually similar, and depend on the Numexpr package.</p>
@@ -4664,8 +4552,7 @@ The Pandas <code>eval()</code> and <code>query()</code> tools that we will discu
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="pandas.eval()-for-Efficient-Operations"><code>pandas.eval()</code> for Efficient Operations<a class="anchor-link" href="#pandas.eval()-for-Efficient-Operations">¶</a></h2><p>The <code>eval()</code> function in Pandas uses string expressions to efficiently compute operations using <code>DataFrame</code>s.
 For example, consider the following <code>DataFrame</code>s:</p>
@@ -4688,8 +4575,7 @@ For example, consider the following <code>DataFrame</code>s:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To compute the sum of all four <code>DataFrame</code>s using the typical Pandas approach, we can just write the sum:</p>
 </div>
@@ -4718,8 +4604,7 @@ For example, consider the following <code>DataFrame</code>s:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The same result can be computed via <code>pd.eval</code> by constructing the expression as a string:</p>
 </div>
@@ -4748,8 +4633,7 @@ For example, consider the following <code>DataFrame</code>s:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>eval()</code> version of this expression is about 50% faster (and uses much less memory), while giving the same result:</p>
 </div>
@@ -4778,8 +4662,7 @@ For example, consider the following <code>DataFrame</code>s:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Operations-supported-by-pd.eval()">Operations supported by <code>pd.eval()</code><a class="anchor-link" href="#Operations-supported-by-pd.eval()">¶</a></h3><p>As of Pandas v0.16, <code>pd.eval()</code> supports a wide range of operations.
 To demonstrate these, we'll use the following integer <code>DataFrame</code>s:</p>
@@ -4799,8 +4682,7 @@ To demonstrate these, we'll use the following integer <code>DataFrame</code>s:</
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Arithmetic-operators">Arithmetic operators<a class="anchor-link" href="#Arithmetic-operators">¶</a></h4><p><code>pd.eval()</code> supports all arithmetic operators. For example:</p>
 </div>
@@ -4830,8 +4712,7 @@ To demonstrate these, we'll use the following integer <code>DataFrame</code>s:</
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Comparison-operators">Comparison operators<a class="anchor-link" href="#Comparison-operators">¶</a></h4><p><code>pd.eval()</code> supports all comparison operators, including chained expressions:</p>
 </div>
@@ -4861,8 +4742,7 @@ To demonstrate these, we'll use the following integer <code>DataFrame</code>s:</
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Bitwise-operators">Bitwise operators<a class="anchor-link" href="#Bitwise-operators">¶</a></h4><p><code>pd.eval()</code> supports the <code>&amp;</code> and <code>|</code> bitwise operators:</p>
 </div>
@@ -4892,8 +4772,7 @@ To demonstrate these, we'll use the following integer <code>DataFrame</code>s:</
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In addition, it supports the use of the literal <code>and</code> and <code>or</code> in Boolean expressions:</p>
 </div>
@@ -4922,8 +4801,7 @@ To demonstrate these, we'll use the following integer <code>DataFrame</code>s:</
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Object-attributes-and-indices">Object attributes and indices<a class="anchor-link" href="#Object-attributes-and-indices">¶</a></h4><p><code>pd.eval()</code> supports access to object attributes via the <code>obj.attr</code> syntax, and indexes via the <code>obj[index]</code> syntax:</p>
 </div>
@@ -4953,8 +4831,7 @@ To demonstrate these, we'll use the following integer <code>DataFrame</code>s:</
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Other-operations">Other operations<a class="anchor-link" href="#Other-operations">¶</a></h4><p>Other operations such as function calls, conditional statements, loops, and other more involved constructs are currently <em>not</em> implemented in <code>pd.eval()</code>.
 If you'd like to execute these more complicated types of expressions, you can use the Numexpr library itself.</p>
@@ -4962,8 +4839,7 @@ If you'd like to execute these more complicated types of expressions, you can us
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="DataFrame.eval()-for-Column-Wise-Operations"><code>DataFrame.eval()</code> for Column-Wise Operations<a class="anchor-link" href="#DataFrame.eval()-for-Column-Wise-Operations">¶</a></h2><p>Just as Pandas has a top-level <code>pd.eval()</code> function, <code>DataFrame</code>s have an <code>eval()</code> method that works in similar ways.
 The benefit of the <code>eval()</code> method is that columns can be referred to <em>by name</em>.
@@ -5050,8 +4926,7 @@ We'll use this labeled array as an example:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Using <code>pd.eval()</code> as above, we can compute expressions with the three columns like this:</p>
 </div>
@@ -5081,8 +4956,7 @@ We'll use this labeled array as an example:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>DataFrame.eval()</code> method allows much more succinct evaluation of expressions with the columns:</p>
 </div>
@@ -5111,16 +4985,14 @@ We'll use this labeled array as an example:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Notice here that we treat <em>column names as variables</em> within the evaluated expression, and the result is what we would wish.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Assignment-in-DataFrame.eval()">Assignment in DataFrame.eval()<a class="anchor-link" href="#Assignment-in-DataFrame.eval()">¶</a></h3><p>In addition to the options just discussed, <code>DataFrame.eval()</code>  also allows assignment to any column.
 Let's use the <code>DataFrame</code> from before, which has columns <code>'A'</code>, <code>'B'</code>, and <code>'C'</code>:</p>
@@ -5205,8 +5077,7 @@ Let's use the <code>DataFrame</code> from before, which has columns <code>'A'</c
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can use <code>df.eval()</code> to create a new column <code>'D'</code> and assign to it a value computed from the other columns:</p>
 </div>
@@ -5297,8 +5168,7 @@ Let's use the <code>DataFrame</code> from before, which has columns <code>'A'</c
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the same way, any existing column can be modified:</p>
 </div>
@@ -5389,8 +5259,7 @@ Let's use the <code>DataFrame</code> from before, which has columns <code>'A'</c
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Local-variables-in-DataFrame.eval()">Local variables in DataFrame.eval()<a class="anchor-link" href="#Local-variables-in-DataFrame.eval()">¶</a></h3><p>The <code>DataFrame.eval()</code> method supports an additional syntax that lets it work with local Python variables.
 Consider the following:</p>
@@ -5422,8 +5291,7 @@ Consider the following:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>@</code> character here marks a <em>variable name</em> rather than a <em>column name</em>, and lets you efficiently evaluate expressions involving the two "namespaces": the namespace of columns, and the namespace of Python objects.
 Notice that this <code>@</code> character is only supported by the <code>DataFrame.eval()</code> <em>method</em>, not by the <code>pandas.eval()</code> <em>function</em>, because the <code>pandas.eval()</code> function only has access to the one (Python) namespace.</p>
@@ -5431,8 +5299,7 @@ Notice that this <code>@</code> character is only supported by the <code>DataFra
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="DataFrame.query()-Method">DataFrame.query() Method<a class="anchor-link" href="#DataFrame.query()-Method">¶</a></h2><p>The <code>DataFrame</code> has another method based on evaluated strings, called the <code>query()</code> method.
 Consider the following:</p>
@@ -5463,8 +5330,7 @@ Consider the following:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As with the example used in our discussion of <code>DataFrame.eval()</code>, this is an expression involving columns of the <code>DataFrame</code>.
 It cannot be expressed using the <code>DataFrame.eval()</code> syntax, however!
@@ -5495,8 +5361,7 @@ Instead, for this type of filtering operation, you can use the <code>query()</co
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In addition to being a more efficient computation, compared to the masking expression this is much easier to read and understand.
 Note that the <code>query()</code> method also accepts the <code>@</code> flag to mark local variables:</p>
@@ -5528,8 +5393,7 @@ Note that the <code>query()</code> method also accepts the <code>@</code> flag t
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Performance:-When-to-Use-These-Functions">Performance: When to Use These Functions<a class="anchor-link" href="#Performance:-When-to-Use-These-Functions">¶</a></h2><p>When considering whether to use these functions, there are two considerations: <em>computation time</em> and <em>memory use</em>.
 Memory use is the most predictable aspect. As already mentioned, every compound expression involving NumPy arrays or Pandas <code>DataFrame</code>s will result in implicit creation of temporary arrays:
@@ -5549,8 +5413,7 @@ For example, this:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Is roughly equivalent to this:</p>
 </div>
@@ -5571,8 +5434,7 @@ For example, this:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If the size of the temporary <code>DataFrame</code>s is significant compared to your available system memory (typically several gigabytes) then it's a good idea to use an <code>eval()</code> or <code>query()</code> expression.
 You can check the approximate size of your array in bytes using this:</p>
@@ -5601,8 +5463,7 @@ You can check the approximate size of your array in bytes using this:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>On the performance side, <code>eval()</code> can be faster even when you are not maxing-out your system memory.
 The issue is how your temporary <code>DataFrame</code>s compare to the size of the L1 or L2 CPU cache on your system (typically a few megabytes in 2016); if they are much bigger, then <code>eval()</code> can avoid some potentially slow movement of values between the different memory caches.
@@ -5614,8 +5475,7 @@ In particular, different parsers and engines can be specified for running these 
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Further-Resources">Further Resources<a class="anchor-link" href="#Further-Resources">¶</a></h1><p>In this chapter, we've covered many of the basics of using Pandas effectively for data analysis.
 Still, much has been omitted from our discussion.

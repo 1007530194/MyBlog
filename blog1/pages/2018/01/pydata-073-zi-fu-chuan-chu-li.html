@@ -1064,8 +1064,7 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="7.3-String-Manipulation（字符串处理）">7.3 String Manipulation（字符串处理）<a class="anchor-link" href="#7.3-String-Manipulation（字符串处理）">¶</a></h1><p>python很多内建方法很适合处理string。而且对于更复杂的模式，可以配合使用正则表达式。而pandas则混合了两种方式。</p>
 <h1 id="1-String-Object-Methods（字符串对象方法）">1 String Object Methods（字符串对象方法）<a class="anchor-link" href="#1-String-Object-Methods（字符串对象方法）">¶</a></h1><p>大部分string处理，使用内建的一些方法就足够了。比如，可以用split来分割用逗号区分的字符串：</p>
@@ -1105,8 +1104,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>split经常和strip一起搭配使用来去除空格（包括换行符）:</p>
 </div>
@@ -1135,8 +1133,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>可以使用+号把::和字符串连起来：</p>
 </div>
@@ -1175,8 +1172,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>但这种方法并不python，更快的方法是直接用join方法：</p>
 </div>
@@ -1204,8 +1200,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>其他一些方法适合锁定子字符串位置相关的。用in关键字是检测substring最好的方法，当然，index和find也能完成任务：</p>
 </div>
@@ -1275,8 +1270,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>注意index和find的区别。如果要找的string不存在的话，index会报错。而find会返回-1:</p>
 </div>
@@ -1310,8 +1304,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>count会返回一个substring出现的次数：</p>
 </div>
@@ -1339,8 +1332,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>replace会取代一种出现方式（pattern）。也通常用于删除pattern，传入一个空字符串即可：</p>
 </div>
@@ -1389,8 +1381,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里一些内建的string方法：</p>
 <p><img alt="" src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/m643y.png"/></p>
@@ -1445,8 +1436,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>当调用<code>re.split('\s+', text)</code>的时候，正则表达式第一次被compile编译，并且split方法会被调用搜索text。我们可以自己编译regex，用re.compile，可以生成一个可以多次使用的regex object：</p>
 </div>
@@ -1485,8 +1475,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>如果想要得到符合regex的所有结果，以一个list结果返回，可以使用findall方法：</p>
 </div>
@@ -1514,8 +1503,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><p>为了防止\在正则表达式中的逃逸，推荐使用raw string literal，比如<code>r'C:\x'</code>，而不是使用<code>'C:\\x</code></p>
 </blockquote>
@@ -1553,8 +1541,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>使用findall找到一组邮件地址：</p>
 </div>
@@ -1582,8 +1569,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>search返回text中的第一个匹配结果。match object能告诉我们找到的结果在text中开始和结束的位置：</p>
 </div>
@@ -1643,8 +1629,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>regex.match返回None，因为它只会在pattern存在于stirng开头的情况下才会返回匹配结果：</p>
 </div>
@@ -1673,8 +1658,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>而sub返回一个新的string，把pattern出现的地方替换为我们指定的string：</p>
 </div>
@@ -1706,8 +1690,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>假设你想要找到邮件地址，同时，想要把邮件地址分为三个部分，username, domain name, and domain suffix.（用户名，域名，域名后缀）。需要给每一个pattern加一个括号：</p>
 </div>
@@ -1736,8 +1719,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>match object会返回一个tuple，包含多个pattern组份，通过groups方法：</p>
 </div>
@@ -1776,8 +1758,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>findall会返回a list of tuples:</p>
 </div>
@@ -1808,8 +1789,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>sub也能访问groups的结果，不过要使用特殊符号 \1, \2。\1表示第一个匹配的group，\2表示第二个匹配的group，以此类推：</p>
 </div>
@@ -1841,8 +1821,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里给一些正则表达式的方法：</p>
 <p><img alt="" src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/mj4vc.png"/></p>
@@ -1926,8 +1905,7 @@ dtype: bool</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>可以把一些字符串方法和正则表达式（用lambda或其他函数）用于每一个value上，通过data.map，但是这样会得到NA(null)值。为了解决这个问题，series有一些数组导向的方法可以用于字符串操作，来跳过NA值。这些方法可以通过series的str属性；比如，我们想检查每个电子邮箱地址是否有'gmail' with str.contains:</p>
 </div>
@@ -1980,8 +1958,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>正则表达式也可以用，配合任意的re选项，比如IGNORECASE：</p>
 </div>
@@ -2034,8 +2011,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>有很多方法用于向量化。比如str.get或index索引到str属性：</p>
 </div>
@@ -2076,8 +2052,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>为了访问嵌套list里的元素，我们可以传入一个index给函数：</p>
 </div>
@@ -2134,8 +2109,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>也可以使用这个语法进行切片：</p>
 </div>
@@ -2167,8 +2141,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里有一些字符串向量化的方法：</p>
 <p><img alt="" src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/owc7z.png"/></p>

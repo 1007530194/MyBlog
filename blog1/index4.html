@@ -93,8 +93,7 @@
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="7.3-String-Manipulation（字符串处理）">7.3 String Manipulation&#65288;&#23383;&#31526;&#20018;&#22788;&#29702;&#65289;<a class="anchor-link" href="#7.3-String-Manipulation（字符串处理）">&#182;</a></h1><p>python很多内建方法很适合处理string。而且对于更复杂的模式，可以配合使用正则表达式。而pandas则混合了两种方式。</p>
 <h1 id="1-String-Object-Methods（字符串对象方法）">1 String Object Methods&#65288;&#23383;&#31526;&#20018;&#23545;&#35937;&#26041;&#27861;&#65289;<a class="anchor-link" href="#1-String-Object-Methods（字符串对象方法）">&#182;</a></h1><p>大部分string处理，使用内建的一些方法就足够了。比如，可以用split来分割用逗号区分的字符串：</p>
@@ -119,8 +118,7 @@
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="时间序列">&#26102;&#38388;&#24207;&#21015;<a class="anchor-link" href="#时间序列">&#182;</a></h1><p>时间序列指能在任何能在时间上观测到的数据。很多时间序列是有固定频率（fixed frequency）的，意思是数据点会遵照某种规律定期出现，比如每15秒，每5分钟，或每个月。时间序列也可能是不规律的（irregular），没有一个固定的时间规律。如何参照时间序列数据取决于我们要做什么样的应用，我们可能会遇到下面这些：</p>
 <ul>
@@ -154,8 +152,7 @@
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="时间序列基础">&#26102;&#38388;&#24207;&#21015;&#22522;&#30784;<a class="anchor-link" href="#时间序列基础">&#182;</a></h1><p>在pandas中，一个基本的时间序列对象，是一个用时间戳作为索引的Series，在pandas外部的话，通常是用python 字符串或datetime对象来表示的：</p>
 
@@ -179,8 +176,7 @@
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="11.3-Date-Ranges,-Frequencies,-and-Shifting（日期范围，频度，和位移）">11.3 Date Ranges, Frequencies, and Shifting&#65288;&#26085;&#26399;&#33539;&#22260;&#65292;&#39057;&#24230;&#65292;&#21644;&#20301;&#31227;&#65289;<a class="anchor-link" href="#11.3-Date-Ranges,-Frequencies,-and-Shifting（日期范围，频度，和位移）">&#182;</a></h1><p>普通的时间序列通常是不规律的，但我们希望能有一个固定的频度，比如每天，每月，或没15分钟，即使有一些缺失值也没关系。幸运的是，pandas中有一套方法和工具来进行重采样，推断频度，并生成固定频度的日期范围。例如，我们可以把样本时间序列变为固定按日的频度，需要调用resample：</p>
 
@@ -204,8 +200,7 @@
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="CHAPTER-12-Advanced-pandas（高级pandas用法）">CHAPTER 12 Advanced pandas&#65288;&#39640;&#32423;pandas&#29992;&#27861;&#65289;<a class="anchor-link" href="#CHAPTER-12-Advanced-pandas（高级pandas用法）">&#182;</a></h1><h1 id="12.1-Categorical-Data（类别数据）">12.1 Categorical Data&#65288;&#31867;&#21035;&#25968;&#25454;&#65289;<a class="anchor-link" href="#12.1-Categorical-Data（类别数据）">&#182;</a></h1><p>这一届会介绍pandas的Categorical类型。</p>
 <h1 id="1-Background-and-Motivation（背景和动力）">1 Background and Motivation&#65288;&#32972;&#26223;&#21644;&#21160;&#21147;&#65289;<a class="anchor-link" href="#1-Background-and-Motivation（背景和动力）">&#182;</a></h1><p>表格中的列克可能会有重复的部分。我们可以用unique和value_counts，从一个数组从提取不同的值，并计算频度：</p>
@@ -230,8 +225,7 @@
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="CHAPTER-14-Data-Analysis-Examples（数据分析实例）">CHAPTER 14 Data Analysis Examples&#65288;&#25968;&#25454;&#20998;&#26512;&#23454;&#20363;&#65289;<a class="anchor-link" href="#CHAPTER-14-Data-Analysis-Examples（数据分析实例）">&#182;</a></h1><h1 id="14.1-USA.gov-Data-from-Bitly（USA.gov数据集）">14.1 USA.gov Data from Bitly&#65288;USA.gov&#25968;&#25454;&#38598;&#65289;<a class="anchor-link" href="#14.1-USA.gov-Data-from-Bitly（USA.gov数据集）">&#182;</a></h1><p>2011年，短链接服务（URL shortening service）商<a href="https://bitly.com/">Bitly</a>和美国政府网站<a href="https://www.usa.gov/">USA.gov</a>合作，提供了一份从用户中收集来的匿名数据，这些用户使用了结尾为.gov或.mil的短链接。在2011年，这些数据的动态信息每小时都会保存一次，并可供下载。不过在2017年，这项服务被停掉了。</p>
 <p>数据是每小时更新一次，文件中的每一行都用JOSN（JavaScript Object Notation）格式保存。我们先读取几行看一下数据是什么样的：</p>
@@ -256,8 +250,7 @@
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="14.2-MovieLens-1M-Dataset（MovieLens-1M数据集）">14.2 MovieLens 1M Dataset&#65288;MovieLens 1M&#25968;&#25454;&#38598;&#65289;<a class="anchor-link" href="#14.2-MovieLens-1M-Dataset（MovieLens-1M数据集）">&#182;</a></h1><p>这个数据集是电影评分数据：包括电影评分，电影元数据（风格类型，年代）以及关于用户的人口统计学数据（年龄，邮编，性别，职业等）。</p>
 <p>MovieLens 1M数据集含有来自6000名用户对4000部电影的100万条评分数据。分为三个表：评分，用户信息，电影信息。这些数据都是dat文件格式，可以通过pandas.read_table将各个表分别读到一个pandas DataFrame对象中：</p>
@@ -282,8 +275,7 @@
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="14.3-US-Baby-Names-1880–2010（1880年至2010年美国婴儿姓名）">14.3 US Baby Names 1880&#8211;2010&#65288;1880&#24180;&#33267;2010&#24180;&#32654;&#22269;&#23156;&#20799;&#22995;&#21517;&#65289;<a class="anchor-link" href="#14.3-US-Baby-Names-1880–2010（1880年至2010年美国婴儿姓名）">&#182;</a></h1><p>这个数据是从1880年到2010年婴儿名字频率数据。我们先看一下这个数据长什么样子：</p>
 <p><img src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/r5ofm.png" alt=""></p>
@@ -318,8 +310,7 @@
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Random-Forest-Example">Random Forest Example<a class="anchor-link" href="#Random-Forest-Example">&#182;</a></h1><p>Implement Random Forest algorithm with TensorFlow, and apply it to classify 
 handwritten digit images. This example is using the MNIST database of 
@@ -386,8 +377,7 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Pandas库">Pandas&#24211;<a class="anchor-link" href="#Pandas库">&#182;</a></h1><p><a href="https://blog.csdn.net/Junming_Lu/article/details/79336878">https://blog.csdn.net/Junming_Lu/article/details/79336878</a></p>
 <p>Pandas是Python第三方库，提供高性能易用数据类型和分析工具</p>
@@ -437,8 +427,7 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><p><a href="http://zh.wikipedia.org/wiki/Help:MATH">http://zh.wikipedia.org/wiki/Help:MATH</a>
 函数、符号及特殊字符</p>
@@ -447,8 +436,7 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="常用">&#24120;&#29992;<a class="anchor-link" href="#常用">&#182;</a></h1><h2 id="声调">&#22768;&#35843;<a class="anchor-link" href="#声调">&#182;</a></h2><table>
 <thead><tr>
@@ -496,8 +484,7 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="函数">&#20989;&#25968;<a class="anchor-link" href="#函数">&#182;</a></h2><table>
 <thead><tr>
@@ -603,8 +590,7 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Matplotlib介绍">Matplotlib&#20171;&#32461;<a class="anchor-link" href="#Matplotlib介绍">&#182;</a></h1><p>Matplotlib是一个Python的2D绘图库，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图形。通过Matplotlib，开发者可以仅需要几行代码，便可以生成绘图，折线图、散点图、柱状图、饼图、直方图、子图等。Matplotlib使用NumPy进行数组运算，并调用一系列其他的Python库来实现硬件交互。</p>
 
@@ -628,8 +614,7 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Pandas</p>
 <h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><h2 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h2><p><a href="http:#pandas.pydata.org/pandas-docs/stable/10min.html#">来自官网十分钟教学</a> 

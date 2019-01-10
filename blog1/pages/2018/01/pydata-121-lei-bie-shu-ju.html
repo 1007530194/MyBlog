@@ -1064,8 +1064,7 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="CHAPTER-12-Advanced-pandas（高级pandas用法）">CHAPTER 12 Advanced pandas（高级pandas用法）<a class="anchor-link" href="#CHAPTER-12-Advanced-pandas（高级pandas用法）">¶</a></h1><h1 id="12.1-Categorical-Data（类别数据）">12.1 Categorical Data（类别数据）<a class="anchor-link" href="#12.1-Categorical-Data（类别数据）">¶</a></h1><p>这一届会介绍pandas的Categorical类型。</p>
 <h1 id="1-Background-and-Motivation（背景和动力）">1 Background and Motivation（背景和动力）<a class="anchor-link" href="#1-Background-and-Motivation（背景和动力）">¶</a></h1><p>表格中的列克可能会有重复的部分。我们可以用unique和value_counts，从一个数组从提取不同的值，并计算频度：</p>
@@ -1159,8 +1158,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>对于不同的类型数据值，一个更好的方法是用维度表（dimension table）来表示，然后用整数键（integer keys）来指代维度表：</p>
 </div>
@@ -1221,8 +1219,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>用take方法来重新存储原始的，由字符串构成的Series：</p>
 </div>
@@ -1258,8 +1255,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这种用整数表示的方法叫做类别（categorical）或字典编码（dictionary-encoded）表示法。表示不同类别值的数组，被称作类别，字典，或层级。本书中我们将使用类别（categorical and categories）来称呼。表示类别的整数值被叫做，类别编码（category code），或编码（code）。</p>
 <h1 id="2-Categorical-Type-in-pandas（pandas中的Categorical类型）">2 Categorical Type in pandas（pandas中的Categorical类型）<a class="anchor-link" href="#2-Categorical-Type-in-pandas（pandas中的Categorical类型）">¶</a></h1><p>pandas中有一个Categorical类型，是用来保存那些基于整数的类别型数据。考虑下面的例子：</p>
@@ -1398,8 +1394,7 @@ dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里，df['fruit']是一个python的字符串对象。我们将其转换为类型对象：</p>
 </div>
@@ -1437,8 +1432,7 @@ Categories (2, object): [apple, orange]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>fruits_cat的值并不是一个numpy数组，而是一个pandas.Categorical实例：</p>
 </div>
@@ -1467,8 +1461,7 @@ Categories (2, object): [apple, orange]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这个Categorical对象有categories和codes属性：</p>
 </div>
@@ -1517,8 +1510,7 @@ Categories (2, object): [apple, orange]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>可以把转换的结果变为DataFrame列：</p>
 </div>
@@ -1556,8 +1548,7 @@ Categories (2, object): [apple, orange]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>也可以直接把其他的python序列变为pandas.Categorical类型：</p>
 </div>
@@ -1587,8 +1578,7 @@ Categories (3, object): [bar, baz, foo]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>如果已经得到了分类编码数据（categorical encoded data），我们可以使用from_codes构造器：</p>
 </div>
@@ -1640,8 +1630,7 @@ Categories (3, object): [foo, bar, baz]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>除非明确指定，非常默认类别没有特定的顺序。所以，取决于输入的数据，categories数组可能有不同的顺序。当使用from_codes或其他一些构造器的时候，我们可以指定类别的顺序：</p>
 </div>
@@ -1672,8 +1661,7 @@ Categories (3, object): [foo &lt; bar &lt; baz]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>输出的结果中，<code>[foo &lt; bar &lt; baz]</code>表示foo在bar之间，以此类推。一个没有顺序的类型实例（unordered categorical instance）可以通过as_ordered来排序：</p>
 </div>
@@ -1702,8 +1690,7 @@ Categories (3, object): [foo &lt; bar &lt; baz]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>最后一点需要注意的，类型数据没必要一定是字符串，它可以是任何不可变的值类型
 （any immutable value types）。</p>
@@ -1756,8 +1743,7 @@ Categories (3, object): [foo &lt; bar &lt; baz]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>计算分箱后的分位数：</p>
 </div>
@@ -1788,8 +1774,7 @@ Categories (4, interval[float64]): [(-2.95, -0.684] &lt; (-0.684, -0.0101] &lt; 
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>具体分位数并不如季度的名字直观，我们直接在qcut中设定labels：</p>
 </div>
@@ -1841,8 +1826,7 @@ Categories (4, object): [Q1 &lt; Q2 &lt; Q3 &lt; Q4]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>bins caetegorical并没有包含边界星系，我们可以用groupby来提取：</p>
 </div>
@@ -1940,8 +1924,7 @@ Categories (4, object): [Q1 &lt; Q2 &lt; Q3 &lt; Q4]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>quartile列包含了原始的类别信息，包含bins中的顺序：</p>
 </div>
@@ -1974,8 +1957,7 @@ Categories (4, object): [Q1 &lt; Q2 &lt; Q3 &lt; Q4]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Better-performance-with-categoricals-（使用categoricals得到更好的效果）">Better performance with categoricals （使用categoricals得到更好的效果）<a class="anchor-link" href="#Better-performance-with-categoricals-（使用categoricals得到更好的效果）">¶</a></h3><p>使用categorical能让效果提高。如果一个DataFrame的列是categorical类型，使用的时候会减少很多内存的使用。假设我们有一个一千万的元素和一个类别：</p>
 </div>
@@ -1995,8 +1977,7 @@ Categories (4, object): [Q1 &lt; Q2 &lt; Q3 &lt; Q4]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>把labels变为categorical：</p>
 </div>
@@ -2014,8 +1995,7 @@ Categories (4, object): [Q1 &lt; Q2 &lt; Q3 &lt; Q4]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>可以看到labels会比categories使用更多的内存：</p>
 </div>
@@ -2064,8 +2044,7 @@ Categories (4, object): [Q1 &lt; Q2 &lt; Q3 &lt; Q4]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>当然，转换成category也是要消耗计算的，不过这种消耗是一次性的：</p>
 </div>
@@ -2095,8 +2074,7 @@ Wall time: 385 ms
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在categories上使用groupby会非常快，因为用的是基于整数的编码，而不是由字符串组成的数组。</p>
 <h1 id="4-Categorical-Methods（类别方法）">4 Categorical Methods（类别方法）<a class="anchor-link" href="#4-Categorical-Methods（类别方法）">¶</a></h1><p>如果是包含categorical数据的Series数据，有和Series.str类似的一些比较特殊的方法。对于访问categories和code很方便：</p>
@@ -2146,8 +2124,7 @@ Categories (4, object): [a, b, c, d]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>属性cat可以访问categorical方法：</p>
 </div>
@@ -2204,8 +2181,7 @@ dtype: int8</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>假设我们知道实际的类别超过了当前观测到的四个类别，那么我们可以使用set_categories方法来扩展：</p>
 </div>
@@ -2244,8 +2220,7 @@ Categories (5, object): [a, b, c, d, e]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>数据本身似乎没有改变，不过在对其进行操作的时候会反应出来。例如，value_counts：</p>
 </div>
@@ -2303,8 +2278,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在大型数据集，categoricals经常用来作为省内存和提高效果的工具。在对一个很大的DataFrame或Series进行过滤后，很多类型可能不会出现在数据中。我们用remove_unused_categories方法来除去没有观测到的类别：</p>
 </div>
@@ -2364,8 +2338,7 @@ Categories (2, object): [a, b]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>下面是一些categorical的方法：</p>
 <p><img alt="" src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/kbedp.png"/></p>
@@ -2386,8 +2359,7 @@ Categories (2, object): [a, b]</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在第七章也介绍过，pandas.get_dummies函数会把一维的类型数据变为包含哑变量的DataFrame：</p>
 </div>

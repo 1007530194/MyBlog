@@ -1064,8 +1064,7 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>向量化的数组运算比纯python同等程度的运算要快很多。</p>
 <p>一个简单的例子，假设我们想要评价函数<code>sqrt(x^2 + y^2)</code>。<code>np.meshgrid</code>函数取两个1维的数组，产生一个2维的矩阵，对应于所有两个数组中(x, y)的组合：</p>
@@ -1084,8 +1083,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在进行书中的内容之前，先举个例子说明meshgrid的效果。meshgrid函数用两个坐标轴上的点在平面上画网格。用法：</p>
 <ul>
@@ -1195,8 +1193,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>可以看到X和Y的shape都是3x5，用图的话更好理解：</p>
 <p><a href="../MarkdownPhotos/chp04/v2-a7f1c996c371d1167a0fb7b5273c6d01_r.jpg"></a></p>
@@ -1381,8 +1378,7 @@ AABg5P8AUGes10LjfHEAAAAASUVORK5CYII=
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>可以用zip得到网格平面上坐标点的数据：</p>
 </div>
@@ -1425,8 +1421,7 @@ AABg5P8AUGes10LjfHEAAAAASUVORK5CYII=
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>好了，下面继续进入书中的内容</p>
 </div>
@@ -1496,8 +1491,7 @@ AABg5P8AUGes10LjfHEAAAAASUVORK5CYII=
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里我们用matplotlib把图画出来：</p>
 </div>
@@ -2341,8 +2335,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="像数组操作一样表示逻辑条件">像数组操作一样表示逻辑条件<a class="anchor-link" href="#像数组操作一样表示逻辑条件">¶</a></h1><p><code>numpy.where</code>函数是一个向量版的三相表达式，<code>x if condition else y</code>。假设我们有一个布尔数组和两个数组：</p>
 </div>
@@ -2362,8 +2355,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>假设如果cond中为true，我们去xarr中对应的值，否则就取yarr中的值。列表表达式的话会这么写：</p>
 </div>
@@ -2394,8 +2386,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这么做的话会有很多问题。首先，对于很大的数组，会比较慢。第二，对于多维数组不起作用。但<code>np.where</code>能让我们写得更简洁：</p>
 </div>
@@ -2424,8 +2415,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>np.where</code>中第二个和第三个参数不用必须是数组。where在数据分析中一个典型的用法是基于一个数组，产生一个新的数组值。假设我们有一个随机数字生成的矩阵，我们想要把所有的正数变为2，所有的负数变为-2。用where的话会非常简单：</p>
 </div>
@@ -2505,8 +2495,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>我们可以结合标量和数组。比如只把整数变为2，其他仍未原来的数字：</p>
 </div>
@@ -2537,8 +2526,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="数学和统计方法">数学和统计方法<a class="anchor-link" href="#数学和统计方法">¶</a></h1><p>一些能计算统计值的数学函数能基于整个数组，或者沿着一个axis（轴）。可以使用aggregations(often called reductions，汇总，或被叫做降维)，比如sum, mean, and std(标准差).</p>
 <p>下面是一些aggregate statistics（汇总统计）：</p>
@@ -2635,8 +2623,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>mean, sum这样的函数能接受axis作为参数来计算统计数字，返回的结果维度更少：</p>
 </div>
@@ -2685,8 +2672,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里<code>arr.mean(1)</code>表示，compute mean acros the columns(计算各列之间的平均值)。<code>arr.sum(0)</code>表示，compute sum down the rows(计算各行总和)。</p>
 <p>其他一些方法，像cumsum和cumprod不做汇总，而是产生一个中间结果的数组：</p>
@@ -2716,8 +2702,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>上面的计算是一个累加的结果，<code>0+1=1，1+2=3，3+3=6</code>以此类推。</p>
 </div>
@@ -2735,8 +2720,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>对于多维数组，accumulation functions（累积函数）比如cumsum，返回的是同样大小的数组，但是部分聚合会沿着指示的轴向较低维度进行切片：</p>
 </div>
@@ -2813,8 +2797,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里有一些基本的统计计算方法：
 <img alt="" src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/9mzrp.png"/></p>
@@ -2845,8 +2828,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>有两个其他方法，any和all，对于布尔数组特别有用。any检测数组中只要有一个ture返回就是true，而all检测数组中都是true才会返回true。</p>
 </div>
@@ -2906,8 +2888,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="排序">排序<a class="anchor-link" href="#排序">¶</a></h1><p>numpy中也有sort方法：</p>
 </div>
@@ -2982,8 +2963,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>如果是多维数组，还可以按axis来排序：</p>
 </div>
@@ -3052,8 +3032,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>上面是直接调用数组的sort方法，会改变原有数组的顺序。但如果使用<code>np.sort()</code>函数的话，会生成一个新的排序后的结果。</p>
 <p>一个计算分位数的快捷方法是先给数组排序，然后选择某个排名的值：</p>
@@ -3094,8 +3073,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="单一性和其他集合逻辑">单一性和其他集合逻辑<a class="anchor-link" href="#单一性和其他集合逻辑">¶</a></h1><p>Numpy也有一些基本的集合操作用于一维数组。<code>np.unique</code>，能返回排好序且不重复的值：</p>
 </div>
@@ -3157,8 +3135,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>如果用纯python代码来实现的话，要这么写：</p>
 </div>
@@ -3186,8 +3163,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>np.in1d</code>, 测试一个数组的值是否在另一个数组里，返回一个布尔数组：</p>
 </div>
@@ -3226,8 +3202,7 @@ VapUjFJApkqVKlWqVIz+P/ccRi8qaOT2AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里是一些数组的集合操作：
 <img alt="" src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/du91n.png"/></p>

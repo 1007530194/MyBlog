@@ -1064,8 +1064,7 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="CHAPTER-7-Data-Cleaning-and-Preparation">CHAPTER 7 Data Cleaning and Preparation<a class="anchor-link" href="#CHAPTER-7-Data-Cleaning-and-Preparation">¶</a></h1><p>其实数据分析中80%的时间都是在数据清理部分，loading, clearning, transforming, rearranging。而pandas非常适合用来执行这些任务。</p>
 <h1 id="7.1-Handling-Missing-Data">7.1 Handling Missing Data<a class="anchor-link" href="#7.1-Handling-Missing-Data">¶</a></h1><p>在pandas中，missing data呈现的方式有些缺点的，但对大部分用户能起到足够的效果。对于数值型数据，pandas用浮点值Nan(Not a Number)来表示缺失值。我们称之为识别符（sentinel value)，这种值能被轻易检测到：</p>
@@ -1136,8 +1135,7 @@ dtype: bool</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在pandas中，我们使用了R语言中的一些传统，把缺失值表示为NA（not available）。在统计应用里，NA数据别是要么是数据不存在，要么是存在但不能被检测到。做数据清理的时候，对缺失值做分析是很重要的，我们要确定是否是数据收集的问题，或者缺失值是否会带来潜在的偏见。</p>
 <p>内建的Python None值也被当做NA：</p>
@@ -1181,8 +1179,7 @@ dtype: bool</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里有一些用来处理缺失值的函数：</p>
 <p><img alt="" src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/zq0q8.png"/></p>
@@ -1237,8 +1234,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>上面的等同于：</p>
 </div>
@@ -1269,8 +1265,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>对于DataFrame，会复杂一些。你可能想要删除包含有NA的row和column。dropna默认会删除包含有缺失值的row：</p>
 </div>
@@ -1388,8 +1383,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>设定<code>how=all</code>只会删除那些全是NA的行：</p>
 </div>
@@ -1448,8 +1442,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>删除列也一样，设置axis=1:</p>
 </div>
@@ -1578,8 +1571,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>一种删除DataFrame row的相关应用是是time series data。假设你想要保留有特定数字的观测结果，可以使用thresh参数：</p>
 </div>
@@ -1943,8 +1935,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="2-Filling-In-Missing-Data（填补缺失值）">2 Filling In Missing Data（填补缺失值）<a class="anchor-link" href="#2-Filling-In-Missing-Data（填补缺失值）">¶</a></h1><p>不是删除缺失值，而是用一些数字填补。对于大部分目的，fillna是可以用的。调用fillna的时候设置好一个常用用来替换缺失值：</p>
 </div>
@@ -2027,8 +2018,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>给fillna传入一个dict，可以给不同列替换不同的值：</p>
 </div>
@@ -2111,8 +2101,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>fillna返回一个新对象，但你可以使用in-place来直接更改原有的数据：</p>
 </div>
@@ -2196,8 +2185,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在使用fillna的时候，这种插入法同样能用于reindexing：</p>
 </div>
@@ -2557,8 +2545,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>使用fillna可以我们做一些颇有创造力的事情。比如，可以传入一个series的平均值或中位数：</p>
 </div>
@@ -2592,8 +2579,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>下面是fillna的一些参数：</p>
 <p><img alt="" src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/vtzrf.png"/></p>

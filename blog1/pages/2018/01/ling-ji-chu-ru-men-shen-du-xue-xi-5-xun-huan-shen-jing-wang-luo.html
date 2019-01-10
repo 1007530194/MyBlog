@@ -1064,8 +1064,7 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><p>无论即将到来的是大数据时代还是人工智能时代，亦或是传统行业使用人工智能在云上处理大数据的时代，作为一个有理想有追求的程序员，不懂深度学习（Deep Learning）这个超热的技术，会不会感觉马上就out了？现在救命稻草来了，《零基础入门深度学习》系列文章旨在讲帮助爱编程的你从零基础达到入门级水平。零基础意味着你不需要太多的数学知识，只要会写程序就行了，没错，这是专门为程序员写的文章。虽然文中会有很多公式你也许看不懂，但同时也会有更多的代码，程序员的你一定能看懂的（我周围是一群狂热的Clean Code程序员，所以我写的代码也不会很差）。</p>
 </blockquote>
@@ -1081,8 +1080,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="语言模型">语言模型<a class="anchor-link" href="#语言模型">¶</a></h1><p>RNN是在<strong>自然语言处理</strong>领域中最先被用起来的，比如，RNN可以为语言模型来建模。那么，什么是<strong>语言模型</strong>呢？</p>
 <p>我们可以和电脑玩一个游戏，我们写出一个句子前面的一些词，然后，让电脑帮我们写下接下来的一个词。比如下面这句：</p>
@@ -1101,8 +1099,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="循环神经网络是啥">循环神经网络是啥<a class="anchor-link" href="#循环神经网络是啥">¶</a></h1><p>循环神经网络种类繁多，我们先从最简单的基本循环神经网络开始吧。</p>
 <h2 id="基本循环神经网络">基本循环神经网络<a class="anchor-link" href="#基本循环神经网络">¶</a></h2><p>下图是一个简单的循环神经网络如，它由输入层、一个隐藏层和一个输出层组成：
@@ -1114,8 +1111,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>现在看上去就比较清楚了，这个网络在t时刻接收到输入$x_t$之后，隐藏层的值是$s_t$，输出值是$o_t$。关键一点是，$s_t$的值不仅仅取决于$x_t$，还取决于$s_{t-1}$。我们可以用下面的公式来表示循环神经网络的计算方法：</p>
 <p>\begin{align}
@@ -1137,8 +1133,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="双向循环神经网络">双向循环神经网络<a class="anchor-link" href="#双向循环神经网络">¶</a></h2><p>对于<strong>语言模型</strong>来说，很多时候光看前面的词是不够的，比如下面这句话：</p>
 <blockquote><p>我的手机坏了，我打算____一部新手机。</p>
@@ -1165,8 +1160,7 @@ A_2'&amp;=f(W'A_3'+U'\mathrm{x}_2)\\
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="深度循环神经网络">深度循环神经网络<a class="anchor-link" href="#深度循环神经网络">¶</a></h2><p>前面我们介绍的循环神经网络只有一个隐藏层，我们当然也可以堆叠两个以上的隐藏层，这样就得到了<strong>深度循环神经网络</strong>。如下图所示：</p>
 <p><img alt="深度循环神经网络" src="http://upload-images.jianshu.io/upload_images/2256672-df137de8007c3d26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480"/></p>
@@ -1183,8 +1177,7 @@ A_2'&amp;=f(W'A_3'+U'\mathrm{x}_2)\\
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="循环神经网络的训练">循环神经网络的训练<a class="anchor-link" href="#循环神经网络的训练">¶</a></h1><h2 id="循环神经网络的训练算法：BPTT">循环神经网络的训练算法：BPTT<a class="anchor-link" href="#循环神经网络的训练算法：BPTT">¶</a></h2><p>BPTT算法是针对<strong>循环层</strong>的训练算法，它的基本原理和BP算法是一样的，也包含同样的三个步骤：</p>
 <ul>
@@ -1235,8 +1228,7 @@ s_n^{t-1}\\
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在这里我们用手写体字母表示向量的一个元素，它的下标表示它是这个向量的第几个元素，它的上标表示第几个时刻。例如，$s_j^t$表示向量s的第j个元素在t时刻的值。$u_{ji}$表示输入层第i个神经元到循环层第j个神经元的权重。$u_{ji}$表示循环层第t-1时刻的第i个神经元到循环层第t个时刻的第j个神经元的权重。</p>
 <p>误差项的计算
@@ -1339,8 +1331,7 @@ Wdiag[f'(\mathrm{net}_{k})]
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$$
 \nabla_{W_t}E=\begin{bmatrix}
@@ -1354,8 +1345,7 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="权重梯度的计算">权重梯度的计算<a class="anchor-link" href="#权重梯度的计算">¶</a></h3><p>现在，我们终于来到了BPTT算法的最后一步：计算每个权重的梯度。</p>
 <p>首先，我们计算误差函数E对权重矩阵W的梯度$\frac{\partial{E}}{\partial{W}}$。</p>
@@ -1429,8 +1419,7 @@ w_{n1}s_1^{t-1}+w_{n2}s_2^{t-1}...w_{nn}s_n^{t-1}\\
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>----------数学公式超高能预警----------</p>
 <p>前面已经介绍了$\nabla_WE$的计算方法，看上去还是比较直观的。然而，读者也许会困惑，为什么最终的梯度是各个时刻的梯度之和呢？我们前面只是直接用了这个结论，实际上这里面是有道理的，只是这个数学推导比较绕脑子。感兴趣的同学可以仔细阅读接下来这一段，它用到了矩阵对矩阵求导、张量与向量相乘运算的一些法则。</p>
@@ -1595,8 +1584,7 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="RNN的梯度爆炸和消失问题">RNN的梯度爆炸和消失问题<a class="anchor-link" href="#RNN的梯度爆炸和消失问题">¶</a></h3><p>不幸的是，实践中前面介绍的几种RNNs并不能很好的处理较长的序列。一个主要的原因是，RNN在训练中很容易发生梯度爆炸和梯度消失，这导致训练时梯度不能在较长序列中一直传递下去，从而使RNN无法捕捉到长距离的影响。</p>
 <p>为什么RNN会产生梯度爆炸和消失问题呢？我们接下来将详细分析一下原因。我们根据式\ref{eq:eq003}可得：</p>
@@ -1617,8 +1605,7 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="RNN的应用举例——基于RNN的语言模型">RNN的应用举例——基于RNN的语言模型<a class="anchor-link" href="#RNN的应用举例——基于RNN的语言模型">¶</a></h2><p>现在，我们介绍一下基于RNN语言模型。我们首先把词依次输入到循环神经网络中，每输入一个词，循环神经网络就输出截止到目前为止，下一个最可能的词。例如，当我们依次输入：</p>
 <blockquote><p>我 昨天 上学 迟到 了</p>
@@ -1714,8 +1701,7 @@ L&amp;=-\frac{1}{N}\sum_{n\in{N}}{y_nlogo_n}\\
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="RNN的实现">RNN的实现<a class="anchor-link" href="#RNN的实现">¶</a></h2><blockquote><p>完整代码请参考GitHub: <a href="https://github.com/hanbt/learn_dl/blob/master/rnn.py">https://github.com/hanbt/learn_dl/blob/master/rnn.py</a> (python2.7)</p>
 </blockquote>

@@ -1064,8 +1064,7 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1>  (some) LaTeX environments for Jupyter notebook </h1>
 </div>
@@ -1086,10 +1085,10 @@ h6:hover .anchor-link {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div id="1af0069f-8ebe-48c1-9f8f-64ddff9e5dfc"></div>
+<div id="9693d870-f388-4493-8ed0-4d200fc2ddbd"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1af0069f-8ebe-48c1-9f8f-64ddff9e5dfc');
+var element = $('#9693d870-f388-4493-8ed0-4d200fc2ddbd');
 IPython.utils.load_extensions('calico-document-tools');
 </script>
 </div>
@@ -1113,16 +1112,14 @@ IPython.utils.load_extensions('calico-document-tools');
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Presentation-and-main-features">Presentation and main features<a class="anchor-link" href="#Presentation-and-main-features">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This extension for IPython 3.x or Jupyter enables to use some LaTeX commands and environments in the notebook's markdown cells.</p>
 <p>\begin{enumerate}
@@ -1167,48 +1164,42 @@ where $\theta$ is the angle between $u$ and $v$ ...
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Implementation-principle">Implementation principle<a class="anchor-link" href="#Implementation-principle">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The main idea is to override the standard Markdown renderer in order to add a <em>small</em> parsing of LaTeX expressions and environments. This heavily uses regular expressions. The LaTeX expression are then rendered using an html version. For instance <code>\underline {something}</code> is rendered as <code>&lt;u&gt; something &lt;/u&gt;</code>, that is \underline{something}. The environments are replaced by an html tag with a class derived from the name of the environment. For example, a <code>definition</code> denvronment will be replaced by an html rendering corresponding to the class <code>latex_definition</code>. The styles associated with the different classes are sepcified in <code>latex_env.css</code>. These substitutions are implemented in <code>thsInNb4.js</code>.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Support-for-simple-LaTeX-commands">Support for simple LaTeX commands<a class="anchor-link" href="#Support-for-simple-LaTeX-commands">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We also added some LaTeX commands (e.g. <code>\textit</code>, <code>\textbf</code>, <code>\underline</code>) -- this is useful in the case of copy-paste from a LaTeX document. Labels and references are supported, including for equations.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Available-environments">Available environments<a class="anchor-link" href="#Available-environments">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li><strong>theorems-like environments</strong>: <em>property, theorem, lemma, corollary, proposition, definition,remark, problem,           exercise, example</em>,</li>
@@ -1222,16 +1213,14 @@ where $\theta$ is the angle between $u$ and $v$ ...
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Automatic-numerotation,-labels-and-references">Automatic numerotation, labels and references<a class="anchor-link" href="#Automatic-numerotation,-labels-and-references">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Counters for numerotation are implemented: one for theorems-like environments, a second for exercises-like environments and a third one for numbering figures.<br/>
 Mathjax-equations with a label are also numbered document-wide (in contrast with standard notebook/mathjax numbering where the scope of numbering is limited to cells). 
@@ -1240,8 +1229,7 @@ An anchor is created for any label which enables to links things within the docu
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A simple example is as follows, featuring automatic numerotation, and the use of labels and references. Also note that standard markdown can be present in the environment and is interpreted. 
 <em>The rendering is done according to the stylesheet <code>latex_env.css</code>, which of course, can be tailored to specific uses and tastes</em>.</p>
@@ -1258,8 +1246,7 @@ X[k]= \frac{1}{N} \sum_{n=0}^{N-1} x[n] e^{-j2\pi \frac{kn}{N}}
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>\begin{definition} \label{def:FT}
 Let $x[n]$ be a sequence of length $N$. Then, its **Fourier transform** is given by
@@ -1272,8 +1259,7 @@ X[k]= \frac{1}{N} \sum_{n=0}^{N-1} x[n] e^{-j2\pi \frac{kn}{N}}
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It is now possible to refer to the definition and to the equation by their labels,  as in:
 \begin{listing}
@@ -1287,8 +1273,7 @@ where $k_0$ is an integer.
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As an example of Definition \ref{def:FT}, consider the Fourier transform (\ref{eq:FT2}) of a pure cosine wave given by
 $$
@@ -1304,24 +1289,21 @@ modulo $N$.</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Bibliography">Bibliography<a class="anchor-link" href="#Bibliography">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Usage">Usage<a class="anchor-link" href="#Usage">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It is possible to cite bibliographic references using the standard LaTeX <code>\cite</code> mechanism. The extension looks for the references in a bibTeX file, by default <code>biblio.bib</code> in the same directory as the notebook. The name of this file can be modified in the configuration toolbar. It is then possible to cite works in the notebook, e.g. 
 \begin{listing}
@@ -1332,16 +1314,14 @@ The main paper on IPython is definitively \cite{PER-GRA:2007}. Other interesting
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Implementation">Implementation<a class="anchor-link" href="#Implementation">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The implemention uses several snippets from the nice <a href="https://bitbucket.org/ipre/calico/downloads/">icalico-document-tools</a> extension that also considers the rendering of citations in the notebook. We also use a modified version of the <a href="https://code.google.com/p/bibtex-js/">bibtex-js</a> parser for reading the references in the bibTeX file. The different functions are implemented in <code>bibInNb4.js</code>. The rendering of citations calls can adopt three styles (Numbered, by key or apa-like) -- this can be selected in the configuration toolbar. It is also possible to customize the rendering of references in the reference list. A citation template is provided in the beginning of file <code>latex_envs.js</code>:</p>
 <pre><code>var cit_tpl = {
@@ -1353,16 +1333,14 @@ The main paper on IPython is definitively \cite{PER-GRA:2007}. Other interesting
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Figure-environment">Figure environment<a class="anchor-link" href="#Figure-environment">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Finally, it is sometimes useful to integrate a figure within a markdown cell. The standard markdown markup for that is <code>![link](image)</code>, but a limitation is that the image can not be resized, can not be referenced and is not numbered. Furthermore it can be useful for re-using existing code. Threfore we have added a limited support for the <code>figure</code> environment. This enables to do something like
 \begin{listing}
@@ -1385,16 +1363,14 @@ Figure \ref{fig:example} shows a second filter with input $X_2$, output $Y_2$  a
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Other-features">Other features<a class="anchor-link" href="#Other-features">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>It is possible to mix LaTeX and markdown markup in environments  </li>
@@ -1404,24 +1380,21 @@ Figure \ref{fig:example} shows a second filter with input $X_2$, output $Y_2$  a
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="User-interface">User interface<a class="anchor-link" href="#User-interface">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Buttons-on-main-toolbar">Buttons on main toolbar<a class="anchor-link" href="#Buttons-on-main-toolbar">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>On the main toolbar, the extension provides three buttons 
 \begin{figure}[H]
@@ -1432,16 +1405,14 @@ The first one  can be used to refresh the numerotation of equations and referenc
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Configuration-toolbar">Configuration toolbar<a class="anchor-link" href="#Configuration-toolbar">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The configuration toolbar<br/>
 \begin{figure}[H]
@@ -1452,24 +1423,21 @@ The first one  can be used to refresh the numerotation of equations and referenc
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Installation,-usage-and-further-examples">Installation, usage and further examples<a class="anchor-link" href="#Installation,-usage-and-further-examples">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Installation">Installation<a class="anchor-link" href="#Installation">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The extension consists in several javascript scripts: <code>latex_envs.js</code>, <code>thmsInNb4.js</code>, <code>bibInNb4.js</code> and <code>initNb.js</code>,  together with a stylesheet <code>latex_envs.css</code>. 
 With Jupyter, you may also simply install the extension with</p>
@@ -1480,8 +1448,7 @@ With Jupyter, you may also simply install the extension with</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>An even more simple procedure is to issue</p>
 <pre><code>jupyter nbextension install https://rawgit.com/jfbercher/latex_envs/master/latex_envs.zip  --user</code></pre>
@@ -1490,8 +1457,7 @@ With Jupyter, you may also simply install the extension with</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you are still with IPython 3, you can install with</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.html.nbextensions</span> <span class="kn">import</span> <span class="n">install_nbextension</span><span class="p">,</span> <span class="n">check_nbextension</span>
@@ -1501,8 +1467,7 @@ With Jupyter, you may also simply install the extension with</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You may then try the extension.  Load it by typing</p>
 <div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">javascript</span>
@@ -1513,8 +1478,7 @@ With Jupyter, you may also simply install the extension with</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you want to automatically load the extension for any notebook, you may use</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.html.services.config</span> <span class="kn">import</span> <span class="n">ConfigManager</span>
@@ -1526,8 +1490,7 @@ With Jupyter, you may also simply install the extension with</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>and replace the <code>True</code> by `None if you want to unload the extension.</p>
 <p>Alternatively you may also do this in javascript via</p>
@@ -1538,8 +1501,7 @@ With Jupyter, you may also simply install the extension with</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>replace the <code>true</code> by <code>null</code> to unload.</p>
 <p>The last alternative is</p>
@@ -1548,32 +1510,28 @@ With Jupyter, you may also simply install the extension with</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>and <code>disable</code> to disable it, of course.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You may follow the instructions in the <a href="https://github.com/ipython-contrib/IPython-notebook-extensions/wiki">wiki</a> to install the extension.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="First-example-(continued)">First example (continued)<a class="anchor-link" href="#First-example-(continued)">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We continue the first example on fthe Fourier transform definition \ref{def:FT} in order to show that, of course, we can illustrate things using a simple code. Since the Fourier transform is an essential tool in signal processing, We put this in evidence using the <code>textboxa</code> environment -- which is defined here in the css, and that one should define in the LaTeX counterpart:
 \begin{listing}
@@ -1585,8 +1543,7 @@ The Fourier transform is an extremely useful tool to have in your toolbox!
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>\begin{textboxa}
 The Fourier transform is an extremely useful tool to have in your toolbox!
@@ -1595,8 +1552,7 @@ The Fourier transform is an extremely useful tool to have in your toolbox!
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The Fourier transform of a pure cosine is given by 
 $$
@@ -1758,24 +1714,21 @@ IyIqlyCPiKhcgjwionL/H9EXA/71Eb4cAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Second-example">Second example<a class="anchor-link" href="#Second-example">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This example shows a series of environments, with different facets; <strong>links, references, markdown or/and LaTeX formatting within environments</strong>. Again, the rendering is done according to the stylesheet <code>latex_env.css</code>, which can be customized. The listing of environments below is typed using the environment <em>listing</em>...</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>\begin{listing}
 \begin{definition} \label{def:diffeq}
@@ -1811,8 +1764,7 @@ Consider the filter defined in Example \ref{ex:IIR1}. Using the **function** `lf
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The lines above are rendered as follows (of course everything can be tailored in the stylesheet):</p>
 <p>\begin{definition} \label{def:diffeq}
@@ -1848,8 +1800,7 @@ Consider the filter defined in Example \ref{ex:IIR1}. Using the **function** `lf
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>\begin{listing}
 The solution of exercise \ref{ex:exofilter}, which uses a difference equation as in Definition \ref{def:diffeq}:
@@ -2222,24 +2173,21 @@ DyGElooEH0IILRUJPoQQWup/lAtzMWJ4g58AAAAASUVORK5CYII=
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Third-example:">Third example:<a class="anchor-link" href="#Third-example:">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This example shows that environments like itemize or enumerate are also available. As already indicated, this is useful for copying text from a TeX file. Following the same idea, text formating commands <code>\textit</code>, <code>\textbf</code>, <code>\underline</code>, etc are also available.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>\begin{listing}
 The following \textit{environments} are available:
@@ -2263,8 +2211,7 @@ The following \textit{environments} are available:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>which gives...</p>
 <p>The following \textit{environments} are available:
@@ -2287,48 +2234,42 @@ The following \textit{environments} are available:
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="(post)-Converters">(post)-Converters<a class="anchor-link" href="#(post)-Converters">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The extension works in the live-notebook. Since it relies on a bunch of javascript, the notebook does not render as is in very nice services such as <code>nbviewer</code> or <code>github</code> viewer. Similarly, <code>nbconvert</code> does not know of the LaTeX constructs which are used and therefore do not fully convert notebooks making use of this extension. Therefore, it is necessary to add a post conversion step to conversions provided by <code>nbconvert</code>. Though an interface exists for adding post-converters to nbconvert, this (first) author was too lazy and not enough strong to implement the post conversion along these lines. What has be done are simple <code>bash</code> and <code>python</code> scripts that perform this conversion.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Installation">Installation<a class="anchor-link" href="#Installation">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Copy the scripts files to a directory in your search path, or launch the scripts with the complete path. The two main scripts are <code>ipynb_thms_to_html</code> (conversion to html, of course:) and <code>ipynb_thms_to_latex</code>  (conversion to LaTeX!).</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conversion-to-html">Conversion to html<a class="anchor-link" href="#Conversion-to-html">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Requirements</strong>: You will need <code>perl</code>, <code>nodejs</code>, and <code>ipython3</code> (the script calls <code>ipython3</code>; if your interpreter is <code>ipython</code>, edit the script and replace the different occurences).</p>
 <p><strong>Configuration</strong>:</p>
@@ -2351,16 +2292,14 @@ The conversion uses the template <code>thmsInNb.tpl</code> (located in the scrip
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conversion-to-LaTeX">Conversion to LaTeX<a class="anchor-link" href="#Conversion-to-LaTeX">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Requirements</strong>: You will need <code>perl</code> and <code>ipython3</code>.</p>
 <p>The conversion to LaTeX is done by something like</p>
@@ -2387,16 +2326,14 @@ As for an example, the present document has been converted using</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Disclaimer,-sources-and-thanks">Disclaimer, sources and thanks<a class="anchor-link" href="#Disclaimer,-sources-and-thanks">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is a not-quick but certainly dirty hack. I am a complete beginner in javascript and of course there are obviously a large amount of possible improvements of the code, in cleaning, factorizing, etc! Language also needs improvement.</p>
 <p><strong>Contributions will be welcome and deeply appreciated.</strong></p>
@@ -2405,8 +2342,7 @@ As for an example, the present document has been converted using</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="References">References<a class="anchor-link" href="#References">¶</a></h1><p><mark> <b>The bib file  biblio_ipython.bib was not found</b></mark></p>
 <p>&lt;/b&gt; &lt;/mark&gt;(<a href="#call-PER-GRA:2007" id="cit-PER-GRA:2007">?</a>) !! _This reference was not found in  biblio<em>ipython.bib </em> !!</p>

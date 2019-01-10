@@ -1064,8 +1064,7 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="CHAPTER-14-Data-Analysis-Examples（数据分析实例）">CHAPTER 14 Data Analysis Examples（数据分析实例）<a class="anchor-link" href="#CHAPTER-14-Data-Analysis-Examples（数据分析实例）">¶</a></h1><h1 id="14.1-USA.gov-Data-from-Bitly（USA.gov数据集）">14.1 USA.gov Data from Bitly（USA.gov数据集）<a class="anchor-link" href="#14.1-USA.gov-Data-from-Bitly（USA.gov数据集）">¶</a></h1><p>2011年，短链接服务（URL shortening service）商<a href="https://bitly.com/">Bitly</a>和美国政府网站<a href="https://www.usa.gov/">USA.gov</a>合作，提供了一份从用户中收集来的匿名数据，这些用户使用了结尾为.gov或.mil的短链接。在2011年，这些数据的动态信息每小时都会保存一次，并可供下载。不过在2017年，这项服务被停掉了。</p>
 <p>数据是每小时更新一次，文件中的每一行都用JOSN（JavaScript Object Notation）格式保存。我们先读取几行看一下数据是什么样的：</p>
@@ -1105,8 +1104,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>python有很多内置的模块能把JSON字符串转换成Python字典对象。这里我们用JSON模块：</p>
 </div>
@@ -1126,8 +1124,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>上面这种方法叫做列表推导式, list comprehension, 在一组字符串上执行一条相同操作（比如这里的json.loads）。结果对象records现在是一个由dict组成的list：</p>
 </div>
@@ -1191,8 +1188,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="1-Counting-Time-Zones-in-Pure-Python（用纯python代码对时区进行计数）">1 Counting Time Zones in Pure Python（用纯python代码对时区进行计数）<a class="anchor-link" href="#1-Counting-Time-Zones-in-Pure-Python（用纯python代码对时区进行计数）">¶</a></h1><p>我们想知道数据集中出现在哪个时区（即tz字段）</p>
 </div>
@@ -1229,8 +1225,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>看来并不是所有的记录都有时区字段。那么只需要在推导式的末尾加一个if 'tz' in rec判断即可</p>
 </div>
@@ -1278,8 +1273,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在这10条时区信息中，可以看到有些是空字符串，现在先留着。</p>
 <p>为了对时区进行计数，我们用两种方法：一个用纯python代码，比较麻烦。另一个用pandas，比较简单。 这里我们先介绍使用纯python代码的方法：</p>
@@ -1306,8 +1300,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>使用python标准库的话，能把代码写得更简洁一些：</p>
 </div>
@@ -1331,8 +1324,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>（译者：下面关于defaultdict的用法是我从Stack Overflow上找到的，英文比较多，简单的说就是通常如果一个字典里不存在一个key，调用的时候会报错，但是如果我们设置了了default，就不会被报错，而是会新建一个key，对应的value就是我们设置的int，这里int代表0）</p>
 <blockquote><p><strong>defaultdict</strong> means that if a key is not found in the dictionary, then instead of a KeyError being thrown, a new entry is created. The type of this new entry is given by the argument of defaultdict.</p>
@@ -1395,8 +1387,7 @@ print(someddict[3]) # print int(), thus 0
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>上面用函数的方式写出来是为了有更高的可用性。要对它进行时区处理，只需要将time_zones传入即可：</p>
 </div>
@@ -1456,8 +1447,7 @@ print(someddict[3]) # print int(), thus 0
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>如何想要得到前10位的时区及其计数值，我们需要一些有关字典的处理技巧：</p>
 </div>
@@ -1508,8 +1498,7 @@ print(someddict[3]) # print int(), thus 0
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>如果用python标准库里的collections.Counter类，能让这个任务变得更简单</p>
 </div>
@@ -1568,8 +1557,7 @@ print(someddict[3]) # print int(), thus 0
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="2-Counting-Time-Zones-with-pandas（用pandas对时区进行计数）">2 Counting Time Zones with pandas（用pandas对时区进行计数）<a class="anchor-link" href="#2-Counting-Time-Zones-with-pandas（用pandas对时区进行计数）">¶</a></h1><p>从一组原始记录中创建DataFrame是很简单的，直接把records传递给pandas.DataFrame即可：</p>
 </div>
@@ -1674,8 +1662,7 @@ Name: tz, dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里frame的输出形式是summary view, 主要用于较大的dataframe对象。frame['tz']所返回的Series对象有一个value_counts方法，该方法可以让我们得到想要的信息:</p>
 </div>
@@ -1724,8 +1711,7 @@ Name: tz, dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>我们能利用matplotlib为这段数据生成一张图片。这里我们先给记录中未知或缺失的时区填上一个替代值。fillna函数可以替代缺失值（NA），而未知值（空字符串）则可以通过布尔型数组索引，加以替换：</p>
 </div>
@@ -1796,8 +1782,7 @@ Name: tz, dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>利用counts对象的plot方法即可得到一张水平条形图：</p>
 </div>
@@ -2003,8 +1988,7 @@ ERFFQjEiIqJIKEZERBQJxYiIiOL/A8E9ZqsYIeE9AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>当然，我们也可以使用之前介绍的seaborn来画一个水平条形图（horizontal bar plot）：</p>
 </div>
@@ -2216,8 +2200,7 @@ ljkpmpmZZU6KZmZmmZOimZlZ9v/+jFe67PC+YAAAAABJRU5ErkJggg==
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>我们还可以对这种数据进行更多的处理。比如a字段含有执行URL操作的浏览器、设备、应用程序的相关信息：</p>
 </div>
@@ -2313,8 +2296,7 @@ Name: a, dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>将这些USER_AGENT字符串中的所有信息都解析出来是一件挺郁闷的工作。不过只要掌握了Python内置的字符串函数和正则表达式，就方便了。比如，我们可以把字符串的第一节（与浏览器大致对应）分离出来得到另一份用户行为摘要：</p>
 </div>
@@ -2387,8 +2369,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>现在，假设我们想按Windows和非Windows用户对时区统计信息进行分解。为了简单期间，我们假定只要agent字符串中含有“windows”就认为该用户是windows用户。由于有的agent缺失，所以先将他们从数据中移除：</p>
 </div>
@@ -2563,8 +2544,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>其次根据a值计算出各行是否是windows：</p>
 </div>
@@ -2625,8 +2605,7 @@ Name: os, dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>接下来就可以根据时区和新得到的操作系统列表对数据进行分组了：</p>
 </div>
@@ -2727,8 +2706,7 @@ Length: 149, dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>上面通过size对分组结果进行计数，类似于value_counts函数，并利用unstack对计数结果进行重塑为一个表格：</p>
 </div>
@@ -2847,8 +2825,7 @@ Length: 149, dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>最后，我们来选取最常出现的时区。为了达到这个目的，根据agg_counts中的行数构造了一个简洁索引数组：</p>
 </div>
@@ -2921,8 +2898,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>然后通过take按照这个顺序截取了最后10行：</p>
 </div>
@@ -3031,8 +3007,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>pandas有一个很方便的方法叫nlargest，可以实现相同效果：</p>
 </div>
@@ -3071,8 +3046,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>上面的输出结果可以画成条形图；通过给seaborn的barplot函数传递一个参数，来画出堆积条形图（stacked bar plot）：</p>
 </div>
@@ -3462,8 +3436,7 @@ EUmRgqmIiEiKFExFRERSpGAqIiKSIgVTERGRFP0/wRrB/PoI65wAAAAASUVORK5CYII=
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>由于这张图中不太容易看清楚较小分组中windows用户的相对比例，因此我们可以将各行规范化为“总计为1”并重新绘图：</p>
 </div>
@@ -3739,8 +3712,7 @@ SEL/D11XqdlXu5aMAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>我们还可以使用transform和groupby，来更有效率地计算规范化的和：</p>
 </div>
@@ -3759,8 +3731,7 @@ SEL/D11XqdlXu5aMAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>译者：下面的内容是不适用seaborn的画图方法，这种画法是2013年第一版中的内容：</p>
 </div>
@@ -3869,8 +3840,7 @@ SEL/D11XqdlXu5aMAAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里也可以生成一张条形图。我们使用stacked=True来生成一张堆积条形图：</p>
 </div>
@@ -4120,8 +4090,7 @@ piIiIjH9f8lh9JfulKm/AAAAAElFTkSuQmCC
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>由于这张图中不太容易看清楚较小分组中windows用户的相对比例，因此我们可以将各行规范化为“总计为1”并重新绘图：</p>
 </div>

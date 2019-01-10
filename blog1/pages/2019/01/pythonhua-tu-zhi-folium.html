@@ -1064,8 +1064,7 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="简介">简介<a class="anchor-link" href="#简介">¶</a></h1><p>folium是js上著名的地理信息可视化库leaflet.js为Python提供的接口，通过它，我们可以通过在Python端编写代码操纵数据，来调用leaflet的相关功能，基于内建的osm或自行获取的osm资源和地图原件进行地理信息内容的可视化，以及制作优美的可交互地图。其语法格式类似ggplot2，是通过不断添加图层元素来定义一个Map对象，最后以几种方式将Map对象展现出来。</p>
 <p>　　而在Map对象的生成形式上，可以在定义所有的图层内容之后，将其保存为html文件在浏览器中独立显示，也可以基于jupyter notebook在一个ipynb文件内部嵌入对应的交互地图，本文即采用后者对应的方法。</p>
@@ -1102,8 +1101,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>可以看出，m的类型为folium中的Map，类似ggplot2中显示图形的方式，接下来直接在jupyter notebook调用m即可显示地图（默认的osm资源地址在国外，需要稍许等待）;</p>
 <p>通过这样一个简单的例子，可以了解到，folium.Map()即为folium中绘制地图图层的基本函数，其主要参数如下：</p>
@@ -1149,8 +1147,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>如我们设置的一样，视图只有左半边被地图填充，且在地图的左下角施加了比例尺，标记出了公里和英里的比例尺。</p>
 <p>　　下面是一个tiles设置为'Stamen Terrain'的地图：</p>
@@ -1185,8 +1182,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="在图层上添加各种内建的部件">在图层上添加各种内建的部件<a class="anchor-link" href="#在图层上添加各种内建的部件">¶</a></h1><h2 id="为地图添加标记部件">为地图添加标记部件<a class="anchor-link" href="#为地图添加标记部件">¶</a></h2><p>有了最底层的地图，接下来我们就可以利用手里掌握的地理信息数据，根据需要将其展现在地图图层之上，下面是一个简单的示范：</p>
 </div>
@@ -1225,8 +1221,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>我们通过folium.Marker()方法，创建了一个简单的标记小部件，并通过add_to()将定义好的部件施加于先前创建的Map对象m之上，下面我们对folium.Marker()的常用参数进行介绍：</p>
 <p>　　location：同folium.Map()中的同名参数，用于确定标记部件的经纬位置</p>
@@ -1332,8 +1327,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="在地图上添加圆圈">在地图上添加圆圈<a class="anchor-link" href="#在地图上添加圆圈">¶</a></h2><p>　　除了单点类型的图形部件，我们还可以在地图上施加指定范围的几何图像，例如圆圈：</p>
 </div>
@@ -1376,8 +1370,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在folium中我们使用folium.Circle()来绘制指定圆心和半径的圆圈，其主要参数如下：</p>
 <p>　　location：同folium.Map()中的location，用于控制圆圈的圆心坐标</p>
@@ -1428,8 +1421,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>将圆圈内部填充颜色设置为粉色：</p>
 </div>
@@ -1472,8 +1464,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="在地图上绘制任意几何图形">在地图上绘制任意几何图形<a class="anchor-link" href="#在地图上绘制任意几何图形">¶</a></h2><p>　　很多时候我们希望在地图上呈现不规则的几何区域，folium.PolyLine()就可以实现这个功能，下面是一个简单的演示：</p>
 </div>
@@ -1512,8 +1503,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>folium.PolyLine()的常用参数如下：</p>
 <p>　　locations：二级嵌套的list，用于指定需要按顺序连接的坐标点，若要绘制闭合的几何图像，需要在传入列表的首尾传入同样的坐标</p>
@@ -1556,8 +1546,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="实现点击地图任意位置产生一个新的图标">实现点击地图任意位置产生一个新的图标<a class="anchor-link" href="#实现点击地图任意位置产生一个新的图标">¶</a></h3>
 </div>
@@ -1591,8 +1580,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="热力地图(heatmap)">热力地图(heatmap)<a class="anchor-link" href="#热力地图(heatmap)">¶</a></h1><p>我们利用folium.plugins.HeatMap()来绘制我们的热力地图，该方法较为简单，主要的传入参数仅有一个data，其格式为[[经度,纬度,数值],[经度,纬度,数值],...,[经度,纬度,数值]]，其中每一个单独的点的坐标由嵌套的内层每一个列表的前两个元素来确定，控制热力程度的值由上述列表的第三个值表示，下面是一个简单的例子：</p>
 </div>

@@ -1064,8 +1064,7 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="时间序列基础">时间序列基础<a class="anchor-link" href="#时间序列基础">¶</a></h1><p>在pandas中，一个基本的时间序列对象，是一个用时间戳作为索引的Series，在pandas外部的话，通常是用python 字符串或datetime对象来表示的：</p>
 </div>
@@ -1126,8 +1125,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>上面的转化原理是，datetime对象被放进了DatetimeIndex:</p>
 </div>
@@ -1157,8 +1155,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>像其他的Series一行，数值原色会自动按时间序列索引进行对齐：</p>
 </div>
@@ -1216,8 +1213,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>ts[::2]会在ts中，每隔两个元素选一个元素。</p>
 <p>pandas中的时间戳，是按numpy中的datetime64数据类型进行保存的，可以精确到纳秒的级别：</p>
@@ -1246,8 +1242,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>DatetimeIndex的标量是pandas的Timestamp对象：</p>
 </div>
@@ -1276,8 +1271,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Timestamp可以在任何地方用datetime对象进行替换。</p>
 <h1 id="索引，选择，取子集">索引，选择，取子集<a class="anchor-link" href="#索引，选择，取子集">¶</a></h1><p>当我们基于标签进行索引和选择时，时间序列就像是pandas.Series：</p>
@@ -1344,8 +1338,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>为了方便，我们可以直接传入一个字符串用来表示日期：</p>
 </div>
@@ -1394,8 +1387,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>对于比较长的时间序列，我们可以直接传入一年或一年一个月，来进行数据选取：</p>
 </div>
@@ -1568,8 +1560,7 @@ Freq: D, dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里，字符串'2001'就直接被解析为一年，然后选中这个时期的数据。我们也可以指定月份：</p>
 </div>
@@ -1628,8 +1619,7 @@ Freq: D, dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>利用datetime进行切片（slicing）也没问题：</p>
 </div>
@@ -1657,8 +1647,7 @@ Freq: D, dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>因为大部分时间序列是按年代时间顺序来排列的，我们可以用时间戳来进行切片，选中一段范围内的时间：</p>
 </div>
@@ -1716,8 +1705,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>记住，这种方式的切片得到的只是原来数据的一个视图，如果我们在切片的结果上进行更改的的，原来的数据也会变化。</p>
 <p>有一个相等的实例方法（instance method）也能切片，truncate，能在两个日期上，对Series进行切片：</p>
@@ -1750,8 +1738,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>所有这些都适用于DataFrame，我们对行进行索引：</p>
 </div>
@@ -1853,8 +1840,7 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="重复索引的时间序列">重复索引的时间序列<a class="anchor-link" href="#重复索引的时间序列">¶</a></h1><p>在某些数据中，可能会遇到多个数据在同一时间戳下的情况：</p>
 </div>
@@ -1900,8 +1886,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>我们通过is_unique属性来查看index是否是唯一值：</p>
 </div>
@@ -1929,8 +1914,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>对这个时间序列取索引的的话， 要么得到标量，要么得到切片，这取决于时间戳是否是重复的：</p>
 </div>
@@ -1982,8 +1966,7 @@ dtype: int64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>假设我们想要聚合那些有重复时间戳的数据，一种方法是用groupby，设定level=0：</p>
 </div>

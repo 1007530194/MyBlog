@@ -1064,24 +1064,21 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="xgboost">xgboost<a class="anchor-link" href="#xgboost">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="参考网址">参考网址<a class="anchor-link" href="#参考网址">¶</a></h2><p>1 XGBoost参数调优完全指南（附Python代码） <a href="https://www.cnblogs.com/mfryf/p/6293814.html">https://www.cnblogs.com/mfryf/p/6293814.html</a></p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="XGBoost的参数">XGBoost的参数<a class="anchor-link" href="#XGBoost的参数">¶</a></h1><p>XGBoost的作者把所有的参数分成了三类：<br/>
 1、通用参数：宏观函数控制。<br/>
@@ -1092,8 +1089,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="通用参数">通用参数<a class="anchor-link" href="#通用参数">¶</a></h2><p>这些参数用来控制XGBoost的宏观功能。</p>
 <h3 id="booster[默认gbtree]">booster[默认gbtree]<a class="anchor-link" href="#booster[默认gbtree]">¶</a></h3><p>选择每次迭代的模型，有两种选择：
@@ -1106,8 +1102,7 @@ gbliner：线性模型</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="booster参数">booster参数<a class="anchor-link" href="#booster参数">¶</a></h2><p>尽管有两种booster可供选择，我这里只介绍tree booster，因为它的表现远远胜过linear booster，所以linear booster很少用到。</p>
 <h3 id="eta[默认0.3]">eta[默认0.3]<a class="anchor-link" href="#eta[默认0.3]">¶</a></h3><p>和GBM中的 learning rate 参数类似。 通过减少每一步的权重，可以提高模型的鲁棒性。 典型值为0.01-0.2。</p>
@@ -1126,8 +1121,7 @@ gbliner：线性模型</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="学习目标参数">学习目标参数<a class="anchor-link" href="#学习目标参数">¶</a></h2><p>这个参数用来控制理想的优化目标和每一步结果的度量方法。</p>
 <h3 id="objective[默认reg:linear]">objective[默认reg:linear]<a class="anchor-link" href="#objective[默认reg:linear]">¶</a></h3><p>这个参数定义需要被最小化的损失函数。最常用的值有：<br/>
@@ -1151,8 +1145,7 @@ auc 曲线下面积</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="调整参数(含示例)">调整参数(含示例)<a class="anchor-link" href="#调整参数(含示例)">¶</a></h1><p>我已经对这些数据进行了一些处理：</p>
 <p>City变量，因为类别太多，所以删掉了一些类别。 DOB变量换算成年龄，并删除了一些数据。 增加了 EMI_Loan_Submitted_Missing 变量。如果EMI_Loan_Submitted变量的数据缺失，则这个参数的值为1。否则为0。删除了原先的EMI_Loan_Submitted变量。 EmployerName变量，因为类别太多，所以删掉了一些类别。 因为Existing_EMI变量只有111个值缺失，所以缺失值补充为中位数0。 增加了 Interest_Rate_Missing 变量。如果Interest_Rate变量的数据缺失，则这个参数的值为1。否则为0。删除了原先的Interest_Rate变量。 删除了Lead_Creation_Date，从直觉上这个特征就对最终结果没什么帮助。 Loan_Amount_Applied, Loan_Tenure_Applied 两个变量的缺项用中位数补足。 增加了 Loan_Amount_Submitted_Missing 变量。如果Loan_Amount_Submitted变量的数据缺失，则这个参数的值为1。否则为0。删除了原先的Loan_Amount_Submitted变量。 增加了 Loan_Tenure_Submitted_Missing 变量。如果 Loan_Tenure_Submitted 变量的数据缺失，则这个参数的值为1。否则为0。删除了原先的 Loan_Tenure_Submitted 变量。 删除了LoggedIn, Salary_Account 两个变量 增加了 Processing_Fee_Missing 变量。如果 Processing_Fee 变量的数据缺失，则这个参数的值为1。否则为0。删除了原先的 Processing_Fee 变量。 Source前两位不变，其它分成不同的类别。 进行了量化和独热编码(一位有效编码)。</p>
@@ -1162,8 +1155,7 @@ auc 曲线下面积</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="实例">实例<a class="anchor-link" href="#实例">¶</a></h1><h2 id="上手实例一">上手实例一<a class="anchor-link" href="#上手实例一">¶</a></h2><h3 id="数据集">数据集<a class="anchor-link" href="#数据集">¶</a></h3>
 </div>
@@ -1205,8 +1197,7 @@ auc 曲线下面积</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="训练集与测试集">训练集与测试集<a class="anchor-link" href="#训练集与测试集">¶</a></h3>
 </div>
@@ -1240,8 +1231,7 @@ auc 曲线下面积</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="模型初始化设置">模型初始化设置<a class="anchor-link" href="#模型初始化设置">¶</a></h3>
 </div>
@@ -1277,8 +1267,7 @@ auc 曲线下面积</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="建模与预测">建模与预测<a class="anchor-link" href="#建模与预测">¶</a></h3>
 </div>
@@ -1481,8 +1470,7 @@ Precesion: 1.0000
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="可视化输出">可视化输出<a class="anchor-link" href="#可视化输出">¶</a></h3>
 </div>

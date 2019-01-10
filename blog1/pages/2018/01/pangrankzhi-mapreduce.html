@@ -1064,8 +1064,7 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="https://blog.csdn.net/u010414589/article/details/51404971">https://blog.csdn.net/u010414589/article/details/51404971</a></p>
 <p>早就对PageRank 算法感兴趣，但一直都是轮廓性的概念，没有具体深入学习。最近要学习和总结MapReduce 的实例，就又把PageRank 算法重新学习了一遍，并基于MapReduce 进行了实现。</p>
@@ -1074,8 +1073,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="简单的PageRank计算">简单的PageRank计算<a class="anchor-link" href="#简单的PageRank计算">¶</a></h1><p>首先我们对整个Web进行一个简单化处理：1、将每一个页面看做一个节点；2、如果页面A 链接页面B，则存在一条从A到B的有向边。整个Web就被抽象成一个有向图。 
 现在假设只有四张网页，它的结构如图所示。</p>
@@ -1219,8 +1217,7 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>显然该图是强联通的(从任一节点出发都可以达到另一任节点)。对于页面A来说，它链接到页面B，C，D，即A有3个出链，则它跳转到每个出链B，C，D的概率均为1/3.。如果A有k个出链，跳转到每个出链的概率为1/k。同理B到A，C，D的概率为1/2，0，1/2。C到A,B,D的概率为1，0，0。D到A，B，C的概率为0，1/2，1/2。</p>
 <p>通常我们使用一种合适的数据结构来表示页面间的链接关系。设一共有N个页面，则要生成一个N维矩阵，其中第i行表示的是其他页面对 第i个页面链接的概率，第j列表示的是第j个页面对其他页面链接的概率。这样的矩阵叫做转移矩阵。对应到上图，转移矩阵为：</p>
@@ -1265,8 +1262,7 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="处理Dead-Ends(终止点)">处理Dead Ends(终止点)<a class="anchor-link" href="#处理Dead-Ends(终止点)">¶</a></h1><p>上面的PageRank计算方法要求整个Web是强联通的。而实际上真实的Web并不是强联通的，有一类页面，它们不存在任何外链，称之为Dead Ends(终止点)。比如下面的图：</p>
 <p><img alt="nothing" src="https://img-blog.csdn.net/20160514115939628"/></p>
@@ -1291,8 +1287,7 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="处理Spider-Traps（蜘蛛陷阱）">处理Spider Traps（蜘蛛陷阱）<a class="anchor-link" href="#处理Spider-Traps（蜘蛛陷阱）">¶</a></h1><p>通过以上可以想象到，真实的Web链接关系若是转换成转移矩阵，那必将是一个稀疏的矩阵。而稀疏的矩阵迭代相乘会使得中间产生的PageRank向量变得不平滑（一小部分值很大，大部分值很小或接近于0）。而一种Spider Traps 节点 会加剧这个不平滑的效果，也即是蜘蛛陷阱。它是指某一些节点虽然有外链，但是它只链向自己。如下图所示：</p>
 <p><img alt="nothing" src="https://img-blog.csdn.net/20160514130534469"/></p>
@@ -1320,8 +1315,7 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="基于MapReduce-的PageRank-设计思路">基于MapReduce 的PageRank 设计思路<a class="anchor-link" href="#基于MapReduce-的PageRank-设计思路">¶</a></h1><h2 id="输入">输入<a class="anchor-link" href="#输入">¶</a></h2><p>基于上面的例子，我们的输入样本是</p>
 <table>
@@ -1391,8 +1385,7 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Map过程的设计">Map过程的设计<a class="anchor-link" href="#Map过程的设计">¶</a></h2><p>对每一行文本进行解析，获得当前网页、当前网页的PageRank值、当前网页要链接到的其他网页<br/>
 计算出要链接到的其他网友的个数，然后求出当前网页对其他网页的贡献值。<br/>
@@ -1491,8 +1484,7 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Reduce过程的设计">Reduce过程的设计<a class="anchor-link" href="#Reduce过程的设计">¶</a></h2><p>shuffule的输出也即是reduce的输入。</p>
 <p>reduce输入的key 直接作为输出的key</p>
@@ -1506,8 +1498,7 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="源码分析">源码分析<a class="anchor-link" href="#源码分析">¶</a></h1><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.apache.hadoop.examples</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
