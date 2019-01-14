@@ -1,49 +1,80 @@
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>十分钟上手xgboost_jupyter &mdash; 魑魅魍魉</title>
-  <meta name="author" content="niult">
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+<meta charset="utf-8">
+<title>十分钟上手xgboost_jupyter &mdash; 魑魅魍魉</title>
+<meta name="author" content="niult">
 
 
 
 
 
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <link href="../../../favicon.png" rel="icon">
 
-  <link href="../../../theme/css/main.css" media="screen, projection"
-        rel="stylesheet" type="text/css">
+<link href="../../../theme/css/main.css" media="screen, projection"
+      rel="stylesheet" type="text/css">
 
-  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-</head>
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+      rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+      rel="stylesheet" type="text/css">
+
+<!-- mathjax config similar to math.stackexchange -->
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+    init_mathjax = function () {
+        if (window.MathJax) {
+            // MathJax loaded
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ["\\(", "\\)"]],
+                    displayMath: [['$$', '$$'], ["\\[", "\\]"]]
+                },
+                displayAlign: 'center', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 0}}
+                }
+            });
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    };
+    init_mathjax();
+</script>
+
+<script type="text/javascript">
+    init_mathjax2 = function () {
+        // Fix <code> tags after MathJax finishes running. This is a
+        // hack to overcome a shortcoming of Markdown. Discussion at
+        // https://github.com/mojombo/jekyll/issues/199
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    };
+    init_mathjax2();
+
+
+</script></head>
 
 <body>
-  <header role="banner"><hgroup>
+<header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
 </hgroup></header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+<nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
 
 
 <ul class="main-navigation">
-      <li >
-        <a href="../../../category/00qi-ta.html">00.其他</a>
-      </li>
-      <li >
-        <a href="../../../category/00qi-ta-2.html">00.其他2</a>
-      </li>
       <li class="active">
         <a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
       </li>
@@ -71,11 +102,8 @@
       <li >
         <a href="../../../category/tools.html">Tools</a>
       </li>
-      <li >
-        <a href="../../../category/tools-numpy.html">Tools-numpy</a>
-      </li>
 </ul></nav>
-  <div id="main">
+<div id="main">
     <div id="content">
 <div>
   <article class="hentry" role="article">
@@ -1058,21 +1086,24 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="xgboost">xgboost<a class="anchor-link" href="#xgboost">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="参考网址">参考网址<a class="anchor-link" href="#参考网址">¶</a></h2><p>1 XGBoost参数调优完全指南（附Python代码） <a href="https://www.cnblogs.com/mfryf/p/6293814.html">https://www.cnblogs.com/mfryf/p/6293814.html</a></p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="XGBoost的参数">XGBoost的参数<a class="anchor-link" href="#XGBoost的参数">¶</a></h1><p>XGBoost的作者把所有的参数分成了三类：<br/>
 1、通用参数：宏观函数控制。<br/>
@@ -1083,7 +1114,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="通用参数">通用参数<a class="anchor-link" href="#通用参数">¶</a></h2><p>这些参数用来控制XGBoost的宏观功能。</p>
 <h3 id="booster[默认gbtree]">booster[默认gbtree]<a class="anchor-link" href="#booster[默认gbtree]">¶</a></h3><p>选择每次迭代的模型，有两种选择：
@@ -1096,7 +1128,8 @@ gbliner：线性模型</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="booster参数">booster参数<a class="anchor-link" href="#booster参数">¶</a></h2><p>尽管有两种booster可供选择，我这里只介绍tree booster，因为它的表现远远胜过linear booster，所以linear booster很少用到。</p>
 <h3 id="eta[默认0.3]">eta[默认0.3]<a class="anchor-link" href="#eta[默认0.3]">¶</a></h3><p>和GBM中的 learning rate 参数类似。 通过减少每一步的权重，可以提高模型的鲁棒性。 典型值为0.01-0.2。</p>
@@ -1115,7 +1148,8 @@ gbliner：线性模型</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="学习目标参数">学习目标参数<a class="anchor-link" href="#学习目标参数">¶</a></h2><p>这个参数用来控制理想的优化目标和每一步结果的度量方法。</p>
 <h3 id="objective[默认reg:linear]">objective[默认reg:linear]<a class="anchor-link" href="#objective[默认reg:linear]">¶</a></h3><p>这个参数定义需要被最小化的损失函数。最常用的值有：<br/>
@@ -1139,7 +1173,8 @@ auc 曲线下面积</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="调整参数(含示例)">调整参数(含示例)<a class="anchor-link" href="#调整参数(含示例)">¶</a></h1><p>我已经对这些数据进行了一些处理：</p>
 <p>City变量，因为类别太多，所以删掉了一些类别。 DOB变量换算成年龄，并删除了一些数据。 增加了 EMI_Loan_Submitted_Missing 变量。如果EMI_Loan_Submitted变量的数据缺失，则这个参数的值为1。否则为0。删除了原先的EMI_Loan_Submitted变量。 EmployerName变量，因为类别太多，所以删掉了一些类别。 因为Existing_EMI变量只有111个值缺失，所以缺失值补充为中位数0。 增加了 Interest_Rate_Missing 变量。如果Interest_Rate变量的数据缺失，则这个参数的值为1。否则为0。删除了原先的Interest_Rate变量。 删除了Lead_Creation_Date，从直觉上这个特征就对最终结果没什么帮助。 Loan_Amount_Applied, Loan_Tenure_Applied 两个变量的缺项用中位数补足。 增加了 Loan_Amount_Submitted_Missing 变量。如果Loan_Amount_Submitted变量的数据缺失，则这个参数的值为1。否则为0。删除了原先的Loan_Amount_Submitted变量。 增加了 Loan_Tenure_Submitted_Missing 变量。如果 Loan_Tenure_Submitted 变量的数据缺失，则这个参数的值为1。否则为0。删除了原先的 Loan_Tenure_Submitted 变量。 删除了LoggedIn, Salary_Account 两个变量 增加了 Processing_Fee_Missing 变量。如果 Processing_Fee 变量的数据缺失，则这个参数的值为1。否则为0。删除了原先的 Processing_Fee 变量。 Source前两位不变，其它分成不同的类别。 进行了量化和独热编码(一位有效编码)。</p>
@@ -1149,7 +1184,8 @@ auc 曲线下面积</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="实例">实例<a class="anchor-link" href="#实例">¶</a></h1><h2 id="上手实例一">上手实例一<a class="anchor-link" href="#上手实例一">¶</a></h2><h3 id="数据集">数据集<a class="anchor-link" href="#数据集">¶</a></h3>
 </div>
@@ -1191,7 +1227,8 @@ auc 曲线下面积</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="训练集与测试集">训练集与测试集<a class="anchor-link" href="#训练集与测试集">¶</a></h3>
 </div>
@@ -1225,7 +1262,8 @@ auc 曲线下面积</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="模型初始化设置">模型初始化设置<a class="anchor-link" href="#模型初始化设置">¶</a></h3>
 </div>
@@ -1261,7 +1299,8 @@ auc 曲线下面积</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="建模与预测">建模与预测<a class="anchor-link" href="#建模与预测">¶</a></h3>
 </div>
@@ -1464,7 +1503,8 @@ Precesion: 1.0000
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="可视化输出">可视化输出<a class="anchor-link" href="#可视化输出">¶</a></h3>
 </div>
@@ -1595,49 +1635,47 @@ Precesion: 1.0000
 
 </div>
 <aside class="sidebar">
-  <section>
-    <h1>Recent Posts</h1>
-    <ul id="recent_posts">
-      <li class="post">
-          <a href="../../../pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
-      </li>
-    </ul>
-  </section>
-  <section>
-      
-    <h1>Categories</h1>
-    <ul id="recent_posts">
-        <li><a href="../../../category/00qi-ta.html">00.其他</a></li>
-        <li><a href="../../../category/00qi-ta-2.html">00.其他2</a></li>
-        <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
-        <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
-        <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
-        <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
-        <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
-        <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
-        <li><a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
-        <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
-        <li><a href="../../../category/tools.html">tools</a></li>
-        <li><a href="../../../category/tools-numpy.html">tools-numpy</a></li>
-    </ul>
-  </section>
- 
 
-  <section>
-  <h1>Tags</h1>
-    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/latex.html">latex</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/pandas.html">pandas</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/plot.html">plot</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/shell.html">shell</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+        <section>
+
+            <h1>Categories</h1>
+            <ul id="recent_posts">
+                    <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
+                    <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
+                    <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
+                    <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
+                    <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
+                    <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
+                    <li><a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
+                    <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
+                    <li><a href="../../../category/tools.html">tools</a></li>
+            </ul>
+        </section>
+
+    <section>
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+                <li class="post">
+                    <a href="../../../pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
+                </li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Tags</h1>
+            <a href="../../../tag/python.html">python</a>,            <a href="../../../tag/latex.html">latex</a>,            <a href="../../../tag/numpy.html">numpy</a>,            <a href="../../../tag/pandas.html">pandas</a>,            <a href="../../../tag/jupyter.html">jupyter</a>,            <a href="../../../tag/plot.html">plot</a>,            <a href="../../../tag/pip.html">pip</a>,            <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,            <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,            <a href="../../../tag/tensorflow.html">tensorflow</a>,            <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,            <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,            <a href="../../../tag/pangrank.html">PangRank</a>,            <a href="../../../tag/mapreduce.html">MapReduce</a>,            <a href="../../../tag/book.html">book</a>,            <a href="../../../tag/pydata.html">pydata</a>,            <a href="../../../tag/shell.html">shell</a>,            <a href="../../../tag/pyhton.html">pyhton</a>,            <a href="../../../tag/xgboost.html">xgboost</a>    </section>
 
 
     <section>
@@ -1657,17 +1695,17 @@ Precesion: 1.0000
     </section>
 
 </aside>    </div>
-  </div>
-  <footer role="contentinfo"><p>
-        活到老，学到老，玩到老
-    <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</div>
+<footer role="contentinfo"><p>
+    Copyright &copy;  2017&ndash;2019  niult &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
-  <script src="../../../theme/js/modernizr-2.0.js"></script>
-  <script src="../../../theme/js/ender.js"></script>
-  <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
+<script src="../../../theme/js/modernizr-2.0.js"></script>
+<script src="../../../theme/js/ender.js"></script>
+<script src="../../../theme/js/octopress.js" type="text/javascript"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-127062347-1']);
+    _gaq.push(['_setAccount', 'UA-132396898-1']);
     _gaq.push(['_trackPageview']);
     (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -1680,7 +1718,7 @@ Precesion: 1.0000
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-127062347-1');
+    ga('create', 'UA-132396898-1');
     ga('send', 'pageview');
 </script>
 </body>

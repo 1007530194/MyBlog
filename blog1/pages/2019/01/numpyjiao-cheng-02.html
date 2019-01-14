@@ -1,49 +1,80 @@
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>numpy教程02 &mdash; 魑魅魍魉</title>
-  <meta name="author" content="niult">
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+<meta charset="utf-8">
+<title>numpy教程02 &mdash; 魑魅魍魉</title>
+<meta name="author" content="niult">
 
 
 
 
 
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <link href="../../../favicon.png" rel="icon">
 
-  <link href="../../../theme/css/main.css" media="screen, projection"
-        rel="stylesheet" type="text/css">
+<link href="../../../theme/css/main.css" media="screen, projection"
+      rel="stylesheet" type="text/css">
 
-  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-</head>
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+      rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+      rel="stylesheet" type="text/css">
+
+<!-- mathjax config similar to math.stackexchange -->
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+    init_mathjax = function () {
+        if (window.MathJax) {
+            // MathJax loaded
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ["\\(", "\\)"]],
+                    displayMath: [['$$', '$$'], ["\\[", "\\]"]]
+                },
+                displayAlign: 'center', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 0}}
+                }
+            });
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    };
+    init_mathjax();
+</script>
+
+<script type="text/javascript">
+    init_mathjax2 = function () {
+        // Fix <code> tags after MathJax finishes running. This is a
+        // hack to overcome a shortcoming of Markdown. Discussion at
+        // https://github.com/mojombo/jekyll/issues/199
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    };
+    init_mathjax2();
+
+
+</script></head>
 
 <body>
-  <header role="banner"><hgroup>
+<header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
 </hgroup></header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+<nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
 
 
 <ul class="main-navigation">
-      <li >
-        <a href="../../../category/00qi-ta.html">00.其他</a>
-      </li>
-      <li >
-        <a href="../../../category/00qi-ta-2.html">00.其他2</a>
-      </li>
       <li >
         <a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
       </li>
@@ -71,11 +102,8 @@
       <li class="active">
         <a href="../../../category/tools.html">Tools</a>
       </li>
-      <li >
-        <a href="../../../category/tools-numpy.html">Tools-numpy</a>
-      </li>
 </ul></nav>
-  <div id="main">
+<div id="main">
     <div id="content">
 <div>
   <article class="hentry" role="article">
@@ -1058,14 +1086,16 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Aggregations:-Min,-Max,-and-Everything-In-Between">Aggregations: Min, Max, and Everything In Between<a class="anchor-link" href="#Aggregations:-Min,-Max,-and-Everything-In-Between">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Often when faced with a large amount of data, a first step is to compute summary statistics for the data in question.
 Perhaps the most common summary statistics are the mean and standard deviation, which allow you to summarize the "typical" values in a dataset, but other aggregates are useful as well (the sum, product, median, minimum and maximum, quantiles, etc.).</p>
@@ -1074,7 +1104,8 @@ Perhaps the most common summary statistics are the mean and standard deviation, 
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Summing-the-Values-in-an-Array">Summing the Values in an Array<a class="anchor-link" href="#Summing-the-Values-in-an-Array">¶</a></h2><p>As a quick example, consider computing the sum of all values in an array.
 Python itself can do this using the built-in <code>sum</code> function:</p>
@@ -1115,7 +1146,8 @@ Python itself can do this using the built-in <code>sum</code> function:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The syntax is quite similar to that of NumPy's <code>sum</code> function, and the result is the same in the simplest case:</p>
 </div>
@@ -1143,7 +1175,8 @@ Python itself can do this using the built-in <code>sum</code> function:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>However, because it executes the operation in compiled code, NumPy's version of the operation is computed much more quickly:</p>
 </div>
@@ -1175,7 +1208,8 @@ Python itself can do this using the built-in <code>sum</code> function:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Be careful, though: the <code>sum</code> function and the <code>np.sum</code> function are not identical, which can sometimes lead to confusion!
 In particular, their optional arguments have different meanings, and <code>np.sum</code> is aware of multiple array dimensions, as we will see in the following section.</p>
@@ -1183,7 +1217,8 @@ In particular, their optional arguments have different meanings, and <code>np.su
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Minimum-and-Maximum">Minimum and Maximum<a class="anchor-link" href="#Minimum-and-Maximum">¶</a></h2><p>Similarly, Python has built-in <code>min</code> and <code>max</code> functions, used to find the minimum value and maximum value of any given array:</p>
 </div>
@@ -1211,7 +1246,8 @@ In particular, their optional arguments have different meanings, and <code>np.su
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>NumPy's corresponding functions have similar syntax, and again operate much more quickly:</p>
 </div>
@@ -1263,7 +1299,8 @@ In particular, their optional arguments have different meanings, and <code>np.su
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For <code>min</code>, <code>max</code>, <code>sum</code>, and several other NumPy aggregates, a shorter syntax is to use methods of the array object itself:</p>
 </div>
@@ -1292,14 +1329,16 @@ In particular, their optional arguments have different meanings, and <code>np.su
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Whenever possible, make sure that you are using the NumPy version of these aggregates when operating on NumPy arrays!</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Multi-dimensional-aggregates">Multi dimensional aggregates<a class="anchor-link" href="#Multi-dimensional-aggregates">¶</a></h3><p>One common type of aggregation operation is an aggregate along a row or column.
 Say you have some data stored in a two-dimensional array:</p>
@@ -1332,7 +1371,8 @@ Say you have some data stored in a two-dimensional array:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By default, each NumPy aggregation function will return the aggregate over the entire array:</p>
 </div>
@@ -1360,7 +1400,8 @@ Say you have some data stored in a two-dimensional array:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Aggregation functions take an additional argument specifying the <em>axis</em> along which the aggregate is computed. For example, we can find the minimum value within each column by specifying <code>axis=0</code>:</p>
 </div>
@@ -1388,7 +1429,8 @@ Say you have some data stored in a two-dimensional array:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The function returns four values, corresponding to the four columns of numbers.</p>
 <p>Similarly, we can find the maximum value within each row:</p>
@@ -1417,7 +1459,8 @@ Say you have some data stored in a two-dimensional array:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The way the axis is specified here can be confusing to users coming from other languages.
 The <code>axis</code> keyword specifies the <em>dimension of the array that will be collapsed</em>, rather than the dimension that will be returned.
@@ -1426,7 +1469,8 @@ So specifying <code>axis=0</code> means that the first axis will be collapsed: f
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Other-aggregation-functions">Other aggregation functions<a class="anchor-link" href="#Other-aggregation-functions">¶</a></h3><p>NumPy provides many other aggregation functions, but we won't discuss them in detail here.
 Additionally, most aggregates have a <code>NaN</code>-safe counterpart that computes the result while ignoring missing values, which are marked by the special IEEE floating-point <code>NaN</code> value (for a fuller discussion of missing data, see <a href="03.04-Missing-Values.ipynb">Handling Missing Data</a>).
@@ -1512,14 +1556,16 @@ Some of these <code>NaN</code>-safe functions were not added until NumPy 1.8, so
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Example:-What-is-the-Average-Height-of-US-Presidents?">Example: What is the Average Height of US Presidents?<a class="anchor-link" href="#Example:-What-is-the-Average-Height-of-US-Presidents?">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Aggregates available in NumPy can be extremely useful for summarizing a set of values.
 As a simple example, let's consider the heights of all US presidents.
@@ -1553,7 +1599,8 @@ This data is available in the file <em>president_heights.csv</em>, which is a si
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We'll use the Pandas package, which we'll explore more fully in <a href="03.00-Introduction-to-Pandas.ipynb">Chapter 3</a>, to read the file and extract this information (note that the heights are measured in centimeters).</p>
 </div>
@@ -1587,7 +1634,8 @@ This data is available in the file <em>president_heights.csv</em>, which is a si
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that we have this data array, we can compute a variety of summary statistics:</p>
 </div>
@@ -1622,7 +1670,8 @@ Maximum height:     193
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that in each case, the aggregation operation reduced the entire array to a single summarizing value, which gives us information about the distribution of values.
 We may also wish to compute quantiles:</p>
@@ -1656,7 +1705,8 @@ Median:             182.0
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We see that the median height of US presidents is 182 cm, or just shy of six feet.</p>
 <p>Of course, sometimes it's more useful to see a visual representation of this data, which we can accomplish using tools in Matplotlib (we'll discuss Matplotlib more fully in <a href="04.00-Introduction-To-Matplotlib.ipynb">Chapter 4</a>). For example, this code generates the following chart:</p>
@@ -1868,14 +1918,16 @@ RU5ErkJggg==
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>These aggregates are some of the fundamental pieces of exploratory data analysis that we'll explore in more depth in later chapters of the book.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>title: 05-Computation-on-arrays-broadcasting</li>
@@ -1888,14 +1940,16 @@ RU5ErkJggg==
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Computation-on-Arrays:-Broadcasting">Computation on Arrays: Broadcasting<a class="anchor-link" href="#Computation-on-Arrays:-Broadcasting">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We saw in the previous section how NumPy's universal functions can be used to <em>vectorize</em> operations and thereby remove slow Python loops.
 Another means of vectorizing operations is to use NumPy's <em>broadcasting</em> functionality.
@@ -1904,7 +1958,8 @@ Broadcasting is simply a set of rules for applying binary ufuncs (e.g., addition
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introducing-Broadcasting">Introducing Broadcasting<a class="anchor-link" href="#Introducing-Broadcasting">¶</a></h2><p>Recall that for arrays of the same size, binary operations are performed on an element-by-element basis:</p>
 </div>
@@ -1945,7 +2000,8 @@ Broadcasting is simply a set of rules for applying binary ufuncs (e.g., addition
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Broadcasting allows these types of binary operations to be performed on arrays of different sizes–for example, we can just as easily add a scalar (think of it as a zero-dimensional array) to an array:</p>
 </div>
@@ -1973,7 +2029,8 @@ Broadcasting is simply a set of rules for applying binary ufuncs (e.g., addition
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can think of this as an operation that stretches or duplicates the value <code>5</code> into the array <code>[5, 5, 5]</code>, and adds the results.
 The advantage of NumPy's broadcasting is that this duplication of values does not actually take place, but it is a useful mental model as we think about broadcasting.</p>
@@ -2029,7 +2086,8 @@ The advantage of NumPy's broadcasting is that this duplication of values does no
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here the one-dimensional array <code>a</code> is stretched, or broadcast across the second dimension in order to match the shape of <code>M</code>.</p>
 <p>While these examples are relatively easy to understand, more complicated cases can involve broadcasting of both arrays. Consider the following example:</p>
@@ -2089,7 +2147,8 @@ The advantage of NumPy's broadcasting is that this duplication of values does no
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Just as before we stretched or broadcasted one value to match the shape of the other, here we've stretched <em>both</em> <code>a</code> and <code>b</code> to match a common shape, and the result is a two-dimensional array!
 The geometry of these examples is visualized in the following figure (Code to produce this plot can be found in the <a href="06.00-Figure-Code.ipynb#Broadcasting">appendix</a>, and is adapted from source published in the <a href="http://astroml.org">astroML</a> documentation. Used by permission).</p>
@@ -2097,21 +2156,24 @@ The geometry of these examples is visualized in the following figure (Code to pr
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img alt="Broadcasting Visual" src="figures/02.05-broadcasting.png"/></p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The light boxes represent the broadcasted values: again, this extra memory is not actually allocated in the course of the operation, but it can be useful conceptually to imagine that it is.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Rules-of-Broadcasting">Rules of Broadcasting<a class="anchor-link" href="#Rules-of-Broadcasting">¶</a></h2><p>Broadcasting in NumPy follows a strict set of rules to determine the interaction between the two arrays:</p>
 <ul>
@@ -2124,7 +2186,8 @@ The geometry of these examples is visualized in the following figure (Code to pr
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Broadcasting-example-1">Broadcasting example 1<a class="anchor-link" href="#Broadcasting-example-1">¶</a></h3><p>Let's look at adding a two-dimensional array to a one-dimensional array:</p>
 </div>
@@ -2143,7 +2206,8 @@ The geometry of these examples is visualized in the following figure (Code to pr
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's consider an operation on these two arrays. The shape of the arrays are</p>
 <ul>
@@ -2187,7 +2251,8 @@ The geometry of these examples is visualized in the following figure (Code to pr
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Broadcasting-example-2">Broadcasting example 2<a class="anchor-link" href="#Broadcasting-example-2">¶</a></h3><p>Let's take a look at an example where both arrays need to be broadcast:</p>
 </div>
@@ -2206,7 +2271,8 @@ The geometry of these examples is visualized in the following figure (Code to pr
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Again, we'll start by writing out the shape of the arrays:</p>
 <ul>
@@ -2251,7 +2317,8 @@ The geometry of these examples is visualized in the following figure (Code to pr
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Broadcasting-example-3">Broadcasting example 3<a class="anchor-link" href="#Broadcasting-example-3">¶</a></h3><p>Now let's take a look at an example in which the two arrays are not compatible:</p>
 </div>
@@ -2270,7 +2337,8 @@ The geometry of these examples is visualized in the following figure (Code to pr
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is just a slightly different situation than in the first example: the matrix <code>M</code> is transposed.
 How does this affect the calculation? The shape of the arrays are</p>
@@ -2320,7 +2388,8 @@ How does this affect the calculation? The shape of the arrays are</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note the potential confusion here: you could imagine making <code>a</code> and <code>M</code> compatible by, say, padding <code>a</code>'s shape with ones on the right rather than the left.
 But this is not how the broadcasting rules work!
@@ -2374,7 +2443,8 @@ If right-side padding is what you'd like, you can do this explicitly by reshapin
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Also note that while we've been focusing on the <code>+</code> operator here, these broadcasting rules apply to <em>any</em> binary <code>ufunc</code>.
 For example, here is the <code>logaddexp(a, b)</code> function, which computes <code>log(exp(a) + exp(b))</code> with more precision than the naive approach:</p>
@@ -2405,21 +2475,24 @@ For example, here is the <code>logaddexp(a, b)</code> function, which computes <
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For more information on the many available universal functions, refer to <a href="02.03-Computation-on-arrays-ufuncs.ipynb">Computation on NumPy Arrays: Universal Functions</a>.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Broadcasting-in-Practice">Broadcasting in Practice<a class="anchor-link" href="#Broadcasting-in-Practice">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Broadcasting operations form the core of many examples we'll see throughout this book.
 We'll now take a look at a couple simple examples of where they can be useful.</p>
@@ -2427,14 +2500,16 @@ We'll now take a look at a couple simple examples of where they can be useful.</
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Centering-an-array">Centering an array<a class="anchor-link" href="#Centering-an-array">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the previous section, we saw that ufuncs allow a NumPy user to remove the need to explicitly write slow Python loops. Broadcasting extends this ability.
 One commonly seen example is when centering an array of data.
@@ -2455,7 +2530,8 @@ Using the standard convention (see <a href="05.02-Introducing-Scikit-Learn.ipynb
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can compute the mean of each feature using the <code>mean</code> aggregate across the first dimension:</p>
 </div>
@@ -2484,7 +2560,8 @@ Using the standard convention (see <a href="05.02-Introducing-Scikit-Learn.ipynb
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>And now we can center the <code>X</code> array by subtracting the mean (this is a broadcasting operation):</p>
 </div>
@@ -2502,7 +2579,8 @@ Using the standard convention (see <a href="05.02-Introducing-Scikit-Learn.ipynb
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To double-check that we've done this correctly, we can check that the centered array has near zero mean:</p>
 </div>
@@ -2530,21 +2608,24 @@ Using the standard convention (see <a href="05.02-Introducing-Scikit-Learn.ipynb
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To within machine precision, the mean is now zero.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Plotting-a-two-dimensional-function">Plotting a two-dimensional function<a class="anchor-link" href="#Plotting-a-two-dimensional-function">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>One place that broadcasting is very useful is in displaying images based on two-dimensional functions.
 If we want to define a function $z = f(x, y)$, broadcasting can be used to compute the function across the grid:</p>
@@ -2567,7 +2648,8 @@ If we want to define a function $z = f(x, y)$, broadcasting can be used to compu
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We'll use Matplotlib to plot this two-dimensional array (these tools will be discussed in full in <a href="04.04-Density-and-Contour-Plots.ipynb">Density and Contour Plots</a>):</p>
 </div>
@@ -3648,14 +3730,16 @@ rQAAAABJRU5ErkJggg==
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The result is a compelling visualization of the two-dimensional function.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>title: 06-Boolean-Arrays-and-Masks</li>
@@ -3668,14 +3752,16 @@ rQAAAABJRU5ErkJggg==
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Comparisons,-Masks,-and-Boolean-Logic">Comparisons, Masks, and Boolean Logic<a class="anchor-link" href="#Comparisons,-Masks,-and-Boolean-Logic">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This section covers the use of Boolean masks to examine and manipulate values within NumPy arrays.
 Masking comes up when you want to extract, modify, count, or otherwise manipulate values in an array based on some criterion: for example, you might wish to count all values greater than a certain value, or perhaps remove all outliers that are above some threshold.
@@ -3684,7 +3770,8 @@ In NumPy, Boolean masking is often the most efficient way to accomplish these ty
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Example:-Counting-Rainy-Days">Example: Counting Rainy Days<a class="anchor-link" href="#Example:-Counting-Rainy-Days">¶</a></h2><p>Imagine you have a series of data that represents the amount of precipitation each day for a year in a given city.
 For example, here we'll load the daily rainfall statistics for the city of Seattle in 2014, using Pandas (which is covered in more detail in <a href="03.00-Introduction-to-Pandas.ipynb">Chapter 3</a>):</p>
@@ -3719,7 +3806,8 @@ For example, here we'll load the daily rainfall statistics for the city of Seatt
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The array contains 365 values, giving daily rainfall in inches from January 1 to December 31, 2014.</p>
 <p>As a first quick visualization, let's look at the histogram of rainy days, which was generated using Matplotlib (we will explore this tool more fully in <a href="04.00-Introduction-To-Matplotlib.ipynb">Chapter 4</a>):</p>
@@ -3856,7 +3944,8 @@ ngAAAABJRU5ErkJggg==
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This histogram gives us a general idea of what the data looks like: despite its reputation, the vast majority of days in Seattle saw near zero measured rainfall in 2014.
 But this doesn't do a good job of conveying some information we'd like to see: for example, how many rainy days were there in the year? What is the average precipitation on those rainy days? How many days were there with more than half an inch of rain?</p>
@@ -3864,7 +3953,8 @@ But this doesn't do a good job of conveying some information we'd like to see: f
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Digging-into-the-data">Digging into the data<a class="anchor-link" href="#Digging-into-the-data">¶</a></h3><p>One approach to this would be to answer these questions by hand: loop through the data, incrementing a counter each time we see values in some desired range.
 For reasons discussed throughout this chapter, such an approach is very inefficient, both from the standpoint of time writing code and time computing the result.
@@ -3874,7 +3964,8 @@ We'll leave the data aside for right now, and discuss some general tools in NumP
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Comparison-Operators-as-ufuncs">Comparison Operators as ufuncs<a class="anchor-link" href="#Comparison-Operators-as-ufuncs">¶</a></h2><p>In <a href="02.03-Computation-on-arrays-ufuncs.ipynb">Computation on NumPy Arrays: Universal Functions</a> we introduced ufuncs, and focused in particular on arithmetic operators. We saw that using <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and others on arrays leads to element-wise operations.
 NumPy also implements comparison operators such as <code>&lt;</code> (less than) and <code>&gt;</code> (greater than) as element-wise ufuncs.
@@ -4021,7 +4112,8 @@ All six of the standard comparison operations are available:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It is also possible to do an element-wise comparison of two arrays, and to include compound expressions:</p>
 </div>
@@ -4049,7 +4141,8 @@ All six of the standard comparison operations are available:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As in the case of arithmetic operators, the comparison operators are implemented as ufuncs in NumPy; for example, when you write <code>x &lt; 3</code>, internally NumPy uses <code>np.less(x, 3)</code>.
     A summary of the comparison operators and their equivalent ufunc is shown here:</p>
@@ -4090,7 +4183,8 @@ All six of the standard comparison operations are available:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Just as in the case of arithmetic ufuncs, these will work on arrays of any size and shape.
 Here is a two-dimensional example:</p>
@@ -4146,14 +4240,16 @@ Here is a two-dimensional example:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In each case, the result is a Boolean array, and NumPy provides a number of straightforward patterns for working with these Boolean results.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Working-with-Boolean-Arrays">Working with Boolean Arrays<a class="anchor-link" href="#Working-with-Boolean-Arrays">¶</a></h2><p>Given a Boolean array, there are a host of useful operations you can do.
 We'll work with <code>x</code>, the two-dimensional array we created earlier.</p>
@@ -4185,7 +4281,8 @@ We'll work with <code>x</code>, the two-dimensional array we created earlier.</p
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Counting-entries">Counting entries<a class="anchor-link" href="#Counting-entries">¶</a></h3><p>To count the number of <code>True</code> entries in a Boolean array, <code>np.count_nonzero</code> is useful:</p>
 </div>
@@ -4214,7 +4311,8 @@ We'll work with <code>x</code>, the two-dimensional array we created earlier.</p
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We see that there are eight array entries that are less than 6.
 Another way to get at this information is to use <code>np.sum</code>; in this case, <code>False</code> is interpreted as <code>0</code>, and <code>True</code> is interpreted as <code>1</code>:</p>
@@ -4243,7 +4341,8 @@ Another way to get at this information is to use <code>np.sum</code>; in this ca
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The benefit of <code>sum()</code> is that like with other NumPy aggregation functions, this summation can be done along rows or columns as well:</p>
 </div>
@@ -4272,7 +4371,8 @@ Another way to get at this information is to use <code>np.sum</code>; in this ca
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This counts the number of values less than 6 in each row of the matrix.</p>
 <p>If we're interested in quickly checking whether any or all the values are true, we can use (you guessed it) <code>np.any</code> or <code>np.all</code>:</p>
@@ -4368,7 +4468,8 @@ Another way to get at this information is to use <code>np.sum</code>; in this ca
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>np.all</code> and <code>np.any</code> can be used along particular axes as well. For example:</p>
 </div>
@@ -4397,7 +4498,8 @@ Another way to get at this information is to use <code>np.sum</code>; in this ca
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here all the elements in the first and third rows are less than 8, while this is not the case for the second row.</p>
 <p>Finally, a quick warning: as mentioned in <a href="02.04-Computation-on-arrays-aggregates.ipynb">Aggregations: Min, Max, and Everything In Between</a>, Python has built-in <code>sum()</code>, <code>any()</code>, and <code>all()</code> functions. These have a different syntax than the NumPy versions, and in particular will fail or produce unintended results when used on multidimensional arrays. Be sure that you are using <code>np.sum()</code>, <code>np.any()</code>, and <code>np.all()</code> for these examples!</p>
@@ -4405,7 +4507,8 @@ Another way to get at this information is to use <code>np.sum</code>; in this ca
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Boolean-operators">Boolean operators<a class="anchor-link" href="#Boolean-operators">¶</a></h3><p>We've already seen how we might count, say, all days with rain less than four inches, or all days with rain greater than two inches.
 But what if we want to know about all days with rain less than four inches and greater than one inch?
@@ -4437,7 +4540,8 @@ Like with the standard arithmetic operators, NumPy overloads these as ufuncs whi
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So we see that there are 29 days with rainfall between 0.5 and 1.0 inches.</p>
 <p>Note that the parentheses here are important–because of operator precedence rules, with parentheses removed this expression would be evaluated as follows, which results in an error:</p>
@@ -4469,7 +4573,8 @@ Like with the standard arithmetic operators, NumPy overloads these as ufuncs whi
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Combining comparison operators and Boolean operators on arrays can lead to a wide range of efficient logical operations.</p>
 <p>The following table summarizes the bitwise Boolean operators and their equivalent ufuncs:</p>
@@ -4477,7 +4582,8 @@ Like with the standard arithmetic operators, NumPy overloads these as ufuncs whi
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <table>
 <thead><tr>
@@ -4509,7 +4615,8 @@ Like with the standard arithmetic operators, NumPy overloads these as ufuncs whi
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Using these tools, we might start to answer the types of questions we have about our weather data.
 Here are some examples of results we can compute when combining masking with aggregations:</p>
@@ -4546,7 +4653,8 @@ Rainy days with &lt; 0.2 inches  : 75
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Boolean-Arrays-as-Masks">Boolean Arrays as Masks<a class="anchor-link" href="#Boolean-Arrays-as-Masks">¶</a></h2><p>In the preceding section we looked at aggregates computed directly on Boolean arrays.
 A more powerful pattern is to use Boolean arrays as masks, to select particular subsets of the data themselves.
@@ -4578,7 +4686,8 @@ Returning to our <code>x</code> array from before, suppose we want an array of a
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can obtain a Boolean array for this condition easily, as we've already seen:</p>
 </div>
@@ -4608,7 +4717,8 @@ Returning to our <code>x</code> array from before, suppose we want an array of a
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now to <em>select</em> these values from the array, we can simply index on this Boolean array; this is known as a <em>masking</em> operation:</p>
 </div>
@@ -4636,7 +4746,8 @@ Returning to our <code>x</code> array from before, suppose we want an array of a
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What is returned is a one-dimensional array filled with all the values that meet this condition; in other words, all the values in positions at which the mask array is <code>True</code>.</p>
 <p>We are then free do operate on these values as we wish.
@@ -4684,14 +4795,16 @@ Median precip on non-summer rainy days (inches): 0.200787401575
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By combining Boolean operations, masking operations, and aggregates, we can very quickly answer these sorts of questions for our dataset.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Aside:-Using-the-Keywords-and/or-Versus-the-Operators-&amp;/|">Aside: Using the Keywords and/or Versus the Operators &amp;/|<a class="anchor-link" href="#Aside:-Using-the-Keywords-and/or-Versus-the-Operators-&amp;/|">¶</a></h2><p>One common point of confusion is the difference between the keywords <code>and</code> and <code>or</code> on one hand, and the operators <code>&amp;</code> and <code>|</code> on the other hand.
 When would you use one versus the other?</p>
@@ -4765,7 +4878,8 @@ In Python, all nonzero integers will evaluate as True. Thus:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When you use <code>&amp;</code> and <code>|</code> on integers, the expression operates on the bits of the element, applying the <em>and</em> or the <em>or</em> to the individual bits making up the number:</p>
 </div>
@@ -4856,7 +4970,8 @@ In Python, all nonzero integers will evaluate as True. Thus:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Notice that the corresponding bits of the binary representation are compared in order to yield the result.</p>
 <p>When you have an array of Boolean values in NumPy, this can be thought of as a string of bits where <code>1 = True</code> and <code>0 = False</code>, and the result of <code>&amp;</code> and <code>|</code> operates similarly to above:</p>
@@ -4887,7 +5002,8 @@ In Python, all nonzero integers will evaluate as True. Thus:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Using <code>or</code> on these arrays will try to evaluate the truth or falsehood of the entire array object, which is not a well-defined value:</p>
 </div>
@@ -4921,7 +5037,8 @@ In Python, all nonzero integers will evaluate as True. Thus:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Similarly, when doing a Boolean expression on a given array, you should use <code>|</code> or <code>&amp;</code> rather than <code>or</code> or <code>and</code>:</p>
 </div>
@@ -4950,7 +5067,8 @@ In Python, all nonzero integers will evaluate as True. Thus:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Trying to evaluate the truth or falsehood of the entire array will give the same <code>ValueError</code> we saw previously:</p>
 </div>
@@ -4984,7 +5102,8 @@ In Python, all nonzero integers will evaluate as True. Thus:</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So remember this: <code>and</code> and <code>or</code> perform a single Boolean evaluation on an entire object, while <code>&amp;</code> and <code>|</code> perform multiple Boolean evaluations on the content (the individual bits or bytes) of an object.
 For Boolean NumPy arrays, the latter is nearly always the desired operation.</p>
@@ -5039,49 +5158,47 @@ For Boolean NumPy arrays, the latter is nearly always the desired operation.</p>
 
 </div>
 <aside class="sidebar">
-  <section>
-    <h1>Recent Posts</h1>
-    <ul id="recent_posts">
-      <li class="post">
-          <a href="../../../pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
-      </li>
-    </ul>
-  </section>
-  <section>
-      
-    <h1>Categories</h1>
-    <ul id="recent_posts">
-        <li><a href="../../../category/00qi-ta.html">00.其他</a></li>
-        <li><a href="../../../category/00qi-ta-2.html">00.其他2</a></li>
-        <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
-        <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
-        <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
-        <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
-        <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
-        <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
-        <li><a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
-        <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
-        <li><a href="../../../category/tools.html">tools</a></li>
-        <li><a href="../../../category/tools-numpy.html">tools-numpy</a></li>
-    </ul>
-  </section>
- 
 
-  <section>
-  <h1>Tags</h1>
-    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/latex.html">latex</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/pandas.html">pandas</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/plot.html">plot</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/shell.html">shell</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+        <section>
+
+            <h1>Categories</h1>
+            <ul id="recent_posts">
+                    <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
+                    <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
+                    <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
+                    <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
+                    <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
+                    <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
+                    <li><a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
+                    <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
+                    <li><a href="../../../category/tools.html">tools</a></li>
+            </ul>
+        </section>
+
+    <section>
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+                <li class="post">
+                    <a href="../../../pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
+                </li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Tags</h1>
+            <a href="../../../tag/python.html">python</a>,            <a href="../../../tag/latex.html">latex</a>,            <a href="../../../tag/numpy.html">numpy</a>,            <a href="../../../tag/pandas.html">pandas</a>,            <a href="../../../tag/jupyter.html">jupyter</a>,            <a href="../../../tag/plot.html">plot</a>,            <a href="../../../tag/pip.html">pip</a>,            <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,            <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,            <a href="../../../tag/tensorflow.html">tensorflow</a>,            <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,            <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,            <a href="../../../tag/pangrank.html">PangRank</a>,            <a href="../../../tag/mapreduce.html">MapReduce</a>,            <a href="../../../tag/book.html">book</a>,            <a href="../../../tag/pydata.html">pydata</a>,            <a href="../../../tag/shell.html">shell</a>,            <a href="../../../tag/pyhton.html">pyhton</a>,            <a href="../../../tag/xgboost.html">xgboost</a>    </section>
 
 
     <section>
@@ -5101,17 +5218,17 @@ For Boolean NumPy arrays, the latter is nearly always the desired operation.</p>
     </section>
 
 </aside>    </div>
-  </div>
-  <footer role="contentinfo"><p>
-        活到老，学到老，玩到老
-    <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</div>
+<footer role="contentinfo"><p>
+    Copyright &copy;  2017&ndash;2019  niult &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
-  <script src="../../../theme/js/modernizr-2.0.js"></script>
-  <script src="../../../theme/js/ender.js"></script>
-  <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
+<script src="../../../theme/js/modernizr-2.0.js"></script>
+<script src="../../../theme/js/ender.js"></script>
+<script src="../../../theme/js/octopress.js" type="text/javascript"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-127062347-1']);
+    _gaq.push(['_setAccount', 'UA-132396898-1']);
     _gaq.push(['_trackPageview']);
     (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -5124,7 +5241,7 @@ For Boolean NumPy arrays, the latter is nearly always the desired operation.</p>
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-127062347-1');
+    ga('create', 'UA-132396898-1');
     ga('send', 'pageview');
 </script>
 </body>

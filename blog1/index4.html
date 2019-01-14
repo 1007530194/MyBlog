@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>魑魅魍魉</title>
-  <meta name="author" content="niult">
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+<meta charset="utf-8">
+<title>魑魅魍魉</title>
+<meta name="author" content="niult">
 
 
 
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <link href="./favicon.png" rel="icon">
 
-  <link href="./theme/css/main.css" media="screen, projection"
-        rel="stylesheet" type="text/css">
+<link href="./theme/css/main.css" media="screen, projection"
+      rel="stylesheet" type="text/css">
 
-  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-</head>
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+      rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+      rel="stylesheet" type="text/css">
+
+<!-- mathjax config similar to math.stackexchange -->
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+    init_mathjax = function () {
+        if (window.MathJax) {
+            // MathJax loaded
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ["\\(", "\\)"]],
+                    displayMath: [['$$', '$$'], ["\\[", "\\]"]]
+                },
+                displayAlign: 'center', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 0}}
+                }
+            });
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    };
+    init_mathjax();
+</script>
+
+<script type="text/javascript">
+    init_mathjax2 = function () {
+        // Fix <code> tags after MathJax finishes running. This is a
+        // hack to overcome a shortcoming of Markdown. Discussion at
+        // https://github.com/mojombo/jekyll/issues/199
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    };
+    init_mathjax2();
+
+
+</script></head>
 
 <body>
-  <header role="banner"><hgroup>
+<header role="banner"><hgroup>
   <h1><a href="./">魑魅魍魉</a></h1>
 </hgroup></header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+<nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
 
 
 <ul class="main-navigation">
-      <li >
-        <a href="./category/00qi-ta.html">00.其他</a>
-      </li>
-      <li >
-        <a href="./category/00qi-ta-2.html">00.其他2</a>
-      </li>
       <li >
         <a href="./category/01chang-yong-gong-ju.html">01常用工具</a>
       </li>
@@ -69,68 +100,10 @@
       <li >
         <a href="./category/tools.html">Tools</a>
       </li>
-      <li >
-        <a href="./category/tools-numpy.html">Tools-numpy</a>
-      </li>
 </ul></nav>
-  <div id="main">
+<div id="main">
     <div id="content">
 <div class="blog-index">
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2018/01/pydata-143-1880nian-zhi-2010nian-mei-guo-ying-er-xing-ming.html">pydata-14.3 1880年至2010年美国婴儿姓名</a>
-      </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="14.3-US-Baby-Names-1880–2010（1880年至2010年美国婴儿姓名）">14.3 US Baby Names 1880&#8211;2010&#65288;1880&#24180;&#33267;2010&#24180;&#32654;&#22269;&#23156;&#20799;&#22995;&#21517;&#65289;<a class="anchor-link" href="#14.3-US-Baby-Names-1880–2010（1880年至2010年美国婴儿姓名）">&#182;</a></h1><p>这个数据是从1880年到2010年婴儿名字频率数据。我们先看一下这个数据长什么样子：</p>
-<p><img src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/r5ofm.png" alt=""></p>
-<p>个数据集可以用来做很多事，例如：</p>
-<ul>
-<li>计算指定名字的年度比例</li>
-<li>计算某个名字的相对排名</li>
-<li>计算各年度最流行的名字，以及增长或减少最快的名字</li>
-<li>分析名字趋势：元音、辅音、长度、总体多样性、拼写变化、首尾字母等</li>
-<li>分析外源性趋势：圣经中的名字、名人、人口结构变化等</li>
-</ul>
-<p>之后的教程会涉及到其中一些。另外可以去官网直接下载姓名数据，<a href="https://www.ssa.gov/oact/babynames/limits.html">Popular Baby Names</a>。</p>
-<p>下载National data之后，会得到names.zip文件，解压后，可以看到一系列类似于yob1880.txt这样名字的文件，说明这些文件是按年份记录的。这里使用Unix head命令查看一下文件的前10行：</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-  <footer>
-    <a rel="full-article" href="./pages/2018/01/pydata-143-1880nian-zhi-2010nian-mei-guo-ying-er-xing-ming.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2018/01/random_forest.html">random_forest</a>
-      </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Random-Forest-Example">Random Forest Example<a class="anchor-link" href="#Random-Forest-Example">&#182;</a></h1><p>Implement Random Forest algorithm with TensorFlow, and apply it to classify 
-handwritten digit images. This example is using the MNIST database of 
-handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a></div>
-  <footer>
-    <a rel="full-article" href="./pages/2018/01/random_forest.html">Read On &crarr;</a>
-  </footer>
-  		</article>
   		<article>
 <header>
       <h1 class="entry-title">
@@ -182,7 +155,8 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Pandas库">Pandas&#24211;<a class="anchor-link" href="#Pandas库">&#182;</a></h1><p><a href="https://blog.csdn.net/Junming_Lu/article/details/79336878">https://blog.csdn.net/Junming_Lu/article/details/79336878</a></p>
 <p>Pandas是Python第三方库，提供高性能易用数据类型和分析工具</p>
@@ -232,7 +206,8 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><p><a href="http://zh.wikipedia.org/wiki/Help:MATH">http://zh.wikipedia.org/wiki/Help:MATH</a>
 函数、符号及特殊字符</p>
@@ -241,7 +216,8 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="常用">&#24120;&#29992;<a class="anchor-link" href="#常用">&#182;</a></h1><h2 id="声调">&#22768;&#35843;<a class="anchor-link" href="#声调">&#182;</a></h2><table>
 <thead><tr>
@@ -289,7 +265,8 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="函数">&#20989;&#25968;<a class="anchor-link" href="#函数">&#182;</a></h2><table>
 <thead><tr>
@@ -395,7 +372,8 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Matplotlib介绍">Matplotlib&#20171;&#32461;<a class="anchor-link" href="#Matplotlib介绍">&#182;</a></h1><p>Matplotlib是一个Python的2D绘图库，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图形。通过Matplotlib，开发者可以仅需要几行代码，便可以生成绘图，折线图、散点图、柱状图、饼图、直方图、子图等。Matplotlib使用NumPy进行数组运算，并调用一系列其他的Python库来实现硬件交互。</p>
 
@@ -419,7 +397,8 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Pandas</p>
 <h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><h2 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h2><p><a href="http:#pandas.pydata.org/pandas-docs/stable/10min.html#">来自官网十分钟教学</a> 
@@ -472,14 +451,16 @@ Pandas的主要数据结构：</p>
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="xgboost">xgboost<a class="anchor-link" href="#xgboost">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="参考网址">&#21442;&#32771;&#32593;&#22336;<a class="anchor-link" href="#参考网址">&#182;</a></h2><p>1 XGBoost参数调优完全指南（附Python代码） <a href="https://www.cnblogs.com/mfryf/p/6293814.html">https://www.cnblogs.com/mfryf/p/6293814.html</a></p>
 
@@ -487,7 +468,8 @@ Pandas的主要数据结构：</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="XGBoost的参数">XGBoost&#30340;&#21442;&#25968;<a class="anchor-link" href="#XGBoost的参数">&#182;</a></h1><p>XGBoost的作者把所有的参数分成了三类：<br>
 1、通用参数：宏观函数控制。<br>
@@ -499,7 +481,8 @@ Pandas的主要数据结构：</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="通用参数">&#36890;&#29992;&#21442;&#25968;<a class="anchor-link" href="#通用参数">&#182;</a></h2><p>这些参数用来控制XGBoost的宏观功能。</p>
 <h3 id="booster[默认gbtree]">booster[&#40664;&#35748;gbtree]<a class="anchor-link" href="#booster[默认gbtree]">&#182;</a></h3><p>选择每次迭代的模型，有两种选择：
@@ -513,7 +496,8 @@ gbliner：线性模型</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="booster参数">booster&#21442;&#25968;<a class="anchor-link" href="#booster参数">&#182;</a></h2><p>尽管有两种booster可供选择，我这里只介绍tree booster，因为它的表现远远胜过linear booster，所以linear booster很少用到。</p>
 <h3 id="eta[默认0.3]">eta[&#40664;&#35748;0.3]<a class="anchor-link" href="#eta[默认0.3]">&#182;</a></h3><p>和GBM中的 learning rate 参数类似。 通过减少每一步的权重，可以提高模型的鲁棒性。 典型值为0.01-0.2。</p>
@@ -613,14 +597,16 @@ Pandas的主要数据结构：</p>
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="第1章-统计学习方法概论">&#31532;1&#31456; &#32479;&#35745;&#23398;&#20064;&#26041;&#27861;&#27010;&#35770;<a class="anchor-link" href="#第1章-统计学习方法概论">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>高斯于1823年在误差e1 ,… , en独立同分布的假定下,证明了最小二乘方法的一个最优性质: 在所有无偏的线性估计类中,最小二乘方法是其中方差最小的！</p>
 
@@ -628,7 +614,8 @@ Pandas的主要数据结构：</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="使用最小二乘法拟和曲线">&#20351;&#29992;&#26368;&#23567;&#20108;&#20056;&#27861;&#25311;&#21644;&#26354;&#32447;<a class="anchor-link" href="#使用最小二乘法拟和曲线">&#182;</a></h3><p>对于数据$(x_i, y_i)(i=1, 2, 3...,m)$</p>
 <p>拟合出函数$h(x)$</p>
@@ -639,7 +626,8 @@ Pandas的主要数据结构：</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>一般的H(x)为n次的多项式，$H(x)=w_0+w_1x+w_2x^2+...w_nx^n$</p>
 <p>$w(w_0,w_1,w_2,...,w_n)$为参数</p>
@@ -651,7 +639,8 @@ Pandas的主要数据结构：</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>举例：我们用目标函数$y=sin2{\pi}x$, 加上一个正太分布的噪音干扰，用多项式去拟合【例1.1 11页】</p>
 
@@ -675,14 +664,16 @@ Pandas的主要数据结构：</p>
 
   <div class="entry-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="第2章-感知机">&#31532;2&#31456; &#24863;&#30693;&#26426;<a class="anchor-link" href="#第2章-感知机">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>二分类模型</p>
 <p>$$f(x) = sign(w*x + b)$$</p>
@@ -699,7 +690,8 @@ Pandas的主要数据结构：</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>拿出iris数据集中两个分类的数据和[sepal length，sepal width]作为特征</p>
 
@@ -712,6 +704,77 @@ Pandas的主要数据结构：</p>
     <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-02-gan-zhi-ji.html">Read On &crarr;</a>
   </footer>
   		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-03-kjin-lin.html">统计学习方法03-k近邻</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="第3章-k近邻法">&#31532;3&#31456; k&#36817;&#37051;&#27861;<a class="anchor-link" href="#第3章-k近邻法">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="距离度量">&#36317;&#31163;&#24230;&#37327;<a class="anchor-link" href="#距离度量">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-03-kjin-lin.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-04-po-su-bei-xie-si.html">统计学习方法04-朴素贝叶斯</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="第4章-朴素贝叶斯">&#31532;4&#31456; &#26420;&#32032;&#36125;&#21494;&#26031;<a class="anchor-link" href="#第4章-朴素贝叶斯">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>基于贝叶斯定理与特征条件独立假设的分类方法。</p>
+<p>模型：</p>
+<ul>
+<li>高斯模型</li>
+<li>多项式模型</li>
+<li>伯努利模型</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-04-po-su-bei-xie-si.html">Read On &crarr;</a>
+  </footer>
+  		</article>
 <div class="pagination">
     <a class="prev" href="./index5.html">&larr; Older</a>
 
@@ -719,49 +782,47 @@ Pandas的主要数据结构：</p>
   <br />
 </div></div>
 <aside class="sidebar">
-  <section>
-    <h1>Recent Posts</h1>
-    <ul id="recent_posts">
-      <li class="post">
-          <a href="./pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
-      </li>
-      <li class="post">
-          <a href="./pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
-      </li>
-      <li class="post">
-          <a href="./pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
-      </li>
-      <li class="post">
-          <a href="./pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
-      </li>
-      <li class="post">
-          <a href="./pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
-      </li>
-    </ul>
-  </section>
-  <section>
-      
-    <h1>Categories</h1>
-    <ul id="recent_posts">
-        <li><a href="./category/00qi-ta.html">00.其他</a></li>
-        <li><a href="./category/00qi-ta-2.html">00.其他2</a></li>
-        <li><a href="./category/01chang-yong-gong-ju.html">01常用工具</a></li>
-        <li><a href="./category/02wo-ai-du-shu.html">02.我爱读书</a></li>
-        <li><a href="./category/03shen-du-xue-xi.html">03深度学习</a></li>
-        <li><a href="./category/book-pydata.html">book-pydata</a></li>
-        <li><a href="./category/ji-chu-zhi-shi.html">基础知识</a></li>
-        <li><a href="./category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
-        <li><a href="./category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
-        <li><a href="./category/shen-du-xue-xi.html">深度学习</a></li>
-        <li><a href="./category/tools.html">tools</a></li>
-        <li><a href="./category/tools-numpy.html">tools-numpy</a></li>
-    </ul>
-  </section>
- 
 
-  <section>
-  <h1>Tags</h1>
-    <a href="./tag/python.html">python</a>,    <a href="./tag/latex.html">latex</a>,    <a href="./tag/numpy.html">numpy</a>,    <a href="./tag/pandas.html">pandas</a>,    <a href="./tag/jupyter.html">jupyter</a>,    <a href="./tag/plot.html">plot</a>,    <a href="./tag/pip.html">pip</a>,    <a href="./tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="./tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="./tag/tensorflow.html">tensorflow</a>,    <a href="./tag/shen-du-xue-xi.html">深度学习</a>,    <a href="./tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="./tag/pangrank.html">PangRank</a>,    <a href="./tag/mapreduce.html">MapReduce</a>,    <a href="./tag/book.html">book</a>,    <a href="./tag/pydata.html">pydata</a>,    <a href="./tag/shell.html">shell</a>,    <a href="./tag/pyhton.html">pyhton</a>,    <a href="./tag/xgboost.html">xgboost</a>  </section>
+        <section>
+
+            <h1>Categories</h1>
+            <ul id="recent_posts">
+                    <li><a href="./category/01chang-yong-gong-ju.html">01常用工具</a></li>
+                    <li><a href="./category/02wo-ai-du-shu.html">02.我爱读书</a></li>
+                    <li><a href="./category/03shen-du-xue-xi.html">03深度学习</a></li>
+                    <li><a href="./category/book-pydata.html">book-pydata</a></li>
+                    <li><a href="./category/ji-chu-zhi-shi.html">基础知识</a></li>
+                    <li><a href="./category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
+                    <li><a href="./category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
+                    <li><a href="./category/shen-du-xue-xi.html">深度学习</a></li>
+                    <li><a href="./category/tools.html">tools</a></li>
+            </ul>
+        </section>
+
+    <section>
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+                <li class="post">
+                    <a href="./pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
+                </li>
+                <li class="post">
+                    <a href="./pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
+                </li>
+                <li class="post">
+                    <a href="./pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
+                </li>
+                <li class="post">
+                    <a href="./pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
+                </li>
+                <li class="post">
+                    <a href="./pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
+                </li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Tags</h1>
+            <a href="./tag/python.html">python</a>,            <a href="./tag/latex.html">latex</a>,            <a href="./tag/numpy.html">numpy</a>,            <a href="./tag/pandas.html">pandas</a>,            <a href="./tag/jupyter.html">jupyter</a>,            <a href="./tag/plot.html">plot</a>,            <a href="./tag/pip.html">pip</a>,            <a href="./tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,            <a href="./tag/tensorflowexample.html">TensorFlowExample</a>,            <a href="./tag/tensorflow.html">tensorflow</a>,            <a href="./tag/shen-du-xue-xi.html">深度学习</a>,            <a href="./tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,            <a href="./tag/pangrank.html">PangRank</a>,            <a href="./tag/mapreduce.html">MapReduce</a>,            <a href="./tag/book.html">book</a>,            <a href="./tag/pydata.html">pydata</a>,            <a href="./tag/shell.html">shell</a>,            <a href="./tag/pyhton.html">pyhton</a>,            <a href="./tag/xgboost.html">xgboost</a>    </section>
 
 
     <section>
@@ -781,17 +842,17 @@ Pandas的主要数据结构：</p>
     </section>
 
 </aside>    </div>
-  </div>
-  <footer role="contentinfo"><p>
-        活到老，学到老，玩到老
-    <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</div>
+<footer role="contentinfo"><p>
+    Copyright &copy;  2017&ndash;2019  niult &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
-  <script src="./theme/js/modernizr-2.0.js"></script>
-  <script src="./theme/js/ender.js"></script>
-  <script src="./theme/js/octopress.js" type="text/javascript"></script>
+<script src="./theme/js/modernizr-2.0.js"></script>
+<script src="./theme/js/ender.js"></script>
+<script src="./theme/js/octopress.js" type="text/javascript"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-127062347-1']);
+    _gaq.push(['_setAccount', 'UA-132396898-1']);
     _gaq.push(['_trackPageview']);
     (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -804,7 +865,7 @@ Pandas的主要数据结构：</p>
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-127062347-1');
+    ga('create', 'UA-132396898-1');
     ga('send', 'pageview');
 </script>
 </body>

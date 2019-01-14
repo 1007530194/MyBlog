@@ -1,49 +1,80 @@
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>pydata-11.3 日期范围，频度，和位移 &mdash; 魑魅魍魉</title>
-  <meta name="author" content="niult">
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+<meta charset="utf-8">
+<title>pydata-11.3 日期范围，频度，和位移 &mdash; 魑魅魍魉</title>
+<meta name="author" content="niult">
 
 
 
 
 
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <link href="../../../favicon.png" rel="icon">
 
-  <link href="../../../theme/css/main.css" media="screen, projection"
-        rel="stylesheet" type="text/css">
+<link href="../../../theme/css/main.css" media="screen, projection"
+      rel="stylesheet" type="text/css">
 
-  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-</head>
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+      rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+      rel="stylesheet" type="text/css">
+
+<!-- mathjax config similar to math.stackexchange -->
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+    init_mathjax = function () {
+        if (window.MathJax) {
+            // MathJax loaded
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ["\\(", "\\)"]],
+                    displayMath: [['$$', '$$'], ["\\[", "\\]"]]
+                },
+                displayAlign: 'center', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 0}}
+                }
+            });
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    };
+    init_mathjax();
+</script>
+
+<script type="text/javascript">
+    init_mathjax2 = function () {
+        // Fix <code> tags after MathJax finishes running. This is a
+        // hack to overcome a shortcoming of Markdown. Discussion at
+        // https://github.com/mojombo/jekyll/issues/199
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    };
+    init_mathjax2();
+
+
+</script></head>
 
 <body>
-  <header role="banner"><hgroup>
+<header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
 </hgroup></header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+<nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
 
 
 <ul class="main-navigation">
-      <li >
-        <a href="../../../category/00qi-ta.html">00.其他</a>
-      </li>
-      <li >
-        <a href="../../../category/00qi-ta-2.html">00.其他2</a>
-      </li>
       <li >
         <a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
       </li>
@@ -71,11 +102,8 @@
       <li >
         <a href="../../../category/tools.html">Tools</a>
       </li>
-      <li >
-        <a href="../../../category/tools-numpy.html">Tools-numpy</a>
-      </li>
 </ul></nav>
-  <div id="main">
+<div id="main">
     <div id="content">
 <div>
   <article class="hentry" role="article">
@@ -1058,7 +1086,8 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="11.3-Date-Ranges,-Frequencies,-and-Shifting（日期范围，频度，和位移）">11.3 Date Ranges, Frequencies, and Shifting（日期范围，频度，和位移）<a class="anchor-link" href="#11.3-Date-Ranges,-Frequencies,-and-Shifting（日期范围，频度，和位移）">¶</a></h1><p>普通的时间序列通常是不规律的，但我们希望能有一个固定的频度，比如每天，每月，或没15分钟，即使有一些缺失值也没关系。幸运的是，pandas中有一套方法和工具来进行重采样，推断频度，并生成固定频度的日期范围。例如，我们可以把样本时间序列变为固定按日的频度，需要调用resample：</p>
 </div>
@@ -1113,7 +1142,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里的'D'表示按日的频度（daily frequency）。</p>
 <p>关于频度（frequency）和重采样（resampling）的转换，会在11.6进行具体介绍，这里我们展示一些基本的用法。</p>
@@ -1160,7 +1190,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>默认，date_range会生成按日频度的时间戳。如果我们只传入一个开始或一个结束时间，还必须传入一个数字来表示时期：</p>
 </div>
@@ -1219,7 +1250,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>开始和结束的日期，严格指定了用于生成日期索引（date index）的边界。例如，如果我们希望日期索引包含每个月的最后一个工作日，我们要设定频度为'BM'(business end of month，每个月的最后一个工作日，更多频度可以看下面的表格)，而且只有在这个日期范围内的日期会被包含进去：</p>
 </div>
@@ -1250,7 +1282,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>时间序列频度：</p>
 <p><img alt="" src="http://oydgk2hgw.bkt.clouddn.com/pydata-book/v4ae4.png"/></p>
@@ -1283,7 +1316,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>有些时候我们的时间序列数据带有小时，分，秒这样的信息，但我们想要让这些时间戳全部归一化到午夜（normalized to midnight, 即晚上0点），这个时候要用到normalize选项：</p>
 </div>
@@ -1335,7 +1369,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>可以看到小时，分，秒全部变为0</p>
 <h1 id="2-Frequencies-and-Date-Offsets（频度和日期偏移）">2 Frequencies and Date Offsets（频度和日期偏移）<a class="anchor-link" href="#2-Frequencies-and-Date-Offsets（频度和日期偏移）">¶</a></h1><p>pandas中的频度由一个基本频度（base frequency）和一个乘法器（multiplier）组成。基本频度通常用一个字符串别名（string alias）来代表，比如'M'表示月，'H'表示小时。对每一个基本频度，还有一个被称之为日期偏移（date offset）的对象。例如，小时频度能用Hour类来表示：</p>
@@ -1376,7 +1411,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>通过传入一个整数，我们可以定义一个乘以偏移的乘法（a multiple of an offset）：</p>
 </div>
@@ -1405,7 +1441,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>在很多情况下，我们不需要创建这些对象，而是使用字符串别名，比如'H'或'4H'。在频度前加一个整数，就能作为一个乘法器：</p>
 </div>
@@ -1442,7 +1479,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>很多偏移(offset)还能和加法结合：</p>
 </div>
@@ -1470,7 +1508,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>同样的，我们可以传入频度字符串，比如'1h30min'，这种表达也能被解析：</p>
 </div>
@@ -1503,7 +1542,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Week-of-month-dates（月中的第几周日期）">Week of month dates（月中的第几周日期）<a class="anchor-link" href="#Week-of-month-dates（月中的第几周日期）">¶</a></h3><p>一个有用的类（class）是月中的第几周（Week of month），用WOM表示。丽日我们想得到每个月的第三个星期五：</p>
 </div>
@@ -1562,7 +1602,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="3-Shifting-(Leading-and-Lagging)-Data-（偏移（提前与推后）数据）">3 Shifting (Leading and Lagging) Data （偏移（提前与推后）数据）<a class="anchor-link" href="#3-Shifting-(Leading-and-Lagging)-Data-（偏移（提前与推后）数据）">¶</a></h1><p>偏移（shifting）表示按照时间把数据向前或向后推移。Series和DataFrame都有一个shift方法实现偏移，索引（index）不会被更改：</p>
 </div>
@@ -1646,7 +1687,8 @@ Freq: M, dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>当我们进行位移的时候，就像上面这样会引入缺失值。</p>
 <p>shift的一个普通的用法是计算时间序列的百分比变化，可以表示为：</p>
@@ -1679,7 +1721,8 @@ Freq: M, dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>因为普通的shift不会对index进行修改，一些数据会被丢弃。因此如果频度是已知的，可以把频度传递给shift，这样的话时间戳会自动变化：</p>
 </div>
@@ -1761,7 +1804,8 @@ Freq: M, dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>其他一些频度也可以导入，能让我们前后移动数据：</p>
 </div>
@@ -1818,7 +1862,8 @@ Freq: M, dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>T表示分钟。</p>
 <h3 id="Shifting-dates-with-offsets（用偏移量来移动日期）">Shifting dates with offsets（用偏移量来移动日期）<a class="anchor-link" href="#Shifting-dates-with-offsets（用偏移量来移动日期）">¶</a></h3><p>pandas的日期偏移（date offset）能被用于datetime或Timestamp对象：</p>
@@ -1869,7 +1914,8 @@ Freq: M, dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>如果我们添加一个像MonthEnd这样的anchored offset(依附偏移；锚点位置)，日期会根据频度规则进行递增：</p>
 </div>
@@ -1918,7 +1964,8 @@ Freq: M, dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>依附偏移可以让日期向前或向后滚动，利用rollforward和rollback方法：</p>
 </div>
@@ -1978,7 +2025,8 @@ Freq: M, dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>一个比较创造性的日期偏移（date offset）用法是配合groupby一起用：</p>
 </div>
@@ -2052,7 +2100,8 @@ dtype: float64</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>一个简单且快捷的方式是用resample(11.6会进行更详细的介绍)：</p>
 </div>
@@ -2130,49 +2179,47 @@ Freq: M, dtype: float64</pre>
 
 </div>
 <aside class="sidebar">
-  <section>
-    <h1>Recent Posts</h1>
-    <ul id="recent_posts">
-      <li class="post">
-          <a href="../../../pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
-      </li>
-    </ul>
-  </section>
-  <section>
-      
-    <h1>Categories</h1>
-    <ul id="recent_posts">
-        <li><a href="../../../category/00qi-ta.html">00.其他</a></li>
-        <li><a href="../../../category/00qi-ta-2.html">00.其他2</a></li>
-        <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
-        <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
-        <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
-        <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
-        <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
-        <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
-        <li><a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
-        <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
-        <li><a href="../../../category/tools.html">tools</a></li>
-        <li><a href="../../../category/tools-numpy.html">tools-numpy</a></li>
-    </ul>
-  </section>
- 
 
-  <section>
-  <h1>Tags</h1>
-    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/latex.html">latex</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/pandas.html">pandas</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/plot.html">plot</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/shell.html">shell</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+        <section>
+
+            <h1>Categories</h1>
+            <ul id="recent_posts">
+                    <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
+                    <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
+                    <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
+                    <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
+                    <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
+                    <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
+                    <li><a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
+                    <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
+                    <li><a href="../../../category/tools.html">tools</a></li>
+            </ul>
+        </section>
+
+    <section>
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+                <li class="post">
+                    <a href="../../../pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
+                </li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Tags</h1>
+            <a href="../../../tag/python.html">python</a>,            <a href="../../../tag/latex.html">latex</a>,            <a href="../../../tag/numpy.html">numpy</a>,            <a href="../../../tag/pandas.html">pandas</a>,            <a href="../../../tag/jupyter.html">jupyter</a>,            <a href="../../../tag/plot.html">plot</a>,            <a href="../../../tag/pip.html">pip</a>,            <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,            <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,            <a href="../../../tag/tensorflow.html">tensorflow</a>,            <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,            <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,            <a href="../../../tag/pangrank.html">PangRank</a>,            <a href="../../../tag/mapreduce.html">MapReduce</a>,            <a href="../../../tag/book.html">book</a>,            <a href="../../../tag/pydata.html">pydata</a>,            <a href="../../../tag/shell.html">shell</a>,            <a href="../../../tag/pyhton.html">pyhton</a>,            <a href="../../../tag/xgboost.html">xgboost</a>    </section>
 
 
     <section>
@@ -2192,17 +2239,17 @@ Freq: M, dtype: float64</pre>
     </section>
 
 </aside>    </div>
-  </div>
-  <footer role="contentinfo"><p>
-        活到老，学到老，玩到老
-    <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</div>
+<footer role="contentinfo"><p>
+    Copyright &copy;  2017&ndash;2019  niult &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
-  <script src="../../../theme/js/modernizr-2.0.js"></script>
-  <script src="../../../theme/js/ender.js"></script>
-  <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
+<script src="../../../theme/js/modernizr-2.0.js"></script>
+<script src="../../../theme/js/ender.js"></script>
+<script src="../../../theme/js/octopress.js" type="text/javascript"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-127062347-1']);
+    _gaq.push(['_setAccount', 'UA-132396898-1']);
     _gaq.push(['_trackPageview']);
     (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -2215,7 +2262,7 @@ Freq: M, dtype: float64</pre>
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-127062347-1');
+    ga('create', 'UA-132396898-1');
     ga('send', 'pageview');
 </script>
 </body>

@@ -1,49 +1,80 @@
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>pydata-04.2 通用函数 &mdash; 魑魅魍魉</title>
-  <meta name="author" content="niult">
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+<meta charset="utf-8">
+<title>pydata-04.2 通用函数 &mdash; 魑魅魍魉</title>
+<meta name="author" content="niult">
 
 
 
 
 
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <link href="../../../favicon.png" rel="icon">
 
-  <link href="../../../theme/css/main.css" media="screen, projection"
-        rel="stylesheet" type="text/css">
+<link href="../../../theme/css/main.css" media="screen, projection"
+      rel="stylesheet" type="text/css">
 
-  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-</head>
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+      rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+      rel="stylesheet" type="text/css">
+
+<!-- mathjax config similar to math.stackexchange -->
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+    init_mathjax = function () {
+        if (window.MathJax) {
+            // MathJax loaded
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ["\\(", "\\)"]],
+                    displayMath: [['$$', '$$'], ["\\[", "\\]"]]
+                },
+                displayAlign: 'center', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 0}}
+                }
+            });
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    };
+    init_mathjax();
+</script>
+
+<script type="text/javascript">
+    init_mathjax2 = function () {
+        // Fix <code> tags after MathJax finishes running. This is a
+        // hack to overcome a shortcoming of Markdown. Discussion at
+        // https://github.com/mojombo/jekyll/issues/199
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    };
+    init_mathjax2();
+
+
+</script></head>
 
 <body>
-  <header role="banner"><hgroup>
+<header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
 </hgroup></header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+<nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
 
 
 <ul class="main-navigation">
-      <li >
-        <a href="../../../category/00qi-ta.html">00.其他</a>
-      </li>
-      <li >
-        <a href="../../../category/00qi-ta-2.html">00.其他2</a>
-      </li>
       <li >
         <a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a>
       </li>
@@ -71,11 +102,8 @@
       <li >
         <a href="../../../category/tools.html">Tools</a>
       </li>
-      <li >
-        <a href="../../../category/tools-numpy.html">Tools-numpy</a>
-      </li>
 </ul></nav>
-  <div id="main">
+<div id="main">
     <div id="content">
 <div>
   <article class="hentry" role="article">
@@ -1058,7 +1086,8 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="通用函数：快速点对点数组函数">通用函数：快速点对点数组函数<a class="anchor-link" href="#通用函数：快速点对点数组函数">¶</a></h1><p>universal function, 或 ufunc, 是用来在ndarray中实现element-wise操作的。</p>
 <p>可以认为这个ufunc可以把一些简单的函数做快速的向量化封装，输入是一个以上的标量，输出也是一个以上的标量。</p>
@@ -1068,7 +1097,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1081,7 +1110,7 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[3]:</div>
+<div class="prompt output_prompt">Out[1]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</pre>
 </div>
@@ -1091,7 +1120,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
@@ -1102,10 +1131,10 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[4]:</div>
+<div class="prompt output_prompt">Out[2]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 0.        ,  1.        ,  1.41421356,  1.73205081,  2.        ,
-        2.23606798,  2.44948974,  2.64575131,  2.82842712,  3.        ])</pre>
+<pre>array([0.        , 1.        , 1.41421356, 1.73205081, 2.        ,
+       2.23606798, 2.44948974, 2.64575131, 2.82842712, 3.        ])</pre>
 </div>
 </div>
 </div>
@@ -1113,7 +1142,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
@@ -1124,19 +1153,19 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[5]:</div>
+<div class="prompt output_prompt">Out[3]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([  1.00000000e+00,   2.71828183e+00,   7.38905610e+00,
-         2.00855369e+01,   5.45981500e+01,   1.48413159e+02,
-         4.03428793e+02,   1.09663316e+03,   2.98095799e+03,
-         8.10308393e+03])</pre>
+<pre>array([1.00000000e+00, 2.71828183e+00, 7.38905610e+00, 2.00855369e+01,
+       5.45981500e+01, 1.48413159e+02, 4.03428793e+02, 1.09663316e+03,
+       2.98095799e+03, 8.10308393e+03])</pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这些函数叫做一元通用函数（unary ufuncs）。其他一些函数，比如add或maximum，需要两个数组（binary ufuncs）,并返回一个数组作为结果：</p>
 </div>
@@ -1144,7 +1173,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
@@ -1157,10 +1186,10 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[7]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 0.18373557, -1.82728347, -0.11149882, -1.34286776, -1.09016986,
-        1.63308   ,  1.05205535, -0.32746706])</pre>
+<pre>array([-1.19537804,  0.68491247, -1.30267106,  1.78380698,  0.73824506,
+       -0.7124076 ,  0.56547131, -1.53054077])</pre>
 </div>
 </div>
 </div>
@@ -1168,7 +1197,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span>
@@ -1179,10 +1208,10 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[8]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([-0.42410809,  1.89603273, -1.13649816, -0.98559379, -0.16827718,
-        0.52828569,  1.57543351,  1.50045399])</pre>
+<pre>array([-0.08126726, -1.56258726, -1.09331271, -1.09212953, -1.3874921 ,
+       -0.76300148, -0.89450776, -0.10873233])</pre>
 </div>
 </div>
 </div>
@@ -1190,7 +1219,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -1201,17 +1230,18 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[9]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 0.18373557,  1.89603273, -0.11149882, -0.98559379, -0.16827718,
-        1.63308   ,  1.57543351,  1.50045399])</pre>
+<pre>array([-0.08126726,  0.68491247, -1.09331271,  1.78380698,  0.73824506,
+       -0.7124076 ,  0.56547131, -0.10873233])</pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>这里mamimum点对点的比较x和y中的元素。</p>
 <p>尽管不常见，但ufunc也能返回多个数组。例如modf，这是一个向量版的divmod（python内建函数），modf会返回小数部分和整数部分：</p>
@@ -1222,7 +1252,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
@@ -1234,10 +1264,10 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[10]:</div>
+<div class="prompt output_prompt">Out[7]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 1.51538382, -0.75054846,  0.02863286,  8.74026861, -3.44529124,
-       -9.18401768, -0.68469611])</pre>
+<pre>array([ 9.99797264,  3.39446068, -4.03197549, -6.75114366, -3.61040872,
+       -0.12129898, -7.21788964])</pre>
 </div>
 </div>
 </div>
@@ -1245,7 +1275,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">remainder</span><span class="p">,</span> <span class="n">whole_part</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">modf</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
@@ -1257,10 +1287,10 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 0.51538382, -0.75054846,  0.02863286,  0.74026861, -0.44529124,
-       -0.18401768, -0.68469611])</pre>
+<pre>array([ 0.99797264,  0.39446068, -0.03197549, -0.75114366, -0.61040872,
+       -0.12129898, -0.21788964])</pre>
 </div>
 </div>
 </div>
@@ -1268,7 +1298,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [12]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">whole_part</span>
@@ -1279,18 +1309,101 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[12]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 1., -0.,  0.,  8., -3., -9., -0.])</pre>
+<pre>array([ 9.,  3., -4., -6., -3., -0., -7.])</pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>ufunc能接受一个可选参数作为输出，这样可以直接更改原有的数组：</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 9.99797264,  3.39446068, -4.03197549, -6.75114366, -3.61040872,
+       -0.12129898, -7.21788964])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1"># 没有改变原有的arr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Applications/Anaconda/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in sqrt
+  """Entry point for launching an IPython kernel.
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([3.16195709, 1.84240622,        nan,        nan,        nan,
+              nan,        nan])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span> <span class="c1"># 改变了原有的arr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Applications/Anaconda/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in sqrt
+  """Entry point for launching an IPython kernel.
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[12]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([3.16195709, 1.84240622,        nan,        nan,        nan,
+              nan,        nan])</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1309,97 +1422,16 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt output_prompt">Out[13]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 1.51538382, -0.75054846,  0.02863286,  8.74026861, -3.44529124,
-       -9.18401768, -0.68469611])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [14]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1"># 没有改变原有的arr</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/xu/anaconda/envs/py35/lib/python3.5/site-packages/ipykernel/__main__.py:1: RuntimeWarning: invalid value encountered in sqrt
-  if __name__ == '__main__':
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt output_prompt">Out[14]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([ 1.23100927,         nan,  0.16921248,  2.95639453,         nan,
-               nan,         nan])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [15]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span> <span class="c1"># 改变了原有的arr</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/xu/anaconda/envs/py35/lib/python3.5/site-packages/ipykernel/__main__.py:1: RuntimeWarning: invalid value encountered in sqrt
-  if __name__ == '__main__':
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt output_prompt">Out[15]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([ 1.23100927,         nan,  0.16921248,  2.95639453,         nan,
-               nan,         nan])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [16]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[16]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([ 1.23100927,         nan,  0.16921248,  2.95639453,         nan,
-               nan,         nan])</pre>
+<pre>array([3.16195709, 1.84240622,        nan,        nan,        nan,
+              nan,        nan])</pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>一些一元通用函数：</p>
 <p><img alt="" src="../MarkdownPhotos/chp04/屏幕快照 2017-10-25 下午1.19.41.png"/></p>
@@ -1457,49 +1489,47 @@ h6:hover .anchor-link {
 
 </div>
 <aside class="sidebar">
-  <section>
-    <h1>Recent Posts</h1>
-    <ul id="recent_posts">
-      <li class="post">
-          <a href="../../../pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
-      </li>
-      <li class="post">
-          <a href="../../../pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
-      </li>
-    </ul>
-  </section>
-  <section>
-      
-    <h1>Categories</h1>
-    <ul id="recent_posts">
-        <li><a href="../../../category/00qi-ta.html">00.其他</a></li>
-        <li><a href="../../../category/00qi-ta-2.html">00.其他2</a></li>
-        <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
-        <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
-        <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
-        <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
-        <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
-        <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
-        <li><a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
-        <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
-        <li><a href="../../../category/tools.html">tools</a></li>
-        <li><a href="../../../category/tools-numpy.html">tools-numpy</a></li>
-    </ul>
-  </section>
- 
 
-  <section>
-  <h1>Tags</h1>
-    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/latex.html">latex</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/pandas.html">pandas</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/plot.html">plot</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="../../../tag/tensorflow.html">tensorflow</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/mapreduce.html">MapReduce</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/shell.html">shell</a>,    <a href="../../../tag/pyhton.html">pyhton</a>,    <a href="../../../tag/xgboost.html">xgboost</a>  </section>
+        <section>
+
+            <h1>Categories</h1>
+            <ul id="recent_posts">
+                    <li><a href="../../../category/01chang-yong-gong-ju.html">01常用工具</a></li>
+                    <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
+                    <li><a href="../../../category/03shen-du-xue-xi.html">03深度学习</a></li>
+                    <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
+                    <li><a href="../../../category/ji-chu-zhi-shi.html">基础知识</a></li>
+                    <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
+                    <li><a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
+                    <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
+                    <li><a href="../../../category/tools.html">tools</a></li>
+            </ul>
+        </section>
+
+    <section>
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+                <li class="post">
+                    <a href="../../../pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
+                </li>
+                <li class="post">
+                    <a href="../../../pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
+                </li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Tags</h1>
+            <a href="../../../tag/python.html">python</a>,            <a href="../../../tag/latex.html">latex</a>,            <a href="../../../tag/numpy.html">numpy</a>,            <a href="../../../tag/pandas.html">pandas</a>,            <a href="../../../tag/jupyter.html">jupyter</a>,            <a href="../../../tag/plot.html">plot</a>,            <a href="../../../tag/pip.html">pip</a>,            <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,            <a href="../../../tag/tensorflowexample.html">TensorFlowExample</a>,            <a href="../../../tag/tensorflow.html">tensorflow</a>,            <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,            <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,            <a href="../../../tag/pangrank.html">PangRank</a>,            <a href="../../../tag/mapreduce.html">MapReduce</a>,            <a href="../../../tag/book.html">book</a>,            <a href="../../../tag/pydata.html">pydata</a>,            <a href="../../../tag/shell.html">shell</a>,            <a href="../../../tag/pyhton.html">pyhton</a>,            <a href="../../../tag/xgboost.html">xgboost</a>    </section>
 
 
     <section>
@@ -1519,17 +1549,17 @@ h6:hover .anchor-link {
     </section>
 
 </aside>    </div>
-  </div>
-  <footer role="contentinfo"><p>
-        活到老，学到老，玩到老
-    <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</div>
+<footer role="contentinfo"><p>
+    Copyright &copy;  2017&ndash;2019  niult &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
-  <script src="../../../theme/js/modernizr-2.0.js"></script>
-  <script src="../../../theme/js/ender.js"></script>
-  <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
+<script src="../../../theme/js/modernizr-2.0.js"></script>
+<script src="../../../theme/js/ender.js"></script>
+<script src="../../../theme/js/octopress.js" type="text/javascript"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-127062347-1']);
+    _gaq.push(['_setAccount', 'UA-132396898-1']);
     _gaq.push(['_trackPageview']);
     (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -1542,7 +1572,7 @@ h6:hover .anchor-link {
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-127062347-1');
+    ga('create', 'UA-132396898-1');
     ga('send', 'pageview');
 </script>
 </body>
