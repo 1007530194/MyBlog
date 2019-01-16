@@ -70,6 +70,283 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-01-gai-lun.html">统计学习方法01-概论</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="第1章-统计学习方法概论">&#31532;1&#31456; &#32479;&#35745;&#23398;&#20064;&#26041;&#27861;&#27010;&#35770;<a class="anchor-link" href="#第1章-统计学习方法概论">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>高斯于1823年在误差e1 ,… , en独立同分布的假定下,证明了最小二乘方法的一个最优性质: 在所有无偏的线性估计类中,最小二乘方法是其中方差最小的！</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="使用最小二乘法拟和曲线">&#20351;&#29992;&#26368;&#23567;&#20108;&#20056;&#27861;&#25311;&#21644;&#26354;&#32447;<a class="anchor-link" href="#使用最小二乘法拟和曲线">&#182;</a></h3><p>对于数据$(x_i, y_i)(i=1, 2, 3...,m)$</p>
+<p>拟合出函数$h(x)$</p>
+<p>有误差，即残差：$r_i=h(x_i)-y_i$</p>
+<p>此时L2范数(残差平方和)最小时，h(x) 和 y 相似度最高，更拟合</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>一般的H(x)为n次的多项式，$H(x)=w_0+w_1x+w_2x^2+...w_nx^n$</p>
+<p>$w(w_0,w_1,w_2,...,w_n)$为参数</p>
+<p>最小二乘法就是要找到一组 $w(w_0,w_1,w_2,...,w_n)$ 使得$\sum_{i=1}^n(h(x_i)-y_i)^2$ (残差平方和) 最小</p>
+<p>即，求 $min\sum_{i=1}^n(h(x_i)-y_i)^2$</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>举例：我们用目标函数$y=sin2{\pi}x$, 加上一个正太分布的噪音干扰，用多项式去拟合【例1.1 11页】</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-01-gai-lun.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-02-gan-zhi-ji.html">统计学习方法02-感知机</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="第2章-感知机">&#31532;2&#31456; &#24863;&#30693;&#26426;<a class="anchor-link" href="#第2章-感知机">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>二分类模型</p>
+<p>$$f(x) = sign(w*x + b)$$</p>
+<p>损失函数</p>
+<p>$$L(w, b) = -\Sigma{y_{i}(w*x_{i} + b)}$$</p>
+<hr>
+<h3 id="算法">&#31639;&#27861;<a class="anchor-link" href="#算法">&#182;</a></h3><p>随即梯度下降法 Stochastic Gradient Descent</p>
+<p>随机抽取一个误分类点使其梯度下降。</p>
+<p>$w = w + \eta y_{i}x_{i}$</p>
+<p>$b = b + \eta y_{i}$</p>
+<p>当实例点被误分类，即位于分离超平面的错误侧，则调整w, b的值，使分离超平面向该无分类点的一侧移动，直至误分类点被正确分类</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>拿出iris数据集中两个分类的数据和[sepal length，sepal width]作为特征</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-02-gan-zhi-ji.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-03-kjin-lin.html">统计学习方法03-k近邻</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="第3章-k近邻法">&#31532;3&#31456; k&#36817;&#37051;&#27861;<a class="anchor-link" href="#第3章-k近邻法">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="距离度量">&#36317;&#31163;&#24230;&#37327;<a class="anchor-link" href="#距离度量">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-03-kjin-lin.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-04-po-su-bei-xie-si.html">统计学习方法04-朴素贝叶斯</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="第4章-朴素贝叶斯">&#31532;4&#31456; &#26420;&#32032;&#36125;&#21494;&#26031;<a class="anchor-link" href="#第4章-朴素贝叶斯">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>基于贝叶斯定理与特征条件独立假设的分类方法。</p>
+<p>模型：</p>
+<ul>
+<li>高斯模型</li>
+<li>多项式模型</li>
+<li>伯努利模型</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-04-po-su-bei-xie-si.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-05-jue-ce-shu.html">统计学习方法05-决策树</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="第5章-决策树">&#31532;5&#31456; &#20915;&#31574;&#26641;<a class="anchor-link" href="#第5章-决策树">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>ID3（基于信息增益）</li>
+<li>C4.5（基于信息增益比）</li>
+<li>CART（gini指数）</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="entropy：$H(x)-=--\sum_{i=1}^{n}p_i\log{p_i}$">entropy&#65306;$H(x) = -\sum_{i=1}^{n}p_i\log{p_i}$<a class="anchor-link" href="#entropy：$H(x)-=--\sum_{i=1}^{n}p_i\log{p_i}$">&#182;</a></h4><h4 id="conditional-entropy:-$H(X|Y)=\sum{P(X|Y)}\log{P(X|Y)}$">conditional entropy: $H(X|Y)=\sum{P(X|Y)}\log{P(X|Y)}$<a class="anchor-link" href="#conditional-entropy:-$H(X|Y)=\sum{P(X|Y)}\log{P(X|Y)}$">&#182;</a></h4><h4 id="information-gain-:-$g(D,-A)=H(D)-H(D|A)$">information gain : $g(D, A)=H(D)-H(D|A)$<a class="anchor-link" href="#information-gain-:-$g(D,-A)=H(D)-H(D|A)$">&#182;</a></h4><h4 id="information-gain-ratio:-$g_R(D,-A)-=-\frac{g(D,A)}{H(A)}$">information gain ratio: $g_R(D, A) = \frac{g(D,A)}{H(A)}$<a class="anchor-link" href="#information-gain-ratio:-$g_R(D,-A)-=-\frac{g(D,A)}{H(A)}$">&#182;</a></h4><h4 id="gini-index:$Gini(D)=\sum_{k=1}^{K}p_k\log{p_k}=1-\sum_{k=1}^{K}p_k^2$">gini index:$Gini(D)=\sum_{k=1}^{K}p_k\log{p_k}=1-\sum_{k=1}^{K}p_k^2$<a class="anchor-link" href="#gini-index:$Gini(D)=\sum_{k=1}^{K}p_k\log{p_k}=1-\sum_{k=1}^{K}p_k^2$">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-05-jue-ce-shu.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-06-logisticshui-gui.html">统计学习方法06-logistics回归</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="第6章-逻辑斯谛回归">&#31532;6&#31456; &#36923;&#36753;&#26031;&#35867;&#22238;&#24402;<a class="anchor-link" href="#第6章-逻辑斯谛回归">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>LR是经典的分类方法</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>回归模型：$f(x) = \frac{1}{1+e^{-wx}}$</p>
+<p>其中wx线性函数：$wx =w_0*x_0 + w_1*x_1 + w_2*x_2 +...+w_n*x_n,(x_0=1)$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-06-logisticshui-gui.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-07-zhi-chi-xiang-liang-ji.html">统计学习方法07-支持向量机</a>
       </h1>
     <p class="meta">
@@ -346,164 +623,6 @@ K-Means 是发现给定数据集的 K 个簇的聚类算法, 之所以称之为 
     <a rel="full-article" href="./pages/2017/01/10k-meansju-lei.html">Read On &crarr;</a>
   </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2017/01/11apriori-guan-lian-fen-xi.html">11.Apriori-关联分析</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第 11 章 使用 Apriori 算法进行关联分析</h1>
-<h2>关联分析</h2>
-<p>关联分析是一种在大规模数据集中寻找有趣关系的任务。
-这些关系可以有两种形式: 
-<em> 频繁项集（frequent item sets）: 经常出现在一块的物品的集合。
-</em> 关联规则（associational rules）: 暗示两种物品之间可能存在很强的关系。</p>
-<h2>相关术语</h2>
-<ul>
-<li>
-<p>关联分析（关联规则学习): 从大规模数据集中寻找物品间的隐含关系被称作 <code>关联分析(associati analysis)</code> 或者 <code>关联规则学习（association rule learning …</code></p></li></ul></div>
-  <footer>
-    <a rel="full-article" href="./pages/2017/01/11apriori-guan-lian-fen-xi.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2017/01/12fp-growth-pin-fan-xiang-ji.html">12.FP-growth-频繁项集</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第12章 使用FP-growth算法来高效发现频繁项集</h1>
-<h2>前言</h2>
-<p>在 <a href="">第11章</a> 时我们已经介绍了用 <code>Apriori</code> 算法发现 <code>频繁项集</code> 与 <code>关联规则</code>。<br/>
-本章将继续关注发现 <code>频繁项集</code> 这一任务，并使用 <code>FP-growth</code> 算法更有效的挖掘 <code>频繁项集</code>。</p>
-<h2>FP-growth 算法简介</h2>
-<ul>
-<li>一种非常好的发现频繁项集算法。</li>
-<li>基于Apriori算法构建,但是数据结构不同，使用叫做 <code>FP树</code> 的数据结构结构来存储集合。下面我们会介绍这种数据结构。</li>
-</ul>
-<h2>FP-growth 算法步骤</h2>
-<ul>
-<li>基于数据构建FP树 …</li></ul></div>
-  <footer>
-    <a rel="full-article" href="./pages/2017/01/12fp-growth-pin-fan-xiang-ji.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2017/01/13li-yong-pcalai-jian-hua-shu-ju.html">13.利用PCA来简化数据</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第13章 利用 PCA 来简化数据</h1>
-<h2>降维技术</h2>
-<blockquote>
-<p>场景</p>
-</blockquote>
-<ul>
-<li>我们正通过电视观看体育比赛，在电视的显示器上有一个球。</li>
-<li>显示器大概包含了100万像素点，而球则可能是由较少的像素点组成，例如说一千个像素点。</li>
-<li>人们实时的将显示器上的百万像素转换成为一个三维图像，该图像就给出运动场上球的位置。</li>
-<li>在这个过程中，人们已经将百万像素点的数据，降至为三维。这个过程就称为<code>降维(dimensionality reduction)</code></li>
-</ul>
-<blockquote>
-<p>数据显示 并非大规模特征下的唯一难题，对数据进行简化还有如下一系列的原因：</p>
-</blockquote>
-<ul>
-<li>1) 使得数据集更容易使用</li>
-<li>2) 降低很多算法的计算开销</li>
-<li>3) 去除噪音</li>
-<li>4 …</li></ul></div>
-  <footer>
-    <a rel="full-article" href="./pages/2017/01/13li-yong-pcalai-jian-hua-shu-ju.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2017/01/14li-yong-svdjian-hua-shu-ju.html">14.利用SVD简化数据</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第14章 利用SVD简化数据</h1>
-<p><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default" type="text/javascript"></script></p>
-<h2>SVD 概述</h2>
-<div class="highlight"><pre><span></span>奇异值分解（SVD, Singular Value Decomposition）:
-    提取信息的一种方法，可以把 SVD 看成是从噪声数据中抽取相关特征。从生物信息学到金融学，SVD 是提取信息的强大工具。
-</pre></div>
-<h2>SVD 场景</h2>
-<blockquote>
-<p>信息检索-隐性语义检索（Lstent Semantic Indexing, LSI）或 隐形语义分析（Latent Semantic Analysis, LSA）</p>
-</blockquote>
-<p>隐性语义索引 …</p></div>
-  <footer>
-    <a rel="full-article" href="./pages/2017/01/14li-yong-svdjian-hua-shu-ju.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2017/01/15da-shu-ju-yu-mapreduce.html">15.大数据与MapReduce</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第15章 大数据与MapReduce</h1>
-<h2>大数据 概述</h2>
-<p><code>大数据: 收集到的数据已经远远超出了我们的处理能力。</code></p>
-<h2>大数据 场景</h2>
-<div class="highlight"><pre><span></span>假如你为一家网络购物商店工作，很多用户访问该网站，其中有些人会购买商品，有些人则随意浏览后就离开。
-对于你来说，可能很想识别那些有购物意愿的用户。
-那么问题就来了，数据集可能会非常大，在单机上训练要运行好几天。
-接下来：我们讲讲 MapRedece 如何来解决这样的问题
-</pre></div>
-<h2>MapRedece</h2>
-<h3>Hadoop 概述</h3>
-<div class="highlight"><pre><span></span>Hadoop 是 MapRedece 框架的一个免费开源实现。
-MapReduce: 分布式的计算框架 …</pre></div></div>
-  <footer>
-    <a rel="full-article" href="./pages/2017/01/15da-shu-ju-yu-mapreduce.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2017/01/16tui-jian-xi-tong.html">16.推荐系统</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content"><h1>第16章 推荐系统</h1>
-<h2>背景与挖掘目标</h2>
-<p>随着互联网的快速发展，用户很难快速从海量信息中寻找到自己感兴趣的信息。因此诞生了：搜索引擎+推荐系统</p>
-<p>本章节-推荐系统：</p>
-<ol>
-<li>帮助用户发现其感兴趣和可能感兴趣的信息。</li>
-<li>让网站价值信息脱颖而出，得到广大用户的认可。</li>
-<li>提高用户对网站的忠诚度和关注度，建立稳固用户群体。</li>
-</ol>
-<h2>分析方法与过程</h2>
-<p>本案例的目标是对用户进行推荐，即以一定的方式将用户与物品（本次指网页）之间建立联系。</p>
-<p>由于用户访问网站的数据记录很多，如果不对数据进行分类处理，对所有的记录直接采用推荐系统进行推荐，这样会存在一下问题。</p>
-<ol>
-<li>数据量太大意味着物品数与用户数很多，在模型构建用户与物品稀疏矩阵时，出现设备内存空间不够的情况，并且模型计算需要消耗大量的时间。</li>
-<li>用户区别很大，不同的用户关注的信息不一样，因此 …</li></ol></div>
-  <footer>
-    <a rel="full-article" href="./pages/2017/01/16tui-jian-xi-tong.html">Read On &crarr;</a>
-  </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="./index7.html">&larr; Older</a>
 
@@ -515,19 +634,19 @@ MapReduce: 分布式的计算框架 …</pre></div></div>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="./pages/2019/01/matplotlibjiao-cheng-01.html">matplotlib教程01</a>
+          <a href="./pages/2019/01/handbook-en-01.html">handbook-en-01</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/matplotlibjiao-cheng-02.html">matplotlib教程02</a>
+          <a href="./pages/2019/01/handbook-en-02.html">handbook-en-02</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/matplotlibjiao-cheng-03.html">matplotlib教程03</a>
+          <a href="./pages/2019/01/handbook-en-03.html">handbook-en-03</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/matplotlibjiao-cheng-04.html">matplotlib教程04</a>
+          <a href="./pages/2019/01/mapreduce-python.html">mapreduce-python</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/matplotlibjiao-cheng-zhi-applied.html">matplotlib教程之applied</a>
+          <a href="./pages/2019/01/rbmwang-luo.html">RBM网络</a>
       </li>
     </ul>
   </section>
@@ -550,7 +669,7 @@ MapReduce: 分布式的计算框架 …</pre></div></div>
 
   <section>
   <h1>Tags</h1>
-    <a href="./tag/python.html">python</a>,    <a href="./tag/numpy.html">numpy</a>,    <a href="./tag/matplotlib.html">matplotlib</a>,    <a href="./tag/scikit-learn.html">scikit-learn</a>,    <a href="./tag/latex.html">latex</a>,    <a href="./tag/pandas.html">pandas</a>,    <a href="./tag/jupyter.html">jupyter</a>,    <a href="./tag/plot.html">plot</a>,    <a href="./tag/pip.html">pip</a>,    <a href="./tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="./tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="./tag/tensorflow.html">tensorflow</a>,    <a href="./tag/shen-du-xue-xi.html">深度学习</a>,    <a href="./tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="./tag/pangrank.html">PangRank</a>,    <a href="./tag/mapreduce.html">MapReduce</a>,    <a href="./tag/book.html">book</a>,    <a href="./tag/pydata.html">pydata</a>,    <a href="./tag/shell.html">shell</a>,    <a href="./tag/pyhton.html">pyhton</a>,    <a href="./tag/xgboost.html">xgboost</a>  </section>
+    <a href="./tag/python.html">python</a>,    <a href="./tag/numpy.html">numpy</a>,    <a href="./tag/handbook.html">handbook</a>,    <a href="./tag/mapreduce.html">mapreduce</a>,    <a href="./tag/net.html">net</a>,    <a href="./tag/spark.html">spark</a>,    <a href="./tag/tf.html">tf</a>,    <a href="./tag/ji-huo-han-shu.html">激活函数</a>,    <a href="./tag/matplotlib.html">matplotlib</a>,    <a href="./tag/scikit-learn.html">scikit-learn</a>,    <a href="./tag/latex.html">latex</a>,    <a href="./tag/pandas.html">pandas</a>,    <a href="./tag/jupyter.html">jupyter</a>,    <a href="./tag/plot.html">plot</a>,    <a href="./tag/pip.html">pip</a>,    <a href="./tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="./tag/tensorflowexample.html">TensorFlowExample</a>,    <a href="./tag/shen-du-xue-xi.html">深度学习</a>,    <a href="./tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="./tag/pangrank.html">PangRank</a>,    <a href="./tag/book.html">book</a>,    <a href="./tag/pydata.html">pydata</a>,    <a href="./tag/shell.html">shell</a>,    <a href="./tag/pyhton.html">pyhton</a>,    <a href="./tag/xgboost.html">xgboost</a>  </section>
 
 
     <section>
