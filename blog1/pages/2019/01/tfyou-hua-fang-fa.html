@@ -51,6 +51,9 @@
         <a href="../../../category/book-pydata.html">Book-pydata</a>
       </li>
       <li >
+        <a href="../../../category/deep-learning-with-python.html">Deep-learning-with-python</a>
+      </li>
+      <li >
         <a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a>
       </li>
       <li >
@@ -67,6 +70,9 @@
       </li>
       <li class="active">
         <a href="../../../category/tools.html">Tools</a>
+      </li>
+      <li >
+        <a href="../../../category/tui-jian-xi-tong.html">推荐系统</a>
       </li>
 </ul></nav>
   <div id="main">
@@ -1058,7 +1064,7 @@ h6:hover .anchor-link {
 <p>在很多机器学习和深度学习的应用中，我们发现用的最多的优化器是 Adam，为什么呢？</p>
 <p>下面是 TensorFlow 中的优化器， 
 <a href="https://www.tensorflow.org/api_guides/python/train">https://www.tensorflow.org/api\_guides/python/train</a>
-<img alt="" src="https://github.com/1007530194/datas/blob/master/images/blog/study/others/28A308A65B43D79482C913803F349716.png"/></p>
+<img alt="" src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/28A308A65B43D79482C913803F349716.png"/></p>
 <p>在 keras 中也有 SGD，RMSprop，Adagrad，Adadelta，Adam 等： 
 <a href="https://keras.io/optimizers/">https://keras.io/optimizers/</a></p>
 <p>我们可以发现除了常见的梯度下降，还有 Adadelta，Adagrad，RMSProp 等几种优化器，都是什么呢，又该怎么选择呢？</p>
@@ -1103,7 +1109,7 @@ $$</p>
 <p>看代码，可以看到区别，就是整体数据集是个循环，其中对每个样本进行一次参数更新。</p>
 <p>缺点: 
 但是 SGD 因为更新比较频繁，会造成 cost function 有严重的震荡。</p>
-<p><img alt="" src="https://github.com/1007530194/datas/blob/master/images/blog/study/others/62F8D6CAC0120E34CAC75B59A467B1D8.png"/></p>
+<p><img alt="" src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/62F8D6CAC0120E34CAC75B59A467B1D8.png"/></p>
 <p>BGD 可以收敛到局部极小值，当然 SGD 的震荡可能会跳到更好的局部极小值处。</p>
 <p>当我们稍微减小 learning rate，SGD 和 BGD 的收敛性是一样的。</p>
 <hr/>
@@ -1129,11 +1135,11 @@ n 一般取值在 50～256</p>
 <li>另外，对于非凸函数，还要避免陷于局部极小值处，或者鞍点处，因为鞍点周围的error 是一样的，所有维度的梯度都接近于0，SGD 很容易被困在这里。</li>
 </ol>
 <p>不过 Mini-batch gradient descent 不能保证很好的收敛性，鞍点就是：一个光滑函数的鞍点邻域的曲线，曲面，或超曲面，都位于这点的切线的不同边。 例如这个二维图形，像个马鞍：在x-轴方向往上曲，在y-轴方向往下曲，鞍点就是（0，0）</p>
-<p><img alt="" src="https://github.com/1007530194/datas/blob/master/images/blog/study/others/BE69409D8ECB330D775F9E6F1E99A239.png"/></p>
+<p><img alt="" src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/BE69409D8ECB330D775F9E6F1E99A239.png"/></p>
 <p>为了应对上面的三点挑战就有了下面这些算法。</p>
 <hr/>
 <h2 id="4.-Momentum">4. Momentum<a class="anchor-link" href="#4.-Momentum">¶</a></h2><p>SGD 在 ravines 的情况下容易被困住， ravines 就是曲面的一个方向比另一个方向更陡，这时 SGD 会发生震荡而迟迟不能接近极小值：</p>
-<p><img alt="" src="https://github.com/1007530194/datas/blob/master/images/blog/study/others/76BCC65FF39FB153D377EEF08FABEB16.png"/></p>
+<p><img alt="" src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/76BCC65FF39FB153D377EEF08FABEB16.png"/></p>
 <p>梯度更新规则: 
 Momentum 通过加入 $\gamma v_{t−1}$ ，可以加速 SGD， 并且抑制震荡</p>
 <p>$$
@@ -1158,7 +1164,7 @@ $$</p>
 <p>超参数设定值: 
 $\gamma$ 仍然取值 0.9 左右。</p>
 <p>效果比较: 
-<img alt="" src="https://github.com/1007530194/datas/blob/master/images/blog/study/others/98F724EDF6695476F6B38F7F172B59F5.png"/></p>
+<img alt="" src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/98F724EDF6695476F6B38F7F172B59F5.png"/></p>
 <p>蓝色是 Momentum 的过程，会先计算当前的梯度，然后在更新后的累积梯度后会有一个大的跳跃。 
 而 NAG 会先在前一步的累积梯度上(brown vector)有一个大的跳跃，然后衡量一下梯度做一下修正(red vector)，这种预期的更新可以避免我们走的太快。</p>
 <p>NAG 可以使 RNN 在很多任务上有更好的表现。目前为止，我们可以做到，在更新梯度时顺应 loss function 的梯度来调整速度，并且对 SGD 进行加速。我们还希望可以根据参数的重要性而对不同的参数进行不同程度的更新。</p>
@@ -1335,19 +1341,19 @@ $$</p>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="../../../pages/2019/01/algorithms-adaboost.html">algorithms-AdaBoost</a>
+          <a href="../../../pages/2019/01/21-a-first-look-at-a-neural-network.html">2.1-a-first-look-at-a-neural-network</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2019/01/algorithms-adaboostti-gao-fen-lei-xing-neng.html">algorithms-AdaBoost提高分类性能</a>
+          <a href="../../../pages/2019/01/35-classifying-movie-reviews.html">3.5-classifying-movie-reviews</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2019/01/algorithms-apriori.html">algorithms-apriori</a>
+          <a href="../../../pages/2019/01/36-classifying-newswires.html">3.6-classifying-newswires</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2019/01/algorithms-boostjian-jie.html">algorithms-Boost简介</a>
+          <a href="../../../pages/2019/01/37-predicting-house-prices.html">3.7-predicting-house-prices</a>
       </li>
       <li class="post">
-          <a href="../../../pages/2019/01/algorithms-fp-growth.html">algorithms-FP-growth</a>
+          <a href="../../../pages/2019/01/44-overfitting-and-underfitting.html">4.4-overfitting-and-underfitting</a>
       </li>
     </ul>
   </section>
@@ -1359,19 +1365,21 @@ $$</p>
         <li><a href="../../../category/02wo-ai-du-shu.html">02.我爱读书</a></li>
         <li><a href="../../../category/algorithms.html">algorithms</a></li>
         <li><a href="../../../category/book-pydata.html">book-pydata</a></li>
+        <li><a href="../../../category/deep-learning-with-python.html">deep-learning-with-python</a></li>
         <li><a href="../../../category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
         <li><a href="../../../category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
         <li><a href="../../../category/shen-du-xue-xi.html">深度学习</a></li>
         <li><a href="../../../category/shu-xue-ji-chu.html">数学基础</a></li>
         <li><a href="../../../category/tf-example.html">tf-example</a></li>
         <li><a href="../../../category/tools.html">tools</a></li>
+        <li><a href="../../../category/tui-jian-xi-tong.html">推荐系统</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/algorithms.html">algorithms</a>,    <a href="../../../tag/shu-xue-ji-chu.html">数学基础</a>,    <a href="../../../tag/tf-example.html">tf-example</a>,    <a href="../../../tag/tf.html">tf</a>,    <a href="../../../tag/ji-huo-han-shu.html">激活函数</a>,    <a href="../../../tag/sun-shi-han-shu.html">损失函数</a>,    <a href="../../../tag/mapreduce.html">mapreduce</a>,    <a href="../../../tag/spark.html">spark</a>,    <a href="../../../tag/handbook.html">handbook</a>,    <a href="../../../tag/matplotlib.html">matplotlib</a>,    <a href="../../../tag/scikit-learn.html">scikit-learn</a>,    <a href="../../../tag/latex.html">latex</a>,    <a href="../../../tag/pandas.html">pandas</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/plot.html">plot</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/shell.html">shell</a>,    <a href="../../../tag/pyhton.html">pyhton</a>  </section>
+    <a href="../../../tag/python.html">python</a>,    <a href="../../../tag/numpy.html">numpy</a>,    <a href="../../../tag/deep-learning.html">deep-learning</a>,    <a href="../../../tag/algorithms.html">algorithms</a>,    <a href="../../../tag/shu-xue-ji-chu.html">数学基础</a>,    <a href="../../../tag/tf-example.html">tf-example</a>,    <a href="../../../tag/tui-jian-xi-tong.html">推荐系统</a>,    <a href="../../../tag/tf.html">tf</a>,    <a href="../../../tag/ji-huo-han-shu.html">激活函数</a>,    <a href="../../../tag/sun-shi-han-shu.html">损失函数</a>,    <a href="../../../tag/mapreduce.html">mapreduce</a>,    <a href="../../../tag/spark.html">spark</a>,    <a href="../../../tag/handbook.html">handbook</a>,    <a href="../../../tag/matplotlib.html">matplotlib</a>,    <a href="../../../tag/scikit-learn.html">scikit-learn</a>,    <a href="../../../tag/latex.html">latex</a>,    <a href="../../../tag/pandas.html">pandas</a>,    <a href="../../../tag/jupyter.html">jupyter</a>,    <a href="../../../tag/plot.html">plot</a>,    <a href="../../../tag/pip.html">pip</a>,    <a href="../../../tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="../../../tag/shen-du-xue-xi.html">深度学习</a>,    <a href="../../../tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="../../../tag/pangrank.html">PangRank</a>,    <a href="../../../tag/book.html">book</a>,    <a href="../../../tag/pydata.html">pydata</a>,    <a href="../../../tag/shell.html">shell</a>,    <a href="../../../tag/pyhton.html">pyhton</a>  </section>
 
 
     <section>

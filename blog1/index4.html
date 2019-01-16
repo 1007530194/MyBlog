@@ -49,6 +49,9 @@
         <a href="./category/book-pydata.html">Book-pydata</a>
       </li>
       <li >
+        <a href="./category/deep-learning-with-python.html">Deep-learning-with-python</a>
+      </li>
+      <li >
         <a href="./category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a>
       </li>
       <li >
@@ -66,6 +69,9 @@
       <li >
         <a href="./category/tools.html">Tools</a>
       </li>
+      <li >
+        <a href="./category/tui-jian-xi-tong.html">推荐系统</a>
+      </li>
 </ul></nav>
   <div id="main">
     <div id="content">
@@ -73,7 +79,7 @@
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0309-neural_network_raw.html">tf-example-03.09-neural_network_raw</a>
+        <a href="./pages/2019/01/tf-example-0102-basic-eager-api.html">tf-example-01.02-basic-eager-api</a>
       </h1>
     <p class="meta">
 <time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
@@ -84,7 +90,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Neural-Network-Example">Neural Network Example<a class="anchor-link" href="#Neural-Network-Example">&#182;</a></h1><p>Build a 2-hidden layers fully connected neural network (a.k.a multilayer perceptron) with TensorFlow.</p>
+<h1 id="Basic-introduction-to-TensorFlow's-Eager-API">Basic introduction to TensorFlow's Eager API<a class="anchor-link" href="#Basic-introduction-to-TensorFlow's-Eager-API">&#182;</a></h1><p>A simple introduction to get started with TensorFlow's Eager API.</p>
 <ul>
 <li>Author: Aymeric Damien</li>
 <li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
@@ -97,16 +103,125 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Neural-Network-Overview">Neural Network Overview<a class="anchor-link" href="#Neural-Network-Overview">&#182;</a></h2><p><img src="http://cs231n.github.io/assets/nn1/neural_net2.jpeg" alt="nn" style="width: 400px;" /></p>
+<h3 id="What-is-TensorFlow's-Eager-API-?">What is TensorFlow's Eager API ?<a class="anchor-link" href="#What-is-TensorFlow's-Eager-API-?">&#182;</a></h3><p><em>Eager execution is an imperative, define-by-run interface where operations are
+executed immediately as they are called from Python. This makes it easier to
+get started with TensorFlow, and can make research and development more
+intuitive. A vast majority of the TensorFlow API remains the same whether eager
+execution is enabled or not. As a result, the exact same code that constructs
+TensorFlow graphs (e.g. using the layers API) can be executed imperatively
+by using eager execution. Conversely, most models written with Eager enabled
+can be converted to a graph that can be further optimized and/or extracted
+for deployment in production without changing code. - Rajat Monga</em></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0102-basic-eager-api.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-0103-basic-operations.html">tf-example-01.03-basic-operations</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0103-basic-operations.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-0201-linear_regression_eager_api.html">tf-example-02.01-linear_regression_eager_api</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Linear-Regression-with-Eager-API">Linear Regression with Eager API<a class="anchor-link" href="#Linear-Regression-with-Eager-API">&#182;</a></h1><p>A linear regression implemented using TensorFlow's Eager API.</p>
+<ul>
+<li>Author: Aymeric Damien</li>
+<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0201-linear_regression_eager_api.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-0202-linear_regression.html">tf-example-02.02-linear_regression</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Linear-Regression-Example">Linear Regression Example<a class="anchor-link" href="#Linear-Regression-Example">&#182;</a></h1><p>A linear regression learning algorithm example using TensorFlow library.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0202-linear_regression.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-0203-logistic_regression_eager_api.html">tf-example-02.03-logistic_regression_eager_api</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Logistic-Regression-with-Eager-API">Logistic Regression with Eager API<a class="anchor-link" href="#Logistic-Regression-with-Eager-API">&#182;</a></h1><p>A logistic regression implemented using TensorFlow's Eager API.</p>
+<ul>
+<li>Author: Aymeric Damien</li>
+<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="MNIST-Dataset-Overview">MNIST Dataset Overview<a class="anchor-link" href="#MNIST-Dataset-Overview">&#182;</a></h2><p>This example is using MNIST handwritten digits. The dataset contains 60,000 examples for training and 10,000 examples for testing. The digits have been size-normalized and centered in a fixed-size image (28x28 pixels) with values from 0 to 1. For simplicity, each image has been flattened and converted to a 1-D numpy array of 784 features (28*28).</p></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0309-neural_network_raw.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0203-logistic_regression_eager_api.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0310-neural_network.html">tf-example-03.10-neural_network</a>
+        <a href="./pages/2019/01/tf-example-0204-nearest_neighbor.html">tf-example-02.04-nearest_neighbor</a>
       </h1>
     <p class="meta">
 <time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
@@ -117,16 +232,26 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Neural-Network-Example">Neural Network Example<a class="anchor-link" href="#Neural-Network-Example">&#182;</a></h1><p>Build a 2-hidden layers fully connected neural network (a.k.a multilayer perceptron) with TensorFlow.</p>
-<p>This example is using some of TensorFlow higher-level wrappers (tf.estimators, tf.layers, tf.metrics, ...), you can check 'neural_network_raw' example for a raw, and more detailed TensorFlow implementation.</p></div>
+<h1 id="Nearest-Neighbor-Example">Nearest Neighbor Example<a class="anchor-link" href="#Nearest-Neighbor-Example">&#182;</a></h1><p>A nearest neighbor learning algorithm example using TensorFlow library.
+This example is using the MNIST database of handwritten digits (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>)</p>
+<ul>
+<li>Author: Aymeric Damien</li>
+<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0310-neural_network.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0204-nearest_neighbor.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0311-recurrent_network.html">tf-example-03.11-recurrent_network</a>
+        <a href="./pages/2019/01/tf-example-0205-kmeans.html">tf-example-02.05-kmeans</a>
       </h1>
     <p class="meta">
 <time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
@@ -137,7 +262,29 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Recurrent-Neural-Network-Example">Recurrent Neural Network Example<a class="anchor-link" href="#Recurrent-Neural-Network-Example">&#182;</a></h1><p>Build a recurrent neural network (LSTM) with TensorFlow.</p>
+<h1 id="K-Means-Example">K-Means Example<a class="anchor-link" href="#K-Means-Example">&#182;</a></h1><p>Implement K-Means algorithm with TensorFlow, and apply it to classify
+handwritten digit images. This example is using the MNIST database of
+handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>).</p>
+<p>Note: This example requires TensorFlow v1.1.0 or over.</p></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0205-kmeans.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-0206-lr.html">tf-example-02.06-LR</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Logistic-Regression-Example">Logistic Regression Example<a class="anchor-link" href="#Logistic-Regression-Example">&#182;</a></h1><p>A logistic regression learning algorithm example using TensorFlow library.</p>
 <ul>
 <li>Author: Aymeric Damien</li>
 <li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
@@ -150,20 +297,152 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="RNN-Overview">RNN Overview<a class="anchor-link" href="#RNN-Overview">&#182;</a></h2><p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png" alt="nn" style="width: 600px;" /></p>
+<h2 id="MNIST-Dataset-Overview">MNIST Dataset Overview<a class="anchor-link" href="#MNIST-Dataset-Overview">&#182;</a></h2><p>This example is using MNIST handwritten digits. The dataset contains 60,000 examples for training and 10,000 examples for testing. The digits have been size-normalized and centered in a fixed-size image (28x28 pixels) with values from 0 to 1. For simplicity, each image has been flattened and converted to a 1-D numpy array of 784 features (28*28).</p></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0206-lr.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-0207-gbdt.html">tf-example-02.07-GBDT</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Gradient-Boosted-Decision-Tree">Gradient Boosted Decision Tree<a class="anchor-link" href="#Gradient-Boosted-Decision-Tree">&#182;</a></h1><p>利用张力流实现梯度提升决策树(GBDT)，对手写数字图像进行分类。这个示例使用手写数字的MNIST数据库作为训练样本 (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0207-gbdt.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-0208-word2vec.html">tf-example-02.08-word2vec</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Word2Vec-(Word-Embedding)">Word2Vec (Word Embedding)<a class="anchor-link" href="#Word2Vec-(Word-Embedding)">&#182;</a></h1><p>Implement Word2Vec algorithm to compute vector representations of words.
+This example is using a small chunk of Wikipedia articles to train from.</p>
+<p>More info: <a href="https://arxiv.org/pdf/1301.3781.pdf">Mikolov, Tomas et al. "Efficient Estimation of Word Representations in Vector Space.", 2013</a></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0208-word2vec.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-0209-random_forest.html">tf-example-02.09-random_forest</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Random-Forest-Example">Random Forest Example<a class="anchor-link" href="#Random-Forest-Example">&#182;</a></h1><p>Implement Random Forest algorithm with TensorFlow, and apply it to classify 
+handwritten digit images. This example is using the MNIST database of 
+handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0209-random_forest.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-0301-autoencoder.html">tf-example-03.01-autoencoder</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Auto-Encoder-Example">Auto-Encoder Example<a class="anchor-link" href="#Auto-Encoder-Example">&#182;</a></h1><p>Build a 2 layers auto-encoder with TensorFlow to compress images to a lower latent space and then reconstruct them.</p>
+<ul>
+<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Auto-Encoder-Overview">Auto-Encoder Overview<a class="anchor-link" href="#Auto-Encoder-Overview">&#182;</a></h2><p><img src="http://kvfrans.com/content/images/2016/08/autoenc.jpg" alt="ae" style="width: 800px;" /></p>
+<p>References:</p>
+<ul>
+<li><a href="http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf">Gradient-based learning applied to document recognition</a>. Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner. Proceedings of the IEEE, 86(11):2278-2324, November 1998.</li></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0301-autoencoder.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-0302-bidirectional_rnn.html">tf-example-03.02-bidirectional_rnn</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Bi-directional-Recurrent-Neural-Network-Example">Bi-directional Recurrent Neural Network Example<a class="anchor-link" href="#Bi-directional-Recurrent-Neural-Network-Example">&#182;</a></h1><p>Build a bi-directional recurrent neural network (LSTM) with TensorFlow.</p>
+<ul>
+<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="BiRNN-Overview">BiRNN Overview<a class="anchor-link" href="#BiRNN-Overview">&#182;</a></h2><p><img src="https://ai2-s2-public.s3.amazonaws.com/figures/2016-11-08/191dd7df9cb91ac22f56ed0dfa4a5651e8767a51/1-Figure2-1.png" alt="nn" style="width: 600px;" /></p>
 <p>References:</p>
 <ul>
 <li><a href="http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf">Long Short Term Memory</a>, Sepp Hochreiter &amp; Jurgen Schmidhuber, Neural Computation 9(8): 1735-1780, 1997.</li>
 </ul>
 <h2 id="MNIST-Dataset-Overview">MNIST Dataset Overview<a class="anchor-link" href="#MNIST-Dataset-Overview">&#182;</a></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0311-recurrent_network.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0302-bidirectional_rnn.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0312-variational_autoencoder.html">tf-example-03.12-variational_autoencoder</a>
+        <a href="./pages/2019/01/tf-example-0303-convolutional_network_raw.html">tf-example-03.03-convolutional_network_raw</a>
       </h1>
     <p class="meta">
 <time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
@@ -174,9 +453,8 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Variational-Auto-Encoder-Example">Variational Auto-Encoder Example<a class="anchor-link" href="#Variational-Auto-Encoder-Example">&#182;</a></h1><p>Build a variational auto-encoder (VAE) to generate digit images from a noise distribution with TensorFlow.</p>
+<h1 id="Convolutional-Neural-Network-Example">Convolutional Neural Network Example<a class="anchor-link" href="#Convolutional-Neural-Network-Example">&#182;</a></h1><p>Build a convolutional neural network with TensorFlow.</p>
 <ul>
-<li>Author: Aymeric Damien</li>
 <li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
 </ul>
 
@@ -187,18 +465,16 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="VAE-Overview">VAE Overview<a class="anchor-link" href="#VAE-Overview">&#182;</a></h2><p><img src="http://kvfrans.com/content/images/2016/08/vae.jpg" alt="vae" style="width: 800px;" /></p>
-<p>References:</p>
-<ul>
-<li><a href="https://arxiv.org/abs/1312.6114">Auto-Encoding Variational Bayes The International Conference on Learning Representations</a> (ICLR), Banff, 2014. D.P. Kingma, M. Welling</li></div>
+<h2 id="CNN-Overview">CNN Overview<a class="anchor-link" href="#CNN-Overview">&#182;</a></h2><p><img src="http://personal.ie.cuhk.edu.hk/~ccloy/project_target_code/images/fig3.png" alt="CNN"></p>
+<h2 id="MNIST-Dataset-Overview">MNIST Dataset Overview<a class="anchor-link" href="#MNIST-Dataset-Overview">&#182;</a></h2><p>This example is using MNIST handwritten digits. The dataset contains 60,000 examples for training and 10,000 examples for testing. The digits have been size-normalized and centered in a fixed-size image (28x28 pixels) with values from 0 to 1. For simplicity, each image has been flattened and converted to a 1-D numpy array of 784 features (28*28).</p></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0312-variational_autoencoder.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0303-convolutional_network_raw.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0401-save_restore_model.html">tf-example-04.01-save_restore_model</a>
+        <a href="./pages/2019/01/tf-example-0304-convolutional_network.html">tf-example-03.04-convolutional_network</a>
       </h1>
     <p class="meta">
 <time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
@@ -209,271 +485,10 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Save-&amp;-Restore-a-Model">Save &amp; Restore a Model<a class="anchor-link" href="#Save-&amp;-Restore-a-Model">&#182;</a></h1><p>Save and Restore a model using TensorFlow.
-This example is using the MNIST database of handwritten digits
-(<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
+<h1 id="Convolutional-Neural-Network-Example">Convolutional Neural Network Example<a class="anchor-link" href="#Convolutional-Neural-Network-Example">&#182;</a></h1><h2 id="CNN-Overview">CNN Overview<a class="anchor-link" href="#CNN-Overview">&#182;</a></h2><p><img src="http://personal.ie.cuhk.edu.hk/~ccloy/project_target_code/images/fig3.png" alt="CNN"></p>
+<h2 id="MNIST-Dataset-Overview">MNIST Dataset Overview<a class="anchor-link" href="#MNIST-Dataset-Overview">&#182;</a></h2><p>This example is using MNIST handwritten digits. The dataset contains 60,000 examples for training and 10,000 examples for testing. The digits have been size-normalized and centered in a fixed-size image (28x28 pixels) with values from 0 to 1. For simplicity, each image has been flattened and converted to a 1-D numpy array of 784 features (28*28).</p></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0401-save_restore_model.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0402-tensorboard_advanced.html">tf-example-04.02-tensorboard_advanced</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Tensorboard-Advanced">Tensorboard Advanced<a class="anchor-link" href="#Tensorboard-Advanced">&#182;</a></h1><p>Advanced visualization using Tensorboard (weights, gradient, ...). This example is using the MNIST database of handwritten digits
-(<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0402-tensorboard_advanced.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0403-tensorboard_basic.html">tf-example-04.03-tensorboard_basic</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Tensorboard-Basics">Tensorboard Basics<a class="anchor-link" href="#Tensorboard-Basics">&#182;</a></h1><p>Graph and Loss visualization using Tensorboard. This example is using the MNIST database of handwritten digits (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0403-tensorboard_basic.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0501-build_an_image_dataset.html">tf-example-05.01-build_an_image_dataset</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Build-an-Image-Dataset-in-TensorFlow.">Build an Image Dataset in TensorFlow.<a class="anchor-link" href="#Build-an-Image-Dataset-in-TensorFlow.">&#182;</a></h1><p>For this example, you need to make your own set of images (JPEG).
-We will show 2 different ways to build that dataset:</p>
-<ul>
-<li>From a root folder, that will have a sub-folder containing images for each class</li></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0501-build_an_image_dataset.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0502-tensorflow_dataset_api.html">tf-example-05.02-tensorflow_dataset_api</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="TensorFlow-Dataset-API">TensorFlow Dataset API<a class="anchor-link" href="#TensorFlow-Dataset-API">&#182;</a></h1><p>In this example, we will show how to load numpy array data into the new 
-TensorFlow 'Dataset' API. The Dataset API implements an optimized data pipeline
-with queues, that make data processing and training faster (especially on GPU).</p></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0502-tensorflow_dataset_api.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0601-multigpu_basics.html">tf-example-06.01-multigpu_basics</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Multi-GPU-Basics">Multi-GPU Basics<a class="anchor-link" href="#Multi-GPU-Basics">&#182;</a></h1><p>Basic Multi-GPU computation example using TensorFlow library.</p>
-<p>This tutorial requires your machine to have 2 GPUs<br>
-"/cpu:0": The CPU of your machine.<br>
-"/gpu:0": The first GPU of your machine<br>
-"/gpu:1": The second GPU of your machine<br>
-For this example, we are using 2 GTX-980</p></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0601-multigpu_basics.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-0602-multigpu_cnn.html">tf-example-06.02-multigpu_cnn</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Multi-GPU-Training-Example">Multi-GPU Training Example<a class="anchor-link" href="#Multi-GPU-Training-Example">&#182;</a></h1><h2 id="Training-with-multiple-GPU-cards">Training with multiple GPU cards<a class="anchor-link" href="#Training-with-multiple-GPU-cards">&#182;</a></h2><p>In this example, we are using data parallelism to split the training accross multiple GPUs. Each GPU has a full replica of the neural network model, and the weights (i.e. variables) are updated synchronously by waiting that each GPU process its batch of data.</p></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-0602-multigpu_cnn.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-mljie-shao.html">tf-example-ml介绍</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Machine-Learning">Machine Learning<a class="anchor-link" href="#Machine-Learning">&#182;</a></h1><p>Prior to start browsing the examples, it may be useful that you get familiar with machine learning, as TensorFlow is mostly used for machine learning tasks (especially Neural Networks). You can find below a list of useful links, that can give you the basic knowledge required for this TensorFlow Tutorial.</p></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-mljie-shao.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/tf-example-mnistshu-ju-ji-jie-shao.html">tf-example-mnist数据集介绍</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="MNIST-Dataset-Introduction">MNIST Dataset Introduction<a class="anchor-link" href="#MNIST-Dataset-Introduction">&#182;</a></h1><p>Most examples are using MNIST dataset of handwritten digits. The dataset contains 60,000 examples for training and 10,000 examples for testing. The digits have been size-normalized and centered in a fixed-size image (28x28 pixels) with values from 0 to 1. For simplicity, each image has been flatten and converted to a 1-D numpy array of 784 features (28*28).</p></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/tf-example-mnistshu-ju-ji-jie-shao.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/zui-xiao-er-cheng-fa.html">最小二乘法</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="最小二乘法">&#26368;&#23567;&#20108;&#20056;&#27861;<a class="anchor-link" href="#最小二乘法">&#182;</a></h1><p>我们从矩阵的角度来理解： 
-首先我们给出一个矩阵中的定义：</p>
-<p>$$R(A)=\{Ax|x∈R^n\},A∈R^{n×n}$$</p>
-<p>有了上面的定义之后，我们就可以写出最小二乘问题的矩阵形式：</p>
-<p>$$∃b∉R(A),b∈R^n,\min_{x∈R^n}\parallel Ax−b\parallel _2$$</p>
-<p>用bi格高一点的说法来说，就是求在欧几里得空间中以2-范数作为距离，使得向量Ax与b之间距离最小的x。 
-我们的目标是求：</p>
-<p>$$min_{x∈R^n}\parallel Ax−\parallel_2$$</p>
-<p>当然我们知道，使得距离最小的向量x与使得距离平方最小的向量x是相同的，于是我们可以将所求的目标改写为：</p>
-<p>$$min_{x∈R^n}{\parallel Ax−b\parallel_2}^2$$</p>
-<p>结合一些矩阵、行列式的知识，我们知道：</p>
-<p>$${\parallel Ax−b\parallel_2}^2=(Ax−b)^T∗(Ax−b)$$</p>
-<p>根据我们大一学过的高数知识，我们知道，求最极值问题直接对应的就是导数为零，因此我们试图将所给出的原式的矩阵形式求导：</p>
-<p>不过首先我们需要补充矩阵微积分(matrix calculus)的一些知识 
-(PS:是矩阵微积分吧…我没有翻译错吧….)</p>
-<p>$$\frac {\partial x^Ta}{\partial x}=\frac {\partial a^Tx}{\partial x}=a$$</p>
-<p>$$\frac {\partial x^TAx}{\partial x}=Ax+A^Tx$$</p>
-<p>如果矩阵A是对称的(symmetric matrix):</p>
-<p>$$Ax+A^Tx=2Ax$$</p>
-<p>接下来，我们对原式化简并求其对x的导数：</p>
-<p>$${∥Ax−b∥_2}^2=x^TA^TAx−b^TAx−x^TA^Tb+b^Tb$$</p>
-<p>求导得到：</p>
-<p>$$\frac {\partial{\parallel Ax−b\parallel}^2}{\partial x}=2A^TAx−2A^Tb=0$$</p>
-<p>于是我们就得到了，最小二乘法解的矩阵形式：</p>
-<p>$$x=(A^TA)^{−1}A^Tb$$</p>
-<p>当然了，这里是最简答的线性最小二乘法，还有更为复杂的非线性以及矩阵A不满秩的情况(hdq说他老师能默写出这个过程…)，等以后有时间了，我会再补充上去的。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/zui-xiao-er-cheng-fa.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/chang-jian-ji-huo-han-shu-hui-zong.html">常见激活函数汇总</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-15T00:00:00+08:00" pubdate>2019-01-15 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="激活函数">&#28608;&#27963;&#20989;&#25968;<a class="anchor-link" href="#激活函数">&#182;</a></h1><p>关于激活函数，首先要搞清楚的问题是，激活函数是什么，有什么用？不用激活函数可不可以？答案是不可以。激活函数的主要作用是提供网络的非线性建模能力。如果没有激活函数，那么该网络仅能够表达线性映射，此时即便有再多的隐藏层，其整个网络跟单层神经网络也是等价的。因此也可以认为，只有加入了激活函数之后，深度神经网络才具备了分层的非线性映射学习能力。 那么激活函数应该具有什么样的性质呢？</p>
-<p>可微性： 当优化方法是基于梯度的时候，这个性质是必须的。 
-单调性： 当激活函数是单调的时候，单层网络能够保证是凸函数。 
-输出值的范围： 当激活函数输出值是 有限 的时候，基于梯度的优化方法会更加 稳定，因为特征的表示受有限权值的影响更显著;当激活函数的输出是 无限 的时候，模型的训练会更加高效，不过在这种情况小，一般需要更小的learning rate</p>
-<p>从目前来看，常见的激活函数多是分段线性和具有指数形状的非线性函数</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/chang-jian-ji-huo-han-shu-hui-zong.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/tf-example-0304-convolutional_network.html">Read On &crarr;</a>
   </footer>
   		</article>
 <div class="pagination">
@@ -487,19 +502,19 @@ For this example, we are using 2 GTX-980</p></div>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="./pages/2019/01/algorithms-adaboost.html">algorithms-AdaBoost</a>
+          <a href="./pages/2019/01/21-a-first-look-at-a-neural-network.html">2.1-a-first-look-at-a-neural-network</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/algorithms-adaboostti-gao-fen-lei-xing-neng.html">algorithms-AdaBoost提高分类性能</a>
+          <a href="./pages/2019/01/35-classifying-movie-reviews.html">3.5-classifying-movie-reviews</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/algorithms-apriori.html">algorithms-apriori</a>
+          <a href="./pages/2019/01/36-classifying-newswires.html">3.6-classifying-newswires</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/algorithms-boostjian-jie.html">algorithms-Boost简介</a>
+          <a href="./pages/2019/01/37-predicting-house-prices.html">3.7-predicting-house-prices</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/algorithms-fp-growth.html">algorithms-FP-growth</a>
+          <a href="./pages/2019/01/44-overfitting-and-underfitting.html">4.4-overfitting-and-underfitting</a>
       </li>
     </ul>
   </section>
@@ -511,19 +526,21 @@ For this example, we are using 2 GTX-980</p></div>
         <li><a href="./category/02wo-ai-du-shu.html">02.我爱读书</a></li>
         <li><a href="./category/algorithms.html">algorithms</a></li>
         <li><a href="./category/book-pydata.html">book-pydata</a></li>
+        <li><a href="./category/deep-learning-with-python.html">deep-learning-with-python</a></li>
         <li><a href="./category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
         <li><a href="./category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
         <li><a href="./category/shen-du-xue-xi.html">深度学习</a></li>
         <li><a href="./category/shu-xue-ji-chu.html">数学基础</a></li>
         <li><a href="./category/tf-example.html">tf-example</a></li>
         <li><a href="./category/tools.html">tools</a></li>
+        <li><a href="./category/tui-jian-xi-tong.html">推荐系统</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="./tag/python.html">python</a>,    <a href="./tag/numpy.html">numpy</a>,    <a href="./tag/algorithms.html">algorithms</a>,    <a href="./tag/shu-xue-ji-chu.html">数学基础</a>,    <a href="./tag/tf-example.html">tf-example</a>,    <a href="./tag/tf.html">tf</a>,    <a href="./tag/ji-huo-han-shu.html">激活函数</a>,    <a href="./tag/sun-shi-han-shu.html">损失函数</a>,    <a href="./tag/mapreduce.html">mapreduce</a>,    <a href="./tag/spark.html">spark</a>,    <a href="./tag/handbook.html">handbook</a>,    <a href="./tag/matplotlib.html">matplotlib</a>,    <a href="./tag/scikit-learn.html">scikit-learn</a>,    <a href="./tag/latex.html">latex</a>,    <a href="./tag/pandas.html">pandas</a>,    <a href="./tag/jupyter.html">jupyter</a>,    <a href="./tag/plot.html">plot</a>,    <a href="./tag/pip.html">pip</a>,    <a href="./tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="./tag/shen-du-xue-xi.html">深度学习</a>,    <a href="./tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="./tag/pangrank.html">PangRank</a>,    <a href="./tag/book.html">book</a>,    <a href="./tag/pydata.html">pydata</a>,    <a href="./tag/shell.html">shell</a>,    <a href="./tag/pyhton.html">pyhton</a>  </section>
+    <a href="./tag/python.html">python</a>,    <a href="./tag/numpy.html">numpy</a>,    <a href="./tag/deep-learning.html">deep-learning</a>,    <a href="./tag/algorithms.html">algorithms</a>,    <a href="./tag/shu-xue-ji-chu.html">数学基础</a>,    <a href="./tag/tf-example.html">tf-example</a>,    <a href="./tag/tui-jian-xi-tong.html">推荐系统</a>,    <a href="./tag/tf.html">tf</a>,    <a href="./tag/ji-huo-han-shu.html">激活函数</a>,    <a href="./tag/sun-shi-han-shu.html">损失函数</a>,    <a href="./tag/mapreduce.html">mapreduce</a>,    <a href="./tag/spark.html">spark</a>,    <a href="./tag/handbook.html">handbook</a>,    <a href="./tag/matplotlib.html">matplotlib</a>,    <a href="./tag/scikit-learn.html">scikit-learn</a>,    <a href="./tag/latex.html">latex</a>,    <a href="./tag/pandas.html">pandas</a>,    <a href="./tag/jupyter.html">jupyter</a>,    <a href="./tag/plot.html">plot</a>,    <a href="./tag/pip.html">pip</a>,    <a href="./tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="./tag/shen-du-xue-xi.html">深度学习</a>,    <a href="./tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="./tag/pangrank.html">PangRank</a>,    <a href="./tag/book.html">book</a>,    <a href="./tag/pydata.html">pydata</a>,    <a href="./tag/shell.html">shell</a>,    <a href="./tag/pyhton.html">pyhton</a>  </section>
 
 
     <section>

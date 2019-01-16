@@ -49,6 +49,9 @@
         <a href="./category/book-pydata.html">Book-pydata</a>
       </li>
       <li >
+        <a href="./category/deep-learning-with-python.html">Deep-learning-with-python</a>
+      </li>
+      <li >
         <a href="./category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a>
       </li>
       <li >
@@ -66,6 +69,9 @@
       <li >
         <a href="./category/tools.html">Tools</a>
       </li>
+      <li >
+        <a href="./category/tui-jian-xi-tong.html">推荐系统</a>
+      </li>
 </ul></nav>
   <div id="main">
     <div id="content">
@@ -73,10 +79,10 @@
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/scikit-learn-pca.html">scikit-learn-pca</a>
+        <a href="./pages/2019/01/tf-example-mljie-shao.html">tf-example-ml介绍</a>
       </h1>
     <p class="meta">
-<time datetime="2019-01-14T00:00:00+08:00" pubdate>2019-01-14 00:00</time>    </p>
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
 </header>
 
   <div class="entry-content">
@@ -84,7 +90,61 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="scikit-learn-pca">scikit-learn-pca<a class="anchor-link" href="#scikit-learn-pca">&#182;</a></h1>
+<h1 id="Machine-Learning">Machine Learning<a class="anchor-link" href="#Machine-Learning">&#182;</a></h1><p>Prior to start browsing the examples, it may be useful that you get familiar with machine learning, as TensorFlow is mostly used for machine learning tasks (especially Neural Networks). You can find below a list of useful links, that can give you the basic knowledge required for this TensorFlow Tutorial.</p></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-mljie-shao.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tf-example-mnistshu-ju-ji-jie-shao.html">tf-example-mnist数据集介绍</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="MNIST-Dataset-Introduction">MNIST Dataset Introduction<a class="anchor-link" href="#MNIST-Dataset-Introduction">&#182;</a></h1><p>Most examples are using MNIST dataset of handwritten digits. The dataset contains 60,000 examples for training and 10,000 examples for testing. The digits have been size-normalized and centered in a fixed-size image (28x28 pixels) with values from 0 to 1. For simplicity, each image has been flatten and converted to a 1-D numpy array of 784 features (28*28).</p></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tf-example-mnistshu-ju-ji-jie-shao.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tui-jian-xi-tong.html">推荐系统</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="LibRec">LibRec<a class="anchor-link" href="#LibRec">&#182;</a></h2><p><a href="http://chuansong.me/n/1701947351918">中文介绍</a></p>
+<p><a href="https://github.com/guoguibing/librec">github源码</a></p>
+<p><a href="https://mp.weixin.qq.com/s/AB39ihVWXYHRbeODbGO-2g">通识篇</a></p>
+<p><a href="https://mp.weixin.qq.com/s/OyYn5_4GYAbF0L0SFgsHVQ">工程导入</a></p>
+<p><a href="https://mp.weixin.qq.com/s/xnkg6BGyUUKmbs009p8XCw">命令行操作</a></p>
+<p><a href="https://mp.weixin.qq.com/s/vDnca1FMW9vVrFDgti_1IA">团队一周年纪</a></p>
+<h2 id="实践">&#23454;&#36341;<a class="anchor-link" href="#实践">&#182;</a></h2><p>maven项目可以直接依赖</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">dependency</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">groupId</span><span class="p">&gt;</span>net.librec<span class="p">&lt;/</span><span class="nt">groupId</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">artifactId</span><span class="p">&gt;</span>librec-core<span class="p">&lt;/</span><span class="nt">artifactId</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">version</span><span class="p">&gt;</span>2.0.0<span class="p">&lt;/</span><span class="nt">version</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">dependency</span><span class="p">&gt;</span>
+</pre></div>
+<p>为了更好的理解，这里直接拉取源码和对应的数据，跑通算例</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/guoguibing/librec.git
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -92,23 +152,98 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dimensionality-Reduction:-PCA">Dimensionality Reduction: PCA<a class="anchor-link" href="#Dimensionality-Reduction:-PCA">&#182;</a></h2>
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><h2 id="1.-Overview">1. Overview<a class="anchor-link" href="#1.-Overview">&#182;</a></h2><p>LibRec 是一个基于java 1.7以GPL-3.0协议发布的开源推荐系统. LibRec内包含大量推荐算法并可以通过这些算法快速解决rating和ranking问题. 目前LibRec已被RecSys wiki收录.</p>
+<p>与1.4相比, 2.0版本重新程序的整体结构, 接口更加合理, 可扩展性更强. 对于Librec内已经实现的推荐算法, 可以使用命令行和参数或者配置文件来执行. 也可以通过导入jar包用于其他项目中.</p>
+<p>Librec 的运行需要jdk的版本 &gt;= 1.7</p></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tui-jian-xi-tong.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tui-jian-xi-tong-todo.html">推荐系统TODO</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="YouTube-的视频推荐算法">YouTube &#30340;&#35270;&#39057;&#25512;&#33616;&#31639;&#27861;<a class="anchor-link" href="#YouTube-的视频推荐算法">&#182;</a></h1><p><a href="https://www.jianshu.com/p/c5b8268d273b">https://www.jianshu.com/p/c5b8268d273b</a>
+<a href="https://www.zhihu.com/question/20829671/answer/102607652">参考网址</a></p>
+<h2 id="第一版">&#31532;&#19968;&#29256;<a class="anchor-link" href="#第一版">&#182;</a></h2><p>基于graph和random walk的算法。
+Video suggestion and discovery for youtube: taking random walks through the view graph。
+<a href="https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/34407.pdf">https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/34407.pdf</a></p>
+<h2 id="第二版">&#31532;&#20108;&#29256;<a class="anchor-link" href="#第二版">&#182;</a></h2><p>基于item based协同过滤(＋二度扩展+ranking+多样性)。
+the YouTube video recommendation system。The YouTube video recommendation system</p>
+<h2 id="第三版">&#31532;&#19977;&#29256;<a class="anchor-link" href="#第三版">&#182;</a></h2><p>基于topic representation＋搜索匹配＋LR调权的方法做相关推荐。</p>
+<p>Retrieval Methods forLarge Scale Related Video Suggestion。
+<a href="http://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/42623.pdf">http://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/42623.pdf</a></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/tui-jian-xi-tong-todo.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/zui-xiao-er-cheng-fa.html">最小二乘法</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="最小二乘法">&#26368;&#23567;&#20108;&#20056;&#27861;<a class="anchor-link" href="#最小二乘法">&#182;</a></h1><p>我们从矩阵的角度来理解： 
+首先我们给出一个矩阵中的定义：</p>
+<p>$$R(A)=\{Ax|x∈R^n\},A∈R^{n×n}$$</p>
+<p>有了上面的定义之后，我们就可以写出最小二乘问题的矩阵形式：</p>
+<p>$$∃b∉R(A),b∈R^n,\min_{x∈R^n}\parallel Ax−b\parallel _2$$</p>
+<p>用bi格高一点的说法来说，就是求在欧几里得空间中以2-范数作为距离，使得向量Ax与b之间距离最小的x。 
+我们的目标是求：</p>
+<p>$$min_{x∈R^n}\parallel Ax−\parallel_2$$</p>
+<p>当然我们知道，使得距离最小的向量x与使得距离平方最小的向量x是相同的，于是我们可以将所求的目标改写为：</p>
+<p>$$min_{x∈R^n}{\parallel Ax−b\parallel_2}^2$$</p>
+<p>结合一些矩阵、行列式的知识，我们知道：</p>
+<p>$${\parallel Ax−b\parallel_2}^2=(Ax−b)^T∗(Ax−b)$$</p>
+<p>根据我们大一学过的高数知识，我们知道，求最极值问题直接对应的就是导数为零，因此我们试图将所给出的原式的矩阵形式求导：</p>
+<p>不过首先我们需要补充矩阵微积分(matrix calculus)的一些知识 
+(PS:是矩阵微积分吧…我没有翻译错吧….)</p>
+<p>$$\frac {\partial x^Ta}{\partial x}=\frac {\partial a^Tx}{\partial x}=a$$</p>
+<p>$$\frac {\partial x^TAx}{\partial x}=Ax+A^Tx$$</p>
+<p>如果矩阵A是对称的(symmetric matrix):</p>
+<p>$$Ax+A^Tx=2Ax$$</p>
+<p>接下来，我们对原式化简并求其对x的导数：</p>
+<p>$${∥Ax−b∥_2}^2=x^TA^TAx−b^TAx−x^TA^Tb+b^Tb$$</p>
+<p>求导得到：</p>
+<p>$$\frac {\partial{\parallel Ax−b\parallel}^2}{\partial x}=2A^TAx−2A^Tb=0$$</p>
+<p>于是我们就得到了，最小二乘法解的矩阵形式：</p>
+<p>$$x=(A^TA)^{−1}A^Tb$$</p>
+<p>当然了，这里是最简答的线性最小二乘法，还有更为复杂的非线性以及矩阵A不满秩的情况(hdq说他老师能默写出这个过程…)，等以后有时间了，我会再补充上去的。</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input"></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/scikit-learn-pca.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/zui-xiao-er-cheng-fa.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/scikit-learn-random-forest.html">scikit-learn-random forest</a>
+        <a href="./pages/2019/01/chang-jian-ji-huo-han-shu-hui-zong.html">常见激活函数汇总</a>
       </h1>
     <p class="meta">
-<time datetime="2019-01-14T00:00:00+08:00" pubdate>2019-01-14 00:00</time>    </p>
+<time datetime="2019-01-15T00:00:00+08:00" pubdate>2019-01-15 00:00</time>    </p>
 </header>
 
   <div class="entry-content">
@@ -116,23 +251,28 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="scikit-learn-random-forest">scikit-learn-random forest<a class="anchor-link" href="#scikit-learn-random-forest">&#182;</a></h1>
+<h1 id="激活函数">&#28608;&#27963;&#20989;&#25968;<a class="anchor-link" href="#激活函数">&#182;</a></h1><p>关于激活函数，首先要搞清楚的问题是，激活函数是什么，有什么用？不用激活函数可不可以？答案是不可以。激活函数的主要作用是提供网络的非线性建模能力。如果没有激活函数，那么该网络仅能够表达线性映射，此时即便有再多的隐藏层，其整个网络跟单层神经网络也是等价的。因此也可以认为，只有加入了激活函数之后，深度神经网络才具备了分层的非线性映射学习能力。 那么激活函数应该具有什么样的性质呢？</p>
+<p>可微性： 当优化方法是基于梯度的时候，这个性质是必须的。 
+单调性： 当激活函数是单调的时候，单层网络能够保证是凸函数。 
+输出值的范围： 当激活函数输出值是 有限 的时候，基于梯度的优化方法会更加 稳定，因为特征的表示受有限权值的影响更显著;当激活函数的输出是 无限 的时候，模型的训练会更加高效，不过在这种情况小，一般需要更小的learning rate</p>
+<p>从目前来看，常见的激活函数多是分段线性和具有指数形状的非线性函数</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input"></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/scikit-learn-random-forest.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/chang-jian-ji-huo-han-shu-hui-zong.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/scikit-learn-svm.html">scikit-learn-svm</a>
+        <a href="./pages/2019/01/chang-jian-sun-shi-han-shu-hui-zong.html">常见损失函数汇总</a>
       </h1>
     <p class="meta">
-<time datetime="2019-01-14T00:00:00+08:00" pubdate>2019-01-14 00:00</time>    </p>
+<time datetime="2019-01-15T00:00:00+08:00" pubdate>2019-01-15 00:00</time>    </p>
 </header>
 
   <div class="entry-content">
@@ -140,7 +280,15 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="scikit-learn-svm">scikit-learn-svm<a class="anchor-link" href="#scikit-learn-svm">&#182;</a></h1>
+<h1 id="损失函数">&#25439;&#22833;&#20989;&#25968;<a class="anchor-link" href="#损失函数">&#182;</a></h1><h2 id="平方差函数">&#24179;&#26041;&#24046;&#20989;&#25968;<a class="anchor-link" href="#平方差函数">&#182;</a></h2><p>计算公式</p>
+<p>$$C=\frac{1}{2}(a−y)^2$$</p>
+<p>其中y是我们期望的输出，$a$为神经元的实际输出$a=\sigma(Wx+b)$。也就是说，当神经元的实际输出与我们的期望输出差距越大，代价就越高。想法非常的好，然而在实际应用中，我们知道参数的修正是与$\frac{\partial{C}}{\partial{W}}$和$\frac{\partial{C}}{\partial{b}}$成正比的，而根据</p>
+<p>$$
+\frac{\partial{C}}{\partial{W}}=(a-y)\sigma'(a)x^T\\
+\frac{\partial{C}}{\partial{b}}=(a-y)\sigma'(a)
+$$</p>
+<p>我们发现其中都有$\sigma'(a)$这一项。因为$sigmoid$函数的性质，导致$\sigma'(z)$在$z$取大部分值时会造成饱和现象，从而使得参数的更新速度非常慢，甚至会造成离期望值越远，更新越慢的现象。那么怎么克服这个问题呢？我们想到了交叉熵函数。</p>
+
 </div>
 </div>
 </div>
@@ -148,27 +296,70 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Support Vector Machine Classifier</li>
-<li>Support Vector Machine with Kernels Classifier</li>
+<h2 id="交叉熵函数">&#20132;&#21449;&#29109;&#20989;&#25968;<a class="anchor-link" href="#交叉熵函数">&#182;</a></h2><p>我们知道，熵的计算公式是</p>
+<p>$$H(y)=- \sum_i {y_{i} log{y_i}}$$</p>
+<p>而在实际操作中，我们并不知道y的分布，只能对y的分布做一个估计，也就是算得的a值, 这样我们就能够得到用a来表示y的交叉熵</p>
+<p>$$H(y,a)=- \sum_i {y_{i} log{a_i}}$$</p>
+<p>如果有多个样本，则整个样本的平均交叉熵为</p>
+<p>$$H(y,a)=- \frac{1}{n}\sum_n \sum_i {y_{i,n} \log{a_{i,n}}}$$</p>
+<p>其中$n$表示样本编号,$i$表示类别编。 如果用于logistic分类，则上式可以简化成</p>
+<p>$$H(y,a)=- \frac{1}{n}\sum_n{y\log{a}}+(1-y)\log{(1-a)}$$</p>
+<p>与平方损失函数相比，交叉熵函数有个非常好的特质，</p>
+<p>$$H'=\frac{1}{n}\sum{(a_n-y_n)}=\frac{1}{n}\sum{(\sigma(z_n)-y_n)}$$</p>
+<p>可以看到其中没有了$\sigma'$这一项，这样一来也就不会受到饱和性的影响了。当误差大的时候，权重更新就快，当误差小的时候，权重的更新就慢。这是一个很好的性质。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/chang-jian-sun-shi-han-shu-hui-zong.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/mapreduce-python.html">mapreduce-python</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-15T00:00:00+08:00" pubdate>2019-01-15 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Python-Hadoop-MapReduce:-Analyzing-AWS-S3-Bucket-Logs-with-mrjob">Python Hadoop MapReduce: Analyzing AWS S3 Bucket Logs with mrjob<a class="anchor-link" href="#Python-Hadoop-MapReduce:-Analyzing-AWS-S3-Bucket-Logs-with-mrjob">&#182;</a></h1><ul>
+<li><a href="#Introduction">Introduction</a></li>
+<li><a href="#Setup">Setup</a></li>
+<li><a href="#Processing-S3-Logs">Processing S3 Logs</a></li>
+<li><a href="#Running-Amazon-Elastic-MapReduce-Jobs">Running Amazon Elastic MapReduce Jobs</a></li>
+<li><a href="#Unit-Testing-S3-Logs">Unit Testing S3 Logs</a></li>
+<li><a href="#Running-S3-Logs-Unit-Test">Running S3 Logs Unit Test</a></li>
+<li><a href="#Sample-Config-File">Sample Config File</a></li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p><a href="https://pythonhosted.org/mrjob/">mrjob</a> lets you write MapReduce jobs in Python 2.5+ and run them on several platforms. You can:</p></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/scikit-learn-svm.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/mapreduce-python.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/scikit-learn-validation.html">scikit-learn-validation</a>
+        <a href="./pages/2019/01/spark-enhui-zong.html">spark-en汇总</a>
       </h1>
     <p class="meta">
-<time datetime="2019-01-14T00:00:00+08:00" pubdate>2019-01-14 00:00</time>    </p>
+<time datetime="2019-01-15T00:00:00+08:00" pubdate>2019-01-15 00:00</time>    </p>
 </header>
 
   <div class="entry-content">
@@ -176,32 +367,18 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Validation-and-Model-Selection">Validation and Model Selection<a class="anchor-link" href="#Validation-and-Model-Selection">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this section, we'll look at <em>model evaluation</em> and the tuning of <em>hyperparameters</em>, which are parameters that define the model.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
+<h1 id="RDD-creation">RDD creation<a class="anchor-link" href="#RDD-creation">&#182;</a></h1><p>In this notebook we will introduce two different ways of getting data into the basic Spark data structure, the <strong>Resilient Distributed Dataset</strong> or <strong>RDD</strong>. An RDD is a distributed collection of elements. All work in Spark is expressed as either creating new RDDs, transforming existing RDDs, or calling actions on RDDs to compute a result. Spark automatically distributes the data contained in RDDs across your cluster and parallelizes the operations you perform on them.</p></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/scikit-learn-validation.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/spark-enhui-zong.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">hadoop-hdfs常用文件操作命令</a>
+        <a href="./pages/2019/01/spark-python.html">spark-python</a>
       </h1>
     <p class="meta">
-<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>    </p>
+<time datetime="2019-01-15T00:00:00+08:00" pubdate>2019-01-15 00:00</time>    </p>
 </header>
 
   <div class="entry-content">
@@ -209,54 +386,77 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="命令基本格式:">&#21629;&#20196;&#22522;&#26412;&#26684;&#24335;:<a class="anchor-link" href="#命令基本格式:">&#182;</a></h1><div class="highlight"><pre><span></span>hadoop fs -cmd <span class="se">\&lt;</span> args <span class="se">\&gt;</span>
-</pre></div>
-<h2 id="ls">ls<a class="anchor-link" href="#ls">&#182;</a></h2><div class="highlight"><pre><span></span>hadoop fs -ls  /
-</pre></div>
-<p>列出hdfs文件系统根目录下的目录和文件</p>
-<div class="highlight"><pre><span></span>hadoop fs -ls -R /
-</pre></div>
-<p>列出hdfs文件系统所有的目录和文件</p>
+<h1 id="Spark">Spark<a class="anchor-link" href="#Spark">&#182;</a></h1><h2 id="IPython-Notebook-Setup">IPython Notebook Setup<a class="anchor-link" href="#IPython-Notebook-Setup">&#182;</a></h2><p>The <a href="https://github.com/donnemartin/dev-setup">dev-setup</a> repo contains scripts to install Spark and to automate the its integration with IPython Notebook through the <a href="https://github.com/donnemartin/dev-setup/blob/master/aws.sh">pydata.sh script</a>.</p>
+<p>You can also follow the instructions provided <a href="http://ramhiser.com/2015/02/01/configuring-ipython-notebook-support-for-pyspark/">here</a></div>
+  <footer>
+    <a rel="full-article" href="./pages/2019/01/spark-python.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="./pages/2019/01/tfyou-hua-fang-fa.html">tf优化方法</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-01-15T00:00:00+08:00" pubdate>2019-01-15 00:00</time>    </p>
+</header>
+
+  <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>在很多机器学习和深度学习的应用中，我们发现用的最多的优化器是 Adam，为什么呢？</p>
+<p>下面是 TensorFlow 中的优化器， 
+<a href="https://www.tensorflow.org/api_guides/python/train">https://www.tensorflow.org/api\_guides/python/train</a> 
+<img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/28A308A65B43D79482C913803F349716.png" alt=""></p>
+<p>在 keras 中也有 SGD，RMSprop，Adagrad，Adadelta，Adam 等： 
+<a href="https://keras.io/optimizers/">https://keras.io/optimizers/</a></p>
+<p>我们可以发现除了常见的梯度下降，还有 Adadelta，Adagrad，RMSProp 等几种优化器，都是什么呢，又该怎么选择呢？</p>
+<p>在 Sebastian Ruder 的这篇论文中给出了常用优化器的比较，今天来学习一下： 
+<a href="https://arxiv.org/pdf/1609.04747.pdf">https://arxiv.org/pdf/1609.04747.pdf</a></p>
+<p>本文将梳理：</p>
+<ul>
+<li>每个算法的梯度更新规则和缺点</li>
+<li>为了应对这个不足而提出的下一个算法</li>
+<li>超参数的一般设定值</li>
+<li>几种算法的效果比较</li>
+<li>选择哪种算法</li>
+</ul>
 <hr>
-<h2 id="put">put<a class="anchor-link" href="#put">&#182;</a></h2><div class="highlight"><pre><span></span>hadoop fs -put &lt; <span class="nb">local</span> file &gt; &lt; hdfs file &gt;
-</pre></div>
-<p>hdfs file的父目录一定要存在，否则命令不会执行</p>
-<div class="highlight"><pre><span></span>hadoop fs -put  &lt; <span class="nb">local</span></div>
+<h1 id="1.-优化器算法简述?">1. &#20248;&#21270;&#22120;&#31639;&#27861;&#31616;&#36848;?<a class="anchor-link" href="#1.-优化器算法简述?">&#182;</a></h1><p>首先来看一下梯度下降最常见的三种变形 BGD，SGD，MBGD，这三种形式的区别就是取决于我们用多少数据来计算目标函数的梯度，这样的话自然就涉及到一个 trade－off，即参数更新的准确率和运行时间。</p>
+<h2 id="1.-Batch-gradient-descent">1. Batch gradient descent<a class="anchor-link" href="#1.-Batch-gradient-descent">&#182;</a></h2><p>梯度更新规则: 
+BGD 采用整个训练集的数据来计算 cost function 对参数的梯度：</p>
+<p>$$
+\theta = \theta - \eta \bullet \nabla_\theta \boldsymbol{J}(\theta)
+$$</p></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/hadoop-hdfschang-yong-wen-jian-cao-zuo-ming-ling.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/tfyou-hua-fang-fa.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/latexgong-shi-bian-hao.html">latex公式编号</a>
+        <a href="./pages/2019/01/xia-zai-tu-pian-dao-zhi-ding-lu-jing.html">下载图片到指定路径</a>
       </h1>
     <p class="meta">
-<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>    </p>
+<time datetime="2019-01-15T00:00:00+08:00" pubdate>2019-01-15 00:00</time>    </p>
 </header>
 
   <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1>  (some) LaTeX environments for Jupyter notebook </h1>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input"></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/latexgong-shi-bian-hao.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/xia-zai-tu-pian-dao-zhi-ding-lu-jing.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/latexgong-shi-bian-hao-shi-li.html">latex公式编号实例</a>
+        <a href="./pages/2019/01/matplotlibjiao-cheng-01.html">matplotlib教程01</a>
       </h1>
     <p class="meta">
-<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>    </p>
+<time datetime="2019-01-14T00:00:00+08:00" pubdate>2019-01-14 00:00</time>    </p>
 </header>
 
   <div class="entry-content">
@@ -264,16 +464,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="定理引用">&#23450;&#29702;&#24341;&#29992;<a class="anchor-link" href="#定理引用">&#182;</a></h1><p>\begin{theorem} \label{theo:dotp}
- $u$ 和 $v$ 是两个向量 $\mathbb{R}^n$. 点成可以表示成
-\begin{equation}
-\label{eq:dotp}
-u^Tv = |u||v| \cos \theta,
-\end{equation}
-where $\theta$ is the angle between $u$ and $v$ ...
-\end{theorem}</p>
-<p>定理 \ref{theo:dotp} 举了一个例子</p>
-
+<h1 id="Visualization-with-Matplotlib">Visualization with Matplotlib<a class="anchor-link" href="#Visualization-with-Matplotlib">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -281,23 +472,23 @@ where $\theta$ is the angle between $u$ and $v$ ...
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="公式引用">&#20844;&#24335;&#24341;&#29992;<a class="anchor-link" href="#公式引用">&#182;</a></h1><p>$u$ 和 $v$ 是两个向量 $\mathbb{R}^n$. 点成可以表示成</p>
-<p>\begin{equation}
-\label{eq:dotp2}
-u^Tv = |u||v| \cos \theta,
-\end{equation}
-where $\theta$ is the angle between $u$ and $v$ ...</p></div>
+<p>We'll now take an in-depth look at the Matplotlib package for visualization in Python.
+Matplotlib is a multi-platform data visualization library built on NumPy arrays, and designed to work with the broader SciPy stack.
+It was conceived by John Hunter in 2002, originally as a patch to IPython for enabling interactive MATLAB-style plotting via gnuplot from the IPython command line.
+IPython's creator, Fernando Perez, was at the time scrambling to finish his PhD, and let John know he wouldn’t have time to review the patch for several months.
+John took this as a cue to set out on his own, and the Matplotlib package was born, with version 0.1 released in 2003.
+It received an early boost when it was adopted as the plotting package of choice of the Space Telescope Science Institute (the folks behind the Hubble Telescope), which financially supported Matplotlib’s development and greatly expanded its capabilities.</p></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/latexgong-shi-bian-hao-shi-li.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/matplotlibjiao-cheng-01.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/numpyjiao-cheng-00.html">numpy教程00</a>
+        <a href="./pages/2019/01/matplotlibjiao-cheng-02.html">matplotlib教程02</a>
       </h1>
     <p class="meta">
-<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>    </p>
+<time datetime="2019-01-14T00:00:00+08:00" pubdate>2019-01-14 00:00</time>    </p>
 </header>
 
   <div class="entry-content">
@@ -305,31 +496,27 @@ where $\theta$ is the angle between $u$ and $v$ ...</p></div>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="NumPy">NumPy<a class="anchor-link" href="#NumPy">&#182;</a></h1><p>Credits: Forked from <a href="https://github.com/ogrisel/parallel_ml_tutorial">Parallel Machine Learning with scikit-learn and IPython</a> by Olivier Grisel</p>
-<ul>
-<li>NumPy Arrays, dtype, and shape</li>
-<li>Common Array Operations</li>
-<li>Reshape and Update In-Place</li>
-<li>Combine Arrays</li>
-<li>Create Sample Data</li>
-</ul>
-
+<h1 id="Density-and-Contour-Plots">Density and Contour Plots<a class="anchor-link" href="#Density-and-Contour-Plots">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sometimes it is useful to display three-dimensional data in two dimensions using contours or color-coded regions.
+There are three Matplotlib functions that can be helpful for this task: <code>plt.contour</code></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/numpyjiao-cheng-00.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/matplotlibjiao-cheng-02.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="./pages/2019/01/numpyjiao-cheng-01.html">numpy教程01</a>
+        <a href="./pages/2019/01/matplotlibjiao-cheng-03.html">matplotlib教程03</a>
       </h1>
     <p class="meta">
-<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>    </p>
+<time datetime="2019-01-14T00:00:00+08:00" pubdate>2019-01-14 00:00</time>    </p>
 </header>
 
   <div class="entry-content">
@@ -337,7 +524,7 @@ where $\theta$ is the angle between $u$ and $v$ ...</p></div>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction-to-NumPy">Introduction to NumPy<a class="anchor-link" href="#Introduction-to-NumPy">&#182;</a></h1>
+<h1 id="Multiple-Subplots">Multiple Subplots<a class="anchor-link" href="#Multiple-Subplots">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -345,208 +532,12 @@ where $\theta$ is the angle between $u$ and $v$ ...</p></div>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This chapter, along with chapter 3, outlines techniques for effectively loading, storing, and manipulating in-memory data in Python.
-The topic is very broad: datasets can come from a wide range of sources and a wide range of formats, including be collections of documents, collections of images, collections of sound clips, collections of numerical measurements, or nearly anything else.
-Despite this apparent heterogeneity, it will help us to think of all data fundamentally as arrays of numbers.</p></div>
+<p>Sometimes it is helpful to compare different views of data side by side.
+To this end, Matplotlib has the concept of <em>subplots</em>: groups of smaller axes that can exist together within a single figure.
+These subplots might be insets, grids of plots, or other more complicated layouts.
+In this section we'll explore four routines for creating subplots in Matplotlib.</p></div>
   <footer>
-    <a rel="full-article" href="./pages/2019/01/numpyjiao-cheng-01.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/numpyjiao-cheng-02.html">numpy教程02</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Aggregations:-Min,-Max,-and-Everything-In-Between">Aggregations: Min, Max, and Everything In Between<a class="anchor-link" href="#Aggregations:-Min,-Max,-and-Everything-In-Between">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Often when faced with a large amount of data, a first step is to compute summary statistics for the data in question.
-Perhaps the most common summary statistics are the mean and standard deviation, which allow you to summarize the "typical" values in a dataset, but other aggregates are useful as well (the sum, product, median, minimum and maximum, quantiles, etc.).</p></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/numpyjiao-cheng-02.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/numpyjiao-cheng-03.html">numpy教程03</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Fancy-Indexing">Fancy Indexing<a class="anchor-link" href="#Fancy-Indexing">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In the previous sections, we saw how to access and modify portions of arrays using simple indices (e.g., <code>arr[0]</code>), slices (e.g., <code>arr[:5]</code>), and Boolean masks (e.g., <code>arr[arr &gt; 0]</code></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/numpyjiao-cheng-03.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/pandashan-shu-shen-ru.html">pandas函数深入</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="replace-替换函数">replace &#26367;&#25442;&#20989;&#25968;<a class="anchor-link" href="#replace-替换函数">&#182;</a></h1><p>Series对象值替换</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/pandashan-shu-shen-ru.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2019/01/pythonhua-tu-zhi-folium.html">python画图之folium</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-01-10T00:00:00+08:00" pubdate>2019-01-10 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><p>folium是js上著名的地理信息可视化库leaflet.js为Python提供的接口，通过它，我们可以通过在Python端编写代码操纵数据，来调用leaflet的相关功能，基于内建的osm或自行获取的osm资源和地图原件进行地理信息内容的可视化，以及制作优美的可交互地图。其语法格式类似ggplot2，是通过不断添加图层元素来定义一个Map对象，最后以几种方式将Map对象展现出来。</p>
-<p>　　而在Map对象的生成形式上，可以在定义所有的图层内容之后，将其保存为html文件在浏览器中独立显示，也可以基于jupyter notebook在一个ipynb文件内部嵌入对应的交互地图，本文即采用后者对应的方法。</p>
-<p><a href="https://www.cnblogs.com/feffery/p/9282808.html">参考文献1</a><br>
-<a href="https://www.cnblogs.com/feffery/p/9288138.html">参考文献2</a></p>
-<h1 id="创建地图">&#21019;&#24314;&#22320;&#22270;<a class="anchor-link" href="#创建地图">&#182;</a></h1><p>　　首先，创建一张指定中心坐标的地图，这里指定中心坐标为重庆交通大学（注意，location的格式为[纬度,经度]，zoom_start表示初始地图的缩放尺寸，数值越大放大程度越大）：</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-  <footer>
-    <a rel="full-article" href="./pages/2019/01/pythonhua-tu-zhi-folium.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2018/01/exampleshi-li.html">example实例</a>
-      </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>title: algorithms-</li>
-<li>author: niult</li>
-<li>date: 2019-01-16</li>
-<li>category: algorithms</li>
-<li>tags: python,numpy,algorithms</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>title: 最小二乘法</li>
-<li>author: niult</li>
-<li>date: 2019-01-16</li>
-<li>category: 数学基础</li>
-<li>tags: python,numpy,数学基础</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Scientific-Python-Cheatsheet">Scientific Python Cheatsheet<a class="anchor-link" href="#Scientific-Python-Cheatsheet">&#182;</a></h2><p><a href="https://github.com/IPGP">IPGP</a> / <a href="https://ipgp.github.io/scientific_python_cheat_sheet/">Scientific Python Cheatsheet</a></p>
-<h3 id="NumPy">NumPy<a class="anchor-link" href="#NumPy">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="测试玩下">&#27979;&#35797;&#29609;&#19979;<a class="anchor-link" href="#测试玩下">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-  <footer>
-    <a rel="full-article" href="./pages/2018/01/exampleshi-li.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="./pages/2018/01/fen-ci-gong-ju-pkuseg.html">分词工具pkuseg</a>
-      </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-  <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="分词工具pkuseg">&#20998;&#35789;&#24037;&#20855;pkuseg<a class="anchor-link" href="#分词工具pkuseg">&#182;</a></h1><p><a href="https://github.com/lancopku/PKUSeg-python">github地址</a></p>
-<h2 id="安装">&#23433;&#35013;<a class="anchor-link" href="#安装">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-  <footer>
-    <a rel="full-article" href="./pages/2018/01/fen-ci-gong-ju-pkuseg.html">Read On &crarr;</a>
+    <a rel="full-article" href="./pages/2019/01/matplotlibjiao-cheng-03.html">Read On &crarr;</a>
   </footer>
   		</article>
 <div class="pagination">
@@ -560,19 +551,19 @@ Perhaps the most common summary statistics are the mean and standard deviation, 
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="./pages/2019/01/algorithms-adaboost.html">algorithms-AdaBoost</a>
+          <a href="./pages/2019/01/21-a-first-look-at-a-neural-network.html">2.1-a-first-look-at-a-neural-network</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/algorithms-adaboostti-gao-fen-lei-xing-neng.html">algorithms-AdaBoost提高分类性能</a>
+          <a href="./pages/2019/01/35-classifying-movie-reviews.html">3.5-classifying-movie-reviews</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/algorithms-apriori.html">algorithms-apriori</a>
+          <a href="./pages/2019/01/36-classifying-newswires.html">3.6-classifying-newswires</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/algorithms-boostjian-jie.html">algorithms-Boost简介</a>
+          <a href="./pages/2019/01/37-predicting-house-prices.html">3.7-predicting-house-prices</a>
       </li>
       <li class="post">
-          <a href="./pages/2019/01/algorithms-fp-growth.html">algorithms-FP-growth</a>
+          <a href="./pages/2019/01/44-overfitting-and-underfitting.html">4.4-overfitting-and-underfitting</a>
       </li>
     </ul>
   </section>
@@ -584,19 +575,21 @@ Perhaps the most common summary statistics are the mean and standard deviation, 
         <li><a href="./category/02wo-ai-du-shu.html">02.我爱读书</a></li>
         <li><a href="./category/algorithms.html">algorithms</a></li>
         <li><a href="./category/book-pydata.html">book-pydata</a></li>
+        <li><a href="./category/deep-learning-with-python.html">deep-learning-with-python</a></li>
         <li><a href="./category/ji-qi-xue-xi-shi-zhan.html">机器学习实战</a></li>
         <li><a href="./category/ling-ji-chu-ru-men-shen-du-xue-xi.html">零基础入门深度学习</a></li>
         <li><a href="./category/shen-du-xue-xi.html">深度学习</a></li>
         <li><a href="./category/shu-xue-ji-chu.html">数学基础</a></li>
         <li><a href="./category/tf-example.html">tf-example</a></li>
         <li><a href="./category/tools.html">tools</a></li>
+        <li><a href="./category/tui-jian-xi-tong.html">推荐系统</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="./tag/python.html">python</a>,    <a href="./tag/numpy.html">numpy</a>,    <a href="./tag/algorithms.html">algorithms</a>,    <a href="./tag/shu-xue-ji-chu.html">数学基础</a>,    <a href="./tag/tf-example.html">tf-example</a>,    <a href="./tag/tf.html">tf</a>,    <a href="./tag/ji-huo-han-shu.html">激活函数</a>,    <a href="./tag/sun-shi-han-shu.html">损失函数</a>,    <a href="./tag/mapreduce.html">mapreduce</a>,    <a href="./tag/spark.html">spark</a>,    <a href="./tag/handbook.html">handbook</a>,    <a href="./tag/matplotlib.html">matplotlib</a>,    <a href="./tag/scikit-learn.html">scikit-learn</a>,    <a href="./tag/latex.html">latex</a>,    <a href="./tag/pandas.html">pandas</a>,    <a href="./tag/jupyter.html">jupyter</a>,    <a href="./tag/plot.html">plot</a>,    <a href="./tag/pip.html">pip</a>,    <a href="./tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="./tag/shen-du-xue-xi.html">深度学习</a>,    <a href="./tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="./tag/pangrank.html">PangRank</a>,    <a href="./tag/book.html">book</a>,    <a href="./tag/pydata.html">pydata</a>,    <a href="./tag/shell.html">shell</a>,    <a href="./tag/pyhton.html">pyhton</a>  </section>
+    <a href="./tag/python.html">python</a>,    <a href="./tag/numpy.html">numpy</a>,    <a href="./tag/deep-learning.html">deep-learning</a>,    <a href="./tag/algorithms.html">algorithms</a>,    <a href="./tag/shu-xue-ji-chu.html">数学基础</a>,    <a href="./tag/tf-example.html">tf-example</a>,    <a href="./tag/tui-jian-xi-tong.html">推荐系统</a>,    <a href="./tag/tf.html">tf</a>,    <a href="./tag/ji-huo-han-shu.html">激活函数</a>,    <a href="./tag/sun-shi-han-shu.html">损失函数</a>,    <a href="./tag/mapreduce.html">mapreduce</a>,    <a href="./tag/spark.html">spark</a>,    <a href="./tag/handbook.html">handbook</a>,    <a href="./tag/matplotlib.html">matplotlib</a>,    <a href="./tag/scikit-learn.html">scikit-learn</a>,    <a href="./tag/latex.html">latex</a>,    <a href="./tag/pandas.html">pandas</a>,    <a href="./tag/jupyter.html">jupyter</a>,    <a href="./tag/plot.html">plot</a>,    <a href="./tag/pip.html">pip</a>,    <a href="./tag/geng-xin-suo-you-mo-kuai.html">更新所有模块</a>,    <a href="./tag/shen-du-xue-xi.html">深度学习</a>,    <a href="./tag/xun-huan-shen-jing-wang-luo.html">循环神经网络</a>,    <a href="./tag/pangrank.html">PangRank</a>,    <a href="./tag/book.html">book</a>,    <a href="./tag/pydata.html">pydata</a>,    <a href="./tag/shell.html">shell</a>,    <a href="./tag/pyhton.html">pyhton</a>  </section>
 
 
     <section>
