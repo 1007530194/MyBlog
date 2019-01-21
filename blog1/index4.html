@@ -32,60 +32,343 @@
 <header role="banner"><hgroup>
   <h1><a href="./">魑魅魍魉</a></h1>
 </hgroup></header>
-<nav role="navigation"><ul class="subscription" data-subscription="rss">
-</ul>
+<nav role="navigation">    <ul class="subscription" data-subscription="rss">
+    </ul>
 
 
 <ul class="main-navigation">
-      <li >
-        <a href="./category/01chang yong gong ju.html">01常用工具</a>
-      </li>
-      <li >
-        <a href="./category/02.wo ai du shu.html">02.我爱读书</a>
-      </li>
-      <li >
-        <a href="./category/algorithms.html">Algorithms</a>
-      </li>
-      <li >
-        <a href="./category/book.html">Book</a>
-      </li>
-      <li >
-        <a href="./category/book-pydata.html">Book-pydata</a>
-      </li>
-      <li >
-        <a href="./category/deep-learning-with-python.html">Deep-learning-with-python</a>
-      </li>
-      <li >
-        <a href="./category/ji qi xue xi shi zhan.html">机器学习实战</a>
-      </li>
-      <li >
-        <a href="./category/ling ji chu ru men shen du xue xi.html">零基础入门深度学习</a>
-      </li>
-      <li >
-        <a href="./category/shen du xue xi.html">深度学习</a>
-      </li>
-      <li >
-        <a href="./category/shu xue ji chu.html">数学基础</a>
-      </li>
-      <li >
-        <a href="./category/tf-example.html">Tf-example</a>
-      </li>
-      <li >
-        <a href="./category/tool1.html">Tool1</a>
-      </li>
-      <li >
-        <a href="./category/tool2.html">Tool2</a>
-      </li>
-      <li >
-        <a href="./category/tools.html">Tools</a>
-      </li>
-      <li >
-        <a href="./category/tui jian xi tong.html">推荐系统</a>
-      </li>
-</ul></nav>
+            <li >
+                <a href="./category/01chang yong gong ju.html">01常用工具</a>
+            </li>
+            <li >
+                <a href="./category/02.wo ai du shu.html">02.我爱读书</a>
+            </li>
+            <li >
+                <a href="./category/algorithms.html">Algorithms</a>
+            </li>
+            <li >
+                <a href="./category/book.html">Book</a>
+            </li>
+            <li >
+                <a href="./category/book-pydata.html">Book-pydata</a>
+            </li>
+            <li >
+                <a href="./category/deep-learning-with-python.html">Deep-learning-with-python</a>
+            </li>
+            <li >
+                <a href="./category/ji qi xue xi shi zhan.html">机器学习实战</a>
+            </li>
+            <li >
+                <a href="./category/ling ji chu ru men shen du xue xi.html">零基础入门深度学习</a>
+            </li>
+            <li >
+                <a href="./category/shen du xue xi.html">深度学习</a>
+            </li>
+            <li >
+                <a href="./category/shu xue ji chu.html">数学基础</a>
+            </li>
+            <li >
+                <a href="./category/tf-example.html">Tf-example</a>
+            </li>
+            <li >
+                <a href="./category/tool1.html">Tool1</a>
+            </li>
+            <li >
+                <a href="./category/tool2.html">Tool2</a>
+            </li>
+            <li >
+                <a href="./category/tools.html">Tools</a>
+            </li>
+            <li >
+                <a href="./category/tui jian xi tong.html">推荐系统</a>
+            </li>
+            <li >
+                <a href="./category/wen ben wa jue.html">文本挖掘</a>
+            </li>
+</ul>
+</nav>
 <div id="main">
     <div id="content">
     <div class="blog-index">
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2019/01/algorithms-yin-ma-er-ke-fu-mo-xing-hmm.html">algorithms-隐马尔科夫模型HMM</a>
+        </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="HMM模型基础">HMM&#27169;&#22411;&#22522;&#30784;<a class="anchor-link" href="#HMM模型基础">&#182;</a></h1><p>隐马尔科夫模型（Hidden Markov Model，以下简称HMM）是比较经典的机器学习模型了，它在语言识别，自然语言处理，模式识别等领域得到广泛的应用。当然，随着目前深度学习的崛起，尤其是<a href="http://www.cnblogs.com/pinard/p/6509630.html">RNN</a>，<a href="http://www.cnblogs.com/pinard/p/6519110.html">LSTM</a>等神经网络序列模型的火热，HMM的地位有所下降。但是作为一个经典的模型，学习HMM的模型和对应算法，对我们解决问题建模的能力提高以及算法思路的拓展还是很好的。本文是HMM系列的第一篇，关注于HMM模型的基础。</p>
+<h2 id="什么样的问题需要HMM模型">&#20160;&#20040;&#26679;&#30340;&#38382;&#39064;&#38656;&#35201;HMM&#27169;&#22411;<a class="anchor-link" href="#什么样的问题需要HMM模型">&#182;</a></h2><p>首先我们来看看什么样的问题解决可以用HMM模型。使用HMM模型时我们的问题一般有这两个特征：１）我们的问题是基于序列的，比如时间序列，或者状态序列。２）我们的问题中有两类数据，一类序列数据是可以观测到的，即观测序列；而另一类数据是不能观察到的，即隐藏状态序列，简称状态序列。</p>
+<p>有了这两个特征，那么这个问题一般可以用HMM模型来尝试解决。这样的问题在实际生活中是很多的。比如：我现在在打字写博客，我在键盘上敲出来的一系列字符就是观测序列，而我实际想写的一段话就是隐藏序列，输入法的任务就是从敲入的一系列字符尽可能的猜测我要写的一段话，并把最可能的词语放在最前面让我选择，这就可以看做一个HMM模型了。再举一个，我在和你说话，我发出的一串连续的声音就是观测序列，而我实际要表达的一段话就是状态序列，你大脑的任务，就是从这一串连续的声音中判断出我最可能要表达的话的内容。</p>
+<p>从这些例子中，我们可以发现，HMM模型可以无处不在。但是上面的描述还不精确，下面我们用精确的数学符号来表述我们的HMM模型。</p>
+<h2 id="HMM模型的定义">HMM&#27169;&#22411;&#30340;&#23450;&#20041;<a class="anchor-link" href="#HMM模型的定义">&#182;</a></h2><p>对于HMM模型，首先我们假设$Q$是所有可能的隐藏状态的集合，$V$是所有可能的观测状态的集合，即：$$Q = \{q_1,q_2,...,q_N\}, \; V =\{v_1,v_2,...v_M\}$$</p>
+<p>其中，$N$是可能的隐藏状态数，$M$是所有的可能的观察状态数。</p>
+<p>对于一个长度为$T$的序列，$I$对应的状态序列, $O$是对应的观察序列，即：$$I = \{i_1,i_2,...,i_T\}, \; O =\{o_1,o_2,...o_T\}$$</p>
+<p>其中，任意一个隐藏状态$i_t \in Q$,任意一个观察状态$o_t \in V$</p>
+<p>HMM模型做了两个很重要的假设如下：</p>
+<p>1） 齐次马尔科夫链假设。即任意时刻的隐藏状态只依赖于它前一个隐藏状态，这个我们在<a href="http://www.cnblogs.com/pinard/p/6632399.html">MCMC(二)马尔科夫链</a>中有详细讲述。当然这样假设有点极端，因为很多时候我们的某一个隐藏状态不仅仅只依赖于前一个隐藏状态，可能是前两个或者是前三个。但是这样假设的好处就是模型简单，便于求解。如果在时刻$t$的隐藏状态是$i_t= q_i$,在时刻$t+1$的隐藏状态是$i_{t+1} = q_j$, 则从时刻$t$到时刻$t+1$的HMM状态转移概率$a_{ij}$可以表示为：$$a_{ij} = P(i_{t+1} = q_j | i_t= q_i)$$</p></div>
+        <footer>
+            <a rel="full-article" href="./pages/2019/01/algorithms-yin-ma-er-ke-fu-mo-xing-hmm.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2019/01/ju-zhen-qiu-dao.html">矩阵求导</a>
+        </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><p>第一次遇见矩阵求导，大多数人都是一头雾水，而搜了维基百科看也还是云里雾里，一堆的名词和一堆的表格到底都是什么呢？这里总结了我个人的学习经验，并且通过一个例子可以让你感受如何进行矩阵求导，下次再遇到需要进行矩阵求导的地方就不会措手不及。</p>
+<p>在进行概念的解说之前，首先大家需要先知道下面的这个前提：</p>
+<p><a href="https://en.wikipedia.org/wiki/Matrix_calculus">https://en.wikipedia.org/wiki/Matrix_calculus</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="基本分类">&#22522;&#26412;&#20998;&#31867;<a class="anchor-link" href="#基本分类">&#182;</a></h1><h2 id="前提">&#21069;&#25552;<a class="anchor-link" href="#前提">&#182;</a></h2><p>若$x$为向量，则默认$\boldsymbol x$为列向量，$\boldsymbol x^T$为行向量
+若$y$为向量，则默认$\boldsymbol y$为列向量，$\boldsymbol y^T$为行向量</p>
+<h2 id="标量/向量">&#26631;&#37327;/&#21521;&#37327;<a class="anchor-link" href="#标量/向量">&#182;</a></h2><p>$$\frac {\partial y}{\partial\boldsymbol x}=
+\begin{bmatrix} 
+ \frac {\partial y}{\partial x_1}
+\\\frac {\partial y}{\partial x_2}
+\\ ...
+\\\frac {\partial y}{\partial x_n}
+\end{bmatrix} $$</p>
+<p>$$\frac {\partial y}{\partial\boldsymbol x^T}=
+\left ({\frac {\partial y^T}{\partial\boldsymbol x}} \right)^T=
+\left ({\frac {\partial y}{\partial\boldsymbol x}} \right)^T=
+\begin{bmatrix} 
+ \frac {\partial y}{\partial x_1}
+&amp;\frac {\partial y}{\partial x_2}
+&amp; ...
+&amp;\frac {\partial y}{\partial x_n}
+\end{bmatrix} 
+$$</p></div>
+        <footer>
+            <a rel="full-article" href="./pages/2019/01/ju-zhen-qiu-dao.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2019/01/nlp-word2vecmo-xing.html">NLP-Word2Vec模型</a>
+        </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><p>word2vec是google在2013年推出的一个NLP工具，它的特点是将所有的词向量化，这样词与词之间就可以定量的去度量他们之间的关系，挖掘词之间的联系。虽然源码是开源的，但是谷歌的代码库国内无法访问，因此本文的讲解word2vec原理以Github上的<a href="https://github.com/tmikolov/word2vec">word2vec</a>代码为准。本文关注于word2vec的基础知识。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="词向量基础">&#35789;&#21521;&#37327;&#22522;&#30784;<a class="anchor-link" href="#词向量基础">&#182;</a></h1><p>用词向量来表示词并不是word2vec的首创，在很久之前就出现了。最早的词向量是很冗长的，它使用是词向量维度大小为整个词汇表的大小，对于每个具体的词汇表中的词，将对应的位置置为1。比如我们有下面的5个词组成的词汇表，词"Queen"的序号为2， 那么它的词向量就是$(0,1,0,0,0)$。同样的道理，词"Woman"的词向量就是$(0,0,0,1,0)$。这种词向量的编码方式我们一般叫做1-of-N representation或者one hot representation.</p>
+<p><img src="https://images2015.cnblogs.com/blog/1042406/201707/1042406-20170713145606275-2100371803.png" alt=""></p>
+<p>One hot representation用来表示词向量非常简单，但是却有很多问题。最大的问题是我们的词汇表一般都非常大，比如达到百万级别，这样每个词都用百万维的向量来表示简直是内存的灾难。这样的向量其实除了一个位置是1，其余的位置全部都是0，表达的效率不高，能不能把词向量的维度变小呢？</p>
+<p>Distributed representation可以解决One hot representation的问题，它的思路是通过训练，将每个词都映射到一个较短的词向量上来。所有的这些词向量就构成了向量空间，进而可以用普通的统计学的方法来研究词与词之间的关系。这个较短的词向量维度是多大呢？这个一般需要我们在训练时自己来指定。</p>
+<p>比如下图我们将词汇表里的词用"Royalty","Masculinity", "Femininity"和"Age"4个维度来表示，King这个词对应的词向量可能是$(0.99, 0.99,0.05, 0.7)$。当然在实际情况中，我们并不能对词向量的每个维度做一个很好的解释。</p>
+<p><img src="https://images2015.cnblogs.com/blog/1042406/201707/1042406-20170713150625759-1047275185.png" alt=""></p>
+<p>有了用Distributed Representation表示的较短的词向量，我们就可以较容易的分析词之间的关系了，比如我们将词的维度降维到2维，有一个有趣的研究表明，用下图的词向量表示我们的词时，我们可以发现：$$\vec {King} - \vec {Man} + \vec {Woman} = \vec {Queen} $$</p>
+<p><img src="https://images2015.cnblogs.com/blog/1042406/201707/1042406-20170713151608181-1336632086.png" alt=""></p>
+<p>可见我们只要得到了词汇表里所有词对应的词向量，那么我们就可以做很多有趣的事情了。不过，怎么训练得到合适的词向量呢？一个很常见的方法是使用神经网络语言模型。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="CBOW与Skip-Gram用于神经网络语言模型">CBOW&#19982;Skip-Gram&#29992;&#20110;&#31070;&#32463;&#32593;&#32476;&#35821;&#35328;&#27169;&#22411;<a class="anchor-link" href="#CBOW与Skip-Gram用于神经网络语言模型">&#182;</a></h1><p>在word2vec出现之前，已经有用神经网络DNN来用训练词向量进而处理词与词之间的关系了。采用的方法一般是一个三层的神经网络结构（当然也可以多层），分为输入层，隐藏层和输出层(softmax层)。</p>
+<p>这个模型是如何定义数据的输入和输出呢？一般分为CBOW(Continuous Bag-of-Words 与Skip-Gram两种模型。</p>
+<p>CBOW模型的训练输入是某一个特征词的上下文相关的词对应的词向量，而输出就是这特定的一个词的词向量。比如下面这段话，我们的上下文大小取值为4，特定的这个词是"Learning"，也就是我们需要的输出词向量,上下文对应的词有8个，前后各4个，这8个词是我们模型的输入。由于CBOW使用的是词袋模型，因此这8个词都是平等的，也就是不考虑他们和我们关注的词之间的距离大小，只要在我们上下文之内即可。</p>
+<p><img src="https://images2015.cnblogs.com/blog/1042406/201707/1042406-20170713152436931-1817493891.png" alt=""></p>
+<p>这样我们这个CBOW的例子里，我们的输入是8个词向量，输出是所有词的softmax概率（训练的目标是期望训练样本特定词对应的softmax概率最大），对应的CBOW神经网络模型输入层有8个神经元，输出层有词汇表大小个神经元。隐藏层的神经元个数我们可以自己指定。通过DNN的反向传播算法，我们可以求出DNN模型的参数，同时得到所有的词对应的词向量。这样当我们有新的需求，要求出某8个词对应的最可能的输出中心词时，我们可以通过一次DNN前向传播算法并通过softmax激活函数找到概率最大的词对应的神经元即可。</p>
+<p>Skip-Gram模型和CBOW的思路是反着来的，即输入是特定的一个词的词向量，而输出是特定词对应的上下文词向量。还是上面的例子，我们的上下文大小取值为4， 特定的这个词"Learning"是我们的输入，而这8个上下文词是我们的输出。</p>
+<p>这样我们这个Skip-Gram的例子里，我们的输入是特定词， 输出是softmax概率排前8的8个词，对应的Skip-Gram神经网络模型输入层有1个神经元，输出层有词汇表大小个神经元。隐藏层的神经元个数我们可以自己指定。通过DNN的反向传播算法，我们可以求出DNN模型的参数，同时得到所有的词对应的词向量。这样当我们有新的需求，要求出某1个词对应的最可能的8个上下文词时，我们可以通过一次DNN前向传播算法得到概率大小排前8的softmax概率对应的神经元所对应的词即可。</p>
+<p>以上就是神经网络语言模型中如何用CBOW与Skip-Gram来训练模型与得到词向量的大概过程。但是这和word2vec中用CBOW与Skip-Gram来训练模型与得到词向量的过程有很多的不同。</p>
+<p>word2vec为什么 不用现成的DNN模型，要继续优化出新方法呢？最主要的问题是DNN模型的这个处理过程非常耗时。我们的词汇表一般在百万级别以上，这意味着我们DNN的输出层需要进行softmax计算各个词的输出概率的的计算量很大。有没有简化一点点的方法呢？</p></div>
+        <footer>
+            <a rel="full-article" href="./pages/2019/01/nlp-word2vecmo-xing.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2019/01/rbmwang-luo.html">RBM网络</a>
+        </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="待补充">&#24453;&#34917;&#20805;<a class="anchor-link" href="#待补充">&#182;</a></h1><p><a href="https://www.jiqizhixin.com/articles/2018-05-07-7?from=synced&amp;keyword=%E4%B8%80%E8%B5%B7%E8%AF%BB%E6%87%82%E4%BC%A0%E8%AF%B4%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%85%B8%EF%BC%9A%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA">一起读懂传说中的经典：受限玻尔兹曼机</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="RBM">RBM<a class="anchor-link" href="#RBM">&#182;</a></h1><p>RBM是一种神经感知器，由一个显层和一个隐层构成，显层与隐层的神经元之间为双向全连接。</p>
+<p>在RBM中，任意两个相连的神经元之间有一个权值$W$表示其连接强度，每个神经元自身有一个偏置系数$b$（对显层神经元）和$c$（对隐层神经元）来表示其自身权重。<br>
+这样，就可以用下面函数表示一个RBM的能量:</p>
+<p>$$E(v,h)=−\sum^{N_v}_{i=1}b_i v_i-\sum^{N_h}_{j=1}c_jh_j - \sum^{N_vN_h}_{i,j=1}W_{ij}v_j h_j$$</p>
+<p>在一个RBM中，隐层神经元hj被激活的概率： 
+$$ P(h_j|v)=\sigma\big(b_j+\sum_iW_{i,j}x_i\big) $$</p>
+<p>由于是双向连接，显层神经元同样能被隐层神经元激活： 
+$$ P(v_i|h)=\sigma\big(c_i+\sum_jW_{i,j}h_j\big) $$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>其中，$\sigma$ 为 Sigmoid 函数，也可以设定为其他函数。 
+值得注意的是，当σ 为线性函数时，<strong>DBN</strong>和<strong>PCA</strong>（主成分分析）是等价的。 
+同一层神经元之间具有独立性，所以概率密度亦然满足独立性，故得到下式：</p>
+<p>$$ P(h|v)=\prod^{N_h}_{j=1}P(h_j|v) $$</p>
+<p>$$ P(v|h)=\prod^{N_v}_{i=1}P(v_i|h) $$</p>
+<p><strong>以上即为受限玻尔兹曼机（RBM）的基本构造</strong>。其结构并不复杂。下面来看看它的工作原理： 
+当一条数据（如向量$x$）赋给显层后，RBM根据（3）式计算出每个隐层神经元被开启的概率$P(h_j|x)，j=1,2,...,N_h$，取一个0-1的随机数$\mu$作为阈值，大于该阈值的神经元则被激活，否则不被激活，即：</p>
+<p>$$ h_j=1,P(h_j|x)\ge \mu；h_j=0,P(h_j|x)&lt;\mu $$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>由此得到隐层的每个神经元是否被激活。 
+给定隐层时，显层的计算方法是一样的。
+了解工作原理之后就可以看看RBM是如何通过数据学习的了： 
+RBM共有五个参数：$h$、$v$、$b$、$c$、$W$，其中$b$、$c$、$W$，也就是相应的权重和偏置值，是通过学习得到的。（$v$是输入向量，$h$是输出向量） 
+对于一条样本数据x，采用对比散度算法对其进行训练：</p>
+<p>将$x$赋给显层$v_1$，利用（2）式计算出隐层中每个神经元被激活的概率$P(h_1|v_1)$；
+从计算的概率分布中采取Gibbs抽样抽取一个样本：
+$$ h_1∼P(h_1|v_1) $$
+用h_1重构显层，即通过隐层反推显层，利用（3）式计算显层中每个神经元被激活的概率$P(v_2|h_1)$；
+同样地，从计算得到的概率分布中采取Gibbs抽样抽取一个样本：
+$$ v_2∼P(v_2|h_1) $$
+通过v2再次计算隐层中每个神经元被激活的概率，得到概率分布P(h2|v2)
+更新权重：</p></div>
+        <footer>
+            <a rel="full-article" href="./pages/2019/01/rbmwang-luo.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2019/01/shu-xue-ji-chu-zhu-cheng-fen-fen-xi.html">数学基础-主成分分析</a>
+        </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="PCA简介">PCA&#31616;&#20171;<a class="anchor-link" href="#PCA简介">&#182;</a></h1><h2 id="相关背景">&#30456;&#20851;&#32972;&#26223;<a class="anchor-link" href="#相关背景">&#182;</a></h2><p>上完陈恩红老师的《机器学习与知识发现》和季海波老师的《矩阵代数》两门课之后，颇有体会。最近在做主成分分析和奇异值分解方面的项目，所以记录一下心得体会。</p>
+<p>在许多领域的研究与应用中，往往需要对反映事物的多个变量进行大量的观测，收集大量数据以便进行分析寻找规律。多变量大样本无疑会为研究和应用提供了丰富的信息，但也在一定程度上增加了数据采集的工作量，更重要的是在多数情况下，许多变量之间可能存在相关性，从而增加了问题分析的复杂性，同时对分析带来不便。如果分别对每个指标进行分析，分析往往是孤立的，而不是综合的。盲目减少指标会损失很多信息，容易产生错误的结论。</p>
+<p>因此需要找到一个合理的方法，在减少需要分析的指标同时，尽量减少原指标包含信息的损失，以达到对所收集数据进行全面分析的目的。由于各变量间存在一定的相关关系，因此有可能用较少的综合指标分别综合存在于各变量中的各类信息。主成分分析与因子分析就属于这类降维的方法。</p>
+<p><a href="http://blog.csdn.net/zhongkelee/article/details/44064401">参考文献</a></p>
+<h2 id="问题描述">&#38382;&#39064;&#25551;&#36848;<a class="anchor-link" href="#问题描述">&#182;</a></h2><p>下表1是某些学生的语文、数学、物理、化学成绩统计：</p>
+<p><img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/B9DA6A4845C16156E47AD335D18EA6E0.jpg?raw=true" alt=""></p>
+<p>首先，假设这些科目成绩不相关，也就是说某一科目考多少分与其他科目没有关系。那么一眼就能看出来，数学、物理、化学这三门课的成绩构成了这组数据的主成分（很显然，数学作为第一主成分，因为数学成绩拉的最开）。为什么一眼能看出来？因为坐标轴选对了！下面再看一组学生的数学、物理、化学、语文、历史、英语成绩统计，见表2，还能不能一眼看出来：</p>
+<p><img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/69D88091D516A0064551D8F2881A2EDE.jpg?raw=true" alt=""></p>
+<p>数据太多了，以至于看起来有些凌乱！也就是说，无法直接看出这组数据的主成分，因为在坐标系下这组数据分布的很散乱。究其原因，是因为无法拨开遮住肉眼的迷雾~如果把这些数据在相应的空间中表示出来，也许你就能换一个观察角度找出主成分。如下图1所示：</p>
+<p><img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/DB0C770D8DD55E5A433B6306D7085BF3.jpg?raw=true" alt=""></p>
+<p>但是，对于更高维的数据，能想象其分布吗？就算能描述分布，如何精确地找到这些主成分的轴？如何衡量你提取的主成分到底占了整个数据的多少信息？所以，我们就要用到主成分分析的处理方法。</p>
+<h2 id="数据降维">&#25968;&#25454;&#38477;&#32500;<a class="anchor-link" href="#数据降维">&#182;</a></h2><p>为了说明什么是数据的主成分，先从数据降维说起。数据降维是怎么回事儿？假设三维空间中有一系列点，这些点分布在一个过原点的斜面上，如果你用自然坐标系x,y,z这三个轴来表示这组数据的话，需要使用三个维度，而事实上，这些点的分布仅仅是在一个二维的平面上，那么，问题出在哪里？如果你再仔细想想，能不能把x,y,z坐标系旋转一下，使数据所在平面与x,y平面重合？这就对了！如果把旋转后的坐标系记为x',y',z'，那么这组数据的表示只用x'和y'两个维度表示即可！当然了，如果想恢复原来的表示方式，那就得把这两个坐标之间的变换矩阵存下来。这样就能把数据维度降下来了！但是，我们要看到这个过程的本质，如果把这些数据按行或者按列排成一个矩阵，那么这个矩阵的秩就是2！这些数据之间是有相关性的，这些数据构成的过原点的向量的最大线性无关组包含2个向量，这就是为什么一开始就假设平面过原点的原因！那么如果平面不过原点呢？这就是数据中心化的缘故！将坐标原点平移到数据中心，这样原本不相关的数据在这个新坐标系中就有相关性了！有趣的是，三点一定共面，也就是说三维空间中任意三点中心化后都是线性相关的，一般来讲n维空间中的n个点一定能在一个n-1维子空间中分析！</p>
+<p>上一段文字中，认为把数据降维后并没有丢弃任何东西，因为这些数据在平面以外的第三个维度的分量都为0。现在，假设这些数据在z'轴有一个很小的抖动，那么我们仍然用上述的二维表示这些数据，理由是我们可以认为这两个轴的信息是数据的主成分，而这些信息对于我们的分析已经足够了，z'轴上的抖动很有可能是噪声，也就是说本来这组数据是有相关性的，噪声的引入，导致了数据不完全相关，但是，这些数据在z'轴上的分布与原点构成的夹角非常小，也就是说在z'轴上有很大的相关性，综合这些考虑，就可以认为数据在x',y' 轴上的投影构成了数据的主成分！</p>
+<p>课堂上老师谈到的特征选择的问题，其实就是要剔除的特征主要是和类标签无关的特征。而这里的特征很多是和类标签有关的，但里面存在噪声或者冗余。在这种情况下，需要一种特征降维的方法来减少特征数，减少噪音和冗余，减少过度拟合的可能性。</p>
+<p>PCA的思想是将n维特征映射到k维上（k\&lt;n），这k维是全新的正交特征。这k维特征称为主成分，是重新构造出来的k维特征，而不是简单地从n维特征中去除其余n-k维特征。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="PCA实例">PCA&#23454;&#20363;<a class="anchor-link" href="#PCA实例">&#182;</a></h1><p>现在假设有一组数据如下：</p>
+<p><img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/75D505A58D5B23BD4ED7207C087B5F04.jpg?raw=true" alt=""></p>
+<p>行代表了样例，列代表特征，这里有10个样例，每个样例两个特征。可以这样认为，有10篇文档，x是10篇文档中“learn”出现的TF-IDF，y是10篇文档中“study”出现的TF-IDF。
+<strong>第一步</strong>，分别求x和y的平均值，然后对于所有的样例，都减去对应的均值。这里x的均值是1.81，y的均值是1.91，那么一个样例减去均值后即为（0.69,0.49），得到</p>
+<p><img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/8D90FF4FA2A8A73A23B6D3C61E0892AA.jpg?raw=true" alt=""></p>
+<p><strong>第二步</strong>，求特征协方差矩阵，如果数据是3维，那么协方差矩阵是</p>
+<p>$$C =\begin{pmatrix}    cov(x,x) &amp; cov(x,y) &amp; cov(x,z) \\ cov(y,x) &amp; cov(y,y) &amp; cov(y,z) \\  cov(z,x) &amp; cov(z,y) &amp; cov(z,z)\end{pmatrix}$$</p>
+<p>这里只有$x$和$y$，求解得</p>
+<p>$$cov =\begin{pmatrix}  0.6166 &amp; 0.6154 \\ 0.6154 &amp; 0.7166 \end{pmatrix}$$</p></div>
+        <footer>
+            <a rel="full-article" href="./pages/2019/01/shu-xue-ji-chu-zhu-cheng-fen-fen-xi.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2019/01/tf-example-0101-helloworld.html">tf-example-01.01-helloworld</a>
+        </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2019/01/tf-example-0101-helloworld.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
                 <article>
 <header>
         <h1 class="entry-title">
@@ -126,6 +409,7 @@ for deployment in production without changing code. - Rajat Monga</em></div>
             <a rel="full-article" href="./pages/2019/01/tf-example-0102-basic-eager-api.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -142,6 +426,7 @@ for deployment in production without changing code. - Rajat Monga</em></div>
         <footer>
             <a rel="full-article" href="./pages/2019/01/tf-example-0103-basic-operations.html">Read On &crarr;</a>
         </footer>
+
 
                 </article>
                 <article>
@@ -173,6 +458,7 @@ for deployment in production without changing code. - Rajat Monga</em></div>
             <a rel="full-article" href="./pages/2019/01/tf-example-0201-linear_regression_eager_api.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -198,6 +484,7 @@ for deployment in production without changing code. - Rajat Monga</em></div>
         <footer>
             <a rel="full-article" href="./pages/2019/01/tf-example-0202-linear_regression.html">Read On &crarr;</a>
         </footer>
+
 
                 </article>
                 <article>
@@ -232,6 +519,7 @@ for deployment in production without changing code. - Rajat Monga</em></div>
             <a rel="full-article" href="./pages/2019/01/tf-example-0203-logistic_regression_eager_api.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -263,6 +551,7 @@ This example is using the MNIST database of handwritten digits (<a href="http://
             <a rel="full-article" href="./pages/2019/01/tf-example-0204-nearest_neighbor.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -285,6 +574,7 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
         <footer>
             <a rel="full-article" href="./pages/2019/01/tf-example-0205-kmeans.html">Read On &crarr;</a>
         </footer>
+
 
                 </article>
                 <article>
@@ -319,6 +609,7 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
             <a rel="full-article" href="./pages/2019/01/tf-example-0206-lr.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -345,175 +636,6 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
             <a rel="full-article" href="./pages/2019/01/tf-example-0207-gbdt.html">Read On &crarr;</a>
         </footer>
 
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2019/01/tf-example-0208-word2vec.html">tf-example-02.08-word2vec</a>
-        </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Word2Vec-(Word-Embedding)">Word2Vec (Word Embedding)<a class="anchor-link" href="#Word2Vec-(Word-Embedding)">&#182;</a></h1><p>Implement Word2Vec algorithm to compute vector representations of words.
-This example is using a small chunk of Wikipedia articles to train from.</p>
-<p>More info: <a href="https://arxiv.org/pdf/1301.3781.pdf">Mikolov, Tomas et al. "Efficient Estimation of Word Representations in Vector Space.", 2013</a></div>
-        <footer>
-            <a rel="full-article" href="./pages/2019/01/tf-example-0208-word2vec.html">Read On &crarr;</a>
-        </footer>
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2019/01/tf-example-0209-random_forest.html">tf-example-02.09-random_forest</a>
-        </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Random-Forest-Example">Random Forest Example<a class="anchor-link" href="#Random-Forest-Example">&#182;</a></h1><p>Implement Random Forest algorithm with TensorFlow, and apply it to classify 
-handwritten digit images. This example is using the MNIST database of 
-handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a></div>
-        <footer>
-            <a rel="full-article" href="./pages/2019/01/tf-example-0209-random_forest.html">Read On &crarr;</a>
-        </footer>
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2019/01/tf-example-0301-autoencoder.html">tf-example-03.01-autoencoder</a>
-        </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Auto-Encoder-Example">Auto-Encoder Example<a class="anchor-link" href="#Auto-Encoder-Example">&#182;</a></h1><p>Build a 2 layers auto-encoder with TensorFlow to compress images to a lower latent space and then reconstruct them.</p>
-<ul>
-<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Auto-Encoder-Overview">Auto-Encoder Overview<a class="anchor-link" href="#Auto-Encoder-Overview">&#182;</a></h2><p><img src="http://kvfrans.com/content/images/2016/08/autoenc.jpg" alt="ae" style="width: 800px;" /></p>
-<p>References:</p>
-<ul>
-<li><a href="http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf">Gradient-based learning applied to document recognition</a>. Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner. Proceedings of the IEEE, 86(11):2278-2324, November 1998.</li></div>
-        <footer>
-            <a rel="full-article" href="./pages/2019/01/tf-example-0301-autoencoder.html">Read On &crarr;</a>
-        </footer>
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2019/01/tf-example-0302-bidirectional_rnn.html">tf-example-03.02-bidirectional_rnn</a>
-        </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Bi-directional-Recurrent-Neural-Network-Example">Bi-directional Recurrent Neural Network Example<a class="anchor-link" href="#Bi-directional-Recurrent-Neural-Network-Example">&#182;</a></h1><p>Build a bi-directional recurrent neural network (LSTM) with TensorFlow.</p>
-<ul>
-<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="BiRNN-Overview">BiRNN Overview<a class="anchor-link" href="#BiRNN-Overview">&#182;</a></h2><p><img src="https://ai2-s2-public.s3.amazonaws.com/figures/2016-11-08/191dd7df9cb91ac22f56ed0dfa4a5651e8767a51/1-Figure2-1.png" alt="nn" style="width: 600px;" /></p>
-<p>References:</p>
-<ul>
-<li><a href="http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf">Long Short Term Memory</a>, Sepp Hochreiter &amp; Jurgen Schmidhuber, Neural Computation 9(8): 1735-1780, 1997.</li>
-</ul>
-<h2 id="MNIST-Dataset-Overview">MNIST Dataset Overview<a class="anchor-link" href="#MNIST-Dataset-Overview">&#182;</a></div>
-        <footer>
-            <a rel="full-article" href="./pages/2019/01/tf-example-0302-bidirectional_rnn.html">Read On &crarr;</a>
-        </footer>
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2019/01/tf-example-0303-convolutional_network_raw.html">tf-example-03.03-convolutional_network_raw</a>
-        </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Convolutional-Neural-Network-Example">Convolutional Neural Network Example<a class="anchor-link" href="#Convolutional-Neural-Network-Example">&#182;</a></h1><p>Build a convolutional neural network with TensorFlow.</p>
-<ul>
-<li>Project: <a href="https://github.com/aymericdamien/TensorFlow-Examples/">https://github.com/aymericdamien/TensorFlow-Examples/</a></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="CNN-Overview">CNN Overview<a class="anchor-link" href="#CNN-Overview">&#182;</a></h2><p><img src="http://personal.ie.cuhk.edu.hk/~ccloy/project_target_code/images/fig3.png" alt="CNN"></p>
-<h2 id="MNIST-Dataset-Overview">MNIST Dataset Overview<a class="anchor-link" href="#MNIST-Dataset-Overview">&#182;</a></h2><p>This example is using MNIST handwritten digits. The dataset contains 60,000 examples for training and 10,000 examples for testing. The digits have been size-normalized and centered in a fixed-size image (28x28 pixels) with values from 0 to 1. For simplicity, each image has been flattened and converted to a 1-D numpy array of 784 features (28*28).</p></div>
-        <footer>
-            <a rel="full-article" href="./pages/2019/01/tf-example-0303-convolutional_network_raw.html">Read On &crarr;</a>
-        </footer>
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2019/01/tf-example-0304-convolutional_network.html">tf-example-03.04-convolutional_network</a>
-        </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Convolutional-Neural-Network-Example">Convolutional Neural Network Example<a class="anchor-link" href="#Convolutional-Neural-Network-Example">&#182;</a></h1><h2 id="CNN-Overview">CNN Overview<a class="anchor-link" href="#CNN-Overview">&#182;</a></h2><p><img src="http://personal.ie.cuhk.edu.hk/~ccloy/project_target_code/images/fig3.png" alt="CNN"></p>
-<h2 id="MNIST-Dataset-Overview">MNIST Dataset Overview<a class="anchor-link" href="#MNIST-Dataset-Overview">&#182;</a></h2><p>This example is using MNIST handwritten digits. The dataset contains 60,000 examples for training and 10,000 examples for testing. The digits have been size-normalized and centered in a fixed-size image (28x28 pixels) with values from 0 to 1. For simplicity, each image has been flattened and converted to a 1-D numpy array of 784 features (28*28).</p></div>
-        <footer>
-            <a rel="full-article" href="./pages/2019/01/tf-example-0304-convolutional_network.html">Read On &crarr;</a>
-        </footer>
 
                 </article>
 <div class="pagination">
@@ -562,6 +684,7 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
                     <li><a href="./category/tool2.html">tool2</a></li>
                     <li><a href="./category/tools.html">tools</a></li>
                     <li><a href="./category/tui jian xi tong.html">推荐系统</a></li>
+                    <li><a href="./category/wen ben wa jue.html">文本挖掘</a></li>
             </ul>
         </section>
 
@@ -572,7 +695,9 @@ handwritten digits as training samples (<a href="http://yann.lecun.com/exdb/mnis
             <a href="./tag/numpy.html">numpy</a>, 
             <a href="./tag/deep-learning.html">deep-learning</a>, 
             <a href="./tag/algorithms.html">algorithms</a>, 
+            <a href="./tag/wen-ben-wa-jue.html">文本挖掘</a>, 
             <a href="./tag/shu-xue-ji-chu.html">数学基础</a>, 
+            <a href="./tag/nlp.html">nlp</a>, 
             <a href="./tag/tf-example.html">tf-example</a>, 
             <a href="./tag/tui-jian-xi-tong.html">推荐系统</a>, 
             <a href="./tag/tf.html">tf</a>, 

@@ -32,60 +32,133 @@
 <header role="banner"><hgroup>
   <h1><a href="./">魑魅魍魉</a></h1>
 </hgroup></header>
-<nav role="navigation"><ul class="subscription" data-subscription="rss">
-</ul>
+<nav role="navigation">    <ul class="subscription" data-subscription="rss">
+    </ul>
 
 
 <ul class="main-navigation">
-      <li >
-        <a href="./category/01chang yong gong ju.html">01常用工具</a>
-      </li>
-      <li >
-        <a href="./category/02.wo ai du shu.html">02.我爱读书</a>
-      </li>
-      <li >
-        <a href="./category/algorithms.html">Algorithms</a>
-      </li>
-      <li >
-        <a href="./category/book.html">Book</a>
-      </li>
-      <li >
-        <a href="./category/book-pydata.html">Book-pydata</a>
-      </li>
-      <li >
-        <a href="./category/deep-learning-with-python.html">Deep-learning-with-python</a>
-      </li>
-      <li >
-        <a href="./category/ji qi xue xi shi zhan.html">机器学习实战</a>
-      </li>
-      <li >
-        <a href="./category/ling ji chu ru men shen du xue xi.html">零基础入门深度学习</a>
-      </li>
-      <li >
-        <a href="./category/shen du xue xi.html">深度学习</a>
-      </li>
-      <li >
-        <a href="./category/shu xue ji chu.html">数学基础</a>
-      </li>
-      <li >
-        <a href="./category/tf-example.html">Tf-example</a>
-      </li>
-      <li >
-        <a href="./category/tool1.html">Tool1</a>
-      </li>
-      <li >
-        <a href="./category/tool2.html">Tool2</a>
-      </li>
-      <li >
-        <a href="./category/tools.html">Tools</a>
-      </li>
-      <li >
-        <a href="./category/tui jian xi tong.html">推荐系统</a>
-      </li>
-</ul></nav>
+            <li >
+                <a href="./category/01chang yong gong ju.html">01常用工具</a>
+            </li>
+            <li >
+                <a href="./category/02.wo ai du shu.html">02.我爱读书</a>
+            </li>
+            <li >
+                <a href="./category/algorithms.html">Algorithms</a>
+            </li>
+            <li >
+                <a href="./category/book.html">Book</a>
+            </li>
+            <li >
+                <a href="./category/book-pydata.html">Book-pydata</a>
+            </li>
+            <li >
+                <a href="./category/deep-learning-with-python.html">Deep-learning-with-python</a>
+            </li>
+            <li >
+                <a href="./category/ji qi xue xi shi zhan.html">机器学习实战</a>
+            </li>
+            <li >
+                <a href="./category/ling ji chu ru men shen du xue xi.html">零基础入门深度学习</a>
+            </li>
+            <li >
+                <a href="./category/shen du xue xi.html">深度学习</a>
+            </li>
+            <li >
+                <a href="./category/shu xue ji chu.html">数学基础</a>
+            </li>
+            <li >
+                <a href="./category/tf-example.html">Tf-example</a>
+            </li>
+            <li >
+                <a href="./category/tool1.html">Tool1</a>
+            </li>
+            <li >
+                <a href="./category/tool2.html">Tool2</a>
+            </li>
+            <li >
+                <a href="./category/tools.html">Tools</a>
+            </li>
+            <li >
+                <a href="./category/tui jian xi tong.html">推荐系统</a>
+            </li>
+            <li >
+                <a href="./category/wen ben wa jue.html">文本挖掘</a>
+            </li>
+</ul>
+</nav>
 <div id="main">
     <div id="content">
     <div class="blog-index">
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2019/01/algorithms-logistic-code.html">algorithms-logistic-code</a>
+        </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2019/01/algorithms-logistic-code.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2019/01/algorithms-logistic-li-lun.html">algorithms-logistic-理论</a>
+        </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="逻辑回归">&#36923;&#36753;&#22238;&#24402;<a class="anchor-link" href="#逻辑回归">&#182;</a></h1><p>该算法尝试为<strong>给定一个输入特征的线性组合的一个二元变量的结果</strong>建模。</p>
+<p>举个例子，可以根据候选人为竞选花费的金钱、时间等信息预测选举结果。</p>
+<p>逻辑回归工作流程——</p>
+<p>给定：</p>
+<ul>
+<li>数据集合 $\{(x^{(1)},y^{(1)},\ldots,(x^{(m)},y^{(m)})\}$</li>
+<li>每个 $x^{(i)}$ 都是 $d$ 维向量 $x^{(i)}=(x_1^{(i)},\ldots,x_d^{(i)})$</li>
+<li>每个 $y^{(i)}$ 都是一个二元目标变量 $y^{(i)} \in \{0,1\}$</li>
+</ul>
+<p>逻辑回归模型可以用非常简单的神经网络表达：</p>
+<ul>
+<li>拥有一个实值权重向量 $w=(w^{(1)},\ldots,w^{(d)})$</li>
+<li>拥有一个实值偏置 $b$</li>
+<li>采用sigmoid函数作为激活函数</li>
+</ul>
+<p>与<a href="./线性回归.ipynb">线性回归</a>不同，逻辑回归没有封闭解。</p>
+<p>但是成本函数是凸的（<em>convex</em>），因此可以采用梯度下降方法来训练该模型。</p>
+<p>事实上，梯度下降（或其余任何最优化算法）保证找到全局最小（如果学习率足够小且训练迭代次数足够多）。</p>
+<p>训练步骤：</p>
+<p>一开始模型参数是初始化了的，接下来重复指定的训练迭代次数或直到参数收敛。</p>
+<ul>
+<li><p>第一步</p>
+<p>把权重向量和偏置初始化为零（或小的随机数）</p>
+</li>
+<li><p>第二步</p>
+<p>计算一个输入特性和权重的线性组合。</p>
+<p>采用向量化和广播所有训练样本可一次性搞定： $a=X \cdot w + b$</p>
+<p>这里 $X$ 是矩阵 $(n_{samples},n_{features})$ 保佑全部训练样本，而 $\cdot$ 表示点积。</p>
+</li>
+<li><p>第三步</p>
+<p>应用sigmoid激活函数，返回值在0和1之间： $$\hat y=\sigma (a)=\frac{1}{1 + \exp(-a)}$$</p></div>
+        <footer>
+            <a rel="full-article" href="./pages/2019/01/algorithms-logistic-li-lun.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
                 <article>
 <header>
         <h1 class="entry-title">
@@ -110,6 +183,7 @@
             <a rel="full-article" href="./pages/2019/01/algorithms-lr.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -126,6 +200,7 @@
         <footer>
             <a rel="full-article" href="./pages/2019/01/algorithms-lr3.html">Read On &crarr;</a>
         </footer>
+
 
                 </article>
                 <article>
@@ -144,6 +219,7 @@
             <a rel="full-article" href="./pages/2019/01/algorithms-naivebayes.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -160,6 +236,7 @@
         <footer>
             <a rel="full-article" href="./pages/2019/01/algorithms-pca.html">Read On &crarr;</a>
         </footer>
+
 
                 </article>
                 <article>
@@ -178,6 +255,7 @@
             <a rel="full-article" href="./pages/2019/01/algorithms-pca2.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -194,6 +272,7 @@
         <footer>
             <a rel="full-article" href="./pages/2019/01/algorithms-rnnwang-luo.html">Read On &crarr;</a>
         </footer>
+
 
                 </article>
                 <article>
@@ -340,6 +419,7 @@ RNN的应用举例——基于RNN的语言模型
             <a rel="full-article" href="./pages/2019/01/algorithms-rnnwang-luo-2.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -414,6 +494,7 @@ gbliner：线性模型</p>
             <a rel="full-article" href="./pages/2019/01/algorithms-shi-fen-zhong-shang-shou-xgboost.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -430,6 +511,73 @@ gbliner：线性模型</p>
         <footer>
             <a rel="full-article" href="./pages/2019/01/algorithms-svd.html">Read On &crarr;</a>
         </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2019/01/algorithms-wen-ben-wa-jue-yu-chu-li-zhi-tf-idf.html">algorithms-文本挖掘预处理之TF-IDF</a>
+        </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>在<a href="http://www.cnblogs.com/pinard/p/6688348.html">文本挖掘预处理之向量化与Hash Trick</a>中我们讲到在文本挖掘的预处理中，向量化之后一般都伴随着TF-IDF的处理，那么什么是TF-IDF，为什么一般我们要加这一步预处理呢？这里就对TF-IDF的原理做一个总结。</p>
+<h1 id="文本向量化特征的不足">&#25991;&#26412;&#21521;&#37327;&#21270;&#29305;&#24449;&#30340;&#19981;&#36275;<a class="anchor-link" href="#文本向量化特征的不足">&#182;</a></h1><p>在将文本分词并向量化后，我们可以得到词汇表中每个词在各个文本中形成的词向量，比如在<a href="http://www.cnblogs.com/pinard/p/6688348.html">文本挖掘预处理之向量化与Hash Trick</a>这篇文章中，我们将下面4个短文本做了词频统计：</p>
+
+<pre><code>corpus=["I come to China to travel", "This is a car polupar in China", "I love tea and Apple ", "The work is to write some papers in science"] 
+
+</code></div>
+        <footer>
+            <a rel="full-article" href="./pages/2019/01/algorithms-wen-ben-wa-jue-yu-chu-li-zhi-tf-idf.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2019/01/algorithms-wen-ben-zhu-ti-mo-xing-zhi-qian-zai-yu-yi-suo-yin-lsi.html">algorithms-文本主题模型之潜在语义索引(LSI)</a>
+        </h1>
+    <p class="meta">
+<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><p>在文本挖掘中，主题模型是比较特殊的一块，它的思想不同于我们常用的机器学习算法，因此这里我们需要专门来总结文本主题模型的算法。本文关注于潜在语义索引算法(LSI)的原理。</p>
+<h1 id="文本主题模型的问题特点">&#25991;&#26412;&#20027;&#39064;&#27169;&#22411;&#30340;&#38382;&#39064;&#29305;&#28857;<a class="anchor-link" href="#文本主题模型的问题特点">&#182;</a></h1><p>在数据分析中，我们经常会进行非监督学习的聚类算法，它可以对我们的特征数据进行非监督的聚类。而主题模型也是非监督的算法，目的是得到文本按照主题的概率分布。从这个方面来说，主题模型和普通的聚类算法非常的类似。但是两者其实还是有区别的。</p>
+<p>聚类算法关注于从样本特征的相似度方面将数据聚类。比如通过数据样本之间的欧式距离，曼哈顿距离的大小聚类等。而主题模型，顾名思义，就是对文字中隐含主题的一种建模方法。比如从“人民的名义”和“达康书记”这两个词我们很容易发现对应的文本有很大的主题相关度，但是如果通过词特征来聚类的话则很难找出，因为聚类方法不能考虑到到隐含的主题这一块。</p>
+<p>那么如何找到隐含的主题呢？这个一个大问题。常用的方法一般都是基于统计学的生成方法。即假设以一定的概率选择了一个主题，然后以一定的概率选择当前主题的词。最后这些词组成了我们当前的文本。所有词的统计概率分布可以从语料库获得，具体如何以“一定的概率选择”，这就是各种具体的主题模型算法的任务了。</p>
+<p>当然还有一些不是基于统计的方法，比如我们下面讲到的LSI。</p>
+<h1 id="潜在语义索引(LSI)概述">&#28508;&#22312;&#35821;&#20041;&#32034;&#24341;(LSI)&#27010;&#36848;<a class="anchor-link" href="#潜在语义索引(LSI)概述">&#182;</a></h1><p>潜在语义索引(Latent Semantic Indexing,以下简称LSI)，有的文章也叫Latent Semantic Analysis（LSA）。其实是一个东西，后面我们统称LSI，它是一种简单实用的主题模型。LSI是基于奇异值分解（SVD）的方法来得到文本的主题的。而SVD及其应用我们在前面的文章也多次讲到，比如：<a href="http://www.cnblogs.com/pinard/p/6251584.html">奇异值分解(SVD)原理与在降维中的应用</a>和<a href="http://www.cnblogs.com/pinard/p/6351319.html">矩阵分解在协同过滤推荐算法中的应用</a>。如果大家对SVD还不熟悉，建议复习<a href="http://www.cnblogs.com/pinard/p/6251584.html">奇异值分解(SVD)原理与在降维中的应用</a>后再读下面的内容。</p>
+<p>这里我们简要回顾下SVD：对于一个$m \times n$的矩阵$A$，可以分解为下面三个矩阵：</p>
+<p>$$A_{m \times n} = U_{m \times m}\Sigma_{m \times n} V^T_{n \times n}$$</p>
+<p>有时为了降低矩阵的维度到k，SVD的分解可以近似的写为：</p>
+<p>$$A_{m \times n} \approx U_{m \times k}\Sigma_{k \times k} V^T_{k \times n}$$</p>
+<p>如果把上式用到我们的主题模型，则SVD可以这样解释：我们输入的有m个文本，每个文本有n个词。而$A_{ij}$则对应第i个文本的第j个词的特征值，这里最常用的是基于预处理后的标准化TF-IDF值。k是我们假设的主题数，一般要比文本数少。SVD分解后，$U_{il}$对应第i个文本和第l个主题的相关度。$V_{jm}$对应第j个词和第m个词义的相关度。$\Sigma_{lm}$对应第l个主题和第m个词义的相关度。</p>
+<p>也可以反过来解释：我们输入的有m个词，对应n个文本。而$A_{ij}$则对应第i个词档的第j个文本的特征值，这里最常用的是基于预处理后的标准化TF-IDF值。k是我们假设的主题数，一般要比文本数少。SVD分解后，$U_{il}$对应第i个词和第l个词义的相关度。$V_{jm}$对应第j个文本和第m个主题的相关度。$\Sigma_{lm}$对应第l个词义和第m个主题的相关度。</p>
+<p>这样我们通过一次SVD，就可以得到文档和主题的相关度，词和词义的相关度以及词义和主题的相关度。</p>
+<h1 id="LSI简单实例">LSI&#31616;&#21333;&#23454;&#20363;<a class="anchor-link" href="#LSI简单实例">&#182;</a></h1><p>这里举一个简单的LSI实例，假设我们有下面这个有11个词三个文本的词频TF对应矩阵如下：</p>
+<p><img src="https://images2015.cnblogs.com/blog/1042406/201705/1042406-20170504134451664-1723370358.png" alt=""></p>
+<p>这里我们没有使用预处理，也没有使用TF-IDF，在实际应用中最好使用预处理后的TF-IDF值矩阵作为输入。</p>
+<p>我们假定对应的主题数为2，则通过SVD降维后得到的三矩阵为：</p>
+<p><img src="https://images2015.cnblogs.com/blog/1042406/201705/1042406-20170504135321726-2116029824.png" alt=""></p>
+<p>从矩阵$U_k$我们可以看到词和词义之间的相关性。而从$V_k$可以看到3个文本和两个主题的相关性。大家可以看到里面有负数，所以这样得到的相关度比较难解释。</p>
+<h1 id="LSI用于文本相似度计算">LSI&#29992;&#20110;&#25991;&#26412;&#30456;&#20284;&#24230;&#35745;&#31639;<a class="anchor-link" href="#LSI用于文本相似度计算">&#182;</a></h1><p>在上面我们通过LSI得到的文本主题矩阵可以用于文本相似度计算。而计算方法一般是通过余弦相似度。比如对于上面的三文档两主题的例子。我们可以计算第一个文本和第二个文本的余弦相似度如下 ：$$sim(d1,d2) = \frac{(-0.4945)*(-0.6458) + (0.6492)*(-0.7194)}{\sqrt{(-0.4945)^2+0.6492^2}\sqrt{(-0.6458)^2+(-0.7194)^2}}$$</p></div>
+        <footer>
+            <a rel="full-article" href="./pages/2019/01/algorithms-wen-ben-zhu-ti-mo-xing-zhi-qian-zai-yu-yi-suo-yin-lsi.html">Read On &crarr;</a>
+        </footer>
+
 
                 </article>
                 <article>
@@ -490,6 +638,7 @@ gbliner：线性模型</p>
             <a rel="full-article" href="./pages/2019/01/algorithms-xgboost1.html">Read On &crarr;</a>
         </footer>
 
+
                 </article>
                 <article>
 <header>
@@ -507,195 +656,6 @@ gbliner：线性模型</p>
             <a rel="full-article" href="./pages/2019/01/algorithms-xie-tong-guo-lu-svd.html">Read On &crarr;</a>
         </footer>
 
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2019/01/ju-zhen-qiu-dao.html">矩阵求导</a>
-        </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><p>第一次遇见矩阵求导，大多数人都是一头雾水，而搜了维基百科看也还是云里雾里，一堆的名词和一堆的表格到底都是什么呢？这里总结了我个人的学习经验，并且通过一个例子可以让你感受如何进行矩阵求导，下次再遇到需要进行矩阵求导的地方就不会措手不及。</p>
-<p>在进行概念的解说之前，首先大家需要先知道下面的这个前提：</p>
-<p><a href="https://en.wikipedia.org/wiki/Matrix_calculus">https://en.wikipedia.org/wiki/Matrix_calculus</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="基本分类">&#22522;&#26412;&#20998;&#31867;<a class="anchor-link" href="#基本分类">&#182;</a></h1><h2 id="前提">&#21069;&#25552;<a class="anchor-link" href="#前提">&#182;</a></h2><p>若$x$为向量，则默认$\boldsymbol x$为列向量，$\boldsymbol x^T$为行向量
-若$y$为向量，则默认$\boldsymbol y$为列向量，$\boldsymbol y^T$为行向量</p>
-<h2 id="标量/向量">&#26631;&#37327;/&#21521;&#37327;<a class="anchor-link" href="#标量/向量">&#182;</a></h2><p>$$\frac {\partial y}{\partial\boldsymbol x}=
-\begin{bmatrix} 
- \frac {\partial y}{\partial x_1}
-\\\frac {\partial y}{\partial x_2}
-\\ ...
-\\\frac {\partial y}{\partial x_n}
-\end{bmatrix} $$</p>
-<p>$$\frac {\partial y}{\partial\boldsymbol x^T}=
-\left ({\frac {\partial y^T}{\partial\boldsymbol x}} \right)^T=
-\left ({\frac {\partial y}{\partial\boldsymbol x}} \right)^T=
-\begin{bmatrix} 
- \frac {\partial y}{\partial x_1}
-&amp;\frac {\partial y}{\partial x_2}
-&amp; ...
-&amp;\frac {\partial y}{\partial x_n}
-\end{bmatrix} 
-$$</p></div>
-        <footer>
-            <a rel="full-article" href="./pages/2019/01/ju-zhen-qiu-dao.html">Read On &crarr;</a>
-        </footer>
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2019/01/rbmwang-luo.html">RBM网络</a>
-        </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="待补充">&#24453;&#34917;&#20805;<a class="anchor-link" href="#待补充">&#182;</a></h1><p><a href="https://www.jiqizhixin.com/articles/2018-05-07-7?from=synced&amp;keyword=%E4%B8%80%E8%B5%B7%E8%AF%BB%E6%87%82%E4%BC%A0%E8%AF%B4%E4%B8%AD%E7%9A%84%E7%BB%8F%E5%85%B8%EF%BC%9A%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA">一起读懂传说中的经典：受限玻尔兹曼机</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="RBM">RBM<a class="anchor-link" href="#RBM">&#182;</a></h1><p>RBM是一种神经感知器，由一个显层和一个隐层构成，显层与隐层的神经元之间为双向全连接。</p>
-<p>在RBM中，任意两个相连的神经元之间有一个权值$W$表示其连接强度，每个神经元自身有一个偏置系数$b$（对显层神经元）和$c$（对隐层神经元）来表示其自身权重。<br>
-这样，就可以用下面函数表示一个RBM的能量:</p>
-<p>$$E(v,h)=−\sum^{N_v}_{i=1}b_i v_i-\sum^{N_h}_{j=1}c_jh_j - \sum^{N_vN_h}_{i,j=1}W_{ij}v_j h_j$$</p>
-<p>在一个RBM中，隐层神经元hj被激活的概率： 
-$$ P(h_j|v)=\sigma\big(b_j+\sum_iW_{i,j}x_i\big) $$</p>
-<p>由于是双向连接，显层神经元同样能被隐层神经元激活： 
-$$ P(v_i|h)=\sigma\big(c_i+\sum_jW_{i,j}h_j\big) $$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>其中，$\sigma$ 为 Sigmoid 函数，也可以设定为其他函数。 
-值得注意的是，当σ 为线性函数时，<strong>DBN</strong>和<strong>PCA</strong>（主成分分析）是等价的。 
-同一层神经元之间具有独立性，所以概率密度亦然满足独立性，故得到下式：</p>
-<p>$$ P(h|v)=\prod^{N_h}_{j=1}P(h_j|v) $$</p>
-<p>$$ P(v|h)=\prod^{N_v}_{i=1}P(v_i|h) $$</p>
-<p><strong>以上即为受限玻尔兹曼机（RBM）的基本构造</strong>。其结构并不复杂。下面来看看它的工作原理： 
-当一条数据（如向量$x$）赋给显层后，RBM根据（3）式计算出每个隐层神经元被开启的概率$P(h_j|x)，j=1,2,...,N_h$，取一个0-1的随机数$\mu$作为阈值，大于该阈值的神经元则被激活，否则不被激活，即：</p>
-<p>$$ h_j=1,P(h_j|x)\ge \mu；h_j=0,P(h_j|x)&lt;\mu $$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>由此得到隐层的每个神经元是否被激活。 
-给定隐层时，显层的计算方法是一样的。
-了解工作原理之后就可以看看RBM是如何通过数据学习的了： 
-RBM共有五个参数：$h$、$v$、$b$、$c$、$W$，其中$b$、$c$、$W$，也就是相应的权重和偏置值，是通过学习得到的。（$v$是输入向量，$h$是输出向量） 
-对于一条样本数据x，采用对比散度算法对其进行训练：</p>
-<p>将$x$赋给显层$v_1$，利用（2）式计算出隐层中每个神经元被激活的概率$P(h_1|v_1)$；
-从计算的概率分布中采取Gibbs抽样抽取一个样本：
-$$ h_1∼P(h_1|v_1) $$
-用h_1重构显层，即通过隐层反推显层，利用（3）式计算显层中每个神经元被激活的概率$P(v_2|h_1)$；
-同样地，从计算得到的概率分布中采取Gibbs抽样抽取一个样本：
-$$ v_2∼P(v_2|h_1) $$
-通过v2再次计算隐层中每个神经元被激活的概率，得到概率分布P(h2|v2)
-更新权重：</p></div>
-        <footer>
-            <a rel="full-article" href="./pages/2019/01/rbmwang-luo.html">Read On &crarr;</a>
-        </footer>
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2019/01/shu-xue-ji-chu-zhu-cheng-fen-fen-xi.html">数学基础-主成分分析</a>
-        </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="PCA简介">PCA&#31616;&#20171;<a class="anchor-link" href="#PCA简介">&#182;</a></h1><h2 id="相关背景">&#30456;&#20851;&#32972;&#26223;<a class="anchor-link" href="#相关背景">&#182;</a></h2><p>上完陈恩红老师的《机器学习与知识发现》和季海波老师的《矩阵代数》两门课之后，颇有体会。最近在做主成分分析和奇异值分解方面的项目，所以记录一下心得体会。</p>
-<p>在许多领域的研究与应用中，往往需要对反映事物的多个变量进行大量的观测，收集大量数据以便进行分析寻找规律。多变量大样本无疑会为研究和应用提供了丰富的信息，但也在一定程度上增加了数据采集的工作量，更重要的是在多数情况下，许多变量之间可能存在相关性，从而增加了问题分析的复杂性，同时对分析带来不便。如果分别对每个指标进行分析，分析往往是孤立的，而不是综合的。盲目减少指标会损失很多信息，容易产生错误的结论。</p>
-<p>因此需要找到一个合理的方法，在减少需要分析的指标同时，尽量减少原指标包含信息的损失，以达到对所收集数据进行全面分析的目的。由于各变量间存在一定的相关关系，因此有可能用较少的综合指标分别综合存在于各变量中的各类信息。主成分分析与因子分析就属于这类降维的方法。</p>
-<p><a href="http://blog.csdn.net/zhongkelee/article/details/44064401">参考文献</a></p>
-<h2 id="问题描述">&#38382;&#39064;&#25551;&#36848;<a class="anchor-link" href="#问题描述">&#182;</a></h2><p>下表1是某些学生的语文、数学、物理、化学成绩统计：</p>
-<p><img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/B9DA6A4845C16156E47AD335D18EA6E0.jpg?raw=true" alt=""></p>
-<p>首先，假设这些科目成绩不相关，也就是说某一科目考多少分与其他科目没有关系。那么一眼就能看出来，数学、物理、化学这三门课的成绩构成了这组数据的主成分（很显然，数学作为第一主成分，因为数学成绩拉的最开）。为什么一眼能看出来？因为坐标轴选对了！下面再看一组学生的数学、物理、化学、语文、历史、英语成绩统计，见表2，还能不能一眼看出来：</p>
-<p><img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/69D88091D516A0064551D8F2881A2EDE.jpg?raw=true" alt=""></p>
-<p>数据太多了，以至于看起来有些凌乱！也就是说，无法直接看出这组数据的主成分，因为在坐标系下这组数据分布的很散乱。究其原因，是因为无法拨开遮住肉眼的迷雾~如果把这些数据在相应的空间中表示出来，也许你就能换一个观察角度找出主成分。如下图1所示：</p>
-<p><img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/DB0C770D8DD55E5A433B6306D7085BF3.jpg?raw=true" alt=""></p>
-<p>但是，对于更高维的数据，能想象其分布吗？就算能描述分布，如何精确地找到这些主成分的轴？如何衡量你提取的主成分到底占了整个数据的多少信息？所以，我们就要用到主成分分析的处理方法。</p>
-<h2 id="数据降维">&#25968;&#25454;&#38477;&#32500;<a class="anchor-link" href="#数据降维">&#182;</a></h2><p>为了说明什么是数据的主成分，先从数据降维说起。数据降维是怎么回事儿？假设三维空间中有一系列点，这些点分布在一个过原点的斜面上，如果你用自然坐标系x,y,z这三个轴来表示这组数据的话，需要使用三个维度，而事实上，这些点的分布仅仅是在一个二维的平面上，那么，问题出在哪里？如果你再仔细想想，能不能把x,y,z坐标系旋转一下，使数据所在平面与x,y平面重合？这就对了！如果把旋转后的坐标系记为x',y',z'，那么这组数据的表示只用x'和y'两个维度表示即可！当然了，如果想恢复原来的表示方式，那就得把这两个坐标之间的变换矩阵存下来。这样就能把数据维度降下来了！但是，我们要看到这个过程的本质，如果把这些数据按行或者按列排成一个矩阵，那么这个矩阵的秩就是2！这些数据之间是有相关性的，这些数据构成的过原点的向量的最大线性无关组包含2个向量，这就是为什么一开始就假设平面过原点的原因！那么如果平面不过原点呢？这就是数据中心化的缘故！将坐标原点平移到数据中心，这样原本不相关的数据在这个新坐标系中就有相关性了！有趣的是，三点一定共面，也就是说三维空间中任意三点中心化后都是线性相关的，一般来讲n维空间中的n个点一定能在一个n-1维子空间中分析！</p>
-<p>上一段文字中，认为把数据降维后并没有丢弃任何东西，因为这些数据在平面以外的第三个维度的分量都为0。现在，假设这些数据在z'轴有一个很小的抖动，那么我们仍然用上述的二维表示这些数据，理由是我们可以认为这两个轴的信息是数据的主成分，而这些信息对于我们的分析已经足够了，z'轴上的抖动很有可能是噪声，也就是说本来这组数据是有相关性的，噪声的引入，导致了数据不完全相关，但是，这些数据在z'轴上的分布与原点构成的夹角非常小，也就是说在z'轴上有很大的相关性，综合这些考虑，就可以认为数据在x',y' 轴上的投影构成了数据的主成分！</p>
-<p>课堂上老师谈到的特征选择的问题，其实就是要剔除的特征主要是和类标签无关的特征。而这里的特征很多是和类标签有关的，但里面存在噪声或者冗余。在这种情况下，需要一种特征降维的方法来减少特征数，减少噪音和冗余，减少过度拟合的可能性。</p>
-<p>PCA的思想是将n维特征映射到k维上（k\&lt;n），这k维是全新的正交特征。这k维特征称为主成分，是重新构造出来的k维特征，而不是简单地从n维特征中去除其余n-k维特征。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="PCA实例">PCA&#23454;&#20363;<a class="anchor-link" href="#PCA实例">&#182;</a></h1><p>现在假设有一组数据如下：</p>
-<p><img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/75D505A58D5B23BD4ED7207C087B5F04.jpg?raw=true" alt=""></p>
-<p>行代表了样例，列代表特征，这里有10个样例，每个样例两个特征。可以这样认为，有10篇文档，x是10篇文档中“learn”出现的TF-IDF，y是10篇文档中“study”出现的TF-IDF。
-<strong>第一步</strong>，分别求x和y的平均值，然后对于所有的样例，都减去对应的均值。这里x的均值是1.81，y的均值是1.91，那么一个样例减去均值后即为（0.69,0.49），得到</p>
-<p><img src="https://raw.githubusercontent.com/1007530194/data/master/image/blog/20190101/8D90FF4FA2A8A73A23B6D3C61E0892AA.jpg?raw=true" alt=""></p>
-<p><strong>第二步</strong>，求特征协方差矩阵，如果数据是3维，那么协方差矩阵是</p>
-<p>$$C =\begin{pmatrix}    cov(x,x) &amp; cov(x,y) &amp; cov(x,z) \\ cov(y,x) &amp; cov(y,y) &amp; cov(y,z) \\  cov(z,x) &amp; cov(z,y) &amp; cov(z,z)\end{pmatrix}$$</p>
-<p>这里只有$x$和$y$，求解得</p>
-<p>$$cov =\begin{pmatrix}  0.6166 &amp; 0.6154 \\ 0.6154 &amp; 0.7166 \end{pmatrix}$$</p></div>
-        <footer>
-            <a rel="full-article" href="./pages/2019/01/shu-xue-ji-chu-zhu-cheng-fen-fen-xi.html">Read On &crarr;</a>
-        </footer>
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2019/01/tf-example-0101-helloworld.html">tf-example-01.01-helloworld</a>
-        </h1>
-    <p class="meta">
-<time datetime="2019-01-16T00:00:00+08:00" pubdate>2019-01-16 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-        <footer>
-            <a rel="full-article" href="./pages/2019/01/tf-example-0101-helloworld.html">Read On &crarr;</a>
-        </footer>
 
                 </article>
 <div class="pagination">
@@ -744,6 +704,7 @@ $$ v_2∼P(v_2|h_1) $$
                     <li><a href="./category/tool2.html">tool2</a></li>
                     <li><a href="./category/tools.html">tools</a></li>
                     <li><a href="./category/tui jian xi tong.html">推荐系统</a></li>
+                    <li><a href="./category/wen ben wa jue.html">文本挖掘</a></li>
             </ul>
         </section>
 
@@ -754,7 +715,9 @@ $$ v_2∼P(v_2|h_1) $$
             <a href="./tag/numpy.html">numpy</a>, 
             <a href="./tag/deep-learning.html">deep-learning</a>, 
             <a href="./tag/algorithms.html">algorithms</a>, 
+            <a href="./tag/wen-ben-wa-jue.html">文本挖掘</a>, 
             <a href="./tag/shu-xue-ji-chu.html">数学基础</a>, 
+            <a href="./tag/nlp.html">nlp</a>, 
             <a href="./tag/tf-example.html">tf-example</a>, 
             <a href="./tag/tui-jian-xi-tong.html">推荐系统</a>, 
             <a href="./tag/tf.html">tf</a>, 
