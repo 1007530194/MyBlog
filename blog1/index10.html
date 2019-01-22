@@ -65,6 +65,9 @@
                 <a href="./category/shen du xue xi.html">深度学习</a>
             </li>
             <li >
+                <a href="./category/shen jing wang luo.html">神经网络</a>
+            </li>
+            <li >
                 <a href="./category/shu xue ji chu.html">数学基础</a>
             </li>
             <li >
@@ -90,6 +93,71 @@
 <div id="main">
     <div id="content">
     <div class="blog-index">
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2018/01/pydata-073-zi-fu-chuan-chu-li.html">pydata-07.3 字符串处理</a>
+        </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="7.3-String-Manipulation（字符串处理）">7.3 String Manipulation&#65288;&#23383;&#31526;&#20018;&#22788;&#29702;&#65289;<a class="anchor-link" href="#7.3-String-Manipulation（字符串处理）">&#182;</a></h1><p>python很多内建方法很适合处理string。而且对于更复杂的模式，可以配合使用正则表达式。而pandas则混合了两种方式。</p>
+<h1 id="1-String-Object-Methods（字符串对象方法）">1 String Object Methods&#65288;&#23383;&#31526;&#20018;&#23545;&#35937;&#26041;&#27861;&#65289;<a class="anchor-link" href="#1-String-Object-Methods（字符串对象方法）">&#182;</a></h1><p>大部分string处理，使用内建的一些方法就足够了。比如，可以用split来分割用逗号区分的字符串：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2018/01/pydata-073-zi-fu-chuan-chu-li.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2018/01/pydata-111-ri-qi-he-shi-jian-shu-ju-lei-xing-ji-qi-gong-ju.html">pydata-11.1 日期和时间数据类型及其工具</a>
+        </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="时间序列">&#26102;&#38388;&#24207;&#21015;<a class="anchor-link" href="#时间序列">&#182;</a></h1><p>时间序列指能在任何能在时间上观测到的数据。很多时间序列是有固定频率（fixed frequency）的，意思是数据点会遵照某种规律定期出现，比如每15秒，每5分钟，或每个月。时间序列也可能是不规律的（irregular），没有一个固定的时间规律。如何参照时间序列数据取决于我们要做什么样的应用，我们可能会遇到下面这些：</p>
+<ul>
+<li>Timestamps（时间戳），具体的某一个时刻</li>
+<li>Fixed periods（固定的时期），比如2007年的一月，或者2010年整整一年</li>
+<li>Intervals of time（时间间隔），通常有一个开始和结束的时间戳。Periods（时期）可能被看做是Intervals（间隔）的一种特殊形式。</li>
+<li>Experiment or elapsed time（实验或经过的时间）；每一个时间戳都是看做是一个特定的开始时间（例如，在放入烤箱后，曲奇饼的直径在每一秒的变化程度）</li>
+</ul>
+<p>这一章主要涉及前三个类型。</p>
+<blockquote><p>pandas也支持基于timedeltas的index，本书不会对timedelta index做介绍，感兴趣的可以查看pandas的文档。</p>
+</blockquote>
+<h1 id="日期和时间数据类型及其工具">&#26085;&#26399;&#21644;&#26102;&#38388;&#25968;&#25454;&#31867;&#22411;&#21450;&#20854;&#24037;&#20855;<a class="anchor-link" href="#日期和时间数据类型及其工具">&#182;</a></h1><p>python有标准包用来表示时间和日期数据。datetime, time, calendar，这些模块经常被使用。datetime.datetime类型，或简单写为datetime，被广泛使用：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2018/01/pydata-111-ri-qi-he-shi-jian-shu-ju-lei-xing-ji-qi-gong-ju.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
                 <article>
 <header>
         <h1 class="entry-title">
@@ -635,93 +703,6 @@ Pandas的主要数据结构：</p>
 
 
                 </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2018/01/stock_example.html">stock_Example</a>
-        </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-        <footer>
-            <a rel="full-article" href="./pages/2018/01/stock_example.html">Read On &crarr;</a>
-        </footer>
-
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-01-gai-lun.html">统计学习方法01-概论</a>
-        </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="第1章-统计学习方法概论">&#31532;1&#31456; &#32479;&#35745;&#23398;&#20064;&#26041;&#27861;&#27010;&#35770;<a class="anchor-link" href="#第1章-统计学习方法概论">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>高斯于1823年在误差e1 ,… , en独立同分布的假定下,证明了最小二乘方法的一个最优性质: 在所有无偏的线性估计类中,最小二乘方法是其中方差最小的！</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="使用最小二乘法拟和曲线">&#20351;&#29992;&#26368;&#23567;&#20108;&#20056;&#27861;&#25311;&#21644;&#26354;&#32447;<a class="anchor-link" href="#使用最小二乘法拟和曲线">&#182;</a></h3><p>对于数据$(x_i, y_i)(i=1, 2, 3...,m)$</p>
-<p>拟合出函数$h(x)$</p>
-<p>有误差，即残差：$r_i=h(x_i)-y_i$</p>
-<p>此时L2范数(残差平方和)最小时，h(x) 和 y 相似度最高，更拟合</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>一般的H(x)为n次的多项式，$H(x)=w_0+w_1x+w_2x^2+...w_nx^n$</p>
-<p>$w(w_0,w_1,w_2,...,w_n)$为参数</p>
-<p>最小二乘法就是要找到一组 $w(w_0,w_1,w_2,...,w_n)$ 使得$\sum_{i=1}^n(h(x_i)-y_i)^2$ (残差平方和) 最小</p>
-<p>即，求 $min\sum_{i=1}^n(h(x_i)-y_i)^2$</p>
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>举例：我们用目标函数$y=sin2{\pi}x$, 加上一个正太分布的噪音干扰，用多项式去拟合【例1.1 11页】</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-        <footer>
-            <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-01-gai-lun.html">Read On &crarr;</a>
-        </footer>
-
-
-                </article>
 <div class="pagination">
     <a class="prev" href="./index11.html">&larr; Older</a>
 
@@ -762,6 +743,7 @@ Pandas的主要数据结构：</p>
                     <li><a href="./category/ji qi xue xi shi zhan.html">机器学习实战</a></li>
                     <li><a href="./category/ling ji chu ru men shen du xue xi.html">零基础入门深度学习</a></li>
                     <li><a href="./category/shen du xue xi.html">深度学习</a></li>
+                    <li><a href="./category/shen jing wang luo.html">神经网络</a></li>
                     <li><a href="./category/shu xue ji chu.html">数学基础</a></li>
                     <li><a href="./category/tf-example.html">tf-example</a></li>
                     <li><a href="./category/tool1.html">tool1</a></li>
@@ -780,13 +762,13 @@ Pandas的主要数据结构：</p>
             <a href="./tag/deep-learning.html">deep-learning</a>, 
             <a href="./tag/algorithms.html">algorithms</a>, 
             <a href="./tag/wen-ben-wa-jue.html">文本挖掘</a>, 
+            <a href="./tag/shen-jing-wang-luo.html">神经网络</a>, 
             <a href="./tag/shu-xue-ji-chu.html">数学基础</a>, 
             <a href="./tag/nlp.html">nlp</a>, 
             <a href="./tag/tf-example.html">tf-example</a>, 
             <a href="./tag/tui-jian-xi-tong.html">推荐系统</a>, 
             <a href="./tag/tf.html">tf</a>, 
             <a href="./tag/ji-huo-han-shu.html">激活函数</a>, 
-            <a href="./tag/sun-shi-han-shu.html">损失函数</a>, 
             <a href="./tag/mapreduce.html">mapreduce</a>, 
             <a href="./tag/spark.html">spark</a>, 
             <a href="./tag/handbook.html">handbook</a>, 

@@ -65,6 +65,9 @@
                 <a href="./category/shen du xue xi.html">深度学习</a>
             </li>
             <li >
+                <a href="./category/shen jing wang luo.html">神经网络</a>
+            </li>
+            <li >
                 <a href="./category/shu xue ji chu.html">数学基础</a>
             </li>
             <li >
@@ -90,6 +93,93 @@
 <div id="main">
     <div id="content">
     <div class="blog-index">
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2018/01/stock_example.html">stock_Example</a>
+        </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2018/01/stock_example.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2018/01/tong-ji-xue-xi-fang-fa-01-gai-lun.html">统计学习方法01-概论</a>
+        </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="第1章-统计学习方法概论">&#31532;1&#31456; &#32479;&#35745;&#23398;&#20064;&#26041;&#27861;&#27010;&#35770;<a class="anchor-link" href="#第1章-统计学习方法概论">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>高斯于1823年在误差e1 ,… , en独立同分布的假定下,证明了最小二乘方法的一个最优性质: 在所有无偏的线性估计类中,最小二乘方法是其中方差最小的！</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="使用最小二乘法拟和曲线">&#20351;&#29992;&#26368;&#23567;&#20108;&#20056;&#27861;&#25311;&#21644;&#26354;&#32447;<a class="anchor-link" href="#使用最小二乘法拟和曲线">&#182;</a></h3><p>对于数据$(x_i, y_i)(i=1, 2, 3...,m)$</p>
+<p>拟合出函数$h(x)$</p>
+<p>有误差，即残差：$r_i=h(x_i)-y_i$</p>
+<p>此时L2范数(残差平方和)最小时，h(x) 和 y 相似度最高，更拟合</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>一般的H(x)为n次的多项式，$H(x)=w_0+w_1x+w_2x^2+...w_nx^n$</p>
+<p>$w(w_0,w_1,w_2,...,w_n)$为参数</p>
+<p>最小二乘法就是要找到一组 $w(w_0,w_1,w_2,...,w_n)$ 使得$\sum_{i=1}^n(h(x_i)-y_i)^2$ (残差平方和) 最小</p>
+<p>即，求 $min\sum_{i=1}^n(h(x_i)-y_i)^2$</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>举例：我们用目标函数$y=sin2{\pi}x$, 加上一个正太分布的噪音干扰，用多项式去拟合【例1.1 11页】</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2018/01/tong-ji-xue-xi-fang-fa-01-gai-lun.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
                 <article>
 <header>
         <h1 class="entry-title">
@@ -595,66 +685,6 @@ K-Means 是发现给定数据集的 K 个簇的聚类算法, 之所以称之为 
 
 
                 </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2017/01/13li-yong-pcalai-jian-hua-shu-ju.html">13.利用PCA来简化数据</a>
-        </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-    <div class="entry-content"><h1>第13章 利用 PCA 来简化数据</h1>
-<h2>降维技术</h2>
-<blockquote>
-<p>场景</p>
-</blockquote>
-<ul>
-<li>我们正通过电视观看体育比赛，在电视的显示器上有一个球。</li>
-<li>显示器大概包含了100万像素点，而球则可能是由较少的像素点组成，例如说一千个像素点。</li>
-<li>人们实时的将显示器上的百万像素转换成为一个三维图像，该图像就给出运动场上球的位置。</li>
-<li>在这个过程中，人们已经将百万像素点的数据，降至为三维。这个过程就称为<code>降维(dimensionality reduction)</code></li>
-</ul>
-<blockquote>
-<p>数据显示 并非大规模特征下的唯一难题，对数据进行简化还有如下一系列的原因：</p>
-</blockquote>
-<ul>
-<li>1) 使得数据集更容易使用</li>
-<li>2) 降低很多算法的计算开销</li>
-<li>3) 去除噪音</li>
-<li>4 …</li></ul></div>
-        <footer>
-            <a rel="full-article" href="./pages/2017/01/13li-yong-pcalai-jian-hua-shu-ju.html">Read On &crarr;</a>
-        </footer>
-
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2017/01/14li-yong-svdjian-hua-shu-ju.html">14.利用SVD简化数据</a>
-        </h1>
-    <p class="meta">
-<time datetime="2017-01-01T00:00:00+08:00" pubdate>2017-01-01 00:00</time>    </p>
-</header>
-
-    <div class="entry-content"><h1>第14章 利用SVD简化数据</h1>
-<p><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default" type="text/javascript"></script></p>
-<h2>SVD 概述</h2>
-<div class="highlight"><pre><span></span>奇异值分解（SVD, Singular Value Decomposition）:
-    提取信息的一种方法，可以把 SVD 看成是从噪声数据中抽取相关特征。从生物信息学到金融学，SVD 是提取信息的强大工具。
-</pre></div>
-<h2>SVD 场景</h2>
-<blockquote>
-<p>信息检索-隐性语义检索（Lstent Semantic Indexing, LSI）或 隐形语义分析（Latent Semantic Analysis, LSA）</p>
-</blockquote>
-<p>隐性语义索引 …</p></div>
-        <footer>
-            <a rel="full-article" href="./pages/2017/01/14li-yong-svdjian-hua-shu-ju.html">Read On &crarr;</a>
-        </footer>
-
-
-                </article>
 <div class="pagination">
     <a class="prev" href="./index12.html">&larr; Older</a>
 
@@ -695,6 +725,7 @@ K-Means 是发现给定数据集的 K 个簇的聚类算法, 之所以称之为 
                     <li><a href="./category/ji qi xue xi shi zhan.html">机器学习实战</a></li>
                     <li><a href="./category/ling ji chu ru men shen du xue xi.html">零基础入门深度学习</a></li>
                     <li><a href="./category/shen du xue xi.html">深度学习</a></li>
+                    <li><a href="./category/shen jing wang luo.html">神经网络</a></li>
                     <li><a href="./category/shu xue ji chu.html">数学基础</a></li>
                     <li><a href="./category/tf-example.html">tf-example</a></li>
                     <li><a href="./category/tool1.html">tool1</a></li>
@@ -713,13 +744,13 @@ K-Means 是发现给定数据集的 K 个簇的聚类算法, 之所以称之为 
             <a href="./tag/deep-learning.html">deep-learning</a>, 
             <a href="./tag/algorithms.html">algorithms</a>, 
             <a href="./tag/wen-ben-wa-jue.html">文本挖掘</a>, 
+            <a href="./tag/shen-jing-wang-luo.html">神经网络</a>, 
             <a href="./tag/shu-xue-ji-chu.html">数学基础</a>, 
             <a href="./tag/nlp.html">nlp</a>, 
             <a href="./tag/tf-example.html">tf-example</a>, 
             <a href="./tag/tui-jian-xi-tong.html">推荐系统</a>, 
             <a href="./tag/tf.html">tf</a>, 
             <a href="./tag/ji-huo-han-shu.html">激活函数</a>, 
-            <a href="./tag/sun-shi-han-shu.html">损失函数</a>, 
             <a href="./tag/mapreduce.html">mapreduce</a>, 
             <a href="./tag/spark.html">spark</a>, 
             <a href="./tag/handbook.html">handbook</a>, 

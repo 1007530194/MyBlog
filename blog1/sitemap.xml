@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/</loc>
-<lastmod>2019-01-21T21:20:21-00:00</lastmod>
+<lastmod>2019-01-22T22:26:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/archives.html</loc>
-<lastmod>2019-01-21T21:20:21-00:00</lastmod>
+<lastmod>2019-01-22T22:26:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/tags.html</loc>
-<lastmod>2019-01-21T21:20:21-00:00</lastmod>
+<lastmod>2019-01-22T22:26:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/categories.html</loc>
-<lastmod>2019-01-21T21:20:21-00:00</lastmod>
+<lastmod>2019-01-22T22:26:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -291,20 +291,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://localhost:8000/pages/2019/01/algorithms-rnnwang-luo.html</loc>
-<lastmod>2019-01-16T00:00:00+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>http://localhost:8000/pages/2019/01/algorithms-rnnwang-luo-2.html</loc>
-<lastmod>2019-01-16T00:00:00+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
 <loc>http://localhost:8000/pages/2019/01/algorithms-shi-fen-zhong-shang-shou-xgboost.html</loc>
 <lastmod>2019-01-16T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -354,7 +340,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://localhost:8000/pages/2019/01/cnn-juan-ji-shen-jing-wang-luo-li-lun.html</loc>
+<lastmod>2019-01-16T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2019/01/dnn-shen-du-shen-jing-wang-luo.html</loc>
+<lastmod>2019-01-16T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
 <loc>http://localhost:8000/pages/2019/01/ju-zhen-qiu-dao.html</loc>
+<lastmod>2019-01-16T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2019/01/lstm-chang-duan-qi-ji-yi-wang-luo-li-lun.html</loc>
 <lastmod>2019-01-16T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -368,7 +375,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://localhost:8000/pages/2019/01/rbmwang-luo.html</loc>
+<loc>http://localhost:8000/pages/2019/01/rbm-shou-xian-bo-er-zi-man-ji-li-lun.html</loc>
+<lastmod>2019-01-16T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2019/01/rbm-shou-xian-bo-er-zi-man-ji-shi-jian.html</loc>
+<lastmod>2019-01-16T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2019/01/rnn-di-gui-shen-jing-wang-luo.html</loc>
 <lastmod>2019-01-16T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -635,13 +656,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/pages/2019/01/chang-jian-ji-huo-han-shu-hui-zong.html</loc>
-<lastmod>2019-01-15T00:00:00+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>http://localhost:8000/pages/2019/01/chang-jian-sun-shi-han-shu-hui-zong.html</loc>
 <lastmod>2019-01-15T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -1341,6 +1355,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://localhost:8000/category/shen jing wang luo.html</loc>
+<lastmod>2019-01-16T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://localhost:8000/category/shu xue ji chu.html</loc>
 <lastmod>2019-01-16T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -1425,6 +1446,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://localhost:8000/tag/shen-jing-wang-luo.html</loc>
+<lastmod>2019-01-16T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://localhost:8000/tag/shu-xue-ji-chu.html</loc>
 <lastmod>2019-01-16T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -1461,13 +1489,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/tag/ji-huo-han-shu.html</loc>
-<lastmod>2019-01-15T00:00:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://localhost:8000/tag/sun-shi-han-shu.html</loc>
 <lastmod>2019-01-15T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
