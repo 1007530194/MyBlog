@@ -1090,14 +1090,17 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-<span class="kn">from</span> <span class="nn">pyecharts</span> <span class="k">import</span> <span class="n">Pie</span><span class="p">,</span> <span class="n">Page</span><span class="p">,</span> <span class="n">Style</span>
+<span class="kn">from</span> <span class="nn">pyecharts</span> <span class="k">import</span> <span class="n">Pie</span><span class="p">,</span> <span class="n">Page</span><span class="p">,</span> <span class="n">Style</span><span class="p">,</span><span class="n">online</span>
+
+
 
 <span class="k">def</span> <span class="nf">create_charts</span><span class="p">():</span>
+    <span class="n">online</span><span class="p">()</span>
     <span class="n">page</span> <span class="o">=</span> <span class="n">Page</span><span class="p">()</span>
 
     <span class="n">style</span> <span class="o">=</span> <span class="n">Style</span><span class="p">(</span>
@@ -1183,27 +1186,27 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[2]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <script>
     require.config({
         paths: {
-            'echarts': '/nbextensions/echarts/echarts.min'
+            'echarts': 'https://pyecharts.github.io/jupyter-echarts/echarts/echarts.min'
         }
     });
 </script>
-<div id="a6ef3c270b1642efa890b65fb5e26c8d" style="width:800px;height:400px;"></div>
-<div id="60af032cbe564ef09a78a7c82330e4e2" style="width:800px;height:400px;"></div>
-<div id="6841dbbf855f4e509f386f8389a87e20" style="width:800px;height:400px;"></div>
-<div id="6105156eac6d4c6094f9dc9188f6a08a" style="width:800px;height:400px;"></div>
-<div id="2b0062e6f25747709ce985c5f4ced786" style="width:800px;height:400px;"></div>
-<div id="cc4dede7c5e34a7b8134ac5fb0113969" style="width:800px;height:400px;"></div>
+<div id="7c87efdf26a6423d93523f6539ce4064" style="width:800px;height:400px;"></div>
+<div id="2bbd4eb5306c474ebbc5eae829cb7077" style="width:800px;height:400px;"></div>
+<div id="f5a282c9461d4f819087df1c59a8c12d" style="width:800px;height:400px;"></div>
+<div id="75a2c36082254348bf8189b2f9b790fa" style="width:800px;height:400px;"></div>
+<div id="21654414e8ba46bf88ca9ae03750a101" style="width:800px;height:400px;"></div>
+<div id="58aed8c37a064ff1bf32b4b14abe6948" style="width:800px;height:400px;"></div>
 <script>
     require(['echarts'], function(echarts) {
         
-var myChart_a6ef3c270b1642efa890b65fb5e26c8d = echarts.init(document.getElementById('a6ef3c270b1642efa890b65fb5e26c8d'), 'light', {renderer: 'canvas'});
+var myChart_7c87efdf26a6423d93523f6539ce4064 = echarts.init(document.getElementById('7c87efdf26a6423d93523f6539ce4064'), 'light', {renderer: 'canvas'});
 
-var option_a6ef3c270b1642efa890b65fb5e26c8d = {
+var option_7c87efdf26a6423d93523f6539ce4064 = {
     "title": [
         {
             "text": "\u997c\u56fe\u793a\u4f8b",
@@ -1237,7 +1240,7 @@ var option_a6ef3c270b1642efa890b65fb5e26c8d = {
             }
         }
     },
-    "series_id": 4403169,
+    "series_id": 6465747,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -1305,7 +1308,7 @@ var option_a6ef3c270b1642efa890b65fb5e26c8d = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 4403169
+            "seriesId": 6465747
         }
     ],
     "legend": [
@@ -1357,12 +1360,12 @@ var option_a6ef3c270b1642efa890b65fb5e26c8d = {
         "#f6f5ec"
     ]
 };
-myChart_a6ef3c270b1642efa890b65fb5e26c8d.setOption(option_a6ef3c270b1642efa890b65fb5e26c8d);
+myChart_7c87efdf26a6423d93523f6539ce4064.setOption(option_7c87efdf26a6423d93523f6539ce4064);
 
 
-var myChart_60af032cbe564ef09a78a7c82330e4e2 = echarts.init(document.getElementById('60af032cbe564ef09a78a7c82330e4e2'), 'light', {renderer: 'canvas'});
+var myChart_2bbd4eb5306c474ebbc5eae829cb7077 = echarts.init(document.getElementById('2bbd4eb5306c474ebbc5eae829cb7077'), 'light', {renderer: 'canvas'});
 
-var option_60af032cbe564ef09a78a7c82330e4e2 = {
+var option_2bbd4eb5306c474ebbc5eae829cb7077 = {
     "title": [
         {
             "text": "\u997c\u56fe-\u5706\u73af\u56fe\u793a\u4f8b",
@@ -1396,7 +1399,7 @@ var option_60af032cbe564ef09a78a7c82330e4e2 = {
             }
         }
     },
-    "series_id": 1437757,
+    "series_id": 7006546,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -1464,7 +1467,7 @@ var option_60af032cbe564ef09a78a7c82330e4e2 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 1437757
+            "seriesId": 7006546
         }
     ],
     "legend": [
@@ -1516,12 +1519,12 @@ var option_60af032cbe564ef09a78a7c82330e4e2 = {
         "#f6f5ec"
     ]
 };
-myChart_60af032cbe564ef09a78a7c82330e4e2.setOption(option_60af032cbe564ef09a78a7c82330e4e2);
+myChart_2bbd4eb5306c474ebbc5eae829cb7077.setOption(option_2bbd4eb5306c474ebbc5eae829cb7077);
 
 
-var myChart_6841dbbf855f4e509f386f8389a87e20 = echarts.init(document.getElementById('6841dbbf855f4e509f386f8389a87e20'), 'light', {renderer: 'canvas'});
+var myChart_f5a282c9461d4f819087df1c59a8c12d = echarts.init(document.getElementById('f5a282c9461d4f819087df1c59a8c12d'), 'light', {renderer: 'canvas'});
 
-var option_6841dbbf855f4e509f386f8389a87e20 = {
+var option_f5a282c9461d4f819087df1c59a8c12d = {
     "title": [
         {
             "text": "\u997c\u56fe-\u73ab\u7470\u56fe\u793a\u4f8b",
@@ -1555,7 +1558,7 @@ var option_6841dbbf855f4e509f386f8389a87e20 = {
             }
         }
     },
-    "series_id": 5440169,
+    "series_id": 6213405,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -1625,7 +1628,7 @@ var option_6841dbbf855f4e509f386f8389a87e20 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 5440169
+            "seriesId": 6213405
         },
         {
             "type": "pie",
@@ -1682,7 +1685,7 @@ var option_6841dbbf855f4e509f386f8389a87e20 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 5440169
+            "seriesId": 6213405
         }
     ],
     "legend": [
@@ -1709,37 +1712,37 @@ var option_6841dbbf855f4e509f386f8389a87e20 = {
     "color": [
         "#6e7074",
         "#c4ccd3",
-        "#f47920",
-        "#c23531",
-        "#ef5b9c",
-        "#905a3d",
-        "#2a5caa",
-        "#546570",
-        "#b2d235",
-        "#6d8346",
-        "#f05b72",
-        "#2f4554",
-        "#bda29a",
-        "#f6f5ec",
-        "#61a0a8",
         "#749f83",
+        "#f05b72",
+        "#61a0a8",
         "#6950a1",
-        "#d48265",
-        "#726930",
+        "#ca8622",
         "#fab27b",
         "#1d953f",
-        "#ca8622",
-        "#444693",
         "#918597",
-        "#ac6767"
+        "#bda29a",
+        "#726930",
+        "#f47920",
+        "#b2d235",
+        "#c23531",
+        "#2a5caa",
+        "#ac6767",
+        "#ef5b9c",
+        "#6d8346",
+        "#d48265",
+        "#2f4554",
+        "#905a3d",
+        "#546570",
+        "#f6f5ec",
+        "#444693"
     ]
 };
-myChart_6841dbbf855f4e509f386f8389a87e20.setOption(option_6841dbbf855f4e509f386f8389a87e20);
+myChart_f5a282c9461d4f819087df1c59a8c12d.setOption(option_f5a282c9461d4f819087df1c59a8c12d);
 
 
-var myChart_6105156eac6d4c6094f9dc9188f6a08a = echarts.init(document.getElementById('6105156eac6d4c6094f9dc9188f6a08a'), 'light', {renderer: 'canvas'});
+var myChart_75a2c36082254348bf8189b2f9b790fa = echarts.init(document.getElementById('75a2c36082254348bf8189b2f9b790fa'), 'light', {renderer: 'canvas'});
 
-var option_6105156eac6d4c6094f9dc9188f6a08a = {
+var option_75a2c36082254348bf8189b2f9b790fa = {
     "title": [
         {
             "text": "\u997c\u56fe\u793a\u4f8b",
@@ -1773,7 +1776,7 @@ var option_6105156eac6d4c6094f9dc9188f6a08a = {
             }
         }
     },
-    "series_id": 8222257,
+    "series_id": 5309781,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -1841,7 +1844,7 @@ var option_6105156eac6d4c6094f9dc9188f6a08a = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 8222257
+            "seriesId": 5309781
         },
         {
             "type": "pie",
@@ -1884,7 +1887,7 @@ var option_6105156eac6d4c6094f9dc9188f6a08a = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 8222257
+            "seriesId": 5309781
         }
     ],
     "legend": [
@@ -1939,12 +1942,12 @@ var option_6105156eac6d4c6094f9dc9188f6a08a = {
         "#f6f5ec"
     ]
 };
-myChart_6105156eac6d4c6094f9dc9188f6a08a.setOption(option_6105156eac6d4c6094f9dc9188f6a08a);
+myChart_75a2c36082254348bf8189b2f9b790fa.setOption(option_75a2c36082254348bf8189b2f9b790fa);
 
 
-var myChart_2b0062e6f25747709ce985c5f4ced786 = echarts.init(document.getElementById('2b0062e6f25747709ce985c5f4ced786'), 'light', {renderer: 'canvas'});
+var myChart_21654414e8ba46bf88ca9ae03750a101 = echarts.init(document.getElementById('21654414e8ba46bf88ca9ae03750a101'), 'light', {renderer: 'canvas'});
 
-var option_2b0062e6f25747709ce985c5f4ced786 = {
+var option_21654414e8ba46bf88ca9ae03750a101 = {
     "title": [
         {
             "text": "\u997c\u56fe\u793a\u4f8b",
@@ -1978,7 +1981,7 @@ var option_2b0062e6f25747709ce985c5f4ced786 = {
             }
         }
     },
-    "series_id": 5904512,
+    "series_id": 4917047,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -1998,27 +2001,27 @@ var option_2b0062e6f25747709ce985c5f4ced786 = {
             "data": [
                 {
                     "name": "A",
-                    "value": 81
+                    "value": 13
                 },
                 {
                     "name": "B",
-                    "value": 14
+                    "value": 22
                 },
                 {
                     "name": "C",
-                    "value": 24
+                    "value": 65
                 },
                 {
                     "name": "D",
-                    "value": 49
+                    "value": 17
                 },
                 {
                     "name": "E",
-                    "value": 37
+                    "value": 88
                 },
                 {
                     "name": "F",
-                    "value": 34
+                    "value": 85
                 }
             ],
             "radius": [
@@ -2046,34 +2049,34 @@ var option_2b0062e6f25747709ce985c5f4ced786 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 5904512
+            "seriesId": 4917047
         },
         {
             "type": "pie",
             "data": [
                 {
                     "name": "A",
-                    "value": 83
+                    "value": 71
                 },
                 {
                     "name": "B",
-                    "value": 62
+                    "value": 56
                 },
                 {
                     "name": "C",
-                    "value": 23
+                    "value": 34
                 },
                 {
                     "name": "D",
-                    "value": 73
+                    "value": 98
                 },
                 {
                     "name": "E",
-                    "value": 94
+                    "value": 50
                 },
                 {
                     "name": "F",
-                    "value": 72
+                    "value": 96
                 }
             ],
             "radius": [
@@ -2102,34 +2105,34 @@ var option_2b0062e6f25747709ce985c5f4ced786 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 5904512
+            "seriesId": 4917047
         },
         {
             "type": "pie",
             "data": [
                 {
                     "name": "A",
-                    "value": 41
+                    "value": 87
                 },
                 {
                     "name": "B",
-                    "value": 72
+                    "value": 71
                 },
                 {
                     "name": "C",
-                    "value": 78
+                    "value": 92
                 },
                 {
                     "name": "D",
-                    "value": 25
+                    "value": 64
                 },
                 {
                     "name": "E",
-                    "value": 22
+                    "value": 78
                 },
                 {
                     "name": "F",
-                    "value": 86
+                    "value": 70
                 }
             ],
             "radius": [
@@ -2157,34 +2160,34 @@ var option_2b0062e6f25747709ce985c5f4ced786 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 5904512
+            "seriesId": 4917047
         },
         {
             "type": "pie",
             "data": [
                 {
                     "name": "A",
-                    "value": 80
+                    "value": 52
                 },
                 {
                     "name": "B",
-                    "value": 78
+                    "value": 23
                 },
                 {
                     "name": "C",
-                    "value": 48
+                    "value": 47
                 },
                 {
                     "name": "D",
-                    "value": 41
+                    "value": 71
                 },
                 {
                     "name": "E",
-                    "value": 89
+                    "value": 88
                 },
                 {
                     "name": "F",
-                    "value": 49
+                    "value": 62
                 }
             ],
             "radius": [
@@ -2213,7 +2216,7 @@ var option_2b0062e6f25747709ce985c5f4ced786 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 5904512
+            "seriesId": 4917047
         }
     ],
     "legend": [
@@ -2238,39 +2241,39 @@ var option_2b0062e6f25747709ce985c5f4ced786 = {
     ],
     "animation": true,
     "color": [
-        "#6e7074",
-        "#c23531",
-        "#1d953f",
-        "#ef5b9c",
-        "#b2d235",
-        "#905a3d",
-        "#6950a1",
-        "#749f83",
-        "#f05b72",
-        "#fab27b",
-        "#2f4554",
         "#444693",
-        "#61a0a8",
-        "#d48265",
-        "#6d8346",
         "#c4ccd3",
         "#726930",
-        "#f47920",
-        "#918597",
-        "#ac6767",
+        "#b2d235",
+        "#d48265",
+        "#905a3d",
         "#f6f5ec",
-        "#2a5caa",
-        "#546570",
+        "#918597",
         "#ca8622",
-        "#bda29a"
+        "#bda29a",
+        "#546570",
+        "#1d953f",
+        "#6e7074",
+        "#2a5caa",
+        "#749f83",
+        "#6d8346",
+        "#f47920",
+        "#ac6767",
+        "#fab27b",
+        "#6950a1",
+        "#2f4554",
+        "#ef5b9c",
+        "#c23531",
+        "#f05b72",
+        "#61a0a8"
     ]
 };
-myChart_2b0062e6f25747709ce985c5f4ced786.setOption(option_2b0062e6f25747709ce985c5f4ced786);
+myChart_21654414e8ba46bf88ca9ae03750a101.setOption(option_21654414e8ba46bf88ca9ae03750a101);
 
 
-var myChart_cc4dede7c5e34a7b8134ac5fb0113969 = echarts.init(document.getElementById('cc4dede7c5e34a7b8134ac5fb0113969'), 'light', {renderer: 'canvas'});
+var myChart_58aed8c37a064ff1bf32b4b14abe6948 = echarts.init(document.getElementById('58aed8c37a064ff1bf32b4b14abe6948'), 'light', {renderer: 'canvas'});
 
-var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
+var option_58aed8c37a064ff1bf32b4b14abe6948 = {
     "title": [
         {
             "text": "\u5404\u7c7b\u7535\u5f71\u4e2d\"\u597d\u7247\"\u6240\u5360\u7684\u6bd4\u4f8b",
@@ -2305,7 +2308,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
             }
         }
     },
-    "series_id": 6616554,
+    "series_id": 2114064,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -2356,7 +2359,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6616554
+            "seriesId": 2114064
         },
         {
             "type": "pie",
@@ -2394,7 +2397,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6616554
+            "seriesId": 2114064
         },
         {
             "type": "pie",
@@ -2432,7 +2435,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6616554
+            "seriesId": 2114064
         },
         {
             "type": "pie",
@@ -2470,7 +2473,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6616554
+            "seriesId": 2114064
         },
         {
             "type": "pie",
@@ -2508,7 +2511,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6616554
+            "seriesId": 2114064
         },
         {
             "type": "pie",
@@ -2546,7 +2549,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6616554
+            "seriesId": 2114064
         },
         {
             "type": "pie",
@@ -2584,7 +2587,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6616554
+            "seriesId": 2114064
         },
         {
             "type": "pie",
@@ -2622,7 +2625,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6616554
+            "seriesId": 2114064
         },
         {
             "type": "pie",
@@ -2660,7 +2663,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6616554
+            "seriesId": 2114064
         },
         {
             "type": "pie",
@@ -2698,7 +2701,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6616554
+            "seriesId": 2114064
         }
     ],
     "legend": [
@@ -2755,7 +2758,7 @@ var option_cc4dede7c5e34a7b8134ac5fb0113969 = {
         "#f6f5ec"
     ]
 };
-myChart_cc4dede7c5e34a7b8134ac5fb0113969.setOption(option_cc4dede7c5e34a7b8134ac5fb0113969);
+myChart_58aed8c37a064ff1bf32b4b14abe6948.setOption(option_58aed8c37a064ff1bf32b4b14abe6948);
 
     });
 </script>
@@ -2937,6 +2940,7 @@ myChart_cc4dede7c5e34a7b8134ac5fb0113969.setOption(option_cc4dede7c5e34a7b8134ac
 <script src="../../../theme/js/modernizr-2.0.js"></script>
 <script src="../../../theme/js/ender.js"></script>
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
+
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
