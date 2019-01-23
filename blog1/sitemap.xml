@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/</loc>
-<lastmod>2019-01-22T22:26:10-00:00</lastmod>
+<lastmod>2019-01-23T19:30:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/archives.html</loc>
-<lastmod>2019-01-22T22:26:10-00:00</lastmod>
+<lastmod>2019-01-23T19:30:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/tags.html</loc>
-<lastmod>2019-01-22T22:26:10-00:00</lastmod>
+<lastmod>2019-01-23T19:30:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://localhost:8000/categories.html</loc>
-<lastmod>2019-01-22T22:26:10-00:00</lastmod>
+<lastmod>2019-01-23T19:30:17-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -397,6 +397,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/pages/2019/01/shu-xue-ji-chu-zhu-cheng-fen-fen-xi.html</loc>
+<lastmod>2019-01-16T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2019/01/suo-wei-qing-shang-gao-jiu-shi-hui-shuo-hua.html</loc>
 <lastmod>2019-01-16T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -845,6 +852,41 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://localhost:8000/pages/2019/01/pythonhua-tu-zhi-folium.html</loc>
+<lastmod>2019-01-10T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2019/01/pythonhua-tu-zhi-pycharts-3dtu.html</loc>
+<lastmod>2019-01-10T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2019/01/pythonhua-tu-zhi-pycharts-di-tu.html</loc>
+<lastmod>2019-01-10T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2019/01/pythonhua-tu-zhi-pycharts-qi-ta.html</loc>
+<lastmod>2019-01-10T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2019/01/pythonhua-tu-zhi-pycharts-qi-ta-zuo-biao-xi.html</loc>
+<lastmod>2019-01-10T00:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/pages/2019/01/pythonhua-tu-zhi-pycharts-zhi-jiao-zuo-biao-xi.html</loc>
 <lastmod>2019-01-10T00:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -1341,6 +1383,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://localhost:8000/category/ke wai du wu.html</loc>
+<lastmod>2019-01-16T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://localhost:8000/category/ling ji chu ru men shen du xue xi.html</loc>
 <lastmod>2018-01-01T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -1357,6 +1406,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost:8000/category/shen jing wang luo.html</loc>
 <lastmod>2019-01-16T00:00:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://localhost:8000/category/shu ju wa jue.html</loc>
+<lastmod>2019-01-10T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

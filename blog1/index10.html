@@ -59,6 +59,9 @@
                 <a href="./category/ji qi xue xi shi zhan.html">机器学习实战</a>
             </li>
             <li >
+                <a href="./category/ke wai du wu.html">课外读物</a>
+            </li>
+            <li >
                 <a href="./category/ling ji chu ru men shen du xue xi.html">零基础入门深度学习</a>
             </li>
             <li >
@@ -66,6 +69,9 @@
             </li>
             <li >
                 <a href="./category/shen jing wang luo.html">神经网络</a>
+            </li>
+            <li >
+                <a href="./category/shu ju wa jue.html">数据挖掘</a>
             </li>
             <li >
                 <a href="./category/shu xue ji chu.html">数学基础</a>
@@ -93,6 +99,170 @@
 <div id="main">
     <div id="content">
     <div class="blog-index">
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2018/01/pydata-043-shu-zu-dao-xiang-bian-cheng.html">pydata-04.3 数组导向编程</a>
+        </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>向量化的数组运算比纯python同等程度的运算要快很多。</p>
+<p>一个简单的例子，假设我们想要评价函数<code>sqrt(x^2 + y^2)</code>。<code>np.meshgrid</code>函数取两个1维的数组，产生一个2维的矩阵，对应于所有两个数组中(x, y)的组合：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2018/01/pydata-043-shu-zu-dao-xiang-bian-cheng.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2018/01/pydata-051-pandasde-shu-ju-jie-gou.html">pydata-05.1 pandas的数据结构</a>
+        </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="开讲pandas">&#24320;&#35762;pandas<a class="anchor-link" href="#开讲pandas">&#182;</a></h1><p>这一节终于要开始讲pandas了。闲话不说，直接开始正题。之后的笔记里，这样导入pandas：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2018/01/pydata-051-pandasde-shu-ju-jie-gou.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2018/01/pydata-052-pandaszhu-yao-gong-neng.html">pydata-05.2 pandas主要功能</a>
+        </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="pandas主要功能">pandas&#20027;&#35201;&#21151;&#33021;<a class="anchor-link" href="#pandas主要功能">&#182;</a></h1><p>接下来介绍pandas中的一些主要功能，这里只介绍一些经常用到的。</p>
+<h2 id="重新索引">&#37325;&#26032;&#32034;&#24341;<a class="anchor-link" href="#重新索引">&#182;</a></h2><p>pandas中一个重要的方法是reindex，已实施在创建object的时候遵照一个新的index。如下例：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2018/01/pydata-052-pandaszhu-yao-gong-neng.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2018/01/pydata-053-zong-jie-he-miao-shu-xing-tong-ji.html">pydata-05.3 总结和描述性统计</a>
+        </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="汇总和描述性统计">&#27719;&#24635;&#21644;&#25551;&#36848;&#24615;&#32479;&#35745;<a class="anchor-link" href="#汇总和描述性统计">&#182;</a></h1><p>pandas有很多数学和统计方法。大部分可以归类为降维或汇总统计，这些方法是用来从series中提取单个值（比如sum或mean）。还有一些方法来处理缺失值：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2018/01/pydata-053-zong-jie-he-miao-shu-xing-tong-ji.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2018/01/pydata-071-chu-li-que-shi-shu-ju.html">pydata-07.1 处理缺失数据</a>
+        </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="CHAPTER-7-Data-Cleaning-and-Preparation">CHAPTER 7 Data Cleaning and Preparation<a class="anchor-link" href="#CHAPTER-7-Data-Cleaning-and-Preparation">&#182;</a></h1><p>其实数据分析中80%的时间都是在数据清理部分，loading, clearning, transforming, rearranging。而pandas非常适合用来执行这些任务。</p>
+<h1 id="7.1-Handling-Missing-Data">7.1 Handling Missing Data<a class="anchor-link" href="#7.1-Handling-Missing-Data">&#182;</a></h1><p>在pandas中，missing data呈现的方式有些缺点的，但对大部分用户能起到足够的效果。对于数值型数据，pandas用浮点值Nan(Not a Number)来表示缺失值。我们称之为识别符（sentinel value)，这种值能被轻易检测到：</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2018/01/pydata-071-chu-li-que-shi-shu-ju.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
+                <article>
+<header>
+        <h1 class="entry-title">
+            <a href="./pages/2018/01/pydata-072-shu-ju-bian-huan.html">pydata-07.2 数据变换</a>
+        </h1>
+    <p class="meta">
+<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
+</header>
+
+    <div class="entry-content">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="7.2-Data-Transformation（数据变换）">7.2 Data Transformation&#65288;&#25968;&#25454;&#21464;&#25442;&#65289;<a class="anchor-link" href="#7.2-Data-Transformation（数据变换）">&#182;</a></h1><h1 id="1-删除重复值">1 &#21024;&#38500;&#37325;&#22797;&#20540;<a class="anchor-link" href="#1-删除重复值">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+        <footer>
+            <a rel="full-article" href="./pages/2018/01/pydata-072-shu-ju-bian-huan.html">Read On &crarr;</a>
+        </footer>
+
+
+                </article>
                 <article>
 <header>
         <h1 class="entry-title">
@@ -352,357 +522,6 @@
 
 
                 </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2018/01/shen-du-xue-xi-zhong-wen-ban.html">深度学习中文版</a>
-        </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-    <div class="entry-content"><h1>深度学习中文版</h1>
-<h1><a href="https://github.com/1007530194/datas/blob/master/images/blog/books/deeplearn-zh/dlbook_cn_v0.5-beta.pdf">全文</a></h1>
-<h1><a href="https://github.com/1007530194/datas/blob/master/images/blog/books/deeplearn-zh/dlbook_cn_目录.pdf">目录</a></h1>
-<p>数学符号                </p>
-<h1><a href="https://github.com/1007530194/datas/blob/master/images/blog/books/deeplearn-zh/dlbook_cn_chapter1.pdf">第一章 引言</a></h1>
-<p>1.1 本书面向的读者     10  <br/>
-1.2 深度学习的历史趋势       11  <br/>
-1.2.1   神经网络的众多名称和命运变迁      12  <br/>
-1.2.2   与日俱增的数据量        17  <br/>
-1.2.3   与日俱增的模型规模       19  <br/>
-1 …</p></div>
-        <footer>
-            <a rel="full-article" href="./pages/2018/01/shen-du-xue-xi-zhong-wen-ban.html">Read On &crarr;</a>
-        </footer>
-
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2018/01/shi-fen-zhong-shang-hou-pandshan-shu.html">十分钟上后Pands函数</a>
-        </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pandas库">Pandas&#24211;<a class="anchor-link" href="#Pandas库">&#182;</a></h1><p><a href="https://blog.csdn.net/Junming_Lu/article/details/79336878">https://blog.csdn.net/Junming_Lu/article/details/79336878</a></p>
-<p>Pandas是Python第三方库，提供高性能易用数据类型和分析工具</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-</pre></div>
-<p>Pandas基于NumPy实现，常于NumPy和Matplotlib一同使用<br>
-两个数据类型：Series, DataFrame，基于上述数据类型的各类操作，基本操作、运算操作、特征类操作、关联类操作</p>
-<table>
-<thead><tr>
-<th style="text-align:center">:NumPy:</th>
-<th style="text-align:center">Pandas:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">基础数据类型</td>
-<td style="text-align:center">扩展数据类型</td>
-</tr>
-<tr>
-<td style="text-align:center">关注数据的结构表达</td>
-<td style="text-align:center">关注数据的应用表达</td>
-</tr>
-<tr>
-<td style="text-align:center">维度：数据间的关系</td>
-<td style="text-align:center">数据与索引间关系</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-        <footer>
-            <a rel="full-article" href="./pages/2018/01/shi-fen-zhong-shang-hou-pandshan-shu.html">Read On &crarr;</a>
-        </footer>
-
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2018/01/shi-fen-zhong-shang-shou-latex_jupyter.html">十分钟上手latex_jupyter</a>
-        </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><p><a href="http://zh.wikipedia.org/wiki/Help:MATH">http://zh.wikipedia.org/wiki/Help:MATH</a>
-函数、符号及特殊字符</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="常用">&#24120;&#29992;<a class="anchor-link" href="#常用">&#182;</a></h1><h2 id="声调">&#22768;&#35843;<a class="anchor-link" href="#声调">&#182;</a></h2><table>
-<thead><tr>
-<th style="text-align:center">语法</th>
-<th style="text-align:center">效果</th>
-<th style="text-align:center">语法</th>
-<th style="text-align:center">效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">\bar{x}</td>
-<td style="text-align:center">$\bar{x}$</td>
-<td style="text-align:center">\acute{\eta}</td>
-<td style="text-align:center">$\acute{\eta}$</td>
-</tr>
-<tr>
-<td style="text-align:center">\check{\alpha}</td>
-<td style="text-align:center">$\check{\alpha}$</td>
-<td style="text-align:center">\breve{a}</td>
-<td style="text-align:center">$ \breve{a}$</td>
-</tr>
-<tr>
-<td style="text-align:center">\grave{\eta}</td>
-<td style="text-align:center">$\grave{\eta}$</td>
-<td style="text-align:center">\ddot{y}</td>
-<td style="text-align:center">$\ddot{y}$</td>
-</tr>
-<tr>
-<td style="text-align:center">\dot{x}</td>
-<td style="text-align:center">$\dot{x} $</td>
-<td style="text-align:center">\hat{\alpha}</td>
-<td style="text-align:center">$\hat{\alpha}$</td>
-</tr>
-<tr>
-<td style="text-align:center">\tilde{\iota}</td>
-<td style="text-align:center">$\tilde{\iota}$</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="函数">&#20989;&#25968;<a class="anchor-link" href="#函数">&#182;</a></h2><table>
-<thead><tr>
-<th style="text-align:center">语法</th>
-<th style="text-align:center">效果</th>
-<th style="text-align:center">语法</th>
-<th style="text-align:center">效果</th>
-<th style="text-align:center">语法</th>
-<th style="text-align:center">效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">\sin\theta</td>
-<td style="text-align:center">$\sin\theta$</td>
-<td style="text-align:center">\cos\theta</td>
-<td style="text-align:center">$\cos\theta$</td>
-<td style="text-align:center">\tan\theta</td>
-<td style="text-align:center">$\tan\theta$</td>
-</tr>
-<tr>
-<td style="text-align:center">\arcsin\frac{L}{r}</td>
-<td style="text-align:center">$\arcsin\frac{L}{r}$</td>
-<td style="text-align:center">\arccos\frac{T}{r}</td>
-<td style="text-align:center">$\arccos\frac{T}{r}$</td>
-<td style="text-align:center">\arctan\frac{L}{T}</td>
-<td style="text-align:center">$\arctan\frac{L}{T}$</td>
-</tr>
-<tr>
-<td style="text-align:center">\sinh g</td>
-<td style="text-align:center">$\sinh g$</td>
-<td style="text-align:center">\cosh h</td>
-<td style="text-align:center">$\cosh h$</td>
-<td style="text-align:center">\tanh i</td>
-<td style="text-align:center">$\tanh i$</td>
-</tr>
-<tr>
-<td style="text-align:center">\operatorname{sh}j</td>
-<td style="text-align:center">$\operatorname{sh}j$</td>
-<td style="text-align:center">\operatorname{argsh}k</td>
-<td style="text-align:center">$\operatorname{argsh}k$</td>
-</tr>
-<tr>
-<td style="text-align:center">\operatorname{ch}h</td>
-<td style="text-align:center">$\operatorname{ch}h$</td>
-<td style="text-align:center">\operatorname{argch}l</td>
-<td style="text-align:center">$\operatorname{argch}l$</td>
-</tr>
-<tr>
-<td style="text-align:center">\operatorname{th}i</td>
-<td style="text-align:center">$\operatorname{th}i$</td>
-<td style="text-align:center">\operatorname{argth}m</td>
-<td style="text-align:center">$\operatorname{argth}m$</td>
-</tr>
-<tr>
-<td style="text-align:center">\limsup S</td>
-<td style="text-align:center">$\limsup S$</td>
-<td style="text-align:center">\liminf I</td>
-<td style="text-align:center">$\liminf I$</td>
-<td style="text-align:center">\lim_{t\to n}T</td>
-<td style="text-align:center">$\lim_{t\to n}T$</td>
-</tr>
-<tr>
-<td style="text-align:center">\max H</td>
-<td style="text-align:center">$\max H$</td>
-<td style="text-align:center">\min L</td>
-<td style="text-align:center">$\min L$</td>
-</tr>
-<tr>
-<td style="text-align:center">\inf s</td>
-<td style="text-align:center">$\inf s$</td>
-<td style="text-align:center">\sup t</td>
-<td style="text-align:center">$\sup t$</td>
-</tr>
-<tr>
-<td style="text-align:center">\exp!t</td>
-<td style="text-align:center">$\exp\!t$</td>
-<td style="text-align:center">\ln!X</td>
-<td style="text-align:center">$\ln\!X$</td>
-</tr>
-<tr>
-<td style="text-align:center">\lg X</td>
-<td style="text-align:center">$\lg X$</td>
-<td style="text-align:center">\log X</td>
-<td style="text-align:center">$\log X$</td>
-<td style="text-align:center">\log_\alpha X</td>
-<td style="text-align:center">$\log_\alpha X$</td>
-</tr>
-<tr>
-<td style="text-align:center">\ker x</td></div>
-        <footer>
-            <a rel="full-article" href="./pages/2018/01/shi-fen-zhong-shang-shou-latex_jupyter.html">Read On &crarr;</a>
-        </footer>
-
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2018/01/shi-fen-zhong-shang-shou-matplotlib_jupyter.html">十分钟上手matplotlib_jupyter</a>
-        </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Matplotlib介绍">Matplotlib&#20171;&#32461;<a class="anchor-link" href="#Matplotlib介绍">&#182;</a></h1><p>Matplotlib是一个Python的2D绘图库，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图形。通过Matplotlib，开发者可以仅需要几行代码，便可以生成绘图，折线图、散点图、柱状图、饼图、直方图、子图等。Matplotlib使用NumPy进行数组运算，并调用一系列其他的Python库来实现硬件交互。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-        <footer>
-            <a rel="full-article" href="./pages/2018/01/shi-fen-zhong-shang-shou-matplotlib_jupyter.html">Read On &crarr;</a>
-        </footer>
-
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2018/01/shi-fen-zhong-shang-shou-pandas_jupyter.html">十分钟上手Pandas_jupyter</a>
-        </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-    <div class="entry-content">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Pandas</p>
-<h1 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h1><h2 id="简介">&#31616;&#20171;<a class="anchor-link" href="#简介">&#182;</a></h2><p><a href="http:#pandas.pydata.org/pandas-docs/stable/10min.html#">来自官网十分钟教学</a> 
-Pandas的主要数据结构：</p>
-<table>
-<thead><tr>
-<th style="text-align:center">Dimensions</th>
-<th style="text-align:center">Name</th>
-<th style="text-align:center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">Series</td>
-<td style="text-align:center">1D labeled homogeneously-typed array</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">DataFrame</td>
-<td style="text-align:center">General 2D labeled, size-mutable tabular structure with potentially heterogeneously-typed columns</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">PanelGeneral</td>
-<td style="text-align:center">3D labeled, also size-mutable array</td>
-</tr>
-</tbody>
-</table>
-<p><a href="http:matplotlib.org/gallery.html">matplotlib图库具有大量代码案例，可直接使用</a> 
-<a href="http:pandas.pydata.org/pandas-docs/stable/tutorials.html">pandas 官网教程</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input"></div>
-        <footer>
-            <a rel="full-article" href="./pages/2018/01/shi-fen-zhong-shang-shou-pandas_jupyter.html">Read On &crarr;</a>
-        </footer>
-
-
-                </article>
-                <article>
-<header>
-        <h1 class="entry-title">
-            <a href="./pages/2018/01/shu-ju-index.html">数据index</a>
-        </h1>
-    <p class="meta">
-<time datetime="2018-01-01T00:00:00+08:00" pubdate>2018-01-01 00:00</time>    </p>
-</header>
-
-    <div class="entry-content"><p><a href="http:#pandas.pydata.org/pandas-docs/stable/10min.html#">来自官网十分钟教学</a> 
-Pandas的主要数据结构：</p>
-<p>DimensionsNameDescription1Series1D labeled homogeneously-typed array2DataFrameGeneral 2D labeled, size-mutable tabular structure with potentially heterogeneously-typed columns3PanelGeneral 3D labeled, also size-mutable array</p>
-<h1>一、引入</h1>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>   <span class="c1">#数据分析，代码基于numpy</span>
-<span class="kn">import</span> <span class="nn">numpy …</span></pre></div></div>
-        <footer>
-            <a rel="full-article" href="./pages/2018/01/shu-ju-index.html">Read On &crarr;</a>
-        </footer>
-
-
-                </article>
 <div class="pagination">
     <a class="prev" href="./index11.html">&larr; Older</a>
 
@@ -741,9 +560,11 @@ Pandas的主要数据结构：</p>
                     <li><a href="./category/book-pydata.html">book-pydata</a></li>
                     <li><a href="./category/deep-learning-with-python.html">deep-learning-with-python</a></li>
                     <li><a href="./category/ji qi xue xi shi zhan.html">机器学习实战</a></li>
+                    <li><a href="./category/ke wai du wu.html">课外读物</a></li>
                     <li><a href="./category/ling ji chu ru men shen du xue xi.html">零基础入门深度学习</a></li>
                     <li><a href="./category/shen du xue xi.html">深度学习</a></li>
                     <li><a href="./category/shen jing wang luo.html">神经网络</a></li>
+                    <li><a href="./category/shu ju wa jue.html">数据挖掘</a></li>
                     <li><a href="./category/shu xue ji chu.html">数学基础</a></li>
                     <li><a href="./category/tf-example.html">tf-example</a></li>
                     <li><a href="./category/tool1.html">tool1</a></li>
