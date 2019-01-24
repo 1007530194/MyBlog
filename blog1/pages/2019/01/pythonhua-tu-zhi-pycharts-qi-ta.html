@@ -6,6 +6,7 @@
     <head>
 <meta charset="utf-8">
 <title>python画图之pycharts-其他 &mdash; 魑魅魍魉</title>
+
 <meta name="author" content="niult">
 
 
@@ -31,6 +32,14 @@
 </head>
 
 <body>
+
+<script src="../../../theme/js/modernizr-2.0.js"></script>
+<script src="../../../theme/js/ender.js"></script>
+<script src="../../../theme/js/octopress.js" type="text/javascript"></script>
+<script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
+<script src="../../../theme/js/require.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
+
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
 </hgroup></header>
@@ -1090,7 +1099,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -1100,7 +1109,6 @@ h6:hover .anchor-link {
 
 
 <span class="k">def</span> <span class="nf">create_charts</span><span class="p">():</span>
-    <span class="n">online</span><span class="p">()</span>
     <span class="n">page</span> <span class="o">=</span> <span class="n">Page</span><span class="p">()</span>
 
     <span class="n">style</span> <span class="o">=</span> <span class="n">Style</span><span class="p">(</span>
@@ -1178,6 +1186,7 @@ h6:hover .anchor-link {
 
     <span class="k">return</span> <span class="n">page</span>
 
+<span class="n">online</span><span class="p">()</span>
 <span class="n">create_charts</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1186,7 +1195,7 @@ h6:hover .anchor-link {
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="prompt output_prompt">Out[2]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <script>
     require.config({
@@ -1195,18 +1204,18 @@ h6:hover .anchor-link {
         }
     });
 </script>
-<div id="7c87efdf26a6423d93523f6539ce4064" style="width:800px;height:400px;"></div>
-<div id="2bbd4eb5306c474ebbc5eae829cb7077" style="width:800px;height:400px;"></div>
-<div id="f5a282c9461d4f819087df1c59a8c12d" style="width:800px;height:400px;"></div>
-<div id="75a2c36082254348bf8189b2f9b790fa" style="width:800px;height:400px;"></div>
-<div id="21654414e8ba46bf88ca9ae03750a101" style="width:800px;height:400px;"></div>
-<div id="58aed8c37a064ff1bf32b4b14abe6948" style="width:800px;height:400px;"></div>
+<div id="da13390e09cd427e8ec5af1e86d2660b" style="width:800px;height:400px;"></div>
+<div id="681f34ccf7a847d7b42d0d32a7890a58" style="width:800px;height:400px;"></div>
+<div id="193cc93085174b29b9b17c9b5c3fc221" style="width:800px;height:400px;"></div>
+<div id="9db5ed2f1c85460a850a2002f7d63cb9" style="width:800px;height:400px;"></div>
+<div id="539a1352d6274459b20d10c4f52b7a70" style="width:800px;height:400px;"></div>
+<div id="8bbd3b6df50040039deeb9920549a46b" style="width:800px;height:400px;"></div>
 <script>
     require(['echarts'], function(echarts) {
         
-var myChart_7c87efdf26a6423d93523f6539ce4064 = echarts.init(document.getElementById('7c87efdf26a6423d93523f6539ce4064'), 'light', {renderer: 'canvas'});
+var myChart_da13390e09cd427e8ec5af1e86d2660b = echarts.init(document.getElementById('da13390e09cd427e8ec5af1e86d2660b'), 'light', {renderer: 'canvas'});
 
-var option_7c87efdf26a6423d93523f6539ce4064 = {
+var option_da13390e09cd427e8ec5af1e86d2660b = {
     "title": [
         {
             "text": "\u997c\u56fe\u793a\u4f8b",
@@ -1240,7 +1249,7 @@ var option_7c87efdf26a6423d93523f6539ce4064 = {
             }
         }
     },
-    "series_id": 6465747,
+    "series_id": 1568389,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -1308,7 +1317,7 @@ var option_7c87efdf26a6423d93523f6539ce4064 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6465747
+            "seriesId": 1568389
         }
     ],
     "legend": [
@@ -1360,12 +1369,12 @@ var option_7c87efdf26a6423d93523f6539ce4064 = {
         "#f6f5ec"
     ]
 };
-myChart_7c87efdf26a6423d93523f6539ce4064.setOption(option_7c87efdf26a6423d93523f6539ce4064);
+myChart_da13390e09cd427e8ec5af1e86d2660b.setOption(option_da13390e09cd427e8ec5af1e86d2660b);
 
 
-var myChart_2bbd4eb5306c474ebbc5eae829cb7077 = echarts.init(document.getElementById('2bbd4eb5306c474ebbc5eae829cb7077'), 'light', {renderer: 'canvas'});
+var myChart_681f34ccf7a847d7b42d0d32a7890a58 = echarts.init(document.getElementById('681f34ccf7a847d7b42d0d32a7890a58'), 'light', {renderer: 'canvas'});
 
-var option_2bbd4eb5306c474ebbc5eae829cb7077 = {
+var option_681f34ccf7a847d7b42d0d32a7890a58 = {
     "title": [
         {
             "text": "\u997c\u56fe-\u5706\u73af\u56fe\u793a\u4f8b",
@@ -1399,7 +1408,7 @@ var option_2bbd4eb5306c474ebbc5eae829cb7077 = {
             }
         }
     },
-    "series_id": 7006546,
+    "series_id": 4206600,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -1467,7 +1476,7 @@ var option_2bbd4eb5306c474ebbc5eae829cb7077 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 7006546
+            "seriesId": 4206600
         }
     ],
     "legend": [
@@ -1519,12 +1528,12 @@ var option_2bbd4eb5306c474ebbc5eae829cb7077 = {
         "#f6f5ec"
     ]
 };
-myChart_2bbd4eb5306c474ebbc5eae829cb7077.setOption(option_2bbd4eb5306c474ebbc5eae829cb7077);
+myChart_681f34ccf7a847d7b42d0d32a7890a58.setOption(option_681f34ccf7a847d7b42d0d32a7890a58);
 
 
-var myChart_f5a282c9461d4f819087df1c59a8c12d = echarts.init(document.getElementById('f5a282c9461d4f819087df1c59a8c12d'), 'light', {renderer: 'canvas'});
+var myChart_193cc93085174b29b9b17c9b5c3fc221 = echarts.init(document.getElementById('193cc93085174b29b9b17c9b5c3fc221'), 'light', {renderer: 'canvas'});
 
-var option_f5a282c9461d4f819087df1c59a8c12d = {
+var option_193cc93085174b29b9b17c9b5c3fc221 = {
     "title": [
         {
             "text": "\u997c\u56fe-\u73ab\u7470\u56fe\u793a\u4f8b",
@@ -1558,7 +1567,7 @@ var option_f5a282c9461d4f819087df1c59a8c12d = {
             }
         }
     },
-    "series_id": 6213405,
+    "series_id": 4087416,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -1628,7 +1637,7 @@ var option_f5a282c9461d4f819087df1c59a8c12d = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6213405
+            "seriesId": 4087416
         },
         {
             "type": "pie",
@@ -1685,7 +1694,7 @@ var option_f5a282c9461d4f819087df1c59a8c12d = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 6213405
+            "seriesId": 4087416
         }
     ],
     "legend": [
@@ -1710,39 +1719,39 @@ var option_f5a282c9461d4f819087df1c59a8c12d = {
     ],
     "animation": true,
     "color": [
+        "#bda29a",
+        "#c23531",
+        "#fab27b",
+        "#444693",
+        "#f47920",
+        "#ca8622",
+        "#546570",
+        "#1d953f",
+        "#ef5b9c",
+        "#b2d235",
+        "#726930",
         "#6e7074",
+        "#905a3d",
+        "#2f4554",
+        "#d48265",
         "#c4ccd3",
+        "#2a5caa",
+        "#6d8346",
         "#749f83",
+        "#f6f5ec",
         "#f05b72",
+        "#918597",
         "#61a0a8",
         "#6950a1",
-        "#ca8622",
-        "#fab27b",
-        "#1d953f",
-        "#918597",
-        "#bda29a",
-        "#726930",
-        "#f47920",
-        "#b2d235",
-        "#c23531",
-        "#2a5caa",
-        "#ac6767",
-        "#ef5b9c",
-        "#6d8346",
-        "#d48265",
-        "#2f4554",
-        "#905a3d",
-        "#546570",
-        "#f6f5ec",
-        "#444693"
+        "#ac6767"
     ]
 };
-myChart_f5a282c9461d4f819087df1c59a8c12d.setOption(option_f5a282c9461d4f819087df1c59a8c12d);
+myChart_193cc93085174b29b9b17c9b5c3fc221.setOption(option_193cc93085174b29b9b17c9b5c3fc221);
 
 
-var myChart_75a2c36082254348bf8189b2f9b790fa = echarts.init(document.getElementById('75a2c36082254348bf8189b2f9b790fa'), 'light', {renderer: 'canvas'});
+var myChart_9db5ed2f1c85460a850a2002f7d63cb9 = echarts.init(document.getElementById('9db5ed2f1c85460a850a2002f7d63cb9'), 'light', {renderer: 'canvas'});
 
-var option_75a2c36082254348bf8189b2f9b790fa = {
+var option_9db5ed2f1c85460a850a2002f7d63cb9 = {
     "title": [
         {
             "text": "\u997c\u56fe\u793a\u4f8b",
@@ -1776,7 +1785,7 @@ var option_75a2c36082254348bf8189b2f9b790fa = {
             }
         }
     },
-    "series_id": 5309781,
+    "series_id": 6913407,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -1844,7 +1853,7 @@ var option_75a2c36082254348bf8189b2f9b790fa = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 5309781
+            "seriesId": 6913407
         },
         {
             "type": "pie",
@@ -1887,7 +1896,7 @@ var option_75a2c36082254348bf8189b2f9b790fa = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 5309781
+            "seriesId": 6913407
         }
     ],
     "legend": [
@@ -1942,12 +1951,12 @@ var option_75a2c36082254348bf8189b2f9b790fa = {
         "#f6f5ec"
     ]
 };
-myChart_75a2c36082254348bf8189b2f9b790fa.setOption(option_75a2c36082254348bf8189b2f9b790fa);
+myChart_9db5ed2f1c85460a850a2002f7d63cb9.setOption(option_9db5ed2f1c85460a850a2002f7d63cb9);
 
 
-var myChart_21654414e8ba46bf88ca9ae03750a101 = echarts.init(document.getElementById('21654414e8ba46bf88ca9ae03750a101'), 'light', {renderer: 'canvas'});
+var myChart_539a1352d6274459b20d10c4f52b7a70 = echarts.init(document.getElementById('539a1352d6274459b20d10c4f52b7a70'), 'light', {renderer: 'canvas'});
 
-var option_21654414e8ba46bf88ca9ae03750a101 = {
+var option_539a1352d6274459b20d10c4f52b7a70 = {
     "title": [
         {
             "text": "\u997c\u56fe\u793a\u4f8b",
@@ -1981,7 +1990,7 @@ var option_21654414e8ba46bf88ca9ae03750a101 = {
             }
         }
     },
-    "series_id": 4917047,
+    "series_id": 4600979,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -2001,27 +2010,27 @@ var option_21654414e8ba46bf88ca9ae03750a101 = {
             "data": [
                 {
                     "name": "A",
-                    "value": 13
+                    "value": 25
                 },
                 {
                     "name": "B",
-                    "value": 22
+                    "value": 24
                 },
                 {
                     "name": "C",
-                    "value": 65
+                    "value": 97
                 },
                 {
                     "name": "D",
-                    "value": 17
+                    "value": 76
                 },
                 {
                     "name": "E",
-                    "value": 88
+                    "value": 4
                 },
                 {
                     "name": "F",
-                    "value": 85
+                    "value": 20
                 }
             ],
             "radius": [
@@ -2049,34 +2058,34 @@ var option_21654414e8ba46bf88ca9ae03750a101 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 4917047
+            "seriesId": 4600979
         },
         {
             "type": "pie",
             "data": [
                 {
                     "name": "A",
-                    "value": 71
+                    "value": 27
                 },
                 {
                     "name": "B",
-                    "value": 56
+                    "value": 99
                 },
                 {
                     "name": "C",
-                    "value": 34
+                    "value": 94
                 },
                 {
                     "name": "D",
-                    "value": 98
+                    "value": 57
                 },
                 {
                     "name": "E",
-                    "value": 50
+                    "value": 52
                 },
                 {
                     "name": "F",
-                    "value": 96
+                    "value": 48
                 }
             ],
             "radius": [
@@ -2105,18 +2114,18 @@ var option_21654414e8ba46bf88ca9ae03750a101 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 4917047
+            "seriesId": 4600979
         },
         {
             "type": "pie",
             "data": [
                 {
                     "name": "A",
-                    "value": 87
+                    "value": 52
                 },
                 {
                     "name": "B",
-                    "value": 71
+                    "value": 32
                 },
                 {
                     "name": "C",
@@ -2124,15 +2133,15 @@ var option_21654414e8ba46bf88ca9ae03750a101 = {
                 },
                 {
                     "name": "D",
-                    "value": 64
+                    "value": 94
                 },
                 {
                     "name": "E",
-                    "value": 78
+                    "value": 47
                 },
                 {
                     "name": "F",
-                    "value": 70
+                    "value": 26
                 }
             ],
             "radius": [
@@ -2160,34 +2169,34 @@ var option_21654414e8ba46bf88ca9ae03750a101 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 4917047
+            "seriesId": 4600979
         },
         {
             "type": "pie",
             "data": [
                 {
                     "name": "A",
-                    "value": 52
+                    "value": 46
                 },
                 {
                     "name": "B",
-                    "value": 23
+                    "value": 31
                 },
                 {
                     "name": "C",
-                    "value": 47
+                    "value": 65
                 },
                 {
                     "name": "D",
-                    "value": 71
+                    "value": 49
                 },
                 {
                     "name": "E",
-                    "value": 88
+                    "value": 53
                 },
                 {
                     "name": "F",
-                    "value": 62
+                    "value": 73
                 }
             ],
             "radius": [
@@ -2216,7 +2225,7 @@ var option_21654414e8ba46bf88ca9ae03750a101 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 4917047
+            "seriesId": 4600979
         }
     ],
     "legend": [
@@ -2241,39 +2250,39 @@ var option_21654414e8ba46bf88ca9ae03750a101 = {
     ],
     "animation": true,
     "color": [
-        "#444693",
-        "#c4ccd3",
-        "#726930",
-        "#b2d235",
-        "#d48265",
-        "#905a3d",
-        "#f6f5ec",
+        "#2f4554",
         "#918597",
+        "#6d8346",
+        "#b2d235",
+        "#546570",
+        "#f05b72",
+        "#1d953f",
         "#ca8622",
         "#bda29a",
-        "#546570",
-        "#1d953f",
-        "#6e7074",
-        "#2a5caa",
-        "#749f83",
-        "#6d8346",
+        "#726930",
         "#f47920",
         "#ac6767",
-        "#fab27b",
+        "#61a0a8",
         "#6950a1",
-        "#2f4554",
+        "#c4ccd3",
+        "#444693",
+        "#f6f5ec",
+        "#2a5caa",
         "#ef5b9c",
+        "#fab27b",
+        "#905a3d",
         "#c23531",
-        "#f05b72",
-        "#61a0a8"
+        "#d48265",
+        "#749f83",
+        "#6e7074"
     ]
 };
-myChart_21654414e8ba46bf88ca9ae03750a101.setOption(option_21654414e8ba46bf88ca9ae03750a101);
+myChart_539a1352d6274459b20d10c4f52b7a70.setOption(option_539a1352d6274459b20d10c4f52b7a70);
 
 
-var myChart_58aed8c37a064ff1bf32b4b14abe6948 = echarts.init(document.getElementById('58aed8c37a064ff1bf32b4b14abe6948'), 'light', {renderer: 'canvas'});
+var myChart_8bbd3b6df50040039deeb9920549a46b = echarts.init(document.getElementById('8bbd3b6df50040039deeb9920549a46b'), 'light', {renderer: 'canvas'});
 
-var option_58aed8c37a064ff1bf32b4b14abe6948 = {
+var option_8bbd3b6df50040039deeb9920549a46b = {
     "title": [
         {
             "text": "\u5404\u7c7b\u7535\u5f71\u4e2d\"\u597d\u7247\"\u6240\u5360\u7684\u6bd4\u4f8b",
@@ -2308,7 +2317,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
             }
         }
     },
-    "series_id": 2114064,
+    "series_id": 2313390,
     "tooltip": {
         "trigger": "item",
         "triggerOn": "mousemove|click",
@@ -2359,7 +2368,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 2114064
+            "seriesId": 2313390
         },
         {
             "type": "pie",
@@ -2397,7 +2406,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 2114064
+            "seriesId": 2313390
         },
         {
             "type": "pie",
@@ -2435,7 +2444,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 2114064
+            "seriesId": 2313390
         },
         {
             "type": "pie",
@@ -2473,7 +2482,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 2114064
+            "seriesId": 2313390
         },
         {
             "type": "pie",
@@ -2511,7 +2520,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 2114064
+            "seriesId": 2313390
         },
         {
             "type": "pie",
@@ -2549,7 +2558,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 2114064
+            "seriesId": 2313390
         },
         {
             "type": "pie",
@@ -2587,7 +2596,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 2114064
+            "seriesId": 2313390
         },
         {
             "type": "pie",
@@ -2625,7 +2634,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 2114064
+            "seriesId": 2313390
         },
         {
             "type": "pie",
@@ -2663,7 +2672,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 2114064
+            "seriesId": 2313390
         },
         {
             "type": "pie",
@@ -2701,7 +2710,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
                     "formatter": "{b}: {d}%"
                 }
             },
-            "seriesId": 2114064
+            "seriesId": 2313390
         }
     ],
     "legend": [
@@ -2758,7 +2767,7 @@ var option_58aed8c37a064ff1bf32b4b14abe6948 = {
         "#f6f5ec"
     ]
 };
-myChart_58aed8c37a064ff1bf32b4b14abe6948.setOption(option_58aed8c37a064ff1bf32b4b14abe6948);
+myChart_8bbd3b6df50040039deeb9920549a46b.setOption(option_8bbd3b6df50040039deeb9920549a46b);
 
     });
 </script>
@@ -2937,9 +2946,6 @@ myChart_58aed8c37a064ff1bf32b4b14abe6948.setOption(option_58aed8c37a064ff1bf32b4
         活到老，学到老，玩到老
     <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
-<script src="../../../theme/js/modernizr-2.0.js"></script>
-<script src="../../../theme/js/ender.js"></script>
-<script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
