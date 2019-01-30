@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">scikit-learn-svm</h1>
@@ -1113,7 +1115,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span><span class="p">;</span> 
@@ -1148,7 +1150,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets.samples_generator</span> <span class="k">import</span> <span class="n">make_blobs</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets.samples_generator</span> <span class="k">import</span> <span class="n">make_blobs</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                   <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.60</span><span class="p">)</span>
 
@@ -1170,7 +1172,7 @@ h6:hover .anchor-link {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeMAAAFVCAYAAADc5IdQAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvXd8G3d65/9BB9g7RVGFokSBRSySrGarN1uy1UnZluS6
 2b1k95JNsr/NZu+VzS+X7OVyv73b3OWSbdmsd23JtkiqWpKtZku2ZEsukkiKBaQoUZ29omMw8/tj
@@ -1770,7 +1772,7 @@ f8nbdptBj806AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">SVC</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">SVC</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'linear'</span><span class="p">)</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
@@ -1803,7 +1805,7 @@ f8nbdptBj806AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_svc_decision_function</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_svc_decision_function</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">"""Plot the decision function for a 2D SVC"""</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
@@ -1836,7 +1838,7 @@ f8nbdptBj806AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'spring'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'spring'</span><span class="p">)</span>
 <span class="n">plot_svc_decision_function</span><span class="p">(</span><span class="n">clf</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">clf</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
             <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">'none'</span><span class="p">);</span>
@@ -1848,7 +1850,7 @@ f8nbdptBj806AAAAAElFTkSuQmCC
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdwAAAFRCAYAAADejRzzAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xd8VNeZ+P/PjDSjmVFDnQ4SghG9I0TvvRhsbAO2Yzt2
 4jhtk/1usrspu9lNNvltstndZNNjxxUMLmADNsVgTO+IImAAiV6FEEJlRtPu74+xBg33CtSmSHre
@@ -2208,7 +2210,7 @@ AWCA3wA44A7sUZGB/QAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.html.widgets</span> <span class="k">import</span> <span class="n">interact</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.html.widgets</span> <span class="k">import</span> <span class="n">interact</span>
 
 <span class="k">def</span> <span class="nf">plot_svm</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
@@ -2233,7 +2235,7 @@ AWCA3wA44A7sUZGB/QAAAABJRU5ErkJggg==
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAd8AAAFVCAYAAACuK+XmAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xd8W+d1+P8PuDcJAlziFDWgRWpL1N57WcNaHvFIUsdJ
 HDdJv2nSNm2SNkl/SRNnNnFi19sa1rRlbcnae09oU5siAU5wgADu7w+KEKELWiIFgCB53n7pZeHi
@@ -2766,7 +2768,7 @@ RU5ErkJggg==
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets.samples_generator</span> <span class="k">import</span> <span class="n">make_circles</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets.samples_generator</span> <span class="k">import</span> <span class="n">make_circles</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_circles</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">factor</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="n">noise</span><span class="o">=.</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'linear'</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -2781,7 +2783,7 @@ RU5ErkJggg==
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeYAAAFRCAYAAAChXA4CAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xd8FOe18PHfSlr1LtSFUAEt6m1XEr0bsCm2sQ3ucUuc
 xDdxypvk5tY3t6Xf+CZ5k+sWJzZgGxtsisFgG4Np0qpLSFohkCgChHrfot15/1gQErs0aaVdSc83
@@ -3334,7 +3336,7 @@ gfz/81dr4I2CRhUAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
 
 <span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="k">import</span> <span class="n">mplot3d</span>
 
@@ -3355,7 +3357,7 @@ gfz/81dr4I2CRhUAAAAASUVORK5CYII=
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcwAAAFBCAYAAAD69Z+AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvXmcW2d97/85i6SZ0Uia1TPjmfF43+04sZN4yZ5AQpwm
 ARKS/IB7C71QaAvcttw2oaUb8IPb3hRK0zY/CqG9EBpCSEKcQDayx4TES7yvY489qz3j8azSSGf7
@@ -4022,7 +4024,7 @@ T6lq1MQN/YwAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'rbf'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'rbf'</span><span class="p">)</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'spring'</span><span class="p">)</span>
@@ -4037,7 +4039,7 @@ T6lq1MQN/YwAAAAASUVORK5CYII=
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeYAAAFRCAYAAAChXA4CAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xd4VOed6PHvjGbUu1DvEtKAhBBCdESRqAIEGDDNduzE
 TrJObnpu2vZkd+8mu9lNNsmNb2LHiYONMZgmRBdVCEQH0UYSQh313qae+8fAiLEGTJE0I+n98Pgx
@@ -4868,29 +4870,7 @@ RU5ErkJggg==
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

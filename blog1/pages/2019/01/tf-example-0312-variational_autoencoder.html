@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">tf-example-03.12-variational_autoencoder</h1>
@@ -1126,7 +1128,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">absolute_import</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">absolute_import</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1142,7 +1144,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import MNIST data</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import MNIST data</span>
 <span class="kn">from</span> <span class="nn">tensorflow.examples.tutorials.mnist</span> <span class="k">import</span> <span class="n">input_data</span>
 <span class="n">mnist</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">read_data_sets</span><span class="p">(</span><span class="s2">"/tmp/data/"</span><span class="p">,</span> <span class="n">one_hot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -1173,7 +1175,7 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Parameters</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Parameters</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.001</span>
 <span class="n">num_steps</span> <span class="o">=</span> <span class="mi">30000</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
@@ -1196,7 +1198,7 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Variables</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Variables</span>
 <span class="n">weights</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'encoder_h1'</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">glorot_init</span><span class="p">([</span><span class="n">image_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">])),</span>
     <span class="s1">'z_mean'</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">glorot_init</span><span class="p">([</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">latent_dim</span><span class="p">])),</span>
@@ -1221,7 +1223,7 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Building the encoder</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Building the encoder</span>
 <span class="n">input_image</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_dim</span><span class="p">])</span>
 <span class="n">encoder</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">input_image</span><span class="p">,</span> <span class="n">weights</span><span class="p">[</span><span class="s1">'encoder_h1'</span><span class="p">])</span> <span class="o">+</span> <span class="n">biases</span><span class="p">[</span><span class="s1">'encoder_b1'</span><span class="p">]</span>
 <span class="n">encoder</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">encoder</span><span class="p">)</span>
@@ -1248,7 +1250,7 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define VAE Loss</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define VAE Loss</span>
 <span class="k">def</span> <span class="nf">vae_loss</span><span class="p">(</span><span class="n">x_reconstructed</span><span class="p">,</span> <span class="n">x_true</span><span class="p">):</span>
     <span class="c1"># Reconstruction loss</span>
     <span class="n">encode_decode_loss</span> <span class="o">=</span> <span class="n">x_true</span> <span class="o">*</span> <span class="n">tf</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">1e-10</span> <span class="o">+</span> <span class="n">x_reconstructed</span><span class="p">)</span> \
@@ -1275,7 +1277,7 @@ Extracting /tmp/data/t10k-labels-idx1-ubyte.gz
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start Training</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Start Training</span>
 <span class="c1"># Start a new TF session</span>
 <span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
 
@@ -1344,7 +1346,7 @@ Step 30000, Loss: 151.272964
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Testing</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Testing</span>
 <span class="c1"># Generator takes noise as input</span>
 <span class="n">noise_input</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">latent_dim</span><span class="p">])</span>
 <span class="c1"># Rebuild the decoder to create image from noise</span>
@@ -1378,7 +1380,7 @@ Step 30000, Loss: 151.272964
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeoAAAHhCAYAAAChqv35AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvXlw3Od93//a+97FYnexABb3fRAgCJLgTVG8RFmyFVuJ
 LcmWPEk7cafJ1NNp/0jaOk2n/aOJc007aWeayS+u4+gY1ZIsV5JpSyZFijd4ACBAEPd9LnYXu4u9
@@ -5217,29 +5219,7 @@ GGOoDQaDwWBIYoyhNhgMBoMhiTGG2mAwGAyGJOZ/Adg91jJE7x7IAAAAAElFTkSuQmCC
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

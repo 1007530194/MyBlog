@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">pydata-05.3 总结和描述性统计</h1>
@@ -1102,7 +1104,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
@@ -1114,7 +1116,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.5</span><span class="p">],</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.5</span><span class="p">],</span>
                    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.75</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">]],</span>
                   <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">],</span>
                   <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'one'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">])</span>
@@ -1179,7 +1181,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1210,7 +1212,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1243,7 +1245,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1278,7 +1280,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -1331,7 +1333,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1362,7 +1364,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1423,7 +1425,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1512,7 +1514,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">obj</span>
 </pre></div>
 </div>
@@ -1550,7 +1552,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">obj</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">obj</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1585,7 +1587,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pandas</span><span class="o">-</span><span class="n">datareader</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pandas</span><span class="o">-</span><span class="n">datareader</span>
 </pre></div>
 </div>
 </div>
@@ -1596,7 +1598,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="k">as</span> <span class="nn">web</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="k">as</span> <span class="nn">web</span>
 </pre></div>
 </div>
 </div>
@@ -1607,7 +1609,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">ticker</span><span class="p">:</span> <span class="n">web</span><span class="o">.</span><span class="n">get_data_yahoo</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">all_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">ticker</span><span class="p">:</span> <span class="n">web</span><span class="o">.</span><span class="n">get_data_yahoo</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'AAPL'</span><span class="p">,</span> <span class="s1">'IBM'</span><span class="p">,</span> <span class="s1">'MSFT'</span><span class="p">,</span> <span class="s1">'GOOG'</span><span class="p">]}</span>
 
 <span class="n">price</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">ticker</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">'Adj Close'</span><span class="p">]</span>
@@ -1633,7 +1635,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ls</span> <span class="o">../</span><span class="n">examples</span><span class="o">/</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ls</span> <span class="o">../</span><span class="n">examples</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -1657,7 +1659,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">'../examples/yahoo_price.pkl'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">'../examples/yahoo_price.pkl'</span><span class="p">)</span>
 <span class="n">volume</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">'../examples/yahoo_volume.pkl'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1669,7 +1671,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">price</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">price</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1746,7 +1748,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">volume</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">volume</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1833,7 +1835,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">returns</span> <span class="o">=</span> <span class="n">price</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">returns</span> <span class="o">=</span> <span class="n">price</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
 <span class="n">returns</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1919,7 +1921,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="p">[</span><span class="s1">'MSFT'</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">returns</span><span class="p">[</span><span class="s1">'IBM'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="p">[</span><span class="s1">'MSFT'</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">returns</span><span class="p">[</span><span class="s1">'IBM'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1940,7 +1942,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="p">[</span><span class="s1">'MSFT'</span><span class="p">]</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">returns</span><span class="p">[</span><span class="s1">'IBM'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="p">[</span><span class="s1">'MSFT'</span><span class="p">]</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">returns</span><span class="p">[</span><span class="s1">'IBM'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1969,7 +1971,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="o">.</span><span class="n">MSFT</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">returns</span><span class="o">.</span><span class="n">IBM</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="o">.</span><span class="n">MSFT</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">returns</span><span class="o">.</span><span class="n">IBM</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1998,7 +2000,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2061,7 +2063,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2132,7 +2134,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="o">.</span><span class="n">corrwith</span><span class="p">(</span><span class="n">returns</span><span class="o">.</span><span class="n">IBM</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="o">.</span><span class="n">corrwith</span><span class="p">(</span><span class="n">returns</span><span class="o">.</span><span class="n">IBM</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2165,7 +2167,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="o">.</span><span class="n">corrwith</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">returns</span><span class="o">.</span><span class="n">corrwith</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2199,7 +2201,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -2218,7 +2220,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">uniques</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">uniques</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 <span class="n">uniques</span>
 </pre></div>
 </div>
@@ -2248,7 +2250,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">obj</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">obj</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2281,7 +2283,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2314,7 +2316,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">obj</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">obj</span>
 </pre></div>
 </div>
 </div>
@@ -2344,7 +2346,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
 <span class="n">mask</span>
 </pre></div>
 </div>
@@ -2375,7 +2377,7 @@ dtype: bool</pre>
 <div class="prompt input_prompt">In [39]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">obj</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">obj</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2409,7 +2411,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">to_match</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">to_match</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">])</span>
 <span class="n">unique_vals</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -2421,7 +2423,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [41]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">unique_vals</span><span class="p">)</span><span class="o">.</span><span class="n">get_indexer</span><span class="p">(</span><span class="n">to_match</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">unique_vals</span><span class="p">)</span><span class="o">.</span><span class="n">get_indexer</span><span class="p">(</span><span class="n">to_match</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2452,7 +2454,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [42]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Qu1'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Qu1'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
                      <span class="s1">'Qu2'</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
                      <span class="s1">'Qu3'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
 <span class="n">data</span>
@@ -2527,7 +2529,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">)</span>
 <span class="n">result</span>
 </pre></div>
 </div>
@@ -2734,29 +2736,7 @@ dtype: object</pre>
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

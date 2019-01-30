@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">numpy教程01</h1>
@@ -1125,7 +1127,7 @@ Once you do, you can import NumPy and double-check the version:</p>
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 <span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
@@ -1156,7 +1158,7 @@ By convention, you'll find that most people in the SciPy/PyData world will impor
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -1283,7 +1285,7 @@ We can create a list of integers as follows:</p>
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">L</span>
 </pre></div>
 </div>
@@ -1305,7 +1307,7 @@ We can create a list of integers as follows:</p>
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1334,7 +1336,7 @@ We can create a list of integers as follows:</p>
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">L</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">L</span><span class="p">]</span>
 <span class="n">L2</span>
 </pre></div>
 </div>
@@ -1356,7 +1358,7 @@ We can create a list of integers as follows:</p>
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">L2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">L2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1385,7 +1387,7 @@ We can create a list of integers as follows:</p>
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">L3</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">L3</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L3</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1445,7 +1447,7 @@ The built-in <code>array</code> module (available since Python 3.3) can be used 
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">array</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">array</span>
 <span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s1">'i'</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
 <span class="n">A</span>
@@ -1481,7 +1483,7 @@ We will explore these operations in later sections; here we'll demonstrate sever
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -1500,7 +1502,7 @@ We will explore these operations in later sections; here we'll demonstrate sever
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># integer array:</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># integer array:</span>
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1531,7 +1533,7 @@ If types do not match, NumPy will upcast if possible (here, integers are up-cast
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1560,7 +1562,7 @@ If types do not match, NumPy will upcast if possible (here, integers are up-cast
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'float32'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'float32'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1589,7 +1591,7 @@ If types do not match, NumPy will upcast if possible (here, integers are up-cast
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nested lists result in multi-dimensional arrays</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># nested lists result in multi-dimensional arrays</span>
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
 </pre></div>
 </div>
@@ -1630,7 +1632,7 @@ Here are several examples:</p>
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a length-10 integer array filled with zeros</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a length-10 integer array filled with zeros</span>
 <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1652,7 +1654,7 @@ Here are several examples:</p>
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x5 floating-point array filled with ones</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x5 floating-point array filled with ones</span>
 <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1676,7 +1678,7 @@ Here are several examples:</p>
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x5 array filled with 3.14</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x5 array filled with 3.14</span>
 <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mf">3.14</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1700,7 +1702,7 @@ Here are several examples:</p>
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create an array filled with a linear sequence</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create an array filled with a linear sequence</span>
 <span class="c1"># Starting at 0, ending at 20, stepping by 2</span>
 <span class="c1"># (this is similar to the built-in range() function)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -1724,7 +1726,7 @@ Here are several examples:</p>
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create an array of five values evenly spaced between 0 and 1</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create an array of five values evenly spaced between 0 and 1</span>
 <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1746,7 +1748,7 @@ Here are several examples:</p>
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x3 array of uniformly distributed</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x3 array of uniformly distributed</span>
 <span class="c1"># random values between 0 and 1</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
@@ -1771,7 +1773,7 @@ Here are several examples:</p>
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x3 array of normally distributed random values</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x3 array of normally distributed random values</span>
 <span class="c1"># with mean 0 and standard deviation 1</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
@@ -1796,7 +1798,7 @@ Here are several examples:</p>
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x3 array of random integers in the interval [0, 10)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x3 array of random integers in the interval [0, 10)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1820,7 +1822,7 @@ Here are several examples:</p>
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x3 identity matrix</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a 3x3 identity matrix</span>
 <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1844,7 +1846,7 @@ Here are several examples:</p>
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create an uninitialized array of three integers</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create an uninitialized array of three integers</span>
 <span class="c1"># The values will be whatever happens to already exist at that memory location</span>
 <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -2020,7 +2022,7 @@ We'll use NumPy's random number generator, which we will <em>seed</em> with a se
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># seed for reproducibility</span>
 
 <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>  <span class="c1"># One-dimensional array</span>
@@ -2044,7 +2046,7 @@ We'll use NumPy's random number generator, which we will <em>seed</em> with a se
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"x3 ndim: "</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"x3 ndim: "</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"x3 shape:"</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"x3 size: "</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 </pre></div>
@@ -2078,7 +2080,7 @@ x3 size:  60
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"dtype:"</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"dtype:"</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2108,7 +2110,7 @@ x3 size:  60
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"itemsize:"</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">"bytes"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"itemsize:"</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">"bytes"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"nbytes:"</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="s2">"bytes"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2157,7 +2159,7 @@ In a one-dimensional array, the $i^{th}$ value (counting from zero) can be acces
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x1</span>
 </pre></div>
 </div>
 </div>
@@ -2178,7 +2180,7 @@ In a one-dimensional array, the $i^{th}$ value (counting from zero) can be acces
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2199,7 +2201,7 @@ In a one-dimensional array, the $i^{th}$ value (counting from zero) can be acces
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2228,7 +2230,7 @@ In a one-dimensional array, the $i^{th}$ value (counting from zero) can be acces
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2249,7 +2251,7 @@ In a one-dimensional array, the $i^{th}$ value (counting from zero) can be acces
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2278,7 +2280,7 @@ In a one-dimensional array, the $i^{th}$ value (counting from zero) can be acces
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2</span>
 </pre></div>
 </div>
 </div>
@@ -2301,7 +2303,7 @@ In a one-dimensional array, the $i^{th}$ value (counting from zero) can be acces
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2322,7 +2324,7 @@ In a one-dimensional array, the $i^{th}$ value (counting from zero) can be acces
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2343,7 +2345,7 @@ In a one-dimensional array, the $i^{th}$ value (counting from zero) can be acces
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2372,7 +2374,7 @@ In a one-dimensional array, the $i^{th}$ value (counting from zero) can be acces
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">x2</span>
 </pre></div>
 </div>
@@ -2405,7 +2407,7 @@ This means, for example, that if you attempt to insert a floating-point value to
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.14159</span>  <span class="c1"># this will be truncated!</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.14159</span>  <span class="c1"># this will be truncated!</span>
 <span class="n">x1</span>
 </pre></div>
 </div>
@@ -2456,7 +2458,7 @@ We'll take a look at accessing sub-arrays in one dimension and in multiple dimen
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">x</span>
 </pre></div>
 </div>
@@ -2478,7 +2480,7 @@ We'll take a look at accessing sub-arrays in one dimension and in multiple dimen
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># first five elements</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># first five elements</span>
 </pre></div>
 </div>
 </div>
@@ -2499,7 +2501,7 @@ We'll take a look at accessing sub-arrays in one dimension and in multiple dimen
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>  <span class="c1"># elements after index 5</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>  <span class="c1"># elements after index 5</span>
 </pre></div>
 </div>
 </div>
@@ -2520,7 +2522,7 @@ We'll take a look at accessing sub-arrays in one dimension and in multiple dimen
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>  <span class="c1"># middle sub-array</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>  <span class="c1"># middle sub-array</span>
 </pre></div>
 </div>
 </div>
@@ -2541,7 +2543,7 @@ We'll take a look at accessing sub-arrays in one dimension and in multiple dimen
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># every other element</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># every other element</span>
 </pre></div>
 </div>
 </div>
@@ -2562,7 +2564,7 @@ We'll take a look at accessing sub-arrays in one dimension and in multiple dimen
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># every other element, starting at index 1</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># every other element, starting at index 1</span>
 </pre></div>
 </div>
 </div>
@@ -2593,7 +2595,7 @@ This becomes a convenient way to reverse an array:</p>
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># all elements, reversed</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># all elements, reversed</span>
 </pre></div>
 </div>
 </div>
@@ -2614,7 +2616,7 @@ This becomes a convenient way to reverse an array:</p>
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># reversed every other from index 5</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># reversed every other from index 5</span>
 </pre></div>
 </div>
 </div>
@@ -2644,7 +2646,7 @@ For example:</p>
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2</span>
 </pre></div>
 </div>
 </div>
@@ -2667,7 +2669,7 @@ For example:</p>
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># two rows, three columns</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># two rows, three columns</span>
 </pre></div>
 </div>
 </div>
@@ -2689,7 +2691,7 @@ For example:</p>
 <div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># all rows, every other column</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># all rows, every other column</span>
 </pre></div>
 </div>
 </div>
@@ -2720,7 +2722,7 @@ For example:</p>
 <div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2752,7 +2754,7 @@ This can be done by combining indexing and slicing, using an empty slice marked 
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># first column of x2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># first column of x2</span>
 </pre></div>
 </div>
 </div>
@@ -2774,7 +2776,7 @@ This can be done by combining indexing and slicing, using an empty slice marked 
 <div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>  <span class="c1"># first row of x2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>  <span class="c1"># first row of x2</span>
 </pre></div>
 </div>
 </div>
@@ -2804,7 +2806,7 @@ This can be done by combining indexing and slicing, using an empty slice marked 
 <div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># equivalent to x2[0, :]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># equivalent to x2[0, :]</span>
 </pre></div>
 </div>
 </div>
@@ -2836,7 +2838,7 @@ Consider our two-dimensional array from before:</p>
 <div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2868,7 +2870,7 @@ Consider our two-dimensional array from before:</p>
 <div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2_sub</span> <span class="o">=</span> <span class="n">x2</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2_sub</span> <span class="o">=</span> <span class="n">x2</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x2_sub</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2900,7 +2902,7 @@ Consider our two-dimensional array from before:</p>
 <div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2_sub</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2_sub</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x2_sub</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2924,7 +2926,7 @@ Consider our two-dimensional array from before:</p>
 <div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2964,7 +2966,7 @@ Consider our two-dimensional array from before:</p>
 <div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2_sub_copy</span> <span class="o">=</span> <span class="n">x2</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2_sub_copy</span> <span class="o">=</span> <span class="n">x2</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x2_sub_copy</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2996,7 +2998,7 @@ Consider our two-dimensional array from before:</p>
 <div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x2_sub_copy</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x2_sub_copy</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x2_sub_copy</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3020,7 +3022,7 @@ Consider our two-dimensional array from before:</p>
 <div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3054,7 +3056,7 @@ For example, if you want to put the numbers 1 through 9 in a $3 \times 3$ grid, 
 <div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3090,7 +3092,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [39]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># row vector via reshape</span>
 <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -3114,7 +3116,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># row vector via newaxis</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># row vector via newaxis</span>
 <span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
@@ -3136,7 +3138,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [41]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># column vector via reshape</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># column vector via reshape</span>
 <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -3160,7 +3162,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [42]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># column vector via newaxis</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># column vector via newaxis</span>
 <span class="n">x</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -3209,7 +3211,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [43]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
 </pre></div>
@@ -3240,7 +3242,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">99</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">99</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]))</span>
 </pre></div>
 </div>
@@ -3271,7 +3273,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [45]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
                  <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
 </pre></div>
 </div>
@@ -3283,7 +3285,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [46]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># concatenate along the first axis</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># concatenate along the first axis</span>
 <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">grid</span><span class="p">,</span> <span class="n">grid</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -3308,7 +3310,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [47]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># concatenate along the second axis (zero-indexed)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># concatenate along the second axis (zero-indexed)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">grid</span><span class="p">,</span> <span class="n">grid</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3339,7 +3341,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [48]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
                  <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 
@@ -3367,7 +3369,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [49]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># horizontally stack the arrays</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># horizontally stack the arrays</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">99</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">99</span><span class="p">]])</span>
 <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">grid</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
@@ -3408,7 +3410,7 @@ This can be done with the <code>reshape</code> method, or more easily done by ma
 <div class="prompt input_prompt">In [50]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">)</span>
 </pre></div>
@@ -3441,7 +3443,7 @@ The related functions <code>np.hsplit</code> and <code>np.vsplit</code> are simi
 <div class="prompt input_prompt">In [51]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">grid</span>
 </pre></div>
 </div>
@@ -3466,7 +3468,7 @@ The related functions <code>np.hsplit</code> and <code>np.vsplit</code> are simi
 <div class="prompt input_prompt">In [52]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">upper</span><span class="p">,</span> <span class="n">lower</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vsplit</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">upper</span><span class="p">,</span> <span class="n">lower</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vsplit</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lower</span><span class="p">)</span>
 </pre></div>
@@ -3493,7 +3495,7 @@ The related functions <code>np.hsplit</code> and <code>np.vsplit</code> are simi
 <div class="prompt input_prompt">In [53]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
 </pre></div>
@@ -3567,7 +3569,7 @@ A straightforward approach might look like this:</p>
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">compute_reciprocals</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
@@ -3608,7 +3610,7 @@ We'll benchmark this with IPython's <code>%timeit</code> magic (discussed in <a 
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">big_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">big_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
 <span class="o">%</span><span class="k">timeit</span> compute_reciprocals(big_array)
 </pre></div>
 </div>
@@ -3654,7 +3656,7 @@ This vectorized approach is designed to push the loop into the compiled layer th
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">compute_reciprocals</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">compute_reciprocals</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">values</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3686,7 +3688,7 @@ This vectorized approach is designed to push the loop into the compiled layer th
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> (1.0 / big_array)
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> (1.0 / big_array)
 </pre></div>
 </div>
 </div>
@@ -3717,7 +3719,7 @@ Ufuncs are extremely flexible – before we saw an operation between a scalar an
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3746,7 +3748,7 @@ Ufuncs are extremely flexible – before we saw an operation between a scalar an
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="mi">2</span> <span class="o">**</span> <span class="n">x</span>
 </pre></div>
 </div>
@@ -3797,7 +3799,7 @@ The standard addition, subtraction, multiplication, and division can all be used
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"x     ="</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"x + 5 ="</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"x - 5 ="</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
@@ -3838,7 +3840,7 @@ x // 2 = [0 0 1 1]
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"-x     = "</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"-x     = "</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"x ** 2 = "</span><span class="p">,</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"x % 2  = "</span><span class="p">,</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -3872,7 +3874,7 @@ x % 2  =  [0 1 0 1]
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">-</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">-</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
@@ -3901,7 +3903,7 @@ x % 2  =  [0 1 0 1]
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3989,7 +3991,7 @@ x % 2  =  [0 1 0 1]
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4019,7 +4021,7 @@ x % 2  =  [0 1 0 1]
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4040,7 +4042,7 @@ x % 2  =  [0 1 0 1]
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4069,7 +4071,7 @@ x % 2  =  [0 1 0 1]
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span><span class="n">j</span><span class="p">,</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span><span class="n">j</span><span class="p">,</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="p">])</span>
 <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4100,7 +4102,7 @@ We'll start by defining an array of angles:</p>
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4119,7 +4121,7 @@ We'll start by defining an array of angles:</p>
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"theta      = "</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"theta      = "</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"sin(theta) = "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"cos(theta) = "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"tan(theta) = "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
@@ -4156,7 +4158,7 @@ Inverse trigonometric functions are also available:</p>
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"x         = "</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"arcsin(x) = "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"arccos(x) = "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -4193,7 +4195,7 @@ arctan(x) =  [-0.78539816  0.          0.78539816]
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"x     ="</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"e^x   ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"2^x   ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -4231,7 +4233,7 @@ The basic <code>np.log</code> gives the natural logarithm; if you prefer to comp
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"x        ="</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"ln(x)    ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"log2(x)  ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -4268,7 +4270,7 @@ log10(x) = [ 0.          0.30103     0.60205999  1.        ]
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"exp(x) - 1 ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"log(1 + x) ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
@@ -4313,7 +4315,7 @@ There are far too many functions to list them all, but the following snippet sho
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">special</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">special</span>
 </pre></div>
 </div>
 </div>
@@ -4324,7 +4326,7 @@ There are far too many functions to list them all, but the following snippet sho
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Gamma functions (generalized factorials) and related functions</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Gamma functions (generalized factorials) and related functions</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"gamma(x)     ="</span><span class="p">,</span> <span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"ln|gamma(x)| ="</span><span class="p">,</span> <span class="n">special</span><span class="o">.</span><span class="n">gammaln</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -4352,7 +4354,7 @@ beta(x, 2)   = [ 0.5         0.03333333  0.00909091]
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Error function (integral of Gaussian)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Error function (integral of Gaussian)</span>
 <span class="c1"># its complement, and its inverse</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"erf(x)  ="</span><span class="p">,</span> <span class="n">special</span><span class="o">.</span><span class="n">erf</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -4409,7 +4411,7 @@ For all ufuncs, this can be done using the <code>out</code> argument of the func
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -4442,7 +4444,7 @@ For all ufuncs, this can be done using the <code>out</code> argument of the func
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">y</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
@@ -4486,7 +4488,7 @@ A reduce repeatedly applies a given operation to the elements of an array until 
 <div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4516,7 +4518,7 @@ A reduce repeatedly applies a given operation to the elements of an array until 
 <div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4545,7 +4547,7 @@ A reduce repeatedly applies a given operation to the elements of an array until 
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4566,7 +4568,7 @@ A reduce repeatedly applies a given operation to the elements of an array until 
 <div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4604,7 +4606,7 @@ This allows you, in one line, to do things like create a multiplication table:</
 <div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4790,29 +4792,7 @@ This subject is important enough that we will devote a whole section to it (see 
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

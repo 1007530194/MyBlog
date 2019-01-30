@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">3.7-predicting-house-prices</h1>
@@ -1094,7 +1096,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
 <span class="n">keras</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
@@ -1152,7 +1154,7 @@ others between 0 and 100...</p>
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="k">import</span> <span class="n">boston_housing</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="k">import</span> <span class="n">boston_housing</span>
 
 <span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_targets</span><span class="p">),</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_targets</span><span class="p">)</span> <span class="o">=</span>  <span class="n">boston_housing</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
 </pre></div>
@@ -1165,7 +1167,7 @@ others between 0 and 100...</p>
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_data</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">train_data</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -1186,7 +1188,7 @@ others between 0 and 100...</p>
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_data</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">test_data</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -1232,7 +1234,7 @@ follow:</p>
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_targets</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">train_targets</span>
 </pre></div>
 </div>
 </div>
@@ -1318,7 +1320,7 @@ unit standard deviation. This is easily done in Numpy:</p>
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mean</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">train_data</span> <span class="o">-=</span> <span class="n">mean</span>
 <span class="n">std</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">train_data</span> <span class="o">/=</span> <span class="n">std</span>
@@ -1354,7 +1356,7 @@ a small network is one way to mitigate overfitting.</p>
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">models</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">models</span>
 <span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">layers</span>
 
 <span class="k">def</span> <span class="nf">build_model</span><span class="p">():</span>
@@ -1418,7 +1420,7 @@ partition. The validation score for the model used would then be the average of 
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">k</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">num_val_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span> <span class="o">//</span> <span class="n">k</span>
@@ -1472,7 +1474,7 @@ processing fold # 3
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_scores</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">all_scores</span>
 </pre></div>
 </div>
 </div>
@@ -1493,7 +1495,7 @@ processing fold # 3
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">all_scores</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">all_scores</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1526,7 +1528,7 @@ to save the per-epoch validation score log:</p>
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">backend</span> <span class="k">as</span> <span class="n">K</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">backend</span> <span class="k">as</span> <span class="n">K</span>
 
 <span class="c1"># Some memory clean-up</span>
 <span class="n">K</span><span class="o">.</span><span class="n">clear_session</span><span class="p">()</span>
@@ -1540,7 +1542,7 @@ to save the per-epoch validation score log:</p>
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">500</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">500</span>
 <span class="n">all_mae_histories</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'processing fold #'</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
@@ -1598,7 +1600,7 @@ processing fold # 3
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">average_mae_history</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">average_mae_history</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">all_mae_histories</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">)]</span>
 </pre></div>
 </div>
@@ -1618,7 +1620,7 @@ processing fold # 3
 <div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">average_mae_history</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">average_mae_history</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Epochs'</span><span class="p">)</span>
@@ -1632,7 +1634,7 @@ processing fold # 3
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYUAAAEKCAYAAAD9xUlFAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XecVOXVwPHfmdnZvstSll4WBAGRJigW7ESxG0ussURf
 ooktiTGa15hoYkk0tpjEWGKMLSrR14INu1hAiiBKlV53gS3ssn2e949b9s7MnZmlzC4w5/v57Gdn
@@ -1930,7 +1932,7 @@ TkSuQmCC
 <div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">smooth_curve</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">smooth_curve</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
   <span class="n">smoothed_points</span> <span class="o">=</span> <span class="p">[]</span>
   <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">smoothed_points</span><span class="p">:</span>
@@ -1954,7 +1956,7 @@ TkSuQmCC
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAEKCAYAAAAB0GKPAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XecXHW9+P/Xe3vvm92UTTYJ6T0sSSCIISCEJiqgoCAi
 mouiF+5FpXi/FxX1pyIoCoooiF6ahSo9YOiQSnrvyZZs7333/fvjnJmd7bPZnZ3s7vv5eMxjz3zO
@@ -2280,7 +2282,7 @@ can train a final "production" model on all of the training data, with the best 
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get a fresh, compiled model.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Get a fresh, compiled model.</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">build_model</span><span class="p">()</span>
 <span class="c1"># Train it on the entirety of the data.</span>
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_targets</span><span class="p">,</span>
@@ -2306,7 +2308,7 @@ can train a final "production" model on all of the training data, with the best 
 <div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_mae_score</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">test_mae_score</span>
 </pre></div>
 </div>
 </div>
@@ -2495,29 +2497,7 @@ such as data preprocessing, model evaluation, and overfitting.</p>
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

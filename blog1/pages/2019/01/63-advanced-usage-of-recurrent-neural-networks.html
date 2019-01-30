@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">6.3-advanced-usage-of-recurrent-neural-networks</h1>
@@ -1094,7 +1096,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
 <span class="n">keras</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
@@ -1167,7 +1169,7 @@ few days worth of data points) and predicts the air temperature 24 hours in the 
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">data_dir</span> <span class="o">=</span> <span class="s1">'/home/ubuntu/data/'</span>
 <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">'jena_climate_2009_2016.csv'</span><span class="p">)</span>
@@ -1212,7 +1214,7 @@ few days worth of data points) and predicts the air temperature 24 hours in the 
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">float_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">header</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
@@ -1236,7 +1238,7 @@ few days worth of data points) and predicts the air temperature 24 hours in the 
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="n">temp</span> <span class="o">=</span> <span class="n">float_data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># temperature (in degrees Celsius)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temp</span><span class="p">)),</span> <span class="n">temp</span><span class="p">)</span>
@@ -1249,7 +1251,7 @@ few days worth of data points) and predicts the air temperature 24 hours in the 
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXwAAAD8CAYAAAB0IB+mAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJztnXdYHNfV/7+HjkRTQagLVUugihDFdhx3W+52XGPFcovi
 br9Os3/OmxDHfuMS19ctimvi3hT7tS33otgWINRBFRUkkBAgIZCEqHt/f+wAu7Bt6p2dPZ/n4WH2
@@ -1536,7 +1538,7 @@ per day):</p>
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1440</span><span class="p">),</span> <span class="n">temp</span><span class="p">[:</span><span class="mi">1440</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1440</span><span class="p">),</span> <span class="n">temp</span><span class="p">[:</span><span class="mi">1440</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1546,7 +1548,7 @@ per day):</p>
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXwAAAD8CAYAAAB0IB+mAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJztnXecG+W193+P+kqr7X29613baxv3jjGYanonkEC4JATy
 EkhP7hsuxDf3hpZwA0kuIQVIIOSlhtBCaAbbgGm2sbFx721tr7c3Sav+vH/MjHakVdeM6vl+PvtB
@@ -1895,7 +1897,7 @@ fly using the original data.</li>
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean</span> <span class="o">=</span> <span class="n">float_data</span><span class="p">[:</span><span class="mi">200000</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mean</span> <span class="o">=</span> <span class="n">float_data</span><span class="p">[:</span><span class="mi">200000</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">float_data</span> <span class="o">-=</span> <span class="n">mean</span>
 <span class="n">std</span> <span class="o">=</span> <span class="n">float_data</span><span class="p">[:</span><span class="mi">200000</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">float_data</span> <span class="o">/=</span> <span class="n">std</span>
@@ -1928,7 +1930,7 @@ of the data for validation and another one for testing.</li>
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lookback</span><span class="p">,</span> <span class="n">delay</span><span class="p">,</span> <span class="n">min_index</span><span class="p">,</span> <span class="n">max_index</span><span class="p">,</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lookback</span><span class="p">,</span> <span class="n">delay</span><span class="p">,</span> <span class="n">min_index</span><span class="p">,</span> <span class="n">max_index</span><span class="p">,</span>
               <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">max_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">max_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">delay</span> <span class="o">-</span> <span class="mi">1</span>
@@ -1972,7 +1974,7 @@ validation generator looks at the following 100,000, and the test generator look
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lookback</span> <span class="o">=</span> <span class="mi">1440</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">lookback</span> <span class="o">=</span> <span class="mi">1440</span>
 <span class="n">step</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">delay</span> <span class="o">=</span> <span class="mi">144</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span>
@@ -2036,7 +2038,7 @@ Mean Absolute Error is simply equal to:</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">preds</span> <span class="o">-</span> <span class="n">targets</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">preds</span> <span class="o">-</span> <span class="n">targets</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2055,7 +2057,7 @@ Mean Absolute Error is simply equal to:</p>
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">evaluate_naive_method</span><span class="p">():</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">evaluate_naive_method</span><span class="p">():</span>
     <span class="n">batch_maes</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">val_steps</span><span class="p">):</span>
         <span class="n">samples</span><span class="p">,</span> <span class="n">targets</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">val_gen</span><span class="p">)</span>
@@ -2110,7 +2112,7 @@ on the exact same data and with the exact same metric as with our common sense a
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
 <span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">layers</span>
 <span class="kn">from</span> <span class="nn">keras.optimizers</span> <span class="k">import</span> <span class="n">RMSprop</span>
 
@@ -2193,7 +2195,7 @@ Epoch 20/20
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span>
 <span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'val_loss'</span><span class="p">]</span>
@@ -2216,13 +2218,13 @@ Epoch 20/20
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_text output_subarea ">
+<div class="output_text output_subarea">
 <pre>&lt;matplotlib.figure.Figure at 0x7f3317e5a2b0&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEICAYAAACzliQjAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xt8FNUZ//HPE65yETDQIqCAlspN5BLR/qgiShFthaLU
 gnjXIhZrLbWVemktyq+IFm+lVtufWgWltFaLF4q20qK2IsEiCIggBg0gBJSbqJDk+f1xJmEJuWyS
@@ -2473,7 +2475,7 @@ representational power is seen everywhere in machine learning.</p>
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
 <span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">layers</span>
 <span class="kn">from</span> <span class="nn">keras.optimizers</span> <span class="k">import</span> <span class="n">RMSprop</span>
 
@@ -2555,7 +2557,7 @@ Epoch 20/20
 <div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span>
 <span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'val_loss'</span><span class="p">]</span>
 
 <span class="n">epochs</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">loss</span><span class="p">))</span>
@@ -2576,13 +2578,13 @@ Epoch 20/20
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_text output_subarea ">
+<div class="output_text output_subarea">
 <pre>&lt;matplotlib.figure.Figure at 0x7f3317e755f8&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEICAYAAACzliQjAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XmYVNW19/HvAhlkEBBwAqRRidAgMrSoQYIgMagRLoYY
 EFQcLmpCvNGYG64YY0i4ryJxDDHiFAeUGI2KUSSJkqjXqDSIIFNoEbCZIQIiTk2v9499uinaHqq7
@@ -2841,7 +2843,7 @@ epochs.</p>
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
 <span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">layers</span>
 <span class="kn">from</span> <span class="nn">keras.optimizers</span> <span class="k">import</span> <span class="n">RMSprop</span>
 
@@ -2958,7 +2960,7 @@ Epoch 40/40
 <div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span>
 <span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'val_loss'</span><span class="p">]</span>
 
 <span class="n">epochs</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">loss</span><span class="p">))</span>
@@ -2979,13 +2981,13 @@ Epoch 40/40
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_text output_subarea ">
+<div class="output_text output_subarea">
 <pre>&lt;matplotlib.figure.Figure at 0x7f3317e879e8&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEICAYAAACzliQjAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl8VNX5+PHPE/Z9tyoIQUUhCAKmqF9EFqnighRFy6ZS
 F4RqbaVWqeJGy7eK/hCxfKnYuoJS6ooK0iooLhUFRBARQQgSWQQqS2RN8vz+OHeSScjM3GRmMpOZ
@@ -3243,7 +3245,7 @@ rather than their output at the last timestep. This is done by specifying <code>
 <div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
 <span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">layers</span>
 <span class="kn">from</span> <span class="nn">keras.optimizers</span> <span class="k">import</span> <span class="n">RMSprop</span>
 
@@ -3372,7 +3374,7 @@ Epoch 40/40
 <div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span>
 <span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'val_loss'</span><span class="p">]</span>
 
 <span class="n">epochs</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">loss</span><span class="p">))</span>
@@ -3393,13 +3395,13 @@ Epoch 40/40
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_text output_subarea ">
+<div class="output_text output_subarea">
 <pre>&lt;matplotlib.figure.Figure at 0x7f33151ee630&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEICAYAAACzliQjAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XmYFNW5+PHvyy6L7G4Mm8oVZgABR9CLiCAqioAYoiC4
 RYMScQl6r0SIMRjuT9HgFmIkiZrICKJGJW64oWgUZFAEARHEQQYQAWUTBIZ5f3+c6pmeYbq7prun
@@ -3697,7 +3699,7 @@ used in the first experiment in this section, we get the following results:</p>
 <div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reverse_order_generator</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lookback</span><span class="p">,</span> <span class="n">delay</span><span class="p">,</span> <span class="n">min_index</span><span class="p">,</span> <span class="n">max_index</span><span class="p">,</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reverse_order_generator</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lookback</span><span class="p">,</span> <span class="n">delay</span><span class="p">,</span> <span class="n">min_index</span><span class="p">,</span> <span class="n">max_index</span><span class="p">,</span>
                             <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">max_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">max_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">delay</span> <span class="o">-</span> <span class="mi">1</span>
@@ -3749,7 +3751,7 @@ used in the first experiment in this section, we get the following results:</p>
 <div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">GRU</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">float_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 
@@ -3819,7 +3821,7 @@ Epoch 20/20
 <div class="prompt input_prompt">In [45]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span>
 <span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'val_loss'</span><span class="p">]</span>
 
 <span class="n">epochs</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">loss</span><span class="p">))</span>
@@ -3840,13 +3842,13 @@ Epoch 20/20
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_text output_subarea ">
+<div class="output_text output_subarea">
 <pre>&lt;matplotlib.figure.Figure at 0x7f3314e81860&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEICAYAAACzliQjAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl8VNX5x/HPE1ZZFATc2AJKFRAETFFKEVGr4AKi1oJY
 dxHrVtSfoqhFrHWtWixaaV1aQZHaUqlisVUsaisSEEFACmLQKLIpCIJLyPP749zAELNMMpOZJPN9
@@ -4084,7 +4086,7 @@ try the same trick on the LSTM IMDB example from the previous section:</p>
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="k">import</span> <span class="n">imdb</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="k">import</span> <span class="n">imdb</span>
 <span class="kn">from</span> <span class="nn">keras.preprocessing</span> <span class="k">import</span> <span class="n">sequence</span>
 <span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">layers</span>
 <span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
@@ -4195,7 +4197,7 @@ IMDB sentiment analysis task:</p>
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">backend</span> <span class="k">as</span> <span class="n">K</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">backend</span> <span class="k">as</span> <span class="n">K</span>
 <span class="n">K</span><span class="o">.</span><span class="n">clear_session</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -4207,7 +4209,7 @@ IMDB sentiment analysis task:</p>
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">max_features</span><span class="p">,</span> <span class="mi">32</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Bidirectional</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">32</span><span class="p">)))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'sigmoid'</span><span class="p">))</span>
@@ -4266,7 +4268,7 @@ regularization, the bidirectional approach would likely be a strong performer on
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
 <span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">layers</span>
 <span class="kn">from</span> <span class="nn">keras.optimizers</span> <span class="k">import</span> <span class="n">RMSprop</span>
 
@@ -4564,29 +4566,7 @@ leave them for future study outside of this book.</p>
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

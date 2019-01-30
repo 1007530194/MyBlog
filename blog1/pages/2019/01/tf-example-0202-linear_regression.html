@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">tf-example-02.02-linear_regression</h1>
@@ -1102,7 +1104,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">rng</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span>
@@ -1130,7 +1132,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Parameters</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Parameters</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">training_epochs</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">display_step</span> <span class="o">=</span> <span class="mi">50</span>
@@ -1144,7 +1146,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Training Data</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Training Data</span>
 <span class="n">train_X</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mf">3.3</span><span class="p">,</span><span class="mf">4.4</span><span class="p">,</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">6.71</span><span class="p">,</span><span class="mf">6.93</span><span class="p">,</span><span class="mf">4.168</span><span class="p">,</span><span class="mf">9.779</span><span class="p">,</span><span class="mf">6.182</span><span class="p">,</span><span class="mf">7.59</span><span class="p">,</span><span class="mf">2.167</span><span class="p">,</span>
                          <span class="mf">7.042</span><span class="p">,</span><span class="mf">10.791</span><span class="p">,</span><span class="mf">5.313</span><span class="p">,</span><span class="mf">7.997</span><span class="p">,</span><span class="mf">5.654</span><span class="p">,</span><span class="mf">9.27</span><span class="p">,</span><span class="mf">3.1</span><span class="p">])</span>
 <span class="n">train_Y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mf">1.7</span><span class="p">,</span><span class="mf">2.76</span><span class="p">,</span><span class="mf">2.09</span><span class="p">,</span><span class="mf">3.19</span><span class="p">,</span><span class="mf">1.694</span><span class="p">,</span><span class="mf">1.573</span><span class="p">,</span><span class="mf">3.366</span><span class="p">,</span><span class="mf">2.596</span><span class="p">,</span><span class="mf">2.53</span><span class="p">,</span><span class="mf">1.221</span><span class="p">,</span>
@@ -1160,7 +1162,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># tf Graph Input</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># tf Graph Input</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">"float"</span><span class="p">)</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">"float"</span><span class="p">)</span>
 
@@ -1177,7 +1179,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Construct a linear model</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Construct a linear model</span>
 <span class="n">pred</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">W</span><span class="p">),</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1189,7 +1191,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mean squared error</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Mean squared error</span>
 <span class="n">cost</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_sum</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">pred</span><span class="o">-</span><span class="n">Y</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n_samples</span><span class="p">)</span>
 <span class="c1"># Gradient descent</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">GradientDescentOptimizer</span><span class="p">(</span><span class="n">learning_rate</span><span class="p">)</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
@@ -1203,7 +1205,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize the variables (i.e. assign their default value)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize the variables (i.e. assign their default value)</span>
 <span class="n">init</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1215,7 +1217,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start training</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Start training</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
     <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
 
@@ -1276,7 +1278,7 @@ Training cost= 0.082627706 W= 0.20789695 b= 1.1014292
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,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
 "/>
 </div>
@@ -1289,7 +1291,7 @@ Training cost= 0.082627706 W= 0.20789695 b= 1.1014292
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Regression result</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Regression result</span>
 </pre></div>
 </div>
 </div>
@@ -1434,29 +1436,7 @@ Training cost= 0.082627706 W= 0.20789695 b= 1.1014292
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

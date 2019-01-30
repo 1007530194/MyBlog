@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">scikit-learn-gmm</h1>
@@ -1111,7 +1113,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
@@ -1138,7 +1140,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2000</span><span class="p">),</span>
                     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2000</span><span class="p">),</span>
                     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">600</span><span class="p">)])</span>
@@ -1152,7 +1154,7 @@ h6:hover .anchor-link {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAesAAAFVCAYAAADPM8ekAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAHCZJREFUeJzt3X+M3Hed3/GnF7xwzq737LBGkJiIc8NbllCOEleYBAVS
 MFdoHcIJnWRxJ2EucIRKdUUbSOBIJcRdT7UcNSdIenUSjt6hHjXFyASdE1RQc9mg0NLjQtvkbRKQ
@@ -1301,7 +1303,7 @@ rkJggg==
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="k">import</span> <span class="n">GMM</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="k">import</span> <span class="n">GMM</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">GMM</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">xpdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">density</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">xpdf</span><span class="p">))</span>
@@ -1317,7 +1319,7 @@ rkJggg==
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAesAAAFVCAYAAADPM8ekAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8VPW9//HXLJlJZklCFnbZBI4oiwoqgoILuOPSWq21
 ttVrXdre2l9Xe1tt771tb3ut3a7XLlZ77eJSUVwAEXEBjIKCC8hyQPadJDPZk5lkZn5/zCQEApkE
@@ -1661,7 +1663,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">means_</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">means_</span>
 </pre></div>
 </div>
 </div>
@@ -1685,7 +1687,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">covars_</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">covars_</span>
 </pre></div>
 </div>
 </div>
@@ -1709,7 +1711,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">weights_</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">weights_</span>
 </pre></div>
 </div>
 </div>
@@ -1730,7 +1732,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xpdf</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="s1">'-r'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">n_components</span><span class="p">):</span>
@@ -1747,7 +1749,7 @@ AAAASUVORK5CYII=
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAesAAAFVCAYAAADPM8ekAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XmcXHWd7//XOVVd1VW9JZ10QthXD8iiSNAYIIAKKsjm
 OCjj5aEwuDDOVX86Kg7KHWeGe/UiLiPCddw3RBFRFoGwKZDIqhhFcoAECAESOr1Vd62nzjm/P6q6
@@ -2207,7 +2209,7 @@ For example, there is the Aikaki Information Criterion (AIC) and the Bayesian In
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">bic</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">bic</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">aic</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -2239,7 +2241,7 @@ For example, there is the Aikaki Information Criterion (AIC) and the Bayesian In
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_estimators</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">n_estimators</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">clfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">GMM</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_estimators</span><span class="p">]</span>
 <span class="n">bics</span> <span class="o">=</span> <span class="p">[</span><span class="n">clf</span><span class="o">.</span><span class="n">bic</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="n">clfs</span><span class="p">]</span>
 <span class="n">aics</span> <span class="o">=</span> <span class="p">[</span><span class="n">clf</span><span class="o">.</span><span class="n">aic</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="n">clfs</span><span class="p">]</span>
@@ -2255,7 +2257,7 @@ For example, there is the Aikaki Information Criterion (AIC) and the Bayesian In
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfEAAAFVCAYAAAD/v9aFAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl8XXWd//HXuTf3Zr3JTZN0TZuu+bK0tIAKCII6yIDy
 U1FAUQdxZ1HUwdEZRhn1oTM/FxCVAg6L4jIsRVBAB6riT4QZla1lafmWQveWNm1zsy93Ob8/zkma
@@ -2559,7 +2561,7 @@ One thing that generative models can be useful for is <strong>outlier detection<
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Add 20 outliers</span>
 <span class="n">true_outliers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">20</span><span class="p">))</span>
@@ -2575,7 +2577,7 @@ One thing that generative models can be useful for is <strong>outlier detection<
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">GMM</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">GMM</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="n">xpdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">density_noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">xpdf</span><span class="p">))</span>
 
@@ -2590,7 +2592,7 @@ One thing that generative models can be useful for is <strong>outlier detection<
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAe4AAAFVCAYAAAApGgzgAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XmcZGV97/HPqbW7qpfZemYCgywCjwRFVCQsOkB0cJ0r
 mpv4IttLFIloEhOzIUazXE3uDRfMzUsxhkW93kTvBUQQlE1QoBEMuDCCPOMgiyMD9PRaXVVd1V1V
@@ -2814,7 +2816,7 @@ oMjrWZfR5gAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">log_likelihood</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score_samples</span><span class="p">(</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">log_likelihood</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score_samples</span><span class="p">(</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">log_likelihood</span><span class="p">,</span> <span class="s1">'.k'</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -2824,7 +2826,7 @@ oMjrWZfR5gAAAABJRU5ErkJggg==
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAesAAAFVCAYAAADPM8ekAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAF+JJREFUeJzt3X+sZGddx/H3vfSH7b13u4bselkluo36bZvwI2UttGJb
 4rXKBMKP6B+VHylZ0CIQCgQCxVSDpBoRFCLyoyI1QKqgVURWCjWkQCvdXtAgsj6CuTbRpfQaqXt3
@@ -2945,7 +2947,7 @@ JClzhrUkSZkzrCVJypxhLUlS5gxrSZIyZ1hLkpS5/wfxBqiWDY+wTwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">detected_outliers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">log_likelihood</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">9</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">detected_outliers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">log_likelihood</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">9</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"true outliers:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">true_outliers</span><span class="p">)</span>
@@ -2986,7 +2988,7 @@ detected outliers:
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">true_outliers</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">detected_outliers</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">true_outliers</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">detected_outliers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3015,7 +3017,7 @@ detected outliers:
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">detected_outliers</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">true_outliers</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">detected_outliers</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">true_outliers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3052,7 +3054,7 @@ detected outliers:
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="k">import</span> <span class="n">KernelDensity</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="k">import</span> <span class="n">KernelDensity</span>
 <span class="n">kde</span> <span class="o">=</span> <span class="n">KernelDensity</span><span class="p">(</span><span class="mf">0.15</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">])</span>
 <span class="n">density_kde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">kde</span><span class="o">.</span><span class="n">score_samples</span><span class="p">(</span><span class="n">xpdf</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]))</span>
 
@@ -3069,7 +3071,7 @@ detected outliers:
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAesAAAFVCAYAAADPM8ekAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XmcFPWd//FX3zPT3XMfwAy3UCAKIqgIiifGqESziUlM
 slk1hzG7McZsou4mWc3uJptfYjZrspqsMfehkXjjgXgLAiJyQyE3A3MfPdM9R08fvz9qGIdrDuie
@@ -3659,29 +3661,7 @@ k7UkSZIkOTiZrCVJkiTJwclkLUmSJEkO7v8D8mNFGt4dmZYAAAAASUVORK5CYII=
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

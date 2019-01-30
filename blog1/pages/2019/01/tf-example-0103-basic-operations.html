@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">tf-example-01.03-basic-operations</h1>
@@ -1094,7 +1096,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Basic Operations example using TensorFlow library.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Basic Operations example using TensorFlow library.</span>
 <span class="c1"># Author: Aymeric Damien</span>
 <span class="c1"># Project: https://github.com/aymericdamien/TensorFlow-Examples/</span>
 </pre></div>
@@ -1107,7 +1109,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 </pre></div>
 </div>
 </div>
@@ -1118,7 +1120,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Basic constant operations</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Basic constant operations</span>
 <span class="c1"># The value returned by the constructor represents the output</span>
 <span class="c1"># of the Constant op.</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -1133,7 +1135,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Launch the default graph.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Launch the default graph.</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
     <span class="nb">print</span> <span class="s2">"a: </span><span class="si">%i</span><span class="s2">"</span> <span class="o">%</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="s2">"b: </span><span class="si">%i</span><span class="s2">"</span> <span class="o">%</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
     <span class="nb">print</span> <span class="s2">"Addition with constants: </span><span class="si">%i</span><span class="s2">"</span> <span class="o">%</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
@@ -1161,7 +1163,7 @@ Multiplication with constants: 6
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Basic Operations with variable as graph input</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Basic Operations with variable as graph input</span>
 <span class="c1"># The value returned by the constructor represents the output</span>
 <span class="c1"># of the Variable op. (define as input when running session)</span>
 <span class="c1"># tf Graph input</span>
@@ -1177,7 +1179,7 @@ Multiplication with constants: 6
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define some operations</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define some operations</span>
 <span class="n">add</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="n">mul</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
@@ -1190,7 +1192,7 @@ Multiplication with constants: 6
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Launch the default graph.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Launch the default graph.</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
     <span class="c1"># Run every operation with variable input</span>
     <span class="nb">print</span> <span class="s2">"Addition with variables: </span><span class="si">%i</span><span class="s2">"</span> <span class="o">%</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span>
@@ -1217,7 +1219,7 @@ Multiplication with variables: 6
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ----------------</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># ----------------</span>
 <span class="c1"># More in details:</span>
 <span class="c1"># Matrix Multiplication from TensorFlow official tutorial</span>
 
@@ -1237,7 +1239,7 @@ Multiplication with variables: 6
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create another Constant that produces a 2x1 matrix.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create another Constant that produces a 2x1 matrix.</span>
 <span class="n">matrix2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mf">2.</span><span class="p">],[</span><span class="mf">2.</span><span class="p">]])</span>
 </pre></div>
 </div>
@@ -1249,7 +1251,7 @@ Multiplication with variables: 6
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a Matmul op that takes 'matrix1' and 'matrix2' as inputs.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a Matmul op that takes 'matrix1' and 'matrix2' as inputs.</span>
 <span class="c1"># The returned value, 'product', represents the result of the matrix</span>
 <span class="c1"># multiplication.</span>
 <span class="n">product</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">matrix1</span><span class="p">,</span> <span class="n">matrix2</span><span class="p">)</span>
@@ -1263,7 +1265,7 @@ Multiplication with variables: 6
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># To run the matmul op we call the session 'run()' method, passing 'product'</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># To run the matmul op we call the session 'run()' method, passing 'product'</span>
 <span class="c1"># which represents the output of the matmul op.  This indicates to the call</span>
 <span class="c1"># that we want to get the output of the matmul op back.</span>
 <span class="c1">#</span>
@@ -1432,29 +1434,7 @@ Multiplication with variables: 6
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

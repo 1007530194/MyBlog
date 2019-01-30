@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">5.2-using-convnets-with-small-datasets</h1>
@@ -1094,7 +1096,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
 <span class="n">keras</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
@@ -1195,7 +1197,7 @@ set with 500 samples of each class, and finally a test set with 500 samples of e
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">shutil</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">shutil</span>
 </pre></div>
 </div>
 </div>
@@ -1206,7 +1208,7 @@ set with 500 samples of each class, and finally a test set with 500 samples of e
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The path to the directory where the original</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The path to the directory where the original</span>
 <span class="c1"># dataset was uncompressed</span>
 <span class="n">original_dataset_dir</span> <span class="o">=</span> <span class="s1">'/Users/fchollet/Downloads/kaggle_original_data'</span>
 
@@ -1307,7 +1309,7 @@ set with 500 samples of each class, and finally a test set with 500 samples of e
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total training cat images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_cats_dir</span><span class="p">)))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total training cat images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_cats_dir</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1329,7 +1331,7 @@ set with 500 samples of each class, and finally a test set with 500 samples of e
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total training dog images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_dogs_dir</span><span class="p">)))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total training dog images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_dogs_dir</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1351,7 +1353,7 @@ set with 500 samples of each class, and finally a test set with 500 samples of e
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total validation cat images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">validation_cats_dir</span><span class="p">)))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total validation cat images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">validation_cats_dir</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1373,7 +1375,7 @@ set with 500 samples of each class, and finally a test set with 500 samples of e
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total validation dog images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">validation_dogs_dir</span><span class="p">)))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total validation dog images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">validation_dogs_dir</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1395,7 +1397,7 @@ set with 500 samples of each class, and finally a test set with 500 samples of e
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total test cat images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">test_cats_dir</span><span class="p">)))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total test cat images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">test_cats_dir</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1417,7 +1419,7 @@ set with 500 samples of each class, and finally a test set with 500 samples of e
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total test dog images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">test_dogs_dir</span><span class="p">)))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'total test dog images:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">test_dogs_dir</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1466,7 +1468,7 @@ decreasing (from 148x148 to 7x7). This is a pattern that you will see in almost 
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">layers</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">layers</span>
 <span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">models</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
@@ -1500,7 +1502,7 @@ decreasing (from 148x148 to 7x7). This is a pattern that you will see in almost 
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1560,7 +1562,7 @@ use in various situations).</p>
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">optimizers</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">optimizers</span>
 
 <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">'binary_crossentropy'</span><span class="p">,</span>
               <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizers</span><span class="o">.</span><span class="n">RMSprop</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">),</span>
@@ -1594,7 +1596,7 @@ will use here.</p>
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.preprocessing.image</span> <span class="k">import</span> <span class="n">ImageDataGenerator</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.preprocessing.image</span> <span class="k">import</span> <span class="n">ImageDataGenerator</span>
 
 <span class="c1"># All images will be rescaled by 1./255</span>
 <span class="n">train_datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span><span class="n">rescale</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">)</span>
@@ -1647,7 +1649,7 @@ at some point.</p>
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">data_batch</span><span class="p">,</span> <span class="n">labels_batch</span> <span class="ow">in</span> <span class="n">train_generator</span><span class="p">:</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">data_batch</span><span class="p">,</span> <span class="n">labels_batch</span> <span class="ow">in</span> <span class="n">train_generator</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'data batch shape:'</span><span class="p">,</span> <span class="n">data_batch</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'labels batch shape:'</span><span class="p">,</span> <span class="n">labels_batch</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="k">break</span>
@@ -1690,7 +1692,7 @@ which tells the process how many batches to draw from the validation generator f
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_generator</span><span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_generator</span><span class="p">(</span>
       <span class="n">train_generator</span><span class="p">,</span>
       <span class="n">steps_per_epoch</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
       <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
@@ -1784,7 +1786,7 @@ Epoch 30/30
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'cats_and_dogs_small_1.h5'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'cats_and_dogs_small_1.h5'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1803,7 +1805,7 @@ Epoch 30/30
 <div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'acc'</span><span class="p">]</span>
 <span class="n">val_acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'val_acc'</span><span class="p">]</span>
@@ -1833,7 +1835,7 @@ Epoch 30/30
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXcAAAEICAYAAACktLTqAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XmYFNW5x/HvywAii4CAG8gMGqPsMExARRR3NG4oKjjG
 qFdxf4zReFVMNBr15rrEmBgjGpOoLOKOcY0RgyZRWQQUuAgiKIuAbAIDwjDv/eP0DE0zS/VMz/R0
@@ -2047,7 +2049,7 @@ YII=
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXcAAAEICAYAAACktLTqAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl0FFX2wPHvNWyyCAooKksQHElAlhABRTZxHMCFQRFB
 cBsVdx3ROYO4sIwoOowyKK4IqAQYRkZEQdGfMOKKBESQTZZhCTsoyKqE3N8frxKakKU76U53de7n
@@ -2308,7 +2310,7 @@ instance. Let's get started with an example:</p>
 <div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span>
       <span class="n">rotation_range</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
       <span class="n">width_shift_range</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
       <span class="n">height_shift_range</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
@@ -2345,7 +2347,7 @@ asymmetry (e.g. real-world pictures).</li>
 <div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This is module with image preprocessing utilities</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># This is module with image preprocessing utilities</span>
 <span class="kn">from</span> <span class="nn">keras.preprocessing</span> <span class="k">import</span> <span class="n">image</span>
 
 <span class="n">fnames</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">train_cats_dir</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span> <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">train_cats_dir</span><span class="p">)]</span>
@@ -2381,7 +2383,7 @@ asymmetry (e.g. real-world pictures).</li>
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQUAAAD8CAYAAAB+fLH0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvVmsJUmaJvSZ+e7Hz373G5ERkZFLVVZ1Z1XXVDEzzdAL
 DGqG0cwLGsGgEQ8j9QtIIEBMDxISSCDBCzBPSC2BNEhIzS7mYaRBGlG0Wmq6Kqurq6mqrKzMjD3i
@@ -3350,7 +3352,7 @@ yP8HsjhNFCM2YYgAAAAASUVORK5CYII=
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQUAAAD8CAYAAAB+fLH0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvVmsZVeaJvStYY9nulPMdtjOTDud6XRmZZazsugSqGlo
 gaCpEhLqhoIWSC3VAyCBANHdPPEAErwALSGBCvHQoJaKhkbqfuhWI1rUA6iyqrIqK6ty9Ji2w47h
@@ -4254,7 +4256,7 @@ SxRLbhc/xQAAAABJRU5ErkJggg==
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQUAAAD8CAYAAAB+fLH0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvVmsZUt6JvRFrHmtPZ29z5B5crhjVt0qV3V1dZVdrm4J
 WUIIGhr8giwGtUC05BeQQICwmyceQIIXwE9IpgE1EpIbBFLz0AIkS35AWHZVtduuW4Nv3SlvTifP
@@ -5218,7 +5220,7 @@ ylQmZKoUpjKVqUzIVClMZSpTmZCpUpjKVKYyIf8/65LikuTfBW0AAAAASUVORK5CYII=
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQUAAAD8CAYAAAB+fLH0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvVmsbdl63/Ubs5+r3+3p6pyqulV1O9/YvomxCaGxbCEh
 iMgLsiAoCmApL4BAgLDDEw8ghRcgDyiSBURBikiCQCIPgVhY+AEJkG3hxM2te31vtafOObvfe7Wz
@@ -6147,7 +6149,7 @@ overfitting, we will also add a Dropout layer to our model, right before the den
 <div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">,</span>
                         <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
@@ -6183,7 +6185,7 @@ overfitting, we will also add a Dropout layer to our model, right before the den
 <div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">train_datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span>
     <span class="n">rescale</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span>
     <span class="n">rotation_range</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
     <span class="n">width_shift_range</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
@@ -6446,7 +6448,7 @@ Epoch 100/100
 <div class="prompt input_prompt">In [41]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'cats_and_dogs_small_2.h5'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'cats_and_dogs_small_2.h5'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -6465,7 +6467,7 @@ Epoch 100/100
 <div class="prompt input_prompt">In [43]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'acc'</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'acc'</span><span class="p">]</span>
 <span class="n">val_acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'val_acc'</span><span class="p">]</span>
 <span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span>
 <span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'val_loss'</span><span class="p">]</span>
@@ -6493,7 +6495,7 @@ Epoch 100/100
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEICAYAAACzliQjAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJztnXecFeX1/9+HzgpKl7oLElSatA3qF3tBNHZNBIFYoqiJ
 JWqSrwnGGtT81Gji1xgxMTaUGDVGExsqsRNZC1IURDoiLkWKS1v2/P44M9zZu7ftsvXe83697mtm
@@ -6805,7 +6807,7 @@ jO4AmfoAAAAASUVORK5CYII=
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEICAYAAACzliQjAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJztnXmYFNXV/z+HnQFkGRAVZFO2QZBlAioqoEZRo6ghBhwN
 GhU1r9Gsr2uMwZCg8ecasuAWgygajYoG5TVRY9SoDIogmyACIqCAAiIKDHN+f5wuuqanepmZHmam
@@ -7306,29 +7308,7 @@ sections.</p>
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

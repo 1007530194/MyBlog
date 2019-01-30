@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">十分钟上手Pandas_jupyter</h1>
@@ -1131,7 +1133,7 @@ Pandas的主要数据结构：</p>
 <div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>   <span class="c1">#数据分析，代码基于numpy</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>   <span class="c1">#数据分析，代码基于numpy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>    <span class="c1">#处理数据，代码基于ndarray</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>      <span class="c1">#画图</span>
 </pre></div>
@@ -1152,7 +1154,7 @@ Pandas的主要数据结构：</p>
 <div class="prompt input_prompt">In [45]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>   <span class="c1">#默认以数字从0开始作为键值,使用np.nan表示不参与计算</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>   <span class="c1">#默认以数字从0开始作为键值,使用np.nan表示不参与计算</span>
 <span class="n">s</span>
 </pre></div>
 </div>
@@ -1180,7 +1182,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [46]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">])</span>  <span class="c1">#传入键和值方式</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">])</span>  <span class="c1">#传入键和值方式</span>
 <span class="n">s</span>
 </pre></div>
 </div>
@@ -1206,7 +1208,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [47]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">index</span>    <span class="c1">#获取键列表</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">index</span>    <span class="c1">#获取键列表</span>
 </pre></div>
 </div>
 </div>
@@ -1227,7 +1229,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [48]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">values</span>    <span class="c1">#获取值列表</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">values</span>    <span class="c1">#获取值列表</span>
 </pre></div>
 </div>
 </div>
@@ -1256,7 +1258,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [49]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> <span class="s1">'A'</span> <span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> <span class="s1">'A'</span> <span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
                      <span class="s1">'B'</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'20130102'</span><span class="p">),</span>
                      <span class="s1">'C'</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span><span class="n">dtype</span><span class="o">=</span><span class="s1">'float32'</span><span class="p">),</span>   <span class="c1">#生成Series对象,取的是value</span>
                      <span class="s1">'D'</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s1">'int32'</span><span class="p">),</span>  <span class="c1">#生成numpy对象</span>
@@ -1348,7 +1350,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [50]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'20130101'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'20130101'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">dates</span>
 </pre></div>
 </div>
@@ -1372,7 +1374,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [51]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">'ABCD'</span><span class="p">))</span>    <span class="c1">#np.random.randn(6,4)返回一个样本，具有标准正态分布</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">'ABCD'</span><span class="p">))</span>    <span class="c1">#np.random.randn(6,4)返回一个样本，具有标准正态分布</span>
 <span class="n">df</span><span class="c1"># 指定dates为行键，columns为列键</span>
 </pre></div>
 </div>
@@ -1463,7 +1465,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [52]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">dtypes</span>    <span class="c1">#查看列数据类型</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">dtypes</span>    <span class="c1">#查看列数据类型</span>
 </pre></div>
 </div>
 </div>
@@ -1498,7 +1500,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [53]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>     <span class="c1">#默认值5</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>     <span class="c1">#默认值5</span>
 </pre></div>
 </div>
 </div>
@@ -1581,7 +1583,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [54]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>     <span class="c1">#默认值5</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>     <span class="c1">#默认值5</span>
 </pre></div>
 </div>
 </div>
@@ -1658,7 +1660,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [55]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 </div>
 </div>
@@ -1681,7 +1683,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [56]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
@@ -1702,7 +1704,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [57]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
 </div>
@@ -1736,7 +1738,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [58]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1848,7 +1850,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [59]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1960,7 +1962,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [60]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1985,7 +1987,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [61]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2020,7 +2022,7 @@ Freq: D, dtype: float64</pre>
 <div class="prompt input_prompt">In [62]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
@@ -2114,7 +2116,7 @@ Freq: D, dtype: float64</pre>
 <div class="prompt input_prompt">In [63]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#根据轴，可以.sort_index(axis=0, by=None, ascending=True)。by参数只能对列</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#根据轴，可以.sort_index(axis=0, by=None, ascending=True)。by参数只能对列</span>
 <span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2205,7 +2207,7 @@ Freq: D, dtype: float64</pre>
 <div class="prompt input_prompt">In [64]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'B'</span><span class="p">)</span>       <span class="c1">#根据值</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'B'</span><span class="p">)</span>       <span class="c1">#根据值</span>
 </pre></div>
 </div>
 </div>
@@ -2303,7 +2305,7 @@ Freq: D, dtype: float64</pre>
 <div class="prompt input_prompt">In [65]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'A'</span><span class="p">]</span>  <span class="c1">#可使用df.A</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'A'</span><span class="p">]</span>  <span class="c1">#可使用df.A</span>
 </pre></div>
 </div>
 </div>
@@ -2338,7 +2340,7 @@ Freq: D, Name: A, dtype: float64</pre>
 <div class="prompt input_prompt">In [66]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2407,7 +2409,7 @@ Freq: D, Name: A, dtype: float64</pre>
 <div class="prompt input_prompt">In [67]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'20130102'</span><span class="p">:</span><span class="s1">'20130104'</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'20130102'</span><span class="p">:</span><span class="s1">'20130104'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2484,7 +2486,7 @@ Freq: D, Name: A, dtype: float64</pre>
 <div class="prompt input_prompt">In [68]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#选择一行，会降维</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#选择一行，会降维</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -2510,7 +2512,7 @@ Name: 2013-01-01 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [69]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#局部选择</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#局部选择</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -2587,7 +2589,7 @@ Name: 2013-01-01 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [70]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#局部选择</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#局部选择</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'20130102'</span><span class="p">:</span><span class="s1">'20130104'</span><span class="p">,[</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -2649,7 +2651,7 @@ Name: 2013-01-01 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [71]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#选择一行，会降维</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#选择一行，会降维</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'20130102'</span><span class="p">,[</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -2673,7 +2675,7 @@ Name: 2013-01-02 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [72]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#选择具体某个元素，会降维</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#选择具体某个元素，会降维</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">'A'</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -2695,7 +2697,7 @@ Name: 2013-01-02 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [73]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#选择具体某个元素，会降维</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#选择具体某个元素，会降维</span>
 <span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">'A'</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -2725,7 +2727,7 @@ Name: 2013-01-02 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [74]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2750,7 +2752,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [75]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2806,7 +2808,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [76]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -2867,7 +2869,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [77]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,:]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,:]</span>
 </pre></div>
 </div>
 </div>
@@ -2929,7 +2931,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [78]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3005,7 +3007,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [79]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3026,7 +3028,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [80]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3055,7 +3057,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [81]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">A</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">A</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3124,7 +3126,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [82]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3214,7 +3216,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [83]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">df2</span><span class="p">[</span><span class="s1">'E'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'one'</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">,</span><span class="s1">'two'</span><span class="p">,</span><span class="s1">'three'</span><span class="p">,</span><span class="s1">'four'</span><span class="p">,</span><span class="s1">'three'</span><span class="p">]</span>
 <span class="n">df2</span>
 </pre></div>
@@ -3313,7 +3315,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [84]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">'E'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'two'</span><span class="p">,</span><span class="s1">'four'</span><span class="p">])]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">'E'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'two'</span><span class="p">,</span><span class="s1">'four'</span><span class="p">])]</span>
 </pre></div>
 </div>
 </div>
@@ -3386,7 +3388,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [85]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">'%Y %m </span><span class="si">%d</span><span class="s1"> %H'</span><span class="p">)</span>
 <span class="c1">#dataset = read_csv('raw.csv',  parse_dates = [['year', 'month', 'day', 'hour']], index_col=0, date_parser=parse)</span>
 </pre></div>
@@ -3407,7 +3409,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [86]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'20130102'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'20130102'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">s1</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">'F'</span><span class="p">]</span> <span class="o">=</span> <span class="n">s1</span>     <span class="c1">#通过Series赋值列</span>
 </pre></div>
@@ -3428,7 +3430,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [87]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">'A'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">'A'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">df</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'D'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>   <span class="c1">#通过numpy赋值列</span>
 <span class="n">df</span>
@@ -3528,7 +3530,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [88]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">df2</span><span class="p">[</span><span class="n">df2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">df2</span>    <span class="c1">#为每个数据赋值</span>
 <span class="n">df2</span>
 </pre></div>
@@ -3635,7 +3637,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [89]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'E'</span><span class="p">])</span>   <span class="c1">#修改DataFrame的键</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'E'</span><span class="p">])</span>   <span class="c1">#修改DataFrame的键</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">dates</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">'E'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">df1</span>
 </pre></div>
@@ -3732,7 +3734,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [90]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">'any'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">'any'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3799,7 +3801,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [91]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>   <span class="c1">#对缺失值处进行填充</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>   <span class="c1">#对缺失值处进行填充</span>
 </pre></div>
 </div>
 </div>
@@ -3893,7 +3895,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [92]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>    <span class="c1">#判断位置元素是否为缺失值</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>    <span class="c1">#判断位置元素是否为缺失值</span>
 </pre></div>
 </div>
 </div>
@@ -3987,7 +3989,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</pre>
 <div class="prompt input_prompt">In [93]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                   <span class="c1">#序列元素偏移两位</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                   <span class="c1">#序列元素偏移两位</span>
 <span class="n">s</span>
 </pre></div>
 </div>
@@ -4015,7 +4017,7 @@ Freq: D, dtype: float64</pre>
 <div class="prompt input_prompt">In [94]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'index'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'index'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4120,7 +4122,7 @@ Freq: D, dtype: float64</pre>
 <div class="prompt input_prompt">In [95]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">)</span>    <span class="c1">#对对象每个元素应用函数</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">)</span>    <span class="c1">#对对象每个元素应用函数</span>
 </pre></div>
 </div>
 </div>
@@ -4217,7 +4219,7 @@ Freq: D, dtype: float64</pre>
 <div class="prompt input_prompt">In [96]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -4251,7 +4253,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [97]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">s</span>
 </pre></div>
 </div>
@@ -4283,7 +4285,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [98]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>   <span class="c1">#统计值以数字格式显示直方图</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>   <span class="c1">#统计值以数字格式显示直方图</span>
 </pre></div>
 </div>
 </div>
@@ -4318,7 +4320,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [99]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'Aaba'</span><span class="p">,</span> <span class="s1">'Baca'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s1">'CABA'</span><span class="p">,</span> <span class="s1">'dog'</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'Aaba'</span><span class="p">,</span> <span class="s1">'Baca'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s1">'CABA'</span><span class="p">,</span> <span class="s1">'dog'</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">])</span>
 <span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>   <span class="c1">#序列字符串转成小写字母</span>
 </pre></div>
 </div>
@@ -4357,7 +4359,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [100]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -4476,7 +4478,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [101]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pieces</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="mi">7</span><span class="p">:]]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pieces</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="mi">7</span><span class="p">:]]</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">pieces</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4603,7 +4605,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [102]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">right</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'foo'</span><span class="p">],</span> <span class="s1">'rval'</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]})</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">right</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'foo'</span><span class="p">],</span> <span class="s1">'rval'</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]})</span>
 <span class="n">left</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'foo'</span><span class="p">],</span> <span class="s1">'rval'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
 </pre></div>
 </div>
@@ -4615,7 +4617,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [103]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'key'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'key'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4694,7 +4696,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [104]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="s1">'C'</span><span class="p">,</span><span class="s1">'D'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="s1">'C'</span><span class="p">,</span><span class="s1">'D'</span><span class="p">])</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -4799,7 +4801,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [105]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4919,7 +4921,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [106]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span>
                           <span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'foo'</span><span class="p">],</span>
                    <span class="s1">'B'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'one'</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'three'</span><span class="p">,</span>
                           <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">,</span> <span class="s1">'three'</span><span class="p">],</span>
@@ -5029,7 +5031,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [107]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1">#对键index A分组进行并对每个组执行sum函数</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1">#对键index A分组进行并对每个组执行sum函数</span>
 </pre></div>
 </div>
 </div>
@@ -5090,7 +5092,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [108]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>   <span class="c1">#对index A B进行分组并对每个组执行sum函数</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>   <span class="c1">#对index A B进行分组并对每个组执行sum函数</span>
 </pre></div>
 </div>
 </div>
@@ -5183,7 +5185,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [109]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df2</span>
 </pre></div>
 </div>
 </div>
@@ -5280,7 +5282,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In [110]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stacked</span>  <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">stacked</span>  <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
 <span class="n">stacked</span>
 </pre></div>
 </div>
@@ -5339,7 +5341,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [111]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stacked</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">stacked</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -5436,7 +5438,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [112]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stacked</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">stacked</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5533,7 +5535,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [113]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stacked</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">stacked</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5636,7 +5638,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [114]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -5740,7 +5742,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [115]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">'D'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'C'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">'D'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'C'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -5881,7 +5883,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In [116]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1/1/2012'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'S'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1/1/2012'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'S'</span><span class="p">)</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rng</span><span class="p">)),</span> <span class="n">index</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
 <span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'5Min'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
@@ -5905,7 +5907,7 @@ Freq: 5T, dtype: int64</pre>
 <div class="prompt input_prompt">In [117]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'3/6/2012 00:00'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'D'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'3/6/2012 00:00'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'D'</span><span class="p">)</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rng</span><span class="p">)),</span> <span class="n">rng</span><span class="p">)</span>
 <span class="n">ts</span>
 </pre></div>
@@ -5933,7 +5935,7 @@ Freq: D, dtype: float64</pre>
 <div class="prompt input_prompt">In [118]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts_utc</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">'UTC'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ts_utc</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">'UTC'</span><span class="p">)</span>
 <span class="n">ts_utc</span>
 </pre></div>
 </div>
@@ -5968,7 +5970,7 @@ Freq: D, dtype: float64</pre>
 <div class="prompt input_prompt">In [119]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ts_utc</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="s1">'US/Eastern'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ts_utc</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="s1">'US/Eastern'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -6002,7 +6004,7 @@ Freq: D, dtype: float64</pre>
 <div class="prompt input_prompt">In [120]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1/1/2012'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'M'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1/1/2012'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'M'</span><span class="p">)</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rng</span><span class="p">)),</span> <span class="n">index</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
 <span class="n">ts</span>
 </pre></div>
@@ -6030,7 +6032,7 @@ Freq: M, dtype: float64</pre>
 <div class="prompt input_prompt">In [121]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">to_period</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">to_period</span><span class="p">()</span>
 <span class="n">ps</span>
 </pre></div>
 </div>
@@ -6057,7 +6059,7 @@ Freq: M, dtype: float64</pre>
 <div class="prompt input_prompt">In [122]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ps</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ps</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -6083,7 +6085,7 @@ Freq: MS, dtype: float64</pre>
 <div class="prompt input_prompt">In [123]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">period_range</span><span class="p">(</span><span class="s1">'1990Q1'</span><span class="p">,</span> <span class="s1">'2000Q4'</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'Q-NOV'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">prng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">period_range</span><span class="p">(</span><span class="s1">'1990Q1'</span><span class="p">,</span> <span class="s1">'2000Q4'</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'Q-NOV'</span><span class="p">)</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prng</span><span class="p">)),</span> <span class="n">prng</span><span class="p">)</span>
 <span class="n">ts</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">prng</span><span class="o">.</span><span class="n">asfreq</span><span class="p">(</span><span class="s1">'M'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">asfreq</span><span class="p">(</span><span class="s1">'H'</span><span class="p">,</span> <span class="s1">'s'</span><span class="p">)</span> <span class="o">+</span> <span class="mi">9</span>
 <span class="n">ts</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -6120,7 +6122,7 @@ Freq: H, dtype: float64</pre>
 <div class="prompt input_prompt">In [124]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"id"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="s2">"raw\_grade"</span><span class="p">:[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]})</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"id"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="s2">"raw\_grade"</span><span class="p">:[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]})</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"grade"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"raw\_grade"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"category"</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"grade"</span><span class="p">]</span> 
 </pre></div>
@@ -6158,7 +6160,7 @@ Categories (3, object): [a, b, e]</pre>
 <div class="prompt input_prompt">In [125]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"grade"</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"very good"</span><span class="p">,</span> <span class="s2">"good"</span><span class="p">,</span> <span class="s2">"very bad"</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"grade"</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"very good"</span><span class="p">,</span> <span class="s2">"good"</span><span class="p">,</span> <span class="s2">"very bad"</span><span class="p">]</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -6250,7 +6252,7 @@ Categories (3, object): [a, b, e]</pre>
 <div class="prompt input_prompt">In [126]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"grade"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"grade"</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">set_categories</span><span class="p">([</span><span class="s2">"very bad"</span><span class="p">,</span> <span class="s2">"bad"</span><span class="p">,</span> <span class="s2">"medium"</span><span class="p">,</span> <span class="s2">"good"</span><span class="p">,</span> <span class="s2">"very good"</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"grade"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"grade"</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">set_categories</span><span class="p">([</span><span class="s2">"very bad"</span><span class="p">,</span> <span class="s2">"bad"</span><span class="p">,</span> <span class="s2">"medium"</span><span class="p">,</span> <span class="s2">"good"</span><span class="p">,</span> <span class="s2">"very good"</span><span class="p">])</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"grade"</span><span class="p">]</span> 
 </pre></div>
 </div>
@@ -6287,7 +6289,7 @@ Categories (5, object): [very bad, bad, medium, good, very good]</pre>
 <div class="prompt input_prompt">In [127]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">"grade"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">"grade"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -6378,7 +6380,7 @@ Categories (5, object): [very bad, bad, medium, good, very good]</pre>
 <div class="prompt input_prompt">In [128]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"grade"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"grade"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -6422,7 +6424,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [129]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#写入：</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#写入：</span>
 <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'foo.csv'</span><span class="p">)</span>
 <span class="c1">#读取：</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'foo.csv'</span><span class="p">)</span>
@@ -6523,7 +6525,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [130]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df.to_hdf('foo.h5','df')</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#df.to_hdf('foo.h5','df')</span>
 <span class="c1">#pd.read_hdf('foo.h5','df')</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">"test"</span><span class="p">)</span>
 </pre></div>
@@ -6555,7 +6557,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [131]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">'foo.xlsx'</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'Sheet1'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">'foo.xlsx'</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'Sheet1'</span><span class="p">)</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">'foo.xlsx'</span><span class="p">,</span> <span class="s1">'Sheet1'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="s1">'NA'</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -6639,7 +6641,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#显示所有列</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#显示所有列</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_columns'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="c1">#显示所有行</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -6788,29 +6790,7 @@ dtype: int64</pre>
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

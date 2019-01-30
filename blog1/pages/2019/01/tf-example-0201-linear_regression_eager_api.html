@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">tf-example-02.01-linear_regression_eager_api</h1>
@@ -1106,7 +1108,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1121,7 +1123,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Set Eager API</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Set Eager API</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">enable_eager_execution</span><span class="p">()</span>
 <span class="n">tfe</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">eager</span>
 </pre></div>
@@ -1134,7 +1136,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Training Data</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Training Data</span>
 <span class="n">train_X</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">6.71</span><span class="p">,</span> <span class="mf">6.93</span><span class="p">,</span> <span class="mf">4.168</span><span class="p">,</span> <span class="mf">9.779</span><span class="p">,</span> <span class="mf">6.182</span><span class="p">,</span> <span class="mf">7.59</span><span class="p">,</span> <span class="mf">2.167</span><span class="p">,</span>
            <span class="mf">7.042</span><span class="p">,</span> <span class="mf">10.791</span><span class="p">,</span> <span class="mf">5.313</span><span class="p">,</span> <span class="mf">7.997</span><span class="p">,</span> <span class="mf">5.654</span><span class="p">,</span> <span class="mf">9.27</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">]</span>
 <span class="n">train_Y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.7</span><span class="p">,</span> <span class="mf">2.76</span><span class="p">,</span> <span class="mf">2.09</span><span class="p">,</span> <span class="mf">3.19</span><span class="p">,</span> <span class="mf">1.694</span><span class="p">,</span> <span class="mf">1.573</span><span class="p">,</span> <span class="mf">3.366</span><span class="p">,</span> <span class="mf">2.596</span><span class="p">,</span> <span class="mf">2.53</span><span class="p">,</span> <span class="mf">1.221</span><span class="p">,</span>
@@ -1155,7 +1157,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Weight and Bias</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Weight and Bias</span>
 <span class="n">W</span> <span class="o">=</span> <span class="n">tfe</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">())</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">tfe</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">())</span>
 
@@ -1176,7 +1178,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># SGD Optimizer</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># SGD Optimizer</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">GradientDescentOptimizer</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">)</span>
 
 <span class="c1"># Compute gradients</span>
@@ -1191,7 +1193,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Initial cost, before optimizing</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initial cost, before optimizing</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Initial cost= </span><span class="si">{:.9f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
     <span class="n">mean_square_fn</span><span class="p">(</span><span class="n">linear_regression</span><span class="p">,</span> <span class="n">train_X</span><span class="p">,</span> <span class="n">train_Y</span><span class="p">)),</span>
     <span class="s2">"W="</span><span class="p">,</span> <span class="n">W</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="s2">"b="</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
@@ -1237,7 +1239,7 @@ Epoch: 1000 cost= 0.081205189 W= 0.28870946 b= 0.5359594
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgkAAAFkCAYAAACq4KjhAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzt3Xl8VNX9//HXZzASEwKIoFgEE0FpWqs2cWEHEZFaQCy1
 LUpVKtaliF8Ut0IVa+KumFa0WrVQbekifiu48VWpG6T4I9SVuFQ2t4IsQliNzPn9cbNNMoHMemcm
@@ -1668,29 +1670,7 @@ AElFTkSuQmCC
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">spark-python</h1>
@@ -1120,7 +1122,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pyspark
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>pyspark
 </pre></div>
 </div>
 </div>
@@ -1174,7 +1176,7 @@ KeyboardInterrupt
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sc</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sc</span>
 </pre></div>
 </div>
 </div>
@@ -1205,7 +1207,7 @@ KeyboardInterrupt
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SQLContext</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SQLContext</span>
 <span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkContext</span>
 
 <span class="n">sc</span><span class="o">=</span><span class="n">SparkContext</span><span class="p">(</span><span class="n">appName</span><span class="o">=</span><span class="s2">"myword"</span><span class="p">)</span>
@@ -1228,7 +1230,7 @@ KeyboardInterrupt
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="s2">"/Users/weidian/Documents/MyDiary/tmp/datas/paper/atrank/reviews_Electronics_5.json"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="s2">"/Users/weidian/Documents/MyDiary/tmp/datas/paper/atrank/reviews_Electronics_5.json"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1247,7 +1249,7 @@ KeyboardInterrupt
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1302,7 +1304,7 @@ only showing top 20 rows
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">printSchema</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">printSchema</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1343,7 +1345,7 @@ only showing top 20 rows
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"reviewTime"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"reviewTime"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1372,7 +1374,7 @@ only showing top 20 rows
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">reviewText</span><span class="o">&gt;</span><span class="s2">"10"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">reviewText</span><span class="o">&gt;</span><span class="s2">"10"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1401,7 +1403,7 @@ only showing top 20 rows
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">"reviewText"</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">"reviewText"</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1444,7 +1446,7 @@ only showing top 20 rows
 <div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_data</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">"/Users/weidian/Documents/MyDiary/tmp/datas/paper/atrank/reviews_Electronics_5.json"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">my_data</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">"/Users/weidian/Documents/MyDiary/tmp/datas/paper/atrank/reviews_Electronics_5.json"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1536,7 +1538,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_data</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">my_data</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1565,7 +1567,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_data</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">my_data</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1657,7 +1659,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="s2">".txt"</span> <span class="ow">in</span> <span class="n">line</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">my_data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="s2">".txt"</span> <span class="ow">in</span> <span class="n">line</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1676,7 +1678,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">"file:/path/file.txt"</span><span class="p">)</span> \
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">"file:/path/file.txt"</span><span class="p">)</span> \
     <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="s2">".txt"</span> <span class="ow">in</span> <span class="n">line</span><span class="p">)</span> \
     <span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
@@ -1697,7 +1699,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">first_words</span> <span class="o">=</span> <span class="n">my_data</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">first_words</span> <span class="o">=</span> <span class="n">my_data</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1716,7 +1718,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">first_words</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">first_words</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="nb">print</span> <span class="n">word</span>
 </pre></div>
 </div>
@@ -1736,7 +1738,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">first_words</span><span class="o">.</span><span class="n">saveAsTextFile</span><span class="p">(</span><span class="s2">"file:/path/file"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">first_words</span><span class="o">.</span><span class="n">saveAsTextFile</span><span class="p">(</span><span class="s2">"file:/path/file"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1763,7 +1765,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">DATE_TIME</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">DATE_TIME</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">USER_ID</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">IP_ADDRESS</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">ACTION</span> <span class="o">=</span> <span class="mi">3</span>
@@ -1792,7 +1794,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_actions</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">pair</span><span class="p">:</span> <span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">sortyByKey</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">user_actions</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">pair</span><span class="p">:</span> <span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">sortyByKey</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1811,7 +1813,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_ips</span> <span class="o">=</span> <span class="n">log_data</span> \
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">user_ips</span> <span class="o">=</span> <span class="n">log_data</span> \
     <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> \
     <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">words</span><span class="p">:</span> <span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">IP_ADDRESS</span><span class="p">],</span><span class="n">words</span><span class="p">[</span><span class="n">USER_ID</span><span class="p">]))</span> \
     <span class="o">.</span><span class="n">groupByKey</span><span class="p">()</span>
@@ -1833,7 +1835,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_data</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">"file:/path/*"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">user_data</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">"file:/path/*"</span><span class="p">)</span>
 
 <span class="n">user_profile</span> <span class="o">=</span> <span class="n">user_data</span> \
     <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">))</span> \
@@ -1856,7 +1858,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_actions_with_profile</span> <span class="o">=</span> <span class="n">user_actions</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">user_profile</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">user_actions_with_profile</span> <span class="o">=</span> <span class="n">user_actions</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">user_profile</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1875,7 +1877,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="p">(</span><span class="n">user_info</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span> <span class="ow">in</span> <span class="n">user_actions_with_profiles</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="p">(</span><span class="n">user_info</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span> <span class="ow">in</span> <span class="n">user_actions_with_profiles</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="nb">print</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">user_info</span>
 </pre></div>
 </div>
@@ -1903,7 +1905,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>sudo service spark-master start
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>sudo service spark-master start
 <span class="o">!</span>sudo service spark-worker start
 </pre></div>
 </div>
@@ -1923,7 +1925,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>sudo service spark-master stop
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>sudo service spark-master stop
 <span class="o">!</span>sudo service spark-worker stop
 </pre></div>
 </div>
@@ -1943,7 +1945,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>sudo service spark-master stop
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>sudo service spark-master stop
 <span class="o">!</span>sudo service spark-worker stop
 </pre></div>
 </div>
@@ -1963,7 +1965,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">18080</span><span class="o">//</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">18080</span><span class="o">//</span>
 </pre></div>
 </div>
 </div>
@@ -1982,7 +1984,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nv">MASTER</span><span class="o">=</span>spark://localhost:7077 pyspark
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nv">MASTER</span><span class="o">=</span>spark://localhost:7077 pyspark
 </pre></div>
 </div>
 </div>
@@ -2001,7 +2003,7 @@ py4j.protocol.Py4JNetworkError: Error while receiving
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">master</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">master</span>
 </pre></div>
 </div>
 </div>
@@ -2035,7 +2037,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">4040</span><span class="o">/</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">4040</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -2063,7 +2065,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">dbConnection</span> <span class="o">=</span> <span class="o">...</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">dbConnection</span> <span class="o">=</span> <span class="o">...</span>
 <span class="n">lines</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">...</span> <span class="n">dbConnection</span><span class="o">.</span><span class="n">createStatement</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="o">...</span><span class="p">)</span>
 <span class="n">dbConnection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="o">//</span> <span class="n">Wrong</span><span class="err">!</span>
 </pre></div>
@@ -2097,7 +2099,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_txt</span><span class="p">(</span><span class="n">partIter</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_txt</span><span class="p">(</span><span class="n">partIter</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">partIter</span><span class="p">:</span> 
         <span class="k">if</span> <span class="s2">".txt"</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span> <span class="n">txt_count</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">yield</span> <span class="p">(</span><span class="n">txt_count</span><span class="p">)</span>
@@ -2142,7 +2144,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Cache RDD to memory</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Cache RDD to memory</span>
 <span class="n">my_data</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
 
 <span class="c1"># Persist RDD to both memory and disk (if memory is not enough), with replication of 2</span>
@@ -2180,7 +2182,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Enable checkpointing by setting the checkpoint directory, </span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Enable checkpointing by setting the checkpoint directory, </span>
 <span class="c1"># which will contain all checkpoints for the given data:</span>
 <span class="n">sc</span><span class="o">.</span><span class="n">setCheckpointDir</span><span class="p">(</span><span class="s2">"checkpoints"</span><span class="p">)</span>
 
@@ -2225,7 +2227,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkContext</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
@@ -2260,7 +2262,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>spark-submit --properties-file dir/myspark.conf script.py data/*
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>spark-submit --properties-file dir/myspark.conf script.py data/*
 </pre></div>
 </div>
 </div>
@@ -2287,7 +2289,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>spark-submit --master spark//localhost:7077 --name <span class="s1">'App Name'</span> script.py data/*
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>spark-submit --master spark//localhost:7077 --name <span class="s1">'App Name'</span> script.py data/*
 </pre></div>
 </div>
 </div>
@@ -2306,7 +2308,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">spark</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">name</span>  <span class="n">App</span> <span class="n">Name</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">spark</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">name</span>  <span class="n">App</span> <span class="n">Name</span>
 <span class="n">spark</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">port</span>   <span class="mi">4141</span>
 <span class="n">spark</span><span class="o">.</span><span class="n">master</span>    <span class="n">spark</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">7077</span>
 </pre></div>
@@ -2327,7 +2329,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>spark-submit --properties-file spark.conf script.py data/*
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>spark-submit --properties-file spark.conf script.py data/*
 </pre></div>
 </div>
 </div>
@@ -2346,7 +2348,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sconf</span> <span class="o">=</span> <span class="n">SparkConf</span><span class="p">()</span> \
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sconf</span> <span class="o">=</span> <span class="n">SparkConf</span><span class="p">()</span> \
     <span class="o">.</span><span class="n">setAppName</span><span class="p">(</span><span class="s2">"Word Count"</span><span class="p">)</span> \
     <span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"spark.ui.port"</span><span class="p">,</span><span class="s2">"4141"</span><span class="p">)</span>
 <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="p">(</span><span class="n">conf</span><span class="o">=</span><span class="n">sconf</span><span class="p">)</span>
@@ -2368,7 +2370,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="err">$</span><span class="n">SPARK_HOME</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">log4j</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">template</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="err">$</span><span class="n">SPARK_HOME</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">log4j</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">template</span>
 </pre></div>
 </div>
 </div>
@@ -2395,7 +2397,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>spark-shell --master local<span class="o">[</span><span class="m">2</span><span class="o">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>spark-shell --master local<span class="o">[</span><span class="m">2</span><span class="o">]</span>
 </pre></div>
 </div>
 </div>
@@ -2414,7 +2416,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">ssc</span> <span class="o">=</span> <span class="n">new</span> <span class="n">StreamingContext</span><span class="p">(</span><span class="n">new</span> <span class="n">SparkConf</span><span class="p">(),</span> <span class="n">Seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">ssc</span> <span class="o">=</span> <span class="n">new</span> <span class="n">StreamingContext</span><span class="p">(</span><span class="n">new</span> <span class="n">SparkConf</span><span class="p">(),</span> <span class="n">Seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> 
 <span class="n">val</span> <span class="n">my_stream</span> <span class="o">=</span> <span class="n">ssc</span><span class="o">.</span><span class="n">socketTextStream</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2434,7 +2436,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">logs</span> <span class="o">=</span> <span class="n">ssc</span><span class="o">.</span><span class="n">socketTextStream</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">logs</span> <span class="o">=</span> <span class="n">ssc</span><span class="o">.</span><span class="n">socketTextStream</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2454,7 +2456,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">requests</span> <span class="o">=</span> <span class="n">my_stream</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">requests</span> <span class="o">=</span> <span class="n">my_stream</span>
     <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">line</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">)(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
     <span class="o">.</span><span class="n">reduceByKey</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
@@ -2475,7 +2477,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">sorted_requests</span> <span class="o">=</span> <span class="n">requests</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">sorted_requests</span> <span class="o">=</span> <span class="n">requests</span>
     <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">pair</span> <span class="o">=&gt;</span> <span class="n">pair</span><span class="o">.</span><span class="n">swap</span><span class="p">)</span>
     <span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">rdd</span> <span class="o">=&gt;</span> <span class="n">rdd</span><span class="o">.</span><span class="n">sortByKey</span><span class="p">(</span><span class="n">false</span><span class="p">))</span>
 </pre></div>
@@ -2496,7 +2498,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sorted_requests</span><span class="o">.</span><span class="n">foreachRDD</span><span class="p">((</span><span class="n">rdd</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sorted_requests</span><span class="o">.</span><span class="n">foreachRDD</span><span class="p">((</span><span class="n">rdd</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="n">println</span><span class="p">(</span><span class="s2">"Top users @ "</span> <span class="o">+</span> <span class="n">time</span><span class="p">)</span>
     <span class="n">rdd</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">foreach</span><span class="p">(</span>
     <span class="n">pair</span> <span class="o">=&gt;</span> <span class="n">printf</span><span class="p">(</span><span class="s2">"User: </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">pair</span><span class="o">.</span><span class="n">_2</span><span class="p">,</span> <span class="n">pair</span><span class="o">.</span><span class="n">_1</span><span class="p">))</span>
@@ -2519,7 +2521,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">requests</span><span class="o">.</span><span class="n">saveAsTextFiles</span><span class="p">(</span><span class="s2">"/dir/requests"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">requests</span><span class="o">.</span><span class="n">saveAsTextFiles</span><span class="p">(</span><span class="s2">"/dir/requests"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2538,7 +2540,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ssc</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ssc</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2557,7 +2559,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ssc</span><span class="o">.</span><span class="n">awaitTermination</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ssc</span><span class="o">.</span><span class="n">awaitTermination</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2584,7 +2586,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ssc</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">(</span><span class="s2">"dir"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ssc</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">(</span><span class="s2">"dir"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2603,7 +2605,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">updateCount</span> <span class="o">=</span> <span class="p">(</span><span class="n">newCounts</span><span class="p">:</span> <span class="n">Seq</span><span class="p">[</span><span class="n">Int</span><span class="p">],</span> <span class="n">state</span><span class="p">:</span> <span class="n">Option</span><span class="p">[</span><span class="n">Int</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">updateCount</span> <span class="o">=</span> <span class="p">(</span><span class="n">newCounts</span><span class="p">:</span> <span class="n">Seq</span><span class="p">[</span><span class="n">Int</span><span class="p">],</span> <span class="n">state</span><span class="p">:</span> <span class="n">Option</span><span class="p">[</span><span class="n">Int</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="n">val</span> <span class="n">newCount</span> <span class="o">=</span> <span class="n">newCounts</span><span class="o">.</span><span class="n">foldLeft</span><span class="p">(</span><span class="mi">0</span><span class="p">)(</span><span class="n">_</span> <span class="o">+</span> <span class="n">_</span><span class="p">)</span>
     <span class="n">val</span> <span class="n">previousCount</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">getOrElse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">Some</span><span class="p">(</span><span class="n">newCount</span> <span class="o">+</span> <span class="n">previousCount</span><span class="p">)</span>
@@ -2628,7 +2630,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">reqcountsByWindow</span> <span class="o">=</span> <span class="n">logs</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">line</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="n">reqcountsByWindow</span> <span class="o">=</span> <span class="n">logs</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">line</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
     <span class="o">.</span><span class="n">reduceByKeyAndWindow</span><span class="p">((</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">Minutes</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">Seconds</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -2648,7 +2650,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">define</span> <span class="n">listener</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">define</span> <span class="n">listener</span>
 <span class="k">class</span> <span class="nc">MyListener</span> <span class="n">extends</span> <span class="n">StreamingListener</span> <span class="p">{</span>
   <span class="n">override</span> <span class="k">def</span> <span class="nf">onReceiverStopped</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">streamingContext</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
@@ -2683,7 +2685,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">broadcast_file</span> <span class="o">=</span> <span class="s2">"broadcast.txt"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">broadcast_file</span> <span class="o">=</span> <span class="s2">"broadcast.txt"</span>
 <span class="n">broadcast_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">l</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="nb">open</span><span class="p">(</span><span class="n">broadcast_file</span><span class="p">)))</span>
 </pre></div>
 </div>
@@ -2703,7 +2705,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">broadcast_list_sc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">broadcast_list</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">broadcast_list_sc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">broadcast_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2722,7 +2724,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">log_file</span> <span class="o">=</span> <span class="s2">"hdfs://localhost/user/logs/*"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">log_file</span> <span class="o">=</span> <span class="s2">"hdfs://localhost/user/logs/*"</span>
 <span class="n">filtered_data</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="n">log_file</span><span class="p">)</span>\
     <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="nb">any</span><span class="p">(</span><span class="n">item</span> <span class="ow">in</span> <span class="n">line</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">broadcast_list_sc</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
 
@@ -2753,7 +2755,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">txt_count</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">accumulator</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">txt_count</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">accumulator</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2772,7 +2774,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_data</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">my_data</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
 <span class="n">my_data</span><span class="o">.</span><span class="n">foreach</span><span class="p">(</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="k">if</span> <span class="s1">'.txt'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span> <span class="n">txt_count</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -2792,7 +2794,7 @@ Information about the running executors</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">jpg_count</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">accumulator</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">jpg_count</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">accumulator</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">html_count</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">accumulator</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">css_count</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">accumulator</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -2954,29 +2956,7 @@ Information about the running executors</p>
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

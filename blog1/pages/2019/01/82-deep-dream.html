@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">8.2-deep-dream</h1>
@@ -1094,7 +1096,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">keras</span>
 <span class="n">keras</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
@@ -1144,7 +1146,7 @@ in practice Inception is known to produce very nice-looking Deep Dreams, so we w
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.applications</span> <span class="k">import</span> <span class="n">inception_v3</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.applications</span> <span class="k">import</span> <span class="n">inception_v3</span>
 <span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">backend</span> <span class="k">as</span> <span class="n">K</span>
 
 <span class="c1"># We will not be training our model,</span>
@@ -1191,7 +1193,7 @@ but you will definitely want to explore many different configurations later on:<
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dict mapping layer names to a coefficient</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Dict mapping layer names to a coefficient</span>
 <span class="c1"># quantifying how much the layer's activation</span>
 <span class="c1"># will contribute to the loss we will seek to maximize.</span>
 <span class="c1"># Note that these are layer names as they appear</span>
@@ -1221,7 +1223,7 @@ but you will definitely want to explore many different configurations later on:<
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get the symbolic outputs of each "key" layer (we gave them unique names).</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Get the symbolic outputs of each "key" layer (we gave them unique names).</span>
 <span class="n">layer_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">layer</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">layer</span><span class="p">)</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">layers</span><span class="p">])</span>
 
 <span class="c1"># Define the loss.</span>
@@ -1252,7 +1254,7 @@ but you will definitely want to explore many different configurations later on:<
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This holds our generated image</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># This holds our generated image</span>
 <span class="n">dream</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">input</span>
 
 <span class="c1"># Compute the gradients of the dream with regard to the loss.</span>
@@ -1331,7 +1333,7 @@ require to have SciPy installed.</p>
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
 <span class="kn">from</span> <span class="nn">keras.preprocessing</span> <span class="k">import</span> <span class="n">image</span>
 
 <span class="k">def</span> <span class="nf">resize_img</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
@@ -1380,7 +1382,7 @@ require to have SciPy installed.</p>
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Playing with these hyperparameters will also allow you to achieve new effects</span>
 
@@ -1490,7 +1492,7 @@ Processing image shape (350, 350)
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">deprocess_image</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">img</span><span class="p">)))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1502,7 +1504,7 @@ Processing image shape (350, 350)
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQsAAAD8CAYAAABgtYFHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvcuSZcmSpvWpqtlae2+/RETmyXPqcgqqWrqZMUNgzAAR
 ZswQ4AF6xJwaIjDhGXrAGF6gRXrAE5QIPQIRuuvW1O1c8mRGhLvvvdcyM1UGau4RmUV1Hzorq5OS
@@ -4032,29 +4034,7 @@ siOkF99jAAAAAElFTkSuQmCC
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>

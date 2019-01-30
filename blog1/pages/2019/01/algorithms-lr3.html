@@ -20,7 +20,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="../../../favicon.png" rel="icon">
 
 <link href="../../../theme/css/main.css" media="screen, projection"
       rel="stylesheet" type="text/css">
@@ -38,7 +37,6 @@
 <script src="../../../theme/js/octopress.js" type="text/javascript"></script>
 <script src="../../../theme/js/echarts.min.js" type="text/javascript"></script>
 <script src="../../../theme/js/require.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
 <header role="banner"><hgroup>
   <h1><a href="../../../">魑魅魍魉</a></h1>
@@ -110,6 +108,10 @@
 <div id="main">
     <div id="content">
     <div>
+
+        <h4>Contents</h4>
+        
+
         <article class="hentry" role="article">
 <header>
         <h1 class="entry-title">algorithms-LR3</h1>
@@ -1094,7 +1096,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="c1">#load data from file导入txt数据</span>
 <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="n">dataset</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1116,7 +1118,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="c1">#导入数据并且可视化一下</span>
 <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">"regress/ex0.txt"</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span>
@@ -1143,7 +1145,7 @@ h6:hover .anchor-link {
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAEKCAYAAAAB0GKPAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJztnX9wHeV577/PkR0MFGzFcm0CuKRNem9oxjqxZMl2Awbu
 NJgEO9NpZpqfndtpxiXFOseW07S5LZZEO7ftpJYsGVpKuZnbTkqZTCDF0ECaTINNA5aRQCKhuU0J
@@ -1378,7 +1380,7 @@ hJBE/H+upWAN1MTyxQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#简单的线性回归，使用求导公式就可以求得w的最优值</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#简单的线性回归，使用求导公式就可以求得w的最优值</span>
 
 <span class="k">def</span> <span class="nf">normalEquation</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">):</span>
     <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">))</span>
@@ -1409,7 +1411,7 @@ hJBE/H+upWAN1MTyxQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#现在可视化一下求得w的效果</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#现在可视化一下求得w的效果</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s1">'r'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">),</span><span class="n">color</span> <span class="o">=</span> <span class="s2">"blue"</span><span class="p">,</span><span class="n">linestyle</span> <span class="o">=</span> <span class="s2">"-"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
@@ -1423,7 +1425,7 @@ hJBE/H+upWAN1MTyxQAAAABJRU5ErkJggg==
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAEKCAYAAAAB0GKPAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3X2YXHV99/H3dx+yAWpFl4gUzI222IqipPcanUBhw4MC
 itw2tsWHbm7AruHBilXRaNHUWKPAdTVF5GHB2OSyllojKBRUiCxgMyiJIAKipYgYlBuIoAJhk935
@@ -1632,7 +1634,7 @@ QL0ZrAOeQx0AAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#使用相关系数函数，评价拟合的好坏,得到两两相关的矩阵</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#使用相关系数函数，评价拟合的好坏,得到两两相关的矩阵</span>
 <span class="n">yHat</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">yHat</span><span class="o">.</span><span class="n">shape</span>
 <span class="nb">print</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
@@ -1661,7 +1663,7 @@ QL0ZrAOeQx0AAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#线性回归容易欠拟合，所以实现局部加权线性回归————给待预测点附近的每个点赋予一定的权重</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#线性回归容易欠拟合，所以实现局部加权线性回归————给待预测点附近的每个点赋予一定的权重</span>
 <span class="c1">#局部加权线性回归：运算复杂,计算量大；因为对每个点的预测都需要用到整个数据集合</span>
 
 <span class="c1">#对单个点，用整个数据集合赋权重，求得预测值</span>
@@ -1713,7 +1715,7 @@ should be 3.20175729
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">lwlrTest</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">lwlrTest</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">y2</span> <span class="o">=</span> <span class="n">lwlrTest</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">)</span>
 <span class="n">y3</span> <span class="o">=</span> <span class="n">lwlrTest</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">k</span> <span class="o">=</span> <span class="mf">0.003</span><span class="p">)</span>
 
@@ -1739,7 +1741,7 @@ should be 3.20175729
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#k = 1，权重很大，就等于将所有的数据视为等权重</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#k = 1，权重很大，就等于将所有的数据视为等权重</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s1">'r'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">y1</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span><span class="n">color</span> <span class="o">=</span> <span class="s2">"blue"</span><span class="p">,</span><span class="n">linestyle</span> <span class="o">=</span> <span class="s2">"-"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
@@ -1753,7 +1755,7 @@ should be 3.20175729
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAEKCAYAAAAB0GKPAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XuUXXV99/H3d85MEsALOkSkYoparaVGQKfBQR6YcCty
 8xL7LLx0KFDHcFum1eITKpZKNYj6rKjcMmBoUrXUEkGwIGBkBJsTYAKIgJcnVUSilDBKFYFJZs73
@@ -1962,7 +1964,7 @@ iEgmChgiIpKJAoaIiGTy/wHBVAprUiczxAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#k=0.01拟合的挺好</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#k=0.01拟合的挺好</span>
 <span class="c1">#为了绘制曲线图，需要将数据点排序</span>
 <span class="n">srtIndex</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">srtIndex</span><span class="o">.</span><span class="n">shape</span>
@@ -1992,7 +1994,7 @@ iEgmChgiIpKJAoaIiGTy/wHBVAprUiczxAAAAABJRU5ErkJggg==
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAEKCAYAAAAB0GKPAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xt4VNW5+PHvmoS7kAQSg4IUrSJgSyIJATyKQG3B1kut
 tlqtttYWFckkBKvt8ZgEbXu0SiDj3ePPqlVLrZeKVO2p1YpVCSaaYMGjRapWrNwvchMy8/7+WHtn
@@ -2275,7 +2277,7 @@ cdGAoZRSKi4aMJRSSsVFA4ZSSqm4/H8jgS3s2XQ4BgAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># k = 0.003有点过拟合了</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># k = 0.003有点过拟合了</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s1">'r'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_sort</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">y3</span><span class="p">[</span><span class="n">srtIndex</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)</span>
 <span class="c1">#plt.scatter(x[:,1],y3,color = "blue",marker=".")</span>
@@ -2290,7 +2292,7 @@ cdGAoZRSKi4aMJRSSsVFA4ZSSqm4/H8jgS3s2XQ4BgAAAABJRU5ErkJggg==
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAEKCAYAAAAB0GKPAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl8VNX5+PHPSQibIFvCooBLXVHJQEKCoCjYFlDBarWK
 WxUtRSUzJKit7c8kaPdWSAIutW61rbZWaQWL1OWrFlHABEJwqSi4IFQhrIIgZOb5/XHuzdyZJGSy
@@ -2585,7 +2587,7 @@ pVRMNGAopZSKyf8HbAw1E3ZYuxAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#当数据的特征非常的多，n&gt;m时，则输入数据X不是满秩矩阵，非满秩矩阵求逆会有问题</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#当数据的特征非常的多，n&gt;m时，则输入数据X不是满秩矩阵，非满秩矩阵求逆会有问题</span>
 <span class="c1">#岭回归 == 加入了正则化,缩减权重系数，也就是减少特征值数量</span>
 
 <span class="c1">#岭回归公式求解</span>
@@ -2619,7 +2621,7 @@ pVRMNGAopZSKyf8HbAw1E3ZYuxAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="c1">#load data from file导入txt数据</span>
 <span class="k">def</span> <span class="nf">load_data1</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="n">dataset</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2642,7 +2644,7 @@ pVRMNGAopZSKyf8HbAw1E3ZYuxAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span> <span class="o">=</span> <span class="n">load_data1</span><span class="p">(</span><span class="s2">"regress/abalone.txt"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span> <span class="o">=</span> <span class="n">load_data1</span><span class="p">(</span><span class="s2">"regress/abalone.txt"</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">yy</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
@@ -2665,7 +2667,7 @@ pVRMNGAopZSKyf8HbAw1E3ZYuxAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ws</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ws</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">ws</span><span class="o">.</span><span class="n">shape</span> 
 </pre></div>
 </div>
@@ -2688,7 +2690,7 @@ pVRMNGAopZSKyf8HbAw1E3ZYuxAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span><span class="o">-</span><span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">30</span><span class="p">)],</span><span class="n">ws</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span><span class="o">-</span><span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">30</span><span class="p">)],</span><span class="n">ws</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"log(lamda)"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"w1-8"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2703,7 +2705,7 @@ pVRMNGAopZSKyf8HbAw1E3ZYuxAAAAAASUVORK5CYII=
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY4AAAEKCAYAAAAFJbKyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl8HWd58P3fNWfT0b4dWfIuy3Yc27FjIzuJA0kgCSRp
 QtgDFFqe0IZAKJSXLpS00PI8vKVveWiBQiCQQNnLTkgMIc5iJwESb4nXJFZsxZYsW7ItW7vOMtf7
@@ -2939,7 +2941,7 @@ GGOGxRKHMcaYYbHEYYwxZlj+f0KOCtZj/igdAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#向前逐步回归——————贪心算法：从初始值，每次更新（增大一点/减少一点），看看哪个有利于减少误差，就选择哪个更新，</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#向前逐步回归——————贪心算法：从初始值，每次更新（增大一点/减少一点），看看哪个有利于减少误差，就选择哪个更新，</span>
 
 <span class="c1">#这是一个0均值化，方差为1的特征归一化过程</span>
 <span class="k">def</span> <span class="nf">normalFeature</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -2993,7 +2995,7 @@ GGOGxRKHMcaYYbHEYYwxZlj+f0KOCtZj/igdAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ws</span> <span class="o">=</span> <span class="n">stageWise</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">learn_rate</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span><span class="n">iters</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ws</span> <span class="o">=</span> <span class="n">stageWise</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">learn_rate</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span><span class="n">iters</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">ws</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
@@ -3026,7 +3028,7 @@ GGOGxRKHMcaYYbHEYYwxZlj+f0KOCtZj/igdAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"itres"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"w1-8"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -3038,7 +3040,7 @@ GGOGxRKHMcaYYbHEYYwxZlj+f0KOCtZj/igdAAAAAElFTkSuQmCC
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY4AAAEKCAYAAAAFJbKyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl8VPW9//HXdyaTnWwkbGFfw64QEUEUN1RArFapW1db
 a60//bVXvba9Xby/WvW216ptb3ut2tpVrSsqKosrLkiAQICwBEjYkkCAJIQsM5n5/v6YIQZZksl2
@@ -3257,7 +3259,7 @@ CYuCQ0REwqLgEBGRsCg4REQkLP8fklcFiTCOqJQAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#向前逐步回归，可以从上图看出，那些变化很小的，一直在0附近的权重参数（对应特征），说明他们对误差不产生影响</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#向前逐步回归，可以从上图看出，那些变化很小的，一直在0附近的权重参数（对应特征），说明他们对误差不产生影响</span>
 <span class="c1">#这可以帮助我们找出重要的特征</span>
 </pre></div>
 </div>
@@ -3269,7 +3271,7 @@ CYuCQ0REwqLgEBGRsCg4REQkLP8fklcFiTCOqJQAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class="highlight hl-ipython3"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -3414,29 +3416,7 @@ CYuCQ0REwqLgEBGRsCg4REQkLP8fklcFiTCOqJQAAAAASUVORK5CYII=
 
     <section>
         <h1>GitHub Repos</h1>
-        <ul id="gh_repos">
-            <li class="loading">Status updating...</li>
-        </ul>
             <a href="https://github.com/1007530194">@1007530194</a> on GitHub
-        <script type="text/javascript">
-            $.domReady(function () {
-                if (!window.jXHR) {
-                    var jxhr = document.createElement('script');
-                    jxhr.type = 'text/javascript';
-                    jxhr.src = '../../../theme/js/jXHR.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(jxhr, s);
-                }
-
-                github.showRepos({
-                    user: '1007530194',
-                    count: 5,
-                    skip_forks: false,
-                    target: '#gh_repos'
-                });
-            });
-        </script>
-        <script src="../../../theme/js/github.js" type="text/javascript"></script>
     </section>
 
 </aside>    </div>
